@@ -1,0 +1,7 @@
+<div class="participants">
+    {% for participant in site.data.participants %}
+        <div class="participant">
+            <img src="{{participant.image_url}}" alt="{{participant.title}}"/>
+        </div>
+    {% endfor %}
+</div>
