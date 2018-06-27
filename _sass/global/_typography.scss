@@ -1,0 +1,10 @@
+body {
+  font: 400 #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  line-height: $base-line-height;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+}

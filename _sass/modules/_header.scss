@@ -1,0 +1,18 @@
+.site-header {
+    display: block;
+    width: 100%;
+
+    min-height: 40vh;
+
+    background-image: url('https://placeimg.com/1280/780/nature');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+
+    &.full {
+        height: 100vh;
+    }
+}
