@@ -1,0 +1,15 @@
+body {
+  background-color: $background-color;
+}
+
+.page-content {
+  max-width: $content-width;
+  margin: 2em auto 0 auto;
+  padding: 8px;
+}
+
+.wrapper {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 8px;
+}
