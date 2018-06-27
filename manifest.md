@@ -1,3 +1,9 @@
+---
+layout: default
+title: Manifest
+permalink: /manifest/
+---
+
 1. Basis
 
 Wij geloven dat het uitgangspunt van softwareleveranciers in de zorgsector is om patiënten en zorgprofessionals optimaal digitaal samen te laten werken voor de hoogste kwaliteit van zorg.
