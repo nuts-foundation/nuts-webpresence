@@ -1,5 +1,7 @@
 {%- if page.display_big_header -%}
   <header class="site-header full-screen">
+    <div class="big_logo"></div>
+
 {%- else -%}
   <header class="site-header">
 {%- endif -%}
@@ -12,6 +14,7 @@
         {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths = site.header_pages | default: default_paths -%}
 
         <div class="right-menu">
+
           <input type="checkbox" id="nav-trigger" class="nav-trigger" />
           <label for="nav-trigger">
             <span class="menu-icon">
@@ -29,8 +32,9 @@
               {%- endif -%}
             {%- endfor -%}
           </div>
-        </div>
-      </div>
 
+        </div>
+
+      </div>
     </nav>
-</header>
+  </header>

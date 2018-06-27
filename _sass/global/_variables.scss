@@ -5,9 +5,9 @@ $base-line-height: 1.5 !default;
 $text-color:       #111 !default;
 $background-color: #fdfdfd !default;
 
-$grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark: lighten($grey-color, 80%) !default;
+$grey-color:       #CCCCCC;
+$grey-color-light: #F5F5F5;
+$grey-color-dark:  #828282;
 
 // Navigation colors
 $navigation-background: rgba(#e74c3c, .96);
