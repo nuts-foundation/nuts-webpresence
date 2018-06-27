@@ -4,8 +4,12 @@ body {
 
 .page-content {
   max-width: $content-width;
-  margin: 2em auto 0 auto;
-  padding: 8px;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.page-block {
+  background-color: $grey-color-light
 }
 
 .wrapper {

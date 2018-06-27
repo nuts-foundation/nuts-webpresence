@@ -4,7 +4,7 @@ title: Position paper
 permalink: /position-paper/
 ---
 
-### Wat is het probleem?
+## Wat is het probleem?
 
 Het rommelt al enkele jaren in de Nederlandse zorg-ICT. Na het fiasco met het landelijk elektronisch patiëntendossier heeft de politiek enerzijds besloten dat "de markt" het probleem moet oplossen, en is anderzijds het LSP geïntroduceerd. Ondanks dat het LSP een nuttige functie vervult moeten we toch concluderen dat het centrale probleem waar we al een decennium tegenaan hikken nog niet is opgelost.
 
@@ -14,7 +14,7 @@ Want ja, er wordt in de zorg nog héél veel gefaxt.
 
 Er is geen overzicht, er is geen eenduidige manier om data uit te wisselen, en waar er wel digitaal data uitgewisseld wordt kost dit doorgaans een bedrag per bericht, of betekent het knippen en plakken van het ene naar het andere systeem. Met als gevolg dat communicatie wordt ontmoedigd in plaats van gestimuleerd.
 
-### Liever te voorzichtig
+## Liever te voorzichtig
 
 Maar de bezwaren die tot de ondergang van het EPD hebben geleid zijn zeker terecht. Als we niet heel voorzichtig zijn in het ontwerpen van dit soort communicatiesystemen dan lopen we het risico om met de beste bedoelingen een dystopisch drama te ontwerpen. Eén verkeerde aanname ("zorgmedewerkers [zijn best te vertrouwen](https://nos.nl/artikel/2225867-tientallen-onbevoegden-bekeken-medisch-dossier-barbie.html)") en de dossiers van heel Nederland liggen op straat.
 
@@ -22,7 +22,7 @@ Daarom lijkt de insteek van ICT leveranciers in de zorgsector er één te zijn v
 
 Waar er wel data wordt uitgewisseld gebeurt dit doorgaans op regionale schaal, tussen partijen die elkaar in de ogen hebben gekeken, hebben uitgesproken dat ze willen samenwerken en een contract hebben getekend. Pas nadat de juristen zijn geraadpleegd worden er leveranciers opgebeld om een single sign on te realiseren ("gebruiken we jullie accounts of de onze?") of een API te implementeren ("sluiten jullie aan op onze standaarden of wij op die van jullie?").
 
-### Wij denken dat het anders kan
+## Wij denken dat het anders kan
 
 De wereld heeft niet stilgestaan het afgelopen decennium. De meeste software draait tegenwoordig in je webbrowser of als app op je telefoon. We zagen de opkomst van Bittorrent en Bitcoin. Mensen zijn eraan gewend geraakt om hun bankzaken digitaal te doen dankzij sterke cryptografie. Consumenten zijn digitaal veel vaardiger geworden en boeken tegenwoordig zelf hun reis, voeren hun meterstanden online in en praten digitaal mee met de uitzending op TV. De adoptie van apps zoals Facebook en WhatsApp maakt dat we makkelijker dan ooit iets met elkaar delen.
 
@@ -30,9 +30,9 @@ Daarom is het volgens ons tijd voor een nieuw initiatief om, _privacy-by-design_
 
 Dat betekent dat we niet één partij willen vertrouwen met de zorgdossiers van heel Nederland. Dat betekent dat we de cryptografische waarborgen willen kunnen vertrouwen die we zo normaal zijn gaan vinden bij het internetbankieren. Het betekent dat de patiënt steeds meer een volwaardige gesprekspartner wordt. En het betekent dat we simpel, snel en kostenloos data willen kunnen uitwisselen.
 
-Dit idee hebben we samengevat in [ons manifest van acht standpunten](manifest). En dit manifest willen we samen gaan uitdragen: met patiëntenorganisaties, medische professionals en vooruitstrevende softwareleveranciers.
+Dit idee hebben we samengevat in [ons manifest van acht standpunten](/manifest). En dit manifest willen we samen gaan uitdragen: met patiëntenorganisaties, medische professionals en vooruitstrevende softwareleveranciers.
 
-### #hoedan
+## #hoedan
 
 Om onze ambities waar te maken hebben we een set aan technische standaarden nodig, en software die deze standaarden implementeert. Daarom gaan we, met onze standpunten onder de arm, op zoek naar die technologie. We knippen het probleem op in een aantal deelproblemen waarop we antwoorden proberen te formuleren, zodat het behapbaar wordt.
 

@@ -1,0 +1,21 @@
+.participants {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content: center;
+
+  max-width: $content-width;
+  margin: 0 auto;
+  padding-bottom: 3em;
+
+  .participant {
+    -webkit-flex: 1;
+    flex: 1;
+
+    img {
+      max-width: 250px
+    }
+  }
+}
