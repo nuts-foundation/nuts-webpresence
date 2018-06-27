@@ -1,13 +1,19 @@
 .site-nav {
   display: block;
 
-  background-color: rgba(0,0,0,.8);
-
+  background-color: rgba(0,0,0,.6);
 }
 
-.nav-wrapper {
+.navigation {
 
-  color: #fff;
+  img.logo {
+      float: left;
+      max-width: 120px;
+  }
+
+  .right-menu {
+    float: right;
+  }
 
   .nav-trigger {
     display: none;
