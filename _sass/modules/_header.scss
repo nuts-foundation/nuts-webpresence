@@ -1,18 +1,32 @@
 .site-header {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 
-    min-height: 40vh;
+  min-height: 40vh;
 
-    background-image: url('https://placeimg.com/1280/780/nature');
-    background-size: cover;
+  background-image: url('https://placeimg.com/1280/780/nature');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+
+  &.full-screen {
+      height: 100vh;
+  }
+
+  .big_logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    background-image: url('nuts.png');
+    background-size: 40vw;
     background-repeat: no-repeat;
     background-position: center;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
-
-    &.full-screen {
-        height: 100vh;
-    }
+  }
 }
