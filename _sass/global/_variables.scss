@@ -9,6 +9,11 @@ $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: lighten($grey-color, 80%) !default;
 
+// Navigation colors
+$navigation-background: rgba(#e74c3c, .96);
+$navigation-link: rgba(#fff, 0.75);
+$navigation-link-hover: #fff;
+
 // Width of the content area
 $content-width:    800px !default;
 

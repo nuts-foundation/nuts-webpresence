@@ -1,10 +1,20 @@
 .site-nav {
-  display: block;
+  @include animate;
 
-  background-color: rgba(0,0,0,.6);
+  position: relative;
+  z-index: 2;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $navigation-background;
+  }
 }
 
 .navigation {
+  padding: 2em;
 
   img.logo {
       float: left;
@@ -24,8 +34,14 @@
   }
 
   .page-link {
-    color: $text-color;
+    @include animate;
+
+    color: $navigation-link;
     line-height: $base-line-height;
+
+    &:hover {
+      color: $navigation-link-hover;
+    }
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
