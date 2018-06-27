@@ -8,13 +8,13 @@ permalink: /position-paper/
 
 Het rommelt al enkele jaren in de Nederlandse zorg-ICT. Na het fiasco met het landelijk elektronisch patiëntendossier heeft de politiek enerzijds besloten dat "de markt" het probleem moet oplossen, en is anderzijds het LSP geïntroduceerd. Ondanks dat het LSP een gedeelte van de oplossing biedt moeten we toch concluderen dat het centrale probleem waar we al een decennium tegenaan hikken nog niet is opgelost.
 
-Want het probleem is helder: alles is handwerk. Als ik bij het ziekenhuis kom heeft mijn behandelend arts geen inzage in mijn allergiën totdat deze op verzoek opgestuurd worden door mijn huisarts. Als het ziekenhuis mij vervolgens wil overdragen aan de thuiszorg dan moet de transferverpleegkundige met tien thuiszorgorganisaties bellen om een plekje te vinden. En als mijn huisarts vervolgens wil weten wat de thuiszorg doet dan moet ook de assistente alle organisaties bellen tot de juiste gevonden is, waarna de thuiszorg een uittreksel uit mijn dossier naar de huisarts faxt. 
+Want het probleem is helder: alles is handwerk. Als ik bij het ziekenhuis kom heeft mijn behandelend arts geen inzage in mijn allergiën totdat deze op verzoek opgestuurd worden door mijn huisarts. Als het ziekenhuis mij vervolgens wil overdragen aan de thuiszorg dan moet de transferverpleegkundige met tien thuiszorgorganisaties bellen om een plekje te vinden. En als mijn huisarts vervolgens wil weten wat de thuiszorg doet dan moet ook de assistente alle organisaties bellen tot de juiste gevonden is, waarna de thuiszorg een uittreksel uit mijn dossier naar de huisarts faxt.
 
-Want ja, er wordt in de zorg nog héél veel gefaxt. 
+Want ja, er wordt in de zorg nog héél veel gefaxt.
 
-Er is geen overzicht, er is geen eenduidige manier om data uit te wisselen, en waar er wel digitaal data uitgewisseld wordt kost dit doorgaans een bedrag per bericht, of betekent het knippen en plakken van het ene naar het andere systeem. Met als gevolg dat communicatie wordt ontmoedigd in plaats van gestimuleerd. 
+Er is geen overzicht, er is geen eenduidige manier om data uit te wisselen, en waar er wel digitaal data uitgewisseld wordt kost dit doorgaans een bedrag per bericht, of betekent het knippen en plakken van het ene naar het andere systeem. Met als gevolg dat communicatie wordt ontmoedigd in plaats van gestimuleerd.
 
-En wanneer ik als patiënt als volwaardig gesprekspartner mee wil doen in mijn eigen zorgcarriere, dan zijn daar geen mogelijkheden voor. Uiteraard zijn er landelijke programma's, zoals MedMij, waarmee ik inzage krijg in mijn eigen dossier. Dit geeft mij alleen nog niet de mogelijkheid om echt mee te doen en kan ik alleen maar meekijken. 
+En als patiënt heb ik al helemaal geen invloed op dit proces. Het ontbreekt mij aan de _tools_ om als volwaardige gesprekspartner mee te kunnen doen. Natuurlijk zijn er landelijke programma's zoals MedMij die mij over een paar jaar hopelijk wat inzicht geven. Maar vooralsnog blijft het bij meekijken in de afzonderlijke dossiers van mijn behandelaren, en heb ik geen grip wat er zich tussen deze behandelaren afspeelt.
 
 ## Liever te voorzichtig
 
@@ -32,7 +32,7 @@ Daarom is het volgens ons tijd voor een nieuw initiatief om, _privacy-by-design_
 
 Dat betekent dat we niet één partij willen vertrouwen met de zorgdossiers van heel Nederland. Dat betekent dat we de cryptografische waarborgen willen kunnen vertrouwen die we zo normaal zijn gaan vinden bij het internetbankieren. En het betekent dat we simpel, snel en kostenloos data willen kunnen uitwisselen.
 
-Dit idee hebben we samengevat in [ons manifest van acht standpunten](/manifest). En dit manifest willen we samen gaan uitdragen: met patiëntenorganisaties, medische professionals en vooruitstrevende softwareleveranciers.
+Dit idee hebben we samengevat in [ons manifest van acht standpunten](../manifest). En dit manifest willen we samen gaan uitdragen: met patiëntenorganisaties, medische professionals en vooruitstrevende softwareleveranciers.
 
 ## #hoedan
 
