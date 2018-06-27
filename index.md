@@ -4,3 +4,6 @@
 
 layout: home
 ---
+
+Nuts is een nieuw initiatief om 'privacy-by-design' en gedecentraliseerd
+data uit te wisselen in de gezondheidszorg.
