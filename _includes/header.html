@@ -1,20 +1,16 @@
 {%- if page.display_big_header -%}
-  <header class="site-header full-screen">
-    <div class="big_logo"></div>
+  <header id="site-header" class="site-header full-screen">
+    <div class="big_logo wrapper"></div>
 
 {%- else -%}
-  <header class="site-header">
+  <header class="site-header fixed">
 {%- endif -%}
 
-  <nav id="js-nav" class="site-nav">
+  <nav class="site-nav">
       <div class="wrapper navigation">
-
-        <a href="{{ site.baseurl }}/" class="logo">Nuts</a>
-
-        {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths = site.header_pages | default: default_paths -%}
+        <a href="{{ "/" | relative_url }}" class="small_logo"></a>
 
         <div class="right-menu">
-
           <input type="checkbox" id="nav-trigger" class="nav-trigger" />
           <label for="nav-trigger">
             <span class="menu-icon">
@@ -25,14 +21,10 @@
           </label>
 
           <div class="trigger">
-            {%- for path in page_paths -%}
-              {%- assign my_page = site.pages | where: "path", path | first -%}
-              {%- if my_page.title -%}
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-              {%- endif -%}
-            {%- endfor -%}
+            <a class="page-link" href="{{ 'position-paper' | relative_url }}">Position paper</a>
+            <a class="page-link" href="{{ 'manifest' | relative_url }}">Manifest</a>
+            <a class="page-link" href="{{ 'contact' | relative_url }}">Contact</a>
           </div>
-
         </div>
 
       </div>
