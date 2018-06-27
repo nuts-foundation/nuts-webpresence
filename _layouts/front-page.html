@@ -6,14 +6,16 @@ layout: default
   {{ content }}
 </div>
 
-{%- include participants.html -%}
+<div class="page-block">
+  {%- include participants.html -%}
+</div>
 
 <div class="page-block">
   <div class="fancy-image"></div>
 </div>
 
 <div class="page-content">
-  <p>[ Blurb van laatste twee blogs op Medium.com ]</p>
+  {%- include medium-feed.html -%}
 </div>
 
 <div class="page-block">
