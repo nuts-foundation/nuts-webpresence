@@ -6,17 +6,19 @@ permalink: /position-paper/
 
 ## Wat is het probleem?
 
-Het rommelt al enkele jaren in de Nederlandse zorg-ICT. Na het fiasco met het landelijk elektronisch patiëntendossier heeft de politiek enerzijds besloten dat "de markt" het probleem moet oplossen, en is anderzijds het LSP geïntroduceerd. Ondanks dat het LSP een nuttige functie vervult moeten we toch concluderen dat het centrale probleem waar we al een decennium tegenaan hikken nog niet is opgelost.
+Het rommelt al enkele jaren in de Nederlandse zorg-ICT. Na het fiasco met het landelijk elektronisch patiëntendossier heeft de politiek enerzijds besloten dat "de markt" het probleem moet oplossen, en is anderzijds het LSP geïntroduceerd. Ondanks dat het LSP een gedeelte van de oplossing biedt moeten we toch concluderen dat het centrale probleem waar we al een decennium tegenaan hikken nog niet is opgelost.
 
-Want het probleem is helder: alles is handwerk. Als ik bij het ziekenhuis kom heeft mijn behandelend arts geen inzage in mijn allergiën totdat deze op verzoek opgestuurd worden door mijn huisarts. Als het ziekenhuis mij vervolgens wil overdragen aan de thuiszorg dan moet de transferverpleegkundige met tien thuiszorgorganisaties bellen om een plekje te vinden. En als mijn huisarts vervolgens wil weten wat de thuiszorg doet dan moet ook de assistente alle organisaties bellen tot de juiste gevonden is, waarna de thuiszorg een uittreksel uit mijn dossier naar de huisarts faxt.
+Want het probleem is helder: alles is handwerk. Als ik bij het ziekenhuis kom heeft mijn behandelend arts geen inzage in mijn allergiën totdat deze op verzoek opgestuurd worden door mijn huisarts. Als het ziekenhuis mij vervolgens wil overdragen aan de thuiszorg dan moet de transferverpleegkundige met tien thuiszorgorganisaties bellen om een plekje te vinden. En als mijn huisarts vervolgens wil weten wat de thuiszorg doet dan moet ook de assistente alle organisaties bellen tot de juiste gevonden is, waarna de thuiszorg een uittreksel uit mijn dossier naar de huisarts faxt. 
 
-Want ja, er wordt in de zorg nog héél veel gefaxt.
+Want ja, er wordt in de zorg nog héél veel gefaxt. 
 
-Er is geen overzicht, er is geen eenduidige manier om data uit te wisselen, en waar er wel digitaal data uitgewisseld wordt kost dit doorgaans een bedrag per bericht, of betekent het knippen en plakken van het ene naar het andere systeem. Met als gevolg dat communicatie wordt ontmoedigd in plaats van gestimuleerd.
+Er is geen overzicht, er is geen eenduidige manier om data uit te wisselen, en waar er wel digitaal data uitgewisseld wordt kost dit doorgaans een bedrag per bericht, of betekent het knippen en plakken van het ene naar het andere systeem. Met als gevolg dat communicatie wordt ontmoedigd in plaats van gestimuleerd. 
+
+En wanneer ik als patiënt als volwaardig gesprekspartner mee wil doen in mijn eigen zorgcarriere, dan zijn daar geen mogelijkheden voor. Uiteraard zijn er landelijke programma's, zoals MedMij, waarmee ik inzage krijg in mijn eigen dossier. Dit geeft mij alleen nog niet de mogelijkheid om echt mee te doen en kan ik alleen maar meekijken. 
 
 ## Liever te voorzichtig
 
-Maar de bezwaren die tot de ondergang van het EPD hebben geleid zijn zeker terecht. Als we niet heel voorzichtig zijn in het ontwerpen van dit soort communicatiesystemen dan lopen we het risico om met de beste bedoelingen een dystopisch drama te ontwerpen. Eén verkeerde aanname ("zorgmedewerkers [zijn best te vertrouwen](https://nos.nl/artikel/2225867-tientallen-onbevoegden-bekeken-medisch-dossier-barbie.html)") en de dossiers van heel Nederland liggen op straat.
+Maar de bezwaren die tot de ondergang van het landelijk EPD hebben geleid zijn zeker terecht. Als we niet heel voorzichtig zijn in het ontwerpen van dit soort communicatiesystemen dan lopen we het risico om met de beste bedoelingen een dystopisch drama te ontwerpen. Eén verkeerde aanname ("zorgmedewerkers [zijn best te vertrouwen](https://nos.nl/artikel/2225867-tientallen-onbevoegden-bekeken-medisch-dossier-barbie.html)") en de dossiers van heel Nederland liggen op straat.
 
 Daarom lijkt de insteek van ICT leveranciers in de zorgsector er één te zijn van "wij bewaken de data en niemand komt er aan". We kunnen beter iets te voorzichtig zijn dan iets te scheutig.
 
@@ -28,7 +30,7 @@ De wereld heeft niet stilgestaan het afgelopen decennium. De meeste software dra
 
 Daarom is het volgens ons tijd voor een nieuw initiatief om, _privacy-by-design_ en gedecentraliseerd, data uit te wisselen in de gezondheidszorg, met de technologie van de 21e eeuw.
 
-Dat betekent dat we niet één partij willen vertrouwen met de zorgdossiers van heel Nederland. Dat betekent dat we de cryptografische waarborgen willen kunnen vertrouwen die we zo normaal zijn gaan vinden bij het internetbankieren. Het betekent dat de patiënt steeds meer een volwaardige gesprekspartner wordt. En het betekent dat we simpel, snel en kostenloos data willen kunnen uitwisselen.
+Dat betekent dat we niet één partij willen vertrouwen met de zorgdossiers van heel Nederland. Dat betekent dat we de cryptografische waarborgen willen kunnen vertrouwen die we zo normaal zijn gaan vinden bij het internetbankieren. En het betekent dat we simpel, snel en kostenloos data willen kunnen uitwisselen.
 
 Dit idee hebben we samengevat in [ons manifest van acht standpunten](/manifest). En dit manifest willen we samen gaan uitdragen: met patiëntenorganisaties, medische professionals en vooruitstrevende softwareleveranciers.
 
