@@ -18,8 +18,8 @@ email:
 description: >- # this means to ignore newlines until "baseurl:"
   Nuts is een nieuw initiatief om 'privacy-by-design' en gedecentraliseerd
   data uit te wisselen in de gezondheidszorg.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "site.distributed.health" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/nuts-webpresence" # the subpath of your site, e.g. /blog
+# url: "site.distributed.health" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:
 
