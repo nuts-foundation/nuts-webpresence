@@ -5,16 +5,18 @@
   min-height: 40vh;
 
   background-color: $grey-color;
-  background-image: url('https://placeimg.com/1280/780/nature');
+  background-image: url('background1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 65%;
 
   // Positioning context for the mobile navigation icon
   position: relative;
 
   &.full-screen {
     height: 100vh;
+    background-image: url('background10.jpg');
+    background-position: center;
   }
 
   .big_logo {

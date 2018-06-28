@@ -1,11 +1,11 @@
 <div class="page-content">
-  <p>Dit initiatief wordt ondersteund door deze partijen:</p>
+  <p>Dit initiatief wordt nu al ondersteund door deze partijen:</p>
 </div>
 
 <div class="participants">
-    {% for participant in site.data.participants %}
-        <div class="participant">
-            <img src="{{participant.image_url}}" alt="{{participant.title}}"/>
-        </div>
-    {% endfor %}
+  {% for participant in site.data.participants %}
+    <div class="participant" style="background-image: url('{{participant.image_url}}');">
+      <a href="{{participant.website_url}}"></a>
+    </div>
+  {% endfor %}
 </div>

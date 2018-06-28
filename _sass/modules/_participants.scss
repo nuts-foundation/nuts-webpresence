@@ -1,21 +1,27 @@
 .participants {
-  display: flex;
+  @include flexbox();
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: baseline;
-  align-content: center;
 
   max-width: $content-width;
   margin: 0 auto;
-  padding-bottom: 5em;
+  padding: 0 0.5em 7em 0.5em;
 
   .participant {
-    -webkit-flex: 1;
-    flex: 1;
+    @include flex(1);
+    position: relative;
+    padding: 0.5em;
+    min-width: 200px;
+    min-height: 150px;
 
-    img {
-      max-width: 250px
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   }
 }

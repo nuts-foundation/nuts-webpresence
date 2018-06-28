@@ -1,7 +1,15 @@
 .fancy-image {
-  height: 30vh;
-  background-image: url('https://placeimg.com/1280/780/nature');
+  height: 60vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  &.img1 { background-image: url('background1.jpg'); }
+  &.img2 { background-image: url('background2.jpg'); }
+  &.img3 { background-image: url('background3.jpg'); }
+  &.img4 { background-image: url('background4.jpg'); }
+  &.img5 { background-image: url('background5.jpg'); }
+  &.img6 { background-image: url('background6.jpg'); }
+  &.img7 { background-image: url('background7.jpg'); }
+  &.img8 { background-image: url('background8.jpg'); background-position: center 65%; }
 }
