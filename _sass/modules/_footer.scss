@@ -1,4 +1,21 @@
 footer {
-  min-height: 10vh;
-  background-color: $grey-color;
+  background-color: $grey-color-light;
+
+  .wrapper {
+    @include flexbox;
+
+    min-height: 10vh;
+
+    .left, .right {
+      @include flex(1);
+    }
+
+    .right {
+      text-align: right;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
 }

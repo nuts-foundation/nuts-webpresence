@@ -2,6 +2,7 @@
 layout: page
 title: Manifest
 permalink: /manifest/
+header_image: manifest
 ---
 
 ## 1. Basis

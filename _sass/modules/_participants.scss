@@ -7,6 +7,13 @@
   margin: 0 auto;
   padding: 0 0.5em 7em 0.5em;
 
+  @media only screen and (max-width: $on-laptop) {
+    padding-bottom: 5em;
+  }
+  @media only screen and (max-width: $on-palm) {
+    padding-bottom: 4em;
+  }
+
   .participant {
     @include flex(1);
     position: relative;

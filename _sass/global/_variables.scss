@@ -5,6 +5,9 @@ $base-line-height: 1.5em !default;
 $text-color:       #111 !default;
 $background-color: #fdfdfd !default;
 
+$link-color:       #3b3bb7;
+$link-hover-color: lighten($link-color, 15%);
+
 $grey-color:       #CCCCCC;
 $grey-color-light: #F5F5F5;
 $grey-color-dark:  #828282;

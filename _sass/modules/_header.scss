@@ -5,19 +5,13 @@
   min-height: 40vh;
 
   background-color: $grey-color;
-  background-image: url('background1.jpg');
+  background-image: url('background10.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 65%;
+  background-position: center 83%;
 
   // Positioning context for the mobile navigation icon
   position: relative;
-
-  &.full-screen {
-    height: 100vh;
-    background-image: url('background10.jpg');
-    background-position: center;
-  }
 
   .big_logo {
     position: absolute;
@@ -27,9 +21,27 @@
     right: 0;
     z-index: 1;
 
-    background-image: url('nuts.png');
-    background-size: 80%;
+    background-image: url('nuts-shadow.png');
+    background-size: 120%;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  &.full-screen {
+    height: 100vh;
+    background-image: url('background10.jpg');
+    background-position: center;
+  }
+  &.position-paper {
+    background-image: url('background3.jpg');
+    background-position: center 42%;
+  }
+  &.manifest {
+    background-image: url('background11.jpg');
+    background-position: center 62%;
+  }
+  &.contact {
+    background-image: url('background1.jpg');
+    background-position: center 65%;
   }
 }

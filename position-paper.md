@@ -2,6 +2,7 @@
 layout: page
 title: Position paper
 permalink: /position-paper/
+header_image: position-paper
 ---
 
 ## Wat is het probleem?

@@ -3,10 +3,10 @@
     <div class="big_logo wrapper"></div>
 
 {%- else -%}
-  <header class="site-header fixed">
+  <header class="site-header fixed {{page.header_image}}">
 {%- endif -%}
 
-  <nav class="site-nav">
+    <nav class="site-nav">
       <div class="wrapper navigation">
         <a href="{{ "/" | relative_url }}" class="small_logo"></a>
 
