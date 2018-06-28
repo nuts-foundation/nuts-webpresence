@@ -1,5 +1,5 @@
 .site-nav {
-  @include animate;
+  @include animate(background-color);
 
   position: relative;
   z-index: 2;
@@ -18,7 +18,7 @@
   height: $base-line-height;
 
   .small_logo {
-    @include animate;
+    @include animate(opacity);
 
     display: block;
     position: relative;
@@ -53,7 +53,7 @@
   }
 
   .page-link {
-    @include animate;
+    @include animate(color);
 
     color: $navigation-link;
     line-height: $base-line-height;
@@ -81,16 +81,6 @@
   }
 
   @media only screen and (max-width: $on-palm) {
-    @include animate;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    .fixed & {
-      background-color: $navigation-background;
-    }
-
     text-align: right;
 
     label[for="nav-trigger"] {
@@ -117,7 +107,7 @@
     }
 
     input ~ .trigger {
-      @include animate;
+      @include animate(left);
       position: fixed;
       width: 100vw;
       top: 56px;
