@@ -9,17 +9,17 @@ header_image: manifest
 
 ## 1. Basis
 
-Wij geloven dat het uitgangspunt van softwareleveranciers in de zorgsector is om patiënten en zorgprofessionals optimaal digitaal samen te laten werken voor de hoogste kwaliteit van zorg.
+Wij geloven dat het uitgangspunt van softwareleveranciers in de zorgsector is om patiënten en alle betrokken zorgprofessionals optimaal digitaal te ondersteunen in het leveren van betaalbare en hoog kwalitatieve zorg.
 
 <p><details markdown="1"><summary>Lees verder...</summary>
 
-Het stroomlijnen van communicatie door middel van technologie speelt een steeds belangrijkere rol in het zorgproces. Er sterven patiënten door toediening van verkeerde medicijnen. Er worden mensen tegen hun zin gereanimeerd. Een gebrek aan snelle en eenvoudige toegang tot zorggegevens heeft grote invloed op de levens van mensen.
+Het stroomlijnen van communicatie door middel van technologie speelt een steeds belangrijkere rol in het zorgproces. Er sterven patiënten door toediening van verkeerde medicijnen. Er worden mensen tegen hun zin in gereanimeerd. Een gebrek aan snelle en eenvoudige toegang tot zorggegevens heeft grote invloed op de levens van mensen.
+
+Met de toenemende vergrijzing en de hogere verwachtingen aan de kwaliteit van de geleverde zorg, is een naadloze integratie van zorgsystemen een noodzaak. Op deze manier houden we kosten in de hand, ook in de toekomst en beperken we fouten tot een minimum.
 
 Patiënten en zorgverleners hebben daarom goede technische ondersteuning nodig om optimaal samen te werken, en wij geloven dat het de taak van softwareleveranciers is om deze uitdaging aan te gaan.
 
-Hieruit volgt ook dat het volgens ons niet in het belang van de zorg, noch van haar softwareleveranciers is om die samenwerking te beperken door het opwerpen van artificiële barrières tussen leveranciers of het introduceren van kosten voor samenwerking.
-
-We hebben er daarom een gezamenlijk belang bij om infrastructuur te ontwikkelen die ondersteunend is aan deze behoefte tot samenwerking, die open en eenvoudig is, maar ook rekening houdt met de privacy van de burger.
+Software leveranciers hebben daarom een gezamenlijk belang bij om een infrastructuur te ontwikkelen die ondersteunend is aan deze behoefte tot samenwerking, die open en eenvoudig is, maar ook rekening houdt met de privacy van de burger.
 
 De rest van de standpunten in dit manifest werken verschillende aspecten van deze gedachte verder uit.
 
@@ -34,15 +34,13 @@ Wij geloven dat de patiënt een actieve plaats verdient in het netwerk, bijvoorb
 
 Van het doorgeven van de meterstanden tot een weekendje uit boeken: technologie stelt mensen in staat om meer en meer zaken zelf te regelen en in de gaten te houden. Maar in de zorg leveren we onszelf over aan de professional en moeten we vervolgens hopen dat onze belangen behartigd worden.
 
-Wij zijn van mening dat de patiënt meer betrokken kan zijn in het zorgproces, en dat de zorg transparanter kan. We geloven dat de zorg daar uiteindelijk beter van wordt.
-
-Daarom hebben we softwareapplicaties nodig die de patiënt in staat stellen om mee te praten, toestemmingen te beheren en te zien welke informatie er wordt uitgewisseld tussen zorgprofessionals.
+De verhouding tussen arts en patient is al jaren aan het veranderen. Met slimme ehealth oplossingen, zelfmetingen en PGOs zal de patient een actievere rol kunnen innemen in zijn eigen gezondheid. Het zwaartepunt van zorg zal zich gaan verplaatsen van behandelen naar meer preventie. Daarom hebben we softwareapplicaties nodig die de patiënt in staat stelt om mee te praten, toestemmingen te beheren en te zien welke informatie er wordt uitgewisseld tussen de betrokken partijen.
 
 Het MedMij project maakt een duidelijk onderscheid tussen communicatie van zorgverleners onderling en communicatie tussen de zorginstelling en de patiënt. Wij zien het geheel meer als één netwerk van individuën die communiceren rondom een ziektebeeld of episode. Wel zien we PGOs als de logische plaats voor de patiënt om deel te nemen in dit netwerk.
 
 We zijn ons ervan bewust dat er grenzen zitten aan de betrokkenheid van de patiënt. Er zullen ongetwijfeld mensen zijn die geen behoefte hebben aan die betrokkenheid, of daar niet toe in staat zijn. Daarom moet het systeem ook kunnen functioneren zonder dat de patiënt deel uitmaakt van het gesprek. Ook zien we de meerwaarde in van de mogelijkheid tot ruggespraak. Maar dat er ook mensen voor kiezen om geen auto te kopen weerhoudt ons er niet van om een uitgebreid en veilig wegennet te organiseren.
 
-Behalve de patiënt zelf kan het natuurlijk ook zijn dat een mantelzorger of een bewindvoerder de regie heeft over het zorgproces. Daarom kunnen volgens ons niet alleen zorgverleners maar ook personen zonder medische achtergrond betrokken worden in het netwerk.
+Behalve de patiënt zelf kan het natuurlijk ook zijn dat een mantelzorger danwel bewindvoerder de regie heeft over het zorgproces. Daarom kunnen volgens ons niet alleen zorgverleners maar ook personen zonder medische achtergrond betrokken worden in het netwerk.
 
 </details></p>
 
