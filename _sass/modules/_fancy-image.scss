@@ -4,12 +4,9 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  &.img1 { background-image: url('background1.jpg'); }
-  &.img2 { background-image: url('background2.jpg'); }
-  &.img3 { background-image: url('background3.jpg'); }
-  &.img4 { background-image: url('background4.jpg'); }
-  &.img5 { background-image: url('background5.jpg'); }
-  &.img6 { background-image: url('background6.jpg'); }
-  &.img7 { background-image: url('background7.jpg'); }
-  &.img8 { background-image: url('background8.jpg'); background-position: center 65%; }
+  &.front-page     { background-image: url('background-front-page.jpg');     }
+  &.position-paper { background-image: url('background-position-paper.jpg'); }
+  &.manifest       { background-image: url('background-manifest.jpg');       }
+  &.contact        { background-image: url('background-contact.jpg');
+                     background-position: center 61%;                        }
 }
