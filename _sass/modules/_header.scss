@@ -5,7 +5,7 @@
   min-height: 40vh;
 
   background-color: $grey-color;
-  background-image: url('background-front-page.jpg');
+  background-image: url('images/backgrounds/front-page.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 83%;
@@ -21,7 +21,7 @@
     right: 0;
     z-index: 1;
 
-    background-image: url('nuts-shadow.png');
+    background-image: url('images/nuts-shadow.png');
     background-size: 120%;
     background-repeat: no-repeat;
     background-position: center;
@@ -29,19 +29,19 @@
 
   &.full-screen {
     height: 100vh;
-    background-image: url('background-front-page.jpg');
+    background-image: url('images/backgrounds/front-page.jpg');
     background-position: center;
   }
   &.position-paper {
-    background-image: url('background-position-paper.jpg');
+    background-image: url('images/backgrounds/position-paper.jpg');
     background-position: center 42%;
   }
   &.manifest {
-    background-image: url('background-manifest.jpg');
+    background-image: url('images/backgrounds/manifest.jpg');
     background-position: center 65%;
   }
   &.contact {
-    background-image: url('background-contact.jpg');
+    background-image: url('images/backgrounds/contact.jpg');
     background-position: center 61%;
   }
 }

@@ -4,9 +4,9 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  &.front-page     { background-image: url('background-front-page.jpg');     }
-  &.position-paper { background-image: url('background-position-paper.jpg'); }
-  &.manifest       { background-image: url('background-manifest.jpg');       }
-  &.contact        { background-image: url('background-contact.jpg');
+  &.front-page     { background-image: url('images/backgrounds/front-page.jpg');     }
+  &.position-paper { background-image: url('images/backgrounds/position-paper.jpg'); }
+  &.manifest       { background-image: url('images/backgrounds/manifest.jpg');       }
+  &.contact        { background-image: url('images/backgrounds/contact.jpg');
                      background-position: center 61%;                        }
 }
