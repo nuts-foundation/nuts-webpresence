@@ -48,3 +48,5 @@ En misschien moeten we concluderen dat sommige stukjes van de puzzel nog niet be
 In elk geval begint deze zoektocht met het formuleren van een gedeelde ambitie. Hoe willen we samenwerken, onder welke voorwaarden? Kijken we op dezelfde manier tegen privacy en veiligheid aan? Zijn we het erover eens dat de patiënt de baas moet worden over zijn eigen gegevens?
 
 Doe mee met ons initiatief, dan gaan we samen op zoek naar het antwoord!
+
+{% include creative-commons.html -%}
