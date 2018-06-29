@@ -16,6 +16,7 @@
 .navigation {
   padding: 2em;
   height: $base-line-height;
+  box-sizing: content-box;
 
   .small_logo {
     @include animate(opacity);
