@@ -27,7 +27,7 @@ Daarom lijkt de insteek van ICT leveranciers in de zorgsector er één te zijn v
 
 Waar er wel data wordt uitgewisseld gebeurt dit doorgaans op regionale schaal, tussen partijen die elkaar in de ogen hebben gekeken, hebben uitgesproken dat ze willen samenwerken en een contract hebben getekend. Pas nadat de juristen zijn geraadpleegd worden er leveranciers opgebeld om een single sign on te realiseren ("gebruiken we jullie accounts of de onze?") of een API te implementeren ("sluiten jullie aan op onze standaarden of wij op die van jullie?").
 
-## Wij denken dat het anders kan
+## Het kan anders
 
 De wereld heeft niet stilgestaan het afgelopen decennium. De meeste software draait tegenwoordig in je webbrowser of als app op je telefoon. We zagen de opkomst van Bittorrent en Bitcoin. Mensen zijn eraan gewend geraakt om hun bankzaken digitaal te doen dankzij sterke cryptografie. Consumenten zijn digitaal veel vaardiger geworden en boeken tegenwoordig zelf hun reis, voeren hun meterstanden online in en praten digitaal mee met de uitzending op TV. De adoptie van apps zoals Facebook en WhatsApp maakt dat we makkelijker dan ooit iets met elkaar delen.
 
