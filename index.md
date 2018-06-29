@@ -4,6 +4,8 @@ title: Dit is Nuts
 display_big_header: true
 ---
 
+# Een decentraal communicatienetwerk voor de zorg
+
 Nuts is een nieuwe manier van kijken, een frisse blik op een oud probleem. Het is de realisatie dat de manier waarop we nu gegevens delen in de zorg best wel gek is.
 
 Daarom wordt het tijd voor een gedeelde voorziening, een platform van iedereen en vóór iedereen. De noodzakelijke infrastructuur om te kunnen communiceren in de zorg.
