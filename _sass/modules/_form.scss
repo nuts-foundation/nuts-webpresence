@@ -1,0 +1,34 @@
+form {
+  input {
+    @include animate;
+    @include border-radius;
+
+    display: inline-block;
+    margin: 1em 0;
+    width: 100%;
+    padding: 1em 2em;
+    border: 1px solid $grey-color-light;
+
+    &:hover {
+      border: 1px solid $input-hover-color;
+    }
+  }
+
+  input[type=submit] {
+    background-color: $input-action-color;
+    color: rgba(#fff, 0.9);
+
+    width: 100%;
+    margin: 1em auto;
+
+    &:hover {
+      background-color: darken($input-action-color, 10%);
+      color: #fff;
+    }
+
+    @media only screen and (min-width: $on-palm) {
+      width: 40%;
+
+    }
+  }
+}

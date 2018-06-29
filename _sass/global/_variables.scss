@@ -12,10 +12,17 @@ $grey-color:       #CCCCCC;
 $grey-color-light: #F5F5F5;
 $grey-color-dark:  #828282;
 
+$red:              #e74c3c;
+
 // Navigation colors
-$navigation-background: rgba(#e74c3c, .96);
+$navigation-background: rgba($red, .96);
 $navigation-link: rgba(#fff, 0.75);
 $navigation-link-hover: #fff;
+
+// Form
+$input-hover-color: $red;
+
+$input-action-color: $red;
 
 // Width of the content area
 $content-width:    800px !default;
