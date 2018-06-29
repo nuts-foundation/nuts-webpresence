@@ -5,6 +5,6 @@ permalink: /bedankt/
 header_image: contact
 ---
 
-Bedankt voor het versturen van je bericht!
+# Bedankt!
 
-Je hoort zo snel mogelijk van ons.
+Je bericht is verzonden. Je hoort zo snel mogelijk van ons.

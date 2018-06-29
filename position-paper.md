@@ -5,6 +5,8 @@ permalink: /position-paper/
 header_image: position-paper
 ---
 
+# Position paper
+
 ## Wat is het probleem?
 
 Het rommelt al enkele jaren in de Nederlandse zorg-ICT. Na het fiasco met het landelijk elektronisch patiëntendossier heeft de politiek enerzijds besloten dat "de markt" het probleem moet oplossen, en is anderzijds het LSP geïntroduceerd. Ondanks dat het LSP een gedeelte van de oplossing biedt moeten we toch concluderen dat het centrale probleem waar we al een decennium tegenaan hikken nog niet is opgelost.
