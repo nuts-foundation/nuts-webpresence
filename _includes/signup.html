@@ -1,6 +1,12 @@
-<form action="https://formspree.io/tim.franssen@nedap.com" method="POST">
-  <input type="hidden" name="_subject" value="Ik wil meedoen!" />
-  <input type="text" name="name" placeholder="Naam">
-  <input type="email" name="_replyto" placeholder="E-mailadres">
-  <input type="submit" value="Aanmelden">
+<form class="reduced-width" action="https://formspree.io/tim.franssen@nedap.com" method="POST">
+  <input type="hidden" name="_subject"  value="[NUTS] Contactformulier ingevuld op de website" />
+  <input type="hidden" name="_next"     value="https://nedap.github.io/nuts-webpresence/bedankt/" />
+  <input type="hidden" name="_language" value="nl" />
+  <input type="text"   name="_gotcha"   style="display:none" />
+
+  <input class="full-width" type="text" name="name" placeholder="Naam">
+  <input class="full-width" type="email" name="_replyto" placeholder="E-mailadres">
+  <textarea class="full-width" rows="10" name="content" placeholder="Optioneel een bericht"></textarea>
+
+  <input class="full-width" type="submit" value="Verstuur">
 </form>

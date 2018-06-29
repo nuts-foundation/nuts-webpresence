@@ -20,9 +20,8 @@ $navigation-link: rgba(#fff, 0.75);
 $navigation-link-hover: #fff;
 
 // Form
-$input-hover-color: $red;
-
-$input-action-color: $red;
+$input-color:       lighten($red, 3%);
+$input-hover-color: lighten($input-color, 5%);
 
 // Width of the content area
 $content-width:    800px !default;

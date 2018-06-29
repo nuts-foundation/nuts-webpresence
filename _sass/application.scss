@@ -2,19 +2,19 @@
 
 // Import partials.
 @import
-  "global/normalizer",
-  "global/variables",
-  "global/base",
-  "global/typography",
-
   "mixins/animate",
   "mixins/flexbox",
   "mixins/border_radius",
 
+  "global/normalizer",
+  "global/variables",
+  "global/base",
+  "global/typography",
+  "global/forms",
+
   "modules/header",
   "modules/navigation",
   "modules/participants",
-  "modules/form",
   "modules/footer",
   "modules/fancy-image"
 ;
