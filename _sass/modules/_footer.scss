@@ -17,5 +17,9 @@ footer {
 
   ul {
     list-style-type: none;
+
+    li.secret-page {
+      display: none;
+    }
   }
 }
