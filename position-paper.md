@@ -17,7 +17,7 @@ Want ja, er wordt in de zorg nog héél veel gefaxt.
 
 Er is geen overzicht, er is geen eenduidige manier om data uit te wisselen, en waar er wel digitaal data uitgewisseld wordt kost dit doorgaans een bedrag per bericht, of betekent het knippen en plakken van het ene naar het andere systeem. Met als gevolg dat communicatie wordt ontmoedigd in plaats van gestimuleerd.
 
-En als patiënt heb ik al helemaal geen invloed op dit proces. Het ontbreekt mij aan de _tools_ om als volwaardige gesprekspartner mee te kunnen doen. Natuurlijk zijn er landelijke programma's zoals MedMij die mij over een paar jaar hopelijk wat inzicht geven. Maar vooralsnog blijft het bij meekijken in de afzonderlijke dossiers van mijn behandelaren, en heb ik geen grip wat er zich tussen deze behandelaren afspeelt.
+En als patiënt heb ik al helemaal geen invloed op dit proces. Het ontbreekt mij aan de _tools_ om als volwaardige gesprekspartner mee te kunnen doen. Natuurlijk zijn er landelijke programma's zoals MedMij die mij over een paar jaar hopelijk wat inzicht geven. Maar vooralsnog blijft het bij meekijken in de afzonderlijke dossiers van mijn behandelaars, en heb ik geen grip op wat er zich tussen deze behandelaars afspeelt.
 
 ## Liever te voorzichtig
 
@@ -35,7 +35,7 @@ Daarom is het volgens ons tijd voor een nieuw initiatief om, _privacy-by-design_
 
 Dat betekent dat we niet één partij willen vertrouwen met de zorgdossiers van heel Nederland. Dat betekent dat we de cryptografische waarborgen willen kunnen vertrouwen die we zo normaal zijn gaan vinden bij het internetbankieren. En het betekent dat we simpel, snel en kostenloos data willen kunnen uitwisselen.
 
-Dit idee hebben we samengevat in [ons manifest van acht standpunten](../manifest). En dit manifest willen we samen gaan uitdragen: met patiëntenorganisaties, medische professionals en vooruitstrevende softwareleveranciers.
+Dit idee hebben we samengevat in [ons manifest van acht standpunten](../manifest). En dit manifest willen we samen uitdragen: met patiëntenorganisaties, medische professionals en vooruitstrevende softwareleveranciers.
 
 ## #hoedan
 
