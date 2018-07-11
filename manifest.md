@@ -19,7 +19,7 @@ Met de toenemende vergrijzing en de hogere verwachtingen aan de kwaliteit van de
 
 Patiënten en zorgverleners hebben daarom goede technische ondersteuning nodig om optimaal samen te werken, en wij geloven dat het de taak van softwareleveranciers is om deze uitdaging aan te gaan.
 
-Software leveranciers hebben daarom een gezamenlijk belang bij om een infrastructuur te ontwikkelen die ondersteunend is aan deze behoefte tot samenwerking, die open en eenvoudig is, maar ook rekening houdt met de privacy van de burger.
+Software leveranciers hebben daarom belang bij het gezamenlijk ontwikkelen van een gedeelde infrastructuur. Deze infrastructuur is ondersteunend aan de behoefte tot samenwerking, die open en eenvoudig is, maar ook rekening houdt met de privacy van de burger.
 
 De rest van de standpunten in dit manifest werken verschillende aspecten van deze gedachte verder uit.
 
