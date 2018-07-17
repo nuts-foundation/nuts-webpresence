@@ -34,7 +34,7 @@ Wij geloven dat de patiënt een actieve plaats verdient in het netwerk, bijvoorb
 
 Van het doorgeven van de meterstanden tot een weekendje uit boeken: technologie stelt mensen in staat om meer en meer zaken zelf te regelen en in de gaten te houden. Maar in de zorg leveren we onszelf over aan de professional en moeten we vervolgens hopen dat onze belangen behartigd worden.
 
-De verhouding tussen arts en patient is al jaren aan het veranderen. Met slimme ehealth oplossingen, zelfmetingen en PGOs zal de patient een actievere rol kunnen innemen in zijn eigen gezondheid. Het zwaartepunt van zorg zal zich gaan verplaatsen van behandelen naar meer preventie. Daarom hebben we softwareapplicaties nodig die de patiënt in staat stelt om mee te praten, toestemmingen te beheren en te zien welke informatie er wordt uitgewisseld tussen de betrokken partijen.
+De verhouding tussen arts en patient is al jaren aan het veranderen. Met slimme E-health oplossingen, zelfmetingen en PGO's zal de patiënt een actievere rol kunnen innemen in zijn eigen gezondheid. Het zwaartepunt van zorg zal zich gaan verplaatsen van behandelen naar preventie. Daarom hebben we softwareapplicaties nodig die de patiënt in staat stellen om mee te praten, toestemmingen te beheren en te zien welke informatie er wordt uitgewisseld tussen de betrokken partijen.
 
 Het MedMij project maakt een duidelijk onderscheid tussen communicatie van zorgverleners onderling en communicatie tussen de zorginstelling en de patiënt. Wij zien het geheel meer als één netwerk van individuën die communiceren rondom een ziektebeeld of episode. Wel zien we PGOs als de logische plaats voor de patiënt om deel te nemen in dit netwerk.
 
