@@ -4,6 +4,8 @@
   background-repeat: no-repeat;
   background-position: center;
 
+  // If you add an image to this list, don't forget to add it to the social
+  // media tags in _includes/head.html too.
   &.front-page     { background-image: url('images/backgrounds/front-page.jpg');     }
   &.position-paper { background-image: url('images/backgrounds/position-paper.jpg'); }
   &.manifest       { background-image: url('images/backgrounds/manifest.jpg');       }
