@@ -49,4 +49,4 @@ In elk geval begint deze zoektocht met het formuleren van een gedeelde ambitie. 
 
 Doe mee met ons initiatief, dan gaan we samen op zoek naar het antwoord!
 
-{% include creative-commons.html -%}
+{% include article-footer.html -%}

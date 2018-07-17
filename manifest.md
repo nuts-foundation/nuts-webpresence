@@ -158,4 +158,4 @@ Alleen op die manier kunnen we af van het probleem dat softwareleveranciers en z
 
 </details></p>
 
-{% include creative-commons.html -%}
+{% include article-footer.html -%}
