@@ -15,11 +15,11 @@ Wij geloven dat het uitgangspunt van softwareleveranciers in de zorgsector is om
 
 Het stroomlijnen van communicatie door middel van technologie speelt een steeds belangrijkere rol in het zorgproces. Er sterven patiënten door toediening van verkeerde medicijnen. Er worden mensen tegen hun zin in gereanimeerd. Een gebrek aan snelle en eenvoudige toegang tot zorggegevens heeft grote invloed op de levens van mensen.
 
-Met de toenemende vergrijzing en de hogere verwachtingen aan de kwaliteit van de geleverde zorg, is een naadloze integratie van zorgsystemen een noodzaak. Op deze manier houden we kosten in de hand, ook in de toekomst en beperken we fouten tot een minimum.
+Daarnaast neemt de vergrijzing toe en worden er steeds hogere eisen gesteld aan de kwaliteit van zorg. Daardoor ontstaat de vraag om de zorg efficiënter te organiseren door middel van meer softwareapplicaties.
 
-Patiënten en zorgverleners hebben daarom goede technische ondersteuning nodig om optimaal samen te werken, en wij geloven dat het de taak van softwareleveranciers is om deze uitdaging aan te gaan.
+Met een naadloze digitale integratie kunnen we fouten tot een minumum beperken, administratieve lasten verlichten en de kosten in de hand houden, ook in de toekomst. We willen patiënten en zorgverleners optimaal laten samenwerken. Wij geloven dat het de taak van softwareleveranciers is om deze uitdaging aan te gaan.
 
-Software leveranciers hebben daarom belang bij het gezamenlijk ontwikkelen van een gedeelde infrastructuur. Deze infrastructuur is ondersteunend aan de behoefte tot samenwerking, die open en eenvoudig is, maar ook rekening houdt met de privacy van de burger.
+Softwareleveranciers hebben er daarom een gezamenlijk belang bij om een infrastructuur te ontwikkelen die deze integratie mogelijk maakt. Een infrastructuur die ondersteunend is aan de behoefte tot samenwerking, die open en eenvoudig is, maar ook rekening houdt met de privacy van de burger.
 
 De rest van de standpunten in dit manifest werken verschillende aspecten van deze gedachte verder uit.
 
@@ -28,15 +28,15 @@ De rest van de standpunten in dit manifest werken verschillende aspecten van dez
 
 ## 2. Patiënt centraal
 
-Wij geloven dat de patiënt een actieve plaats verdient in het netwerk, bijvoorbeeld via haar PGO. De patiënt of een gemachtigde mantelzorger of bewindvoerder moet ervoor kunnen kiezen om mee te praten of toestemmingen te beheren en kunnen zien welke informatie er wordt uitgewisseld.
+Wij geloven dat de patiënt een actieve plaats verdient in het netwerk, bijvoorbeeld via haar PGO (persoonlijke gezondheidsomgeving). De patiënt of een gemachtigde mantelzorger of bewindvoerder moet ervoor kunnen kiezen om mee te praten of toestemmingen te beheren en kunnen zien welke informatie er wordt uitgewisseld.
 
 <p><details markdown="1"><summary>Lees verder...</summary>
 
 Van het doorgeven van de meterstanden tot een weekendje uit boeken: technologie stelt mensen in staat om meer en meer zaken zelf te regelen en in de gaten te houden. Maar in de zorg leveren we onszelf over aan de professional en moeten we vervolgens hopen dat onze belangen behartigd worden.
 
-De verhouding tussen arts en patient is al jaren aan het veranderen. Met slimme E-health oplossingen, zelfmetingen en PGO's zal de patiënt een actievere rol kunnen innemen in zijn eigen gezondheid. Het zwaartepunt van zorg zal zich gaan verplaatsen van behandelen naar preventie. Daarom hebben we softwareapplicaties nodig die de patiënt in staat stellen om mee te praten, toestemmingen te beheren en te zien welke informatie er wordt uitgewisseld tussen de betrokken partijen.
+Maar die verhouding tussen arts en patiënt is de laatste jaren aan het verschuiven. Dankzij slimme _E-health_ oplossingen, zelfmetingen en PGO's zullen we een actievere rol kunnen spelen in onze eigen gezondheid. Het zwaartepunt zal zich gaan verplaatsen van genezen naar voorkomen. Maar daarvoor hebben we softwareapplicaties nodig die ons in staat stellen om mee te praten, toestemmingen te beheren en te zien welke informatie er over ons wordt uitgewisseld.
 
-Het MedMij project maakt een duidelijk onderscheid tussen communicatie van zorgverleners onderling en communicatie tussen de zorginstelling en de patiënt. Wij zien het geheel meer als één netwerk van individuën die communiceren rondom een ziektebeeld of episode. Wel zien we PGOs als de logische plaats voor de patiënt om deel te nemen in dit netwerk.
+Het MedMij project maakt een duidelijk onderscheid tussen onderlinge communicatie van zorgverleners enerzijds en communicatie tussen de zorginstelling en de patiënt anderzijds. Wij zien het geheel meer als één netwerk van individuën die communiceren rondom een ziektebeeld of episode. Wel zien we een (door de patiënt zelf uit te kiezen) PGO als de logische plaats voor de patiënt om deel te nemen in dit netwerk.
 
 We zijn ons ervan bewust dat er grenzen zitten aan de betrokkenheid van de patiënt. Er zullen ongetwijfeld mensen zijn die geen behoefte hebben aan die betrokkenheid, of daar niet toe in staat zijn. Daarom moet het systeem ook kunnen functioneren zonder dat de patiënt deel uitmaakt van het gesprek. Ook zien we de meerwaarde in van de mogelijkheid tot ruggespraak. Maar dat er ook mensen voor kiezen om geen auto te kopen weerhoudt ons er niet van om een uitgebreid en veilig wegennet te organiseren.
 
