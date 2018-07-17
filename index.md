@@ -1,5 +1,6 @@
 ---
 layout: front-page
+title:
 display_big_header: true
 ---
 
