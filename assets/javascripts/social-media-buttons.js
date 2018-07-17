@@ -1,7 +1,7 @@
 window.addEventListener('load', function() {
 
   function bindSocialClick(selector, url) {
-    var element = document.getElementsByClassName(selector)[0];
+    var element = document.querySelector(selector);
     if (!element) {return;}
 
     element.addEventListener('click', function() {
@@ -14,8 +14,8 @@ window.addEventListener('load', function() {
 
   var pageUrl = encodeURIComponent(document.URL);
 
-  bindSocialClick('social-share facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl);
-  bindSocialClick('social-share twitter',  'https://twitter.com/intent/tweet?url=' + pageUrl + '&text=' + encodeURIComponent('Wat een goed idee! #nuts'));
-  bindSocialClick('social-share linkedin', 'https://www.linkedin.com/shareArticle?mini=true&url=' + pageUrl);
+  bindSocialClick('.social-media-buttons .facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl);
+  bindSocialClick('.social-media-buttons .twitter',  'https://twitter.com/intent/tweet?url=' + pageUrl + '&text=' + encodeURIComponent('Wat een goed idee! #nuts'));
+  bindSocialClick('.social-media-buttons .linkedin', 'https://www.linkedin.com/shareArticle?mini=true&url=' + pageUrl);
 
 });
