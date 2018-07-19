@@ -1,15 +1,9 @@
 .social-media-buttons {
-  min-height: 33px;
-  max-width: 400px;
-  margin: 0 auto 0 0;
-  float: left;
-
-  color: $text-color;
-  font-size: 0.8em;
-  line-height: 1em;
+  padding: 0.5em 0;
 
   p {
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0.2em 0;
+    padding: 0;
   }
 
   li {
