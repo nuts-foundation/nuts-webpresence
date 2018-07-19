@@ -1,0 +1,32 @@
+.social-media-buttons {
+  padding: 0.5em 0;
+
+  p {
+    margin: 0 0 0.2em 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    margin-right: 0.5em;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    color: transparent;
+    cursor: pointer;
+
+    transition: background-size 0.2s ease;
+
+    &.facebook { background-image: url('images/social-media-icons/facebook.png'); }
+    &.twitter  { background-image: url('images/social-media-icons/twitter.png'); }
+    &.linkedin { background-image: url('images/social-media-icons/linkedin.png'); }
+
+    &:hover {
+      background-size: 100%;
+    }
+  }
+
+}
