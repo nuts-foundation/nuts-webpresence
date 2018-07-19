@@ -30,3 +30,25 @@
   }
 
 }
+
+.follow-us-on-twitter {
+  display: inline-block;
+  margin: 3em 0 0 0;
+
+  color: $link-color;
+  cursor: pointer;
+
+  &:before {
+    content: ' ';
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.5em 0 0;
+    vertical-align: text-bottom;
+
+    background-image: url('images/social-media-icons/twitter.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

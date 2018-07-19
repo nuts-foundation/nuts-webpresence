@@ -3,15 +3,22 @@ footer {
 
   .wrapper {
     @include flexbox;
-
     min-height: 10vh;
 
+    @media only screen and (max-width: $on-palm) {
+      flex-wrap: wrap;
+    }
+
     .left, .right {
-      @include flex(1);
+      @include flex(1 1 400px);
     }
 
     .right {
       text-align: right;
+
+      @media only screen and (max-width: $on-palm) {
+        text-align: left;
+      }
     }
   }
 
