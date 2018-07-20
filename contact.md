@@ -11,5 +11,5 @@ Wil je meedoen met ons initiatief of heb je vragen na het lezen van deze website
 
 {% include signup.html -%}
 
-Liever even bellen? Dat kan ook: 0544-471624   
-Of stuur ons een e-mail via info@nuts.nl
+Liever even bellen? Dat kan ook: [0544-471624](tel:0544-471624).    
+Of stuur ons een e-mail via [info@nuts.nl](mailto:info@nuts.nl).
