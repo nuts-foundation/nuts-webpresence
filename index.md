@@ -1,6 +1,6 @@
 ---
 layout: front-page
-title: Dit is Nuts
+title:
 display_big_header: true
 ---
 

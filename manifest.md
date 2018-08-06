@@ -48,7 +48,7 @@ Behalve de patiënt zelf kan het natuurlijk ook zijn dat een mantelzorger danwel
 
 ## 3. Eigenaarschap
 
-Wij geloven dat medische data toebehoort aan de patiënt en de zorgprofessional, niet aan de softwareleverancier. Wij zijn van mening dat leveranciers hun geld moeten verdienen met het bieden van meerwaarde aan hun eindgebruikers en de data vrijelijke beschikbaar moeten stellen aan de betrokkenen.
+Wij geloven dat medische data toebehoort aan de patiënt en de zorgprofessional, niet aan de softwareleverancier. Wij zijn van mening dat leveranciers hun geld moeten verdienen met het bieden van meerwaarde aan hun eindgebruikers en de data vrijelijk beschikbaar moeten stellen aan de betrokkenen.
 
 <p><details markdown="1"><summary>Lees verder...</summary>
 
@@ -157,4 +157,4 @@ Alleen op die manier kunnen we af van het probleem dat softwareleveranciers en z
 
 </details></p>
 
-{% include creative-commons.html -%}
+{% include article-footer.html -%}

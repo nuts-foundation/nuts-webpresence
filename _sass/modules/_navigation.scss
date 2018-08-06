@@ -1,5 +1,5 @@
 .site-nav {
-  @include animate(background-color);
+  @include default_animation(background-color);
 
   position: relative;
   z-index: 2;
@@ -11,6 +11,16 @@
     right: 0;
     background-color: $navigation-background;
   }
+
+  // Just for Kevin, and only working in Safari: a blurry background
+  // under the menu bar.
+  // (We keep the first default_animation for if a browser decides to
+  // choke on a transition on -webkit-backdrop-filter.)
+  @include default_animation(background-color, -webkit-backdrop-filter);
+  -webkit-backdrop-filter: blur(0px);
+  .fixed & {
+    -webkit-backdrop-filter: blur(3px);
+  }
 }
 
 .navigation {
@@ -19,7 +29,7 @@
   box-sizing: content-box;
 
   .small_logo {
-    @include animate(opacity);
+    @include default_animation(opacity);
 
     display: block;
     position: relative;
@@ -54,7 +64,7 @@
   }
 
   .page-link {
-    @include animate(color);
+    @include default_animation(color);
 
     color: $navigation-link;
     line-height: $base-line-height;
@@ -108,7 +118,7 @@
     }
 
     input ~ .trigger {
-      @include animate(left);
+      @include default_animation(left);
       position: fixed;
       width: 100vw;
       top: 56px;
