@@ -9,8 +9,7 @@ header_image: manifest
 
 ## 1. Basis
 
-Wij geloven dat het uitgangspunt van softwareleveranciers in de zorgsector is om de patiënten en alle betrokken zorgprofessionals optimaal digitaal te ondersteunen bij hun werkzaamheden.
-Software heeft impact op zowel de duurzaamheid, client- en medewerkertevredenheid, beheersbaarheid als de kwaliteit van zorg. We vinden het de verantwoordelijkheid van leveranciers dit te erkennen en daarmee zorgvuldig om te gaan.
+Wij geloven dat het uitgangspunt van softwareleveranciers in de zorgsector is om patiënten en alle betrokken zorgprofessionals optimaal digitaal te ondersteunen bij hun werkzaamheden. Software heeft impact op duurzaamheid, client- en medewerkertevredenheid, beheersbaarheid en de kwaliteit van zorg. Wij vinden het de verantwoordelijkheid van leveranciers om dit te erkennen en daar zorgvuldig mee om te gaan.
 
 <p><details markdown="1"><summary>Lees verder...</summary>
 
