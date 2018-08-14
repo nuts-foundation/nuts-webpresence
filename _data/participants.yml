@@ -1,18 +1,22 @@
-- title: Quli
-  image_url: assets/images/logos/quli.png
-  website_url: https://www.quli.nl/
+- title: Intramed
+  image_url: assets/images/logos/Intramed.png
+  website_url: https://www.intramed.nl/
 
-- title: Privacy by design foundation
-  image_url: assets/images/logos/pbd.png
-  website_url: https://privacybydesign.foundation/
+- title: Nedap Healthcare
+  image_url: assets/images/logos/nedap-healthcare.png
+  website_url: http://www.nedap-healthcare.com/
 
 - title: OZO Verbindzorg
   image_url: assets/images/logos/ozo.png
   website_url: https://www.ozoverbindzorg.nl/
 
-- title: Nedap Healthcare
-  image_url: assets/images/logos/nedap-healthcare.png
-  website_url: http://www.nedap-healthcare.com/
+- title: Privacy by design foundation
+  image_url: assets/images/logos/pbd.png
+  website_url: https://privacybydesign.foundation/
+
+- title: Quli
+  image_url: assets/images/logos/quli.png
+  website_url: https://www.quli.nl/
 
 - title: Vital Health Software
   image_url: assets/images/logos/vhs.png
