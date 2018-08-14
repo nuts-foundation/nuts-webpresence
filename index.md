@@ -4,7 +4,7 @@ title:
 display_big_header: true
 ---
 
-# Een decentraal communicatienetwerk voor de zorg
+# Een decentrale infrastructuur voor de zorg
 
 Nuts is een nieuwe manier van kijken, een frisse blik op een oud probleem. Het is de realisatie dat de manier waarop we nu gegevens delen in de zorg best wel gek is.
 
