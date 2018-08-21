@@ -24,7 +24,7 @@ Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nu
 
 Vrijdag 31 augustus, van 10:00u tot 12:00u.  
 
-Verbind via PC, Mac, Linux, iOS of Android: https://nedap.zoom.us/j/477547320
+Verbind via PC, Mac, Linux, iOS of Android: [https://nedap.zoom.us/j/477547320](https://nedap.zoom.us/j/477547320)
 
 Of via Telefoon: +31 (0) 20 241 0288  of +31 800 220 0040 (geen extra kosten) Meeting ID: 477 547 320
 
