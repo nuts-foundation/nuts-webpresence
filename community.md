@@ -10,8 +10,8 @@ Nuts is een community-initiatief waarbij we samen bouwen aan een decentrale infr
 
 Op deze pagina informeren we iedereen over geplande activiteiten.
 
-Periodiek organiseren we online bijeenkomsten waarin we nieuwe deelnemers verwelkomen, doelen scherp maken, prioriteiten 
-afstemmen, maar vooral ook de voortgang aan elkaar tonen. Deze bijeenkomsten zijn openbaar en te volgen via een link die bij de afspraak komt te staan. Spreektijd is beschikbaar voor community deelnemers en voor mensen die vooraf een agendapunt hebben ingediend. 
+Periodiek organiseren we online bijeenkomsten waarin we nieuwe deelnemers verwelkomen, doelen scherp maken, prioriteiten
+afstemmen, maar vooral ook de voortgang aan elkaar tonen. Deze bijeenkomsten zijn openbaar en te volgen via een link die bij de afspraak komt te staan. Spreektijd is beschikbaar voor community deelnemers en voor mensen die vooraf een agendapunt hebben ingediend.
 
 ## De online bijeenkomst
 Voor de online bijeenkomst maken we gebruik van de videoconferentie tool [Zoom](https://zoom.us). Zoom werkt zonder extra software in een moderne browser. Voor extra functionaliteiten zoals het delen van je desktop raden we de [plugin](https://zoom.us/download#client_4meeting) aan.
@@ -28,7 +28,7 @@ Verbind via PC, Mac, Linux, iOS of Android: [https://nedap.zoom.us/j/477547320](
 
 Of via Telefoon: +31 (0) 20 241 0288  of +31 800 220 0040 (geen extra kosten) Meeting ID: 477 547 320
 
-#### Agenda (voorlopig)
+#### Agenda
 
 1. Opening en vaststellen agenda
 
