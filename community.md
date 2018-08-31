@@ -11,7 +11,7 @@ Nuts is een community-initiatief waarbij we samen bouwen aan een decentrale infr
 
 Daarom organiseren we periodiek online bijeenkomsten waarin we nieuwe deelnemers verwelkomen, doelen scherp maken, prioriteiten afstemmen, en vooral ook de voortgang aan elkaar tonen. Deze bijeenkomsten zijn openbaar en te volgen via een link die bij de afspraak komt te staan. Spreektijd is beschikbaar voor community-deelnemers en voor mensen die vooraf een agendapunt hebben ingediend.
 
-Daarnaast hebben we een Slack workspace waarin we met elkaar kunnen communiceren tussen de online meetings. Om toegevoegd te worden aan de Slack workspace kun je een e-mail met korte motivatie naar [info@nuts.nl](mailto:info@nuts.nl) sturen.
+Daarnaast hebben we een Slack workspace waarin we met elkaar kunnen samenwerken. Om toegevoegd te worden aan de Slack workspace kun je een e-mail met korte motivatie naar [info@nuts.nl](mailto:info@nuts.nl) sturen.
 
 ## De online bijeenkomst
 
