@@ -11,11 +11,13 @@ Nuts is een community-initiatief waarbij we samen bouwen aan een decentrale infr
 
 Daarom organiseren we periodiek online bijeenkomsten waarin we nieuwe deelnemers verwelkomen, doelen scherp maken, prioriteiten afstemmen, en vooral ook de voortgang aan elkaar tonen. Deze bijeenkomsten zijn openbaar en te volgen via een link die bij de afspraak komt te staan. Spreektijd is beschikbaar voor community-deelnemers en voor mensen die vooraf een agendapunt hebben ingediend.
 
+Daarnaast hebben we een Slack workspace waarin we met elkaar kunnen communiceren tussen de online meetings. Om toegevoegd te worden aan de Slack workspace kun je een e-mail met korte motivatie naar [info@nuts.nl](mailto:info@nuts.nl) sturen.
+
 ## De online bijeenkomst
 
 Voor de online bijeenkomst maken we gebruik van de videoconferentie tool [Zoom](https://zoom.us). Zoom werkt zonder extra software in een moderne browser. Voor extra functionaliteiten zoals het delen van je desktop raden we de [plugin](https://zoom.us/download#client_4meeting) aan.
 
-Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren beschikbaar op deze pagina.
+Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren beschikbaar.
 
 ## Kalender
 
