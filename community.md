@@ -15,14 +15,14 @@ Daarnaast hebben we een Slack workspace waarin we met elkaar kunnen samenwerken.
 
 ## De online bijeenkomst
 
-Voor de online bijeenkomst maken we gebruik van de videoconferentie tool [Zoom](https://zoom.us). Zoom werkt zonder extra software in een moderne browser. Voor extra functionaliteiten zoals het delen van je desktop raden we de [plugin](https://zoom.us/download#client_4meeting) aan.
+Voor de online bijeenkomst maken we gebruik van de videoconferentie tool [Zoom](https://zoom.us). Zoom werkt zonder extra software in een moderne browser. Voor extra functionaliteiten zoals het delen van je desktop raden we de [plugin](https://zoom.us/download#client_4meeting) aan. De link voor toegang tot de Nuts meeting staat in de kalender-afspraak, zoals te vinden in onderstaande kalender.
 
-Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren beschikbaar.
-
-## Kalender
-
-<iframe src="https://calendar.google.com/calendar/b/1/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=nl&amp;bgcolor=%23ffffff&amp;src=nuts.nl_rd2e14gtq9oh3nqa30c74b4elc%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=Europe%2FAmsterdam" style="border-width:0" width="768" height="600" frameborder="0" scrolling="no"></iframe>
+Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren beschikbaar. 
 
 ## Bestanden
 
 Agenda's voor de meetings en andere stukken die relevant zijn voor de community zullen we delen op [onze publieke Google Drive](https://drive.google.com/drive/folders/1Cu-vC70UqXeJ4fFQm4ls8R8RHMBuJeom?usp=sharing).
+
+## Kalender
+
+<iframe src="https://calendar.google.com/calendar/b/1/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=nl&amp;bgcolor=%23ffffff&amp;src=nuts.nl_rd2e14gtq9oh3nqa30c74b4elc%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=Europe%2FAmsterdam" style="border-width:0" width="768" height="600" frameborder="0" scrolling="no"></iframe>
