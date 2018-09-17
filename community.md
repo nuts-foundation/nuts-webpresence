@@ -21,7 +21,7 @@ Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nu
 
 ## Bestanden
 
-Agenda's voor de meetings en andere stukken die relevant zijn voor de community zullen we delen op [onze publieke Google Drive](https://drive.google.com/drive/folders/1Cu-vC70UqXeJ4fFQm4ls8R8RHMBuJeom?usp=sharing).
+Bestanden voor de meetings en andere stukken die relevant zijn voor de community delen we op [onze publieke Google Drive](https://drive.google.com/drive/folders/1Cu-vC70UqXeJ4fFQm4ls8R8RHMBuJeom?usp=sharing). Hier staan onder andere de agenda's en opnames van de meetings.
 
 ## Kalender
 
