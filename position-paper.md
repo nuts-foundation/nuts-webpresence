@@ -9,7 +9,7 @@ header_image: position-paper
 
 ## Wat is het probleem?
 
-Het rommelt al enkele jaren in de Nederlandse zorg-ICT. Na het fiasco met het landelijk elektronisch patiëntendossier heeft de politiek enerzijds besloten dat "de markt" het probleem moet oplossen, en is anderzijds het LSP geïntroduceerd. Ondanks dat het LSP een gedeelte van de oplossing biedt moeten we toch concluderen dat het centrale probleem waar we al een decennium tegenaan hikken nog niet is opgelost.
+Het rommelt al enkele jaren in de Nederlandse zorg-ICT. Na het fiasco met het landelijk elektronisch patiëntendossier heeft de politiek enerzijds besloten dat "de markt" het probleem moet oplossen, en is anderzijds het Landelijk Schakelpunt (LSP) geïntroduceerd. Ondanks dat het LSP en andere initiatieven een gedeelte van de oplossing bieden moeten we toch concluderen dat het centrale probleem waar we al een decennium tegenaan hikken nog niet is opgelost.
 
 Want het probleem is helder: alles is handwerk. Als ik bij het ziekenhuis kom heeft mijn behandelend arts geen inzage in mijn allergieën totdat deze op verzoek opgestuurd worden door mijn huisarts. Als het ziekenhuis mij vervolgens wil overdragen aan de thuiszorg dan moet de transferverpleegkundige met tien thuiszorgorganisaties bellen om een plekje te vinden. En als mijn huisarts vervolgens wil weten wat de thuiszorg doet dan moet ook de assistente alle organisaties bellen tot de juiste gevonden is, waarna de thuiszorg een uittreksel uit mijn dossier naar de huisarts faxt.
 
@@ -49,4 +49,4 @@ In elk geval begint deze zoektocht met het formuleren van een gedeelde ambitie. 
 
 Doe mee met ons initiatief, dan gaan we samen op zoek naar het antwoord!
 
-{% include creative-commons.html -%}
+{% include article-footer.html -%}

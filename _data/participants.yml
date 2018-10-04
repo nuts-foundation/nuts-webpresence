@@ -1,11 +1,31 @@
-- title: Privacy by design foundation
-  image_url: assets/images/logos/pbd.png
-  website_url: https://privacybydesign.foundation/
+- title: Gerimedica
+  image_url: assets/images/logos/gerimedica.png
+  website_url: https://www.gerimedica.nl/
+
+- title: Intramed
+  image_url: assets/images/logos/Intramed.png
+  website_url: https://www.intramed.nl/
+
+- title: Miles Ahead
+  image_url: assets/images/logos/milesahead.png
+  website_url: https://www.milesahead.eu/
+
+- title: Nedap Healthcare
+  image_url: assets/images/logos/nedap-healthcare.png
+  website_url: http://www.nedap-healthcare.com/
 
 - title: OZO Verbindzorg
   image_url: assets/images/logos/ozo.png
   website_url: https://www.ozoverbindzorg.nl/
 
-- title: Nedap Healthcare
-  image_url: assets/images/logos/nedap-healthcare.png
-  website_url: http://www.nedap-healthcare.com/
+- title: Privacy by design foundation
+  image_url: assets/images/logos/pbd.png
+  website_url: https://privacybydesign.foundation/
+
+- title: Quli
+  image_url: assets/images/logos/quli.png
+  website_url: https://www.quli.nl/
+
+- title: Vital Health Software
+  image_url: assets/images/logos/vhs.png
+  website_url: http://www.vitalhealthsoftware.nl/

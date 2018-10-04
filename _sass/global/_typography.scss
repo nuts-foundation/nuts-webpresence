@@ -44,3 +44,10 @@ h1, h2, h3 {
     font-size: 1.2em;
   }
 }
+
+hr {
+  height: 1px;
+  border: 0;
+  background: $grey-color;
+  margin: 3em 0;
+}
