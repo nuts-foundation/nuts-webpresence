@@ -45,6 +45,12 @@ h1, h2, h3 {
   }
 }
 
+h1, h2, h3, p, a, input, textarea, button {
+  &.centered {
+    text-align: center;
+  }
+}
+
 hr {
   height: 1px;
   border: 0;

@@ -1,6 +1,7 @@
 {%- if page.display_big_header -%}
   <header id="site-header" class="site-header full-screen">
     <div class="big_logo wrapper"></div>
+    <div class="bouncy-arrow" onclick="window.scrollTo({top: window.innerHeight, left: 0, behavior: 'smooth'})"></div>
 
 {%- else -%}
   <header class="site-header fixed {{page.header_image}}">
