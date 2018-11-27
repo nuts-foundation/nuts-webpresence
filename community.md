@@ -7,7 +7,7 @@ header_image: community
 
 # Community
 
-Nuts is een community-initiatief waarbij we samen bouwen aan een decentrale infrastructuur voor de zorg. Voor een effectieve samenwerking is het essentieel dat we elkaar kunnen ontmoeten en informeren over de voortgang.
+Nuts is een community-initiatief. We bouwen samen aan een decentrale infrastructuur voor de zorg. Voor een effectieve samenwerking en om het vertrouwen van alle betrokken partijen te verdienen is het essentieel dat we open en transparant zijn en elkaar kunnen ontmoeten en informeren over de voortgang.
 
 Daarom organiseren we periodiek online bijeenkomsten waarin we nieuwe deelnemers verwelkomen, doelen scherp maken, prioriteiten afstemmen, en vooral ook de voortgang aan elkaar tonen. Deze bijeenkomsten zijn openbaar en te volgen via een link die bij de afspraak komt te staan. Spreektijd is beschikbaar voor community-deelnemers en voor mensen die vooraf een agendapunt hebben ingediend.
 

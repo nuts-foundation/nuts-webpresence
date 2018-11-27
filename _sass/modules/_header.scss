@@ -20,11 +20,28 @@
     left: 0;
     right: 0;
     z-index: 1;
+    padding: 0;
 
     background-image: url('images/nuts-shadow.png');
     background-size: 120%;
     background-repeat: no-repeat;
     background-position: center;
+
+    p {
+      position: absolute;
+      top: 60%;
+      width: 100%;
+      box-sizing: border-box;
+
+      text-align: center;
+      font-size: 1.5em;
+      color: $navigation-link;
+      text-shadow: 0px 1px 8px rgba(0,0,0,0.8);
+
+      @media only screen and (max-width: $on-laptop) {
+        font-size: 1em;
+      }
+    }
   }
 
   .bouncy-arrow {
