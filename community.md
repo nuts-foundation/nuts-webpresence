@@ -2,7 +2,7 @@
 layout: page
 title: Community
 permalink: /community/
-header_image: contact
+header_image: community
 ---
 
 # Community
@@ -17,7 +17,7 @@ Daarnaast hebben we een Slack workspace waarin we met elkaar kunnen samenwerken.
 
 Voor de online bijeenkomst maken we gebruik van de videoconferentie tool [Zoom](https://zoom.us). Zoom werkt zonder extra software in een moderne browser. Voor extra functionaliteiten zoals het delen van je desktop raden we de [plugin](https://zoom.us/download#client_4meeting) aan. De link voor toegang tot de Nuts meeting staat in de kalender-afspraak, zoals te vinden in onderstaande kalender.
 
-Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren beschikbaar. 
+Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren beschikbaar.
 
 ## Bestanden
 

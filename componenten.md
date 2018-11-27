@@ -2,7 +2,7 @@
 layout: page
 title: Componenten
 permalink: /componenten/
-header_image: manifest
+header_image: components
 ---
 
 # Componenten
@@ -15,7 +15,7 @@ Wat is er minimaal nodig om een decentrale zorginfrastructuur op te zetten?
 
 Er zijn een aantal generieke componenten die elk softwarepakket nodig heeft, die we hieronder zullen beschrijven. We willen deze componenten zo klein en zo simpel mogelijk houden, zodat ze voor iedereen flexibel inzetbaar zijn.
 
-Op deze componenten kunnen leveranciers zelf oplossingen ontwikkelen, waarmee zij toegevoegde waarde bieden voor hun gebruikers. Dit kunnen uiteraard zowel bestaande als nieuwe oplossingen zijn. 
+Op deze componenten kunnen leveranciers zelf oplossingen ontwikkelen, waarmee zij toegevoegde waarde bieden voor hun gebruikers. Dit kunnen uiteraard zowel bestaande als nieuwe oplossingen zijn.
 
 We willen ons dus focussen op die componenten die iedereen nodig heeft.
 

@@ -29,6 +29,7 @@
 
   .bouncy-arrow {
     $size: 3vh;
+    $colour: $red;
 
     display: block;
     position: absolute;
@@ -52,14 +53,14 @@
       bottom: 0.7 * $size;
       width: $size / 2;
       margin-left: -1 * $size / 4;
-      background: green;
-      background: linear-gradient(to bottom, transparent 0%, $red 80%);
+      background: $colour;
+      background: linear-gradient(to bottom, transparent 0%, $colour 80%);
     }
 
     &:after {
       bottom: 0;
       border: solid transparent;
-      border-top-color: $red;
+      border-top-color: $colour;
       border-width: 0.8 * $size;
       margin-left: -0.8 * $size;
       margin-bottom: -0.8 * $size;
@@ -91,5 +92,13 @@
   &.contact {
     background-image: url('images/backgrounds/contact.jpg');
     background-position: center 61%;
+  }
+  &.components {
+    background-image: url('images/backgrounds/components.jpg');
+    background-position: center 20%;
+  }
+  &.community {
+    background-image: url('images/backgrounds/community.jpg');
+    background-position: center;
   }
 }
