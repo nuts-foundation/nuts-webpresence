@@ -25,6 +25,14 @@ footer {
   ul {
     list-style-type: none;
 
+    li {
+      margin-top: 1.2em;
+    }
+
+    ul li {
+      margin-top: 0;
+    }
+
     li.secret-page {
       display: none;
     }
