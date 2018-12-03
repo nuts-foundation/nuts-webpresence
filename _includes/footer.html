@@ -9,36 +9,7 @@
 
       <div class="right">
         <h2>Sitemap</h2>
-        <ul>
-          <li>
-            <a href="{{ '/' | relative_url }}">Home</a>
-          </li>
-          <li>
-            <a href="{{ 'position-paper' | relative_url }}">Position paper</a>
-          </li>
-          <li>
-            <a href="{{ 'manifest' | relative_url }}">Manifest</a>
-          </li>
-          <li>
-            <a href="{{ 'componenten' | relative_url }}">Componenten</a>
-          </li>
-          <li>
-            <a href="{{ 'community' | relative_url }}">Community</a>
-          </li>
-          <li>
-            <a href="{{ 'contact' | relative_url }}">Contact</a>
-          </li>
-          <!-- <li>
-            <a href="{{ 'stichting' | relative_url }}">Over de stichting</a>
-          </li> -->
-          <li>
-            <a href="{{ 'pers' | relative_url }}">Pers</a>
-          </li>
-          <li class="secret-page">
-            <a href="{{ 'bedankt' | relative_url }}">Bedankt</a>
-          </li>
-        </ul>
-
+        {%- include site-structure.html -%}
         <p class="follow-us-on-twitter">@stichtingNuts</p>
       </div>
     </div>
