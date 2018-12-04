@@ -14,17 +14,18 @@ Nuts is een samenwerkingsverband dat ervoor wil zorgen dat we digitaal kunnen sa
 
 ## Hoe is Nuts ontstaan?
 
-Nuts is ontstaan vanuit de realisatie dat elke leverancier van zorg-ICT voor dezelfde uitdaging staat. Elke leverancier probeert een digitaal lijntje te leggen met elke andere leverancier, wat heel kostbaar, rijdrovend en foutgevoelig is. En dat leidt ertoe dat we er maar in zeer beperkte mate in slagen om zorgverleners die verschillende ICT systemen gebruiken toch goed met elkaar samen te laten werken. De partijen die achter het Nuts initiatief zijn gaan staan willen die samenwerking ondersteunen en bevorderen. Daarom onderzoeken we nu samen hoe we dit landelijk kunnen oplossen, en wij geloven dat dat alleen kan met een landelijke infrastructuur die belangeloos beschikbaar is voor iedereen: een nutsvoorziening.
+Nuts is ontstaan vanuit een gedeelde realisatie onder software leveranciers: we zijn veel tijd kwijt met talloze digitaal lijntjes te leggen tussen elkaars systemen. Deze koppelingen zijn meestal kostbaar, tijdrovend en foutgevoelig. Hierdoor is het anno 2018 voor veel zorgverleners niet goed mogelijk om digitaal samen te werken met collega's die gebruik maken van een ander ICT-systeem. Wij geloven dat als we de handen in een slaan we hier wat aan kunnen veranderen. Deelnemers aan het Nuts initiatief bouwen samen aan een landelijke voorziening die we belangeloos beschikbaar stellen aan iedereen: een nutsvoorziening.
 
 ## Waarom is een open communicatienetwerk in de zorg belangrijk?
 
-Het is belangrijk om een communicatienetwerk te hebben zodat we een gezamenlijke basis hebben waarop we allerhande toepassingen kunnen bouwen waar de veranderende zorg om vraagt: persoonlijke gezondheidsomgevingen en wearables aan de kant van de patiënt, eenvoudiger patiënten kunnen verwijzen tussen zorginstellingen, een gezamenlijk beeld hebben van de patiënt in een multidisciplinaire samenwerking, et cetera.
+Veel zorg gaat over zorginstellingen heen. Zorg is een complexe dans tussen specialisten, de patiënt, matenzorg, langdurige zorg etc. Al deze partijen werken het liefst in hun eigen systemen maar hebben wel informatie van elkaar nodig. Door een open communicatienetwerk te introduceren maken we dit mogelijk. Vanuit je eigen software op een uniforme wijze informatie uitwisselen en communiceren met zorgverleners van je eigen of andere organisaties.
 
-Het is belangrijk dat dit netwerk een open netwerk wordt omdat iedereen mee moet kunnen doen: zowel grote ziekenhuizen als Monique de wijkzuster die 4 cliënten helpt. Dit betekent dat je bepaalde organisatorische en technische uitgangspunten moet stellen aan je netwerk. Daarom vinden wij het bijvoorbeeld belangrijk dat de technologie _open source_ is en door iedereen kan worden gebruikt. Ook willen we geen vergoeding vragen voor het aansluiten. Bekijk ons [manifest](/manifest) op onze website voor de andere uitgangspunten.
+Het is belangrijk dat dit netwerk een open netwerk wordt omdat iedereen mee moet kunnen doen: zowel de grote ziekenhuizen als de kleine zorgonderneming met 4 clienten. Door rekening te houden met zowel grote als kleine organisaties denken we na over zowel capaciteit als hele lage kosten voor deelname. Zo blijft het netwerk voor iedereen beschikbaar.
+Bekijk ons [manifest](/manifest) op onze website voor de andere uitgangspunten.
 
 ## Waarom zouden softwareleveranciers zich bij jullie moeten aansluiten?
 
-ICT leveranciers in de zorg staan voor dezelfde uitdaging: het leggen van een digitaal lijntje met elke andere leverancier. Deze koppelingen leggen we nu vaak één-op-één tussen twee leveranciers, wat kostbaar, tijdrovend en foutgevoelig is. Een beetje softwarepakket onderhoudt al snel tien tot honderd verschillende koppelingen met andere leveranciers. Op basis van de Nuts uitgangspunten zal er een gemeenschappelijke technische basis ontstaan, waardoor het voor leveranciers veel makkelijker en goedkoper wordt om een koppeling te realiseren. Daardoor kan er meer energie gestoken worden in belangrijkere zaken, zoals een goede procesondersteuning, wat uiteindelijk resulteert in een veel beter product waarmee de zorg beter kan samenwerken.
+ICT leveranciers in de zorg staan allemaal voor dezelfde uitdaging: het leggen van een digitaal lijntje met elke andere leverancier. Deze koppelingen leggen we nu vaak één-op-één tussen twee leveranciers, wat kostbaar, tijdrovend en foutgevoelig is. Een softwarepakket onderhoudt al snel tien tot honderd verschillende koppelingen met andere leveranciers. Op basis van de Nuts uitgangspunten zal er een gemeenschappelijke technische basis ontstaan waardoor het voor leveranciers veel makkelijker en goedkoper wordt om een koppeling te realiseren. Daardoor kan er meer energie gestoken worden in belangrijkere zaken, zoals een goede procesondersteuning. Dat resulteert uiteindelijk in een veel betere producten waarmee de zorg beter kan samenwerken.
 
 ## Wat is het verdienmodel?
 
@@ -32,15 +33,17 @@ Nuts is een samenwerkingsverband van softwareleveranciers en heeft daarom ook ge
 
 ## Hoe gaat het straks werken voor gebruikers?
 
-Het is de insteek van het MedMij programma dat elke burger inzicht krijgt in zijn of haar eigen zorggegevens via een zelf te kiezen persoonlijke gezondheidsomgeving. Het is de visie van Nuts dat patiënten daarmee op termijn niet alleen inzage krijgen, maar ook zelf kunnen deelnemen in het gesprek met zorgverleners en de controle kunnen nemen over de vraag wie welke gegevens over hem of haar mag inzien.
+Zowel de patiënt als de zorgmedewerker zal niet direct met Nuts werken. De patiënt krijgt een PGO zoals dat nu door MedMij wordt uitgewerkt. Ook de medewerker blijft gewoon zelf een software leverancier kiezen voor de procesondersteuning. Op de achtergrond zullen gegevens tussen deze systemen worden uitgewisseld met behulp van Nuts. Het voordeel hiervan is dat patiënten toestemmingen één keer op uniforme wijze kunnen vastleggen in bijvoorbeeld hun PGO. Zorgverleners kunnen op hun beurt weer inloggen in de diverse systemen met één identiteit. En wat de zorgverlener ook in welk systeem dan ook doet met de data van de patiënt, de patiënt kan dit altijd vanuit het eigen PGO weer inzien. Dat is het voordeel van een universele infrastructuur.
 
-Voor zorgverleners gaat Nuts betekenen dat zij eenvoudig digitaal gegevens kunnen uitwisselen over patiënten. We zien een toekomst voor ons waarin zorgverleners in hun eigen dossiersysteem kunnen vastleggen welke andere zorgverleners of mantelzorgers toegang mogen krijgen tot delen van een dossier. Deze toestemmingen worden dan, ondertekend door de zorgverlener, opgeslagen en gedeeld met de systemen van de andere betrokken personen en de patiënt. Zo is voor iedereen inzichtelijk wie wat mag en wie die toestemming heeft vastgelegd. Nuts gaat, in de basis, uit van het goed zorgverlenerschap van de professional en dus ook dat gegevens beschikbaar moeten zijn wanneer nodig. Eventueel misbruik is achteraf altijd te controleren en kan de uitgangspositie bieden voor eventuele juridische stappen.
 
-Kortom, gebruikers zullen weinig met de naam Nuts te maken krijgen, maar de mechanismen die we samen ontwikkelen zullen ervoor zorgen dat er eenvoudiger en transparanter informatie gedeeld kan worden.
 
 ## Waarom is er niet al zoiets als Nuts?
 
-Deels omdat Nuts een kind van deze tijd is. We worden als consumenten steeds mondiger, we kunnen steeds meer zelf regelen en we raken daar ook aan gewend. Privacy staat weer hoog op de agenda, ook met dank aan de invoering van de AVG. En de technologie heeft niet stilgestaan. We zien de laatste jaren bijvoorbeeld dat een decentrale munteenheid zoals de _Bitcoin_ best wel goed werkt. En die nieuwe tijd vraagt om een nieuwe aanpak.
+Deels omdat Nuts een kind van deze tijd is. We zien in de laatste jaren een aantal trends: 
+* Het digitaal samenwerken in de zorg wordt steeds belangrijker. 
+* Er is een steeds grotere behoeften aan systemen die privacy van de burgers kan waarborgen.
+* De technologie om decentraal en veilig informatie uit te wisselen wordt steeds volwassener. 
+De bovenstaande punten gecombineerd vragen om een nieuwe aanpak en maakt dat wij als leveranciers nu dit initiatief hebben opgestart. Iets wat een aantal jaren misschien nog niet mogelijk was.
 
 En deels misschien ook omdat het business model vrij lastig is. Het is een probleem waar iedereen last van heeft, maar zodra je er geld voor gaat vragen versnippert de markt en bereik je dus niet je doel. Dus moeten we dit pre-concurrentieel met elkaar oplossen, en marktwerking heeft daarbij eigenlijk in de weg gezeten.
 
