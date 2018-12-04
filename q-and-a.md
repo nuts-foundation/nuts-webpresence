@@ -10,7 +10,7 @@ Op deze pagina hebben we de antwoorden verzameld op vragen die we regelmatig teg
 
 ## Wat is Nuts?
 
-Nuts is een samenwerkingsverband dat ervoor wil zorgen dat we digitaal kunnen samenwerken in de zorg. Als basis hanteren we een set uitgangspunten, die we hebben gevat in een [manifest](/manifest). Iedere partij die zich kan vinden in deze uitgangspunten, kan zich aansluiten bij Nuts. Op basis van deze uitgangspunten verzamelen en bouwen we de [technische componenten](/componenten) die nodig zijn.
+Nuts is een samenwerkingsverband dat ervoor wil zorgen dat zorgverleners digitaal kunnen samenwerken. Als basis hanteren we een set uitgangspunten, die we hebben gevat in een [manifest](/manifest). Iedere partij die zich kan vinden in deze uitgangspunten, kan zich aansluiten bij Nuts. Op basis van deze uitgangspunten verzamelen en bouwen we de [technische componenten](/componenten) die nodig zijn.
 
 ## Hoe is Nuts ontstaan?
 
@@ -35,14 +35,12 @@ Nuts is een samenwerkingsverband van softwareleveranciers en heeft daarom ook ge
 
 Zowel de patiënt als de zorgmedewerker zal niet direct met Nuts werken. De patiënt krijgt een PGO zoals dat nu door MedMij wordt uitgewerkt. Ook de medewerker blijft gewoon zelf een software leverancier kiezen voor de procesondersteuning. Op de achtergrond zullen gegevens tussen deze systemen worden uitgewisseld met behulp van Nuts. Het voordeel hiervan is dat patiënten toestemmingen één keer op uniforme wijze kunnen vastleggen in bijvoorbeeld hun PGO. Zorgverleners kunnen op hun beurt weer inloggen in de diverse systemen met één identiteit. En wat de zorgverlener ook in welk systeem dan ook doet met de data van de patiënt, de patiënt kan dit altijd vanuit het eigen PGO weer inzien. Dat is het voordeel van een universele infrastructuur.
 
-
-
 ## Waarom is er niet al zoiets als Nuts?
 
-Deels omdat Nuts een kind van deze tijd is. We zien in de laatste jaren een aantal trends: 
-* Het digitaal samenwerken in de zorg wordt steeds belangrijker. 
+Deels omdat Nuts een kind van deze tijd is. We zien in de laatste jaren een aantal trends:
+* Het digitaal samenwerken in de zorg wordt steeds belangrijker.
 * Er is een steeds grotere behoeften aan systemen die privacy van de burgers kan waarborgen.
-* De technologie om decentraal en veilig informatie uit te wisselen wordt steeds volwassener. 
+* De technologie om decentraal en veilig informatie uit te wisselen wordt steeds volwassener.
 De bovenstaande punten gecombineerd vragen om een nieuwe aanpak en maakt dat wij als leveranciers nu dit initiatief hebben opgestart. Iets wat een aantal jaren misschien nog niet mogelijk was.
 
 En deels misschien ook omdat het business model vrij lastig is. Het is een probleem waar iedereen last van heeft, maar zodra je er geld voor gaat vragen versnippert de markt en bereik je dus niet je doel. Dus moeten we dit pre-concurrentieel met elkaar oplossen, en marktwerking heeft daarbij eigenlijk in de weg gezeten.
