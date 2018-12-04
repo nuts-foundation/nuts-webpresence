@@ -10,4 +10,4 @@ Nuts is een nieuwe manier van kijken, een frisse blik op een oud probleem. Het i
 
 En Nuts is een samenwerkingsverband tussen partijen die geloven dat het tijd wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór iedereen. De noodzakelijke infrastructuur om te kunnen communiceren in de zorg.
 
-Want samenwerken in de zorg kan gewoon met computers in plaats van faxmachines. En het kan veilig, vertrouwd en zonder extra kosten. Nieuwsgierig geworden? Lees dan [ons position paper](position-paper) en sluit je aan bij onze [acht kernwaarden](manifest)!
+Want samenwerken in de zorg kan gewoon met computers in plaats van faxmachines. En het kan veilig, vertrouwd en zonder extra kosten. Nieuwsgierig geworden? Lees dan [ons position paper](position-paper), sluit je aan bij onze [acht kernwaarden](manifest) en [doe mee](meedoen)!

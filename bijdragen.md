@@ -15,14 +15,14 @@ We zijn actief op zoek naar partijen die ons kunnen helpen bij het volgende:
 
 ## Uitdragen
 
-Wil je graag een bijdrage leveren aan het succes van Nuts? Dat kan door Nuts actief te promoten. Bijvoorbeeld door tijdens congressen, zakelijke bijeenkomsten en andere gelegenheden te vertellen over Nuts. Je kunt ook de digitale kanalen die jouw organisatie gebruikt inzetten om de boodschap uit te dragen. Je kunt het [Nuts logo](/pers) gebruiken in presentaties en op social media.
+Wil je graag een bijdrage leveren aan het succes van Nuts? Dat kan door Nuts actief te promoten. Bijvoorbeeld door tijdens congressen, zakelijke bijeenkomsten en andere gelegenheden te vertellen over Nuts. Je kunt ook de digitale kanalen die jouw organisatie gebruikt inzetten om de boodschap uit te dragen. Je kunt het [Nuts logo](/pers/#beeldmateriaal) gebruiken in presentaties en op social media.
 
 Organiseer je een evenement, workshop, beurs of bijeenkomst? Geef Nuts een podium en we komen graag vertellen over onze doelstelling en aanpak. In overleg is veel mogelijk, dus laat via onze [contact](/contact) pagina weten wat we voor je kunnen betekenen.
 
 ## Meedoen
 
 ### Ondersteunen
-Als leverancier of organisatie kun je je naam en logo op deze website laten plaatsen, indien je het eens bent met de uitgangspunten in het [manifest](/manifest). Neem hiervoor [contact met ons op](/contact).
+Als leverancier of organisatie kun je je naam en logo op deze website laten plaatsen indien je het eens bent met de uitgangspunten in het [manifest](/manifest) en het initiatief wilt ondersteunen. Neem hiervoor [contact met ons op](/contact).
 
 ### Testen
 Stap voor stap verzamelen en bouwen we de [componenten](/componenten) die nodig zijn om onze doelstelling te behalen. Zodra nieuwe componenten beschikbaar komen, kunnen we deze met elkaar gaan testen. Help mee door in deze fase aan de slag te gaan met de technologie. We organiseren regelmatig workshops over verschillende onderwerpen. Deze zijn te vinden in de kalender op de [community](/community) pagina. En neem ook eens deel aan één van onze maandelijkse online bijeenkomsten!
