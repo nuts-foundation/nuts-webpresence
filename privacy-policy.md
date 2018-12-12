@@ -2,7 +2,7 @@
 layout: page
 title: Privacy policy
 permalink: /privacy-policy/
-header_image: position-paper
+header_image: privacy-policy
 ---
 
 # Privacy policy Nuts.nl

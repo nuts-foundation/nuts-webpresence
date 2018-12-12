@@ -2,7 +2,7 @@
 layout: page
 title: Community
 permalink: /community/
-header_image: contact
+header_image: community
 ---
 
 # Community

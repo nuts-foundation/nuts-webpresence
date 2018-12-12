@@ -2,7 +2,7 @@
 layout: page
 title: Ik doe mee!
 permalink: /meedoen/
-header_image: contact
+header_image: meedoen
 ---
 
 # Ik doe mee!
