@@ -5,41 +5,13 @@
         <h2>Doe mee met ons initiatief</h2>
         <p>We zoeken meer partijen en zorgprofessionals die zich bij ons manifest aansluiten, onze waarden helpen uitdragen en ontwikkelen aan de zorg-infrastructuur van de toekomst.</p>
         <a href="{{ 'meedoen' | relative_url }}" class="button">Ik doe mee!</a>
+
+        <p><a class="follow-us-on-twitter">@stichtingNuts</a></p>
       </div>
 
       <div class="right">
         <h2>Sitemap</h2>
-        <ul>
-          <li>
-            <a href="{{ '/' | relative_url }}">Home</a>
-          </li>
-          <li>
-            <a href="{{ 'position-paper' | relative_url }}">Position paper</a>
-          </li>
-          <li>
-            <a href="{{ 'manifest' | relative_url }}">Manifest</a>
-          </li>
-          <li>
-            <a href="{{ 'componenten' | relative_url }}">Componenten</a>
-          </li>
-          <li>
-            <a href="{{ 'community' | relative_url }}">Community</a>
-          </li>
-          <li>
-            <a href="{{ 'contact' | relative_url }}">Contact</a>
-          </li>
-          <!-- <li>
-            <a href="{{ 'stichting' | relative_url }}">Over de stichting</a>
-          </li> -->
-          <li>
-            <a href="{{ 'pers' | relative_url }}">Pers</a>
-          </li>
-          <li class="secret-page">
-            <a href="{{ 'bedankt' | relative_url }}">Bedankt</a>
-          </li>
-        </ul>
-
-        <p class="follow-us-on-twitter">@stichtingNuts</p>
+        {%- include site-structure.html -%}
       </div>
     </div>
   </div>

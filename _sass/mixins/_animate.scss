@@ -1,8 +1,8 @@
 /**
  * Transition a list of properties with the default animation. Usage:
- * @include default_animation(background-color, color);
+ * @include default-animation(background-color, color);
  */
-@mixin default_animation($props...) {
+@mixin default-animation($props...) {
   @include animate(0.2s ease-in-out, $props...);
 }
 
