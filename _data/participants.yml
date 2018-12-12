@@ -1,7 +1,7 @@
 - title: Avinty
   image_url: assets/images/logos/Avinty logo.png
   website_url: https://www.avinty.com/
-  
+
 - title: Caren
   image_url: assets/images/logos/caren.png
   website_url: https://www.carenzorgt.nl/
@@ -13,6 +13,10 @@
 - title: Gerimedica
   image_url: assets/images/logos/gerimedica.png
   website_url: https://www.gerimedica.nl/
+
+- title: I Logos
+  image_url: assets/images/logos/ilogos.png
+  website_url: https://www.ilogos.nl/
 
 - title: Intramed
   image_url: assets/images/logos/Intramed.png
