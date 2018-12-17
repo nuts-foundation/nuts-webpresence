@@ -22,6 +22,10 @@
   image_url: assets/images/logos/Intramed.png
   website_url: https://www.intramed.nl/
 
+- title: Ivido
+  image_url: assets/images/logos/ivido.png
+  website_url: https://ivido.nl/
+
 - title: Miles Ahead
   image_url: assets/images/logos/milesahead.png
   website_url: https://www.milesahead.eu/
@@ -45,3 +49,7 @@
 - title: Vital Health Software
   image_url: assets/images/logos/vhs.png
   website_url: http://www.vitalhealthsoftware.nl/
+
+- title: Zorg op Orde
+  image_url: assets/images/logos/zorg-op-orde.png
+  website_url: https://www.zorgoporde.nl/
