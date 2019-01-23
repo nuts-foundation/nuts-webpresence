@@ -1,5 +1,5 @@
 - title: Avinty
-  image_url: assets/images/logos/Avinty logo.png
+  image_url: assets/images/logos/avinty.png
   website_url: https://www.avinty.com/
 
 - title: Caren
@@ -19,15 +19,19 @@
   website_url: https://www.ilogos.nl/
 
 - title: Intramed
-  image_url: assets/images/logos/Intramed.png
+  image_url: assets/images/logos/intramed.png
   website_url: https://www.intramed.nl/
 
 - title: Ivido
   image_url: assets/images/logos/ivido.png
   website_url: https://ivido.nl/
 
+- title: Jouw Omgeving
+  image_url: assets/images/logos/jouw-omgeving.png
+  website_url: https://www.jouwomgeving.nl/
+
 - title: Mextra
-  image_url: assets/images/logos/mextra-logo.png
+  image_url: assets/images/logos/mextra.png
   website_url: https://mextra.nl/
 
 - title: Miles Ahead
