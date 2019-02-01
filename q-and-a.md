@@ -14,7 +14,7 @@ Nuts is een samenwerkingsverband dat ervoor wil zorgen dat zorgverleners digitaa
 
 ## Hoe is Nuts ontstaan?
 
-Nuts is ontstaan vanuit een gedeelde realisatie onder software leveranciers: we zijn veel tijd kwijt met talloze maatwerk koppelingen te bouwen tussen elkaars systemen. Deze koppelingen zijn meestal kostbaar, tijdrovend en foutgevoelig. Hierdoor is het vandaag de dag voor veel zorgverleners niet goed mogelijk om digitaal samen te werken met collega's die gebruik maken van een ander ICT-systeem. In 2018 hebben deze leveranciers de handen in een geslagen en zijn het Nuts initiatief gestart. Dit geen geen praatgroepje maar een bouwgroep!
+Nuts is ontstaan vanuit een gedeelde realisatie onder software leveranciers: we zijn veel tijd kwijt met talloze maatwerk koppelingen te bouwen tussen elkaars systemen. Deze koppelingen zijn meestal kostbaar, tijdrovend en foutgevoelig. Hierdoor is het vandaag de dag voor veel zorgverleners niet goed mogelijk om digitaal samen te werken met collega's die gebruik maken van een ander ICT-systeem. In 2018 hebben deze leveranciers de handen in een geslagen en zijn het Nuts initiatief gestart. Los van het opstellen van standaarden en het maken van afspraken neemt Nuts ook de taak op zich om technologie te ontwikkelen en te integreren.
 
 ## Waarom is een open communicatienetwerk in de zorg belangrijk?
 
@@ -29,7 +29,7 @@ ICT leveranciers in de zorg staan allemaal voor dezelfde uitdaging: het leggen v
 
 ## Wat is het verdienmodel?
 
-Nuts is een samenwerkingsverband van softwareleveranciers en heeft daarom ook geen verdienmodel. Door samen te werken aan een gedeelde infrastructuur pakt elke leverancier een deel van de rekening op. Dit laat zich terugbetalen in een betere concurrentiepositie. Immers een betere informatievoorziening is voor de zorgprofessional een belangrijk punt waarop zij hun keuze voor leverancier baseren.
+Nuts is een samenwerkingsverband van softwareleveranciers en heeft daarom ook geen verdienmodel. Door samen te werken aan een gedeelde infrastructuur pakt elke leverancier een deel van de rekening op. Dit laat zich terugbetalen in lagere kosten voor het bouwen en beheren van koppelingen. Ook verbeter je jouw positie als leverancier door betere procesondersteuning voor jouw gebruikers te bieden. Er is uiteraard wel een kostenmodel, aangezien iedere aangesloten partij de eigen Nuts node zal beheren.
 
 ## Hoe gaat het straks werken voor gebruikers?
 
@@ -43,6 +43,6 @@ Deels omdat Nuts een kind van deze tijd is. We zien in de laatste jaren een aant
 * De technologie om decentraal en veilig informatie uit te wisselen wordt steeds volwassener.
 De bovenstaande punten vragen om een nieuwe aanpak en maken dat wij als leveranciers nu dit initiatief hebben opgestart. Iets wat een aantal jaren geleden nog niet mogelijk was.
 
-En deels misschien ook omdat het business model vrij lastig is. Het is een probleem waar iedereen last van heeft, maar zodra je er geld voor gaat vragen versnippert de markt en bereik je dus niet je doel. Dus moeten we dit pre-concurrentieel met elkaar oplossen, en marktwerking heeft daarbij eigenlijk in de weg gezeten.
+En deels misschien ook omdat het business model vrij lastig is. Het is een probleem waar iedereen last van heeft, maar zodra je er geld voor gaat vragen versnippert de markt en bereik je dus niet je doel. Dus moeten we dit pre-concurrentieel met elkaar oplossen.
 
-Dat gezegd hebbende: Nuts bestaat natuurlijk niet in een vacuum. Er zijn wel al heel erg veel mensen in Nederland bezig om stukjes van dit probleem op te lossen, en daar maken wij natuurlijk dankbaar gebruik van. Wij pakken alleen de stukjes op die volgens ons onderbelicht zijn gebleven, en waarvoor je elkaar echt nodig hebt.
+Dat gezegd hebbende: Nuts bestaat natuurlijk niet in een vacuum. Veel mensen zetten zich al in om onderdelen van dit probleem op te lossen, en daar maken wij natuurlijk dankbaar gebruik van. Wij pakken alleen die onderdelen op die volgens ons onderbelicht zijn gebleven, en waarvoor je elkaar echt nodig hebt.
