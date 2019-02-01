@@ -1,18 +1,38 @@
 - title: Avinty
-  image_url: assets/images/logos/Avinty logo.png
+  image_url: assets/images/logos/avinty.png
   website_url: https://www.avinty.com/
-  
+
 - title: Caren
   image_url: assets/images/logos/caren.png
   website_url: https://www.carenzorgt.nl/
+
+- title: Caresharing
+  image_url: assets/images/logos/caresharing.png
+  website_url: https://www.caresharing.com/
 
 - title: Gerimedica
   image_url: assets/images/logos/gerimedica.png
   website_url: https://www.gerimedica.nl/
 
+- title: I Logos
+  image_url: assets/images/logos/ilogos.png
+  website_url: https://www.ilogos.nl/
+
 - title: Intramed
-  image_url: assets/images/logos/Intramed.png
+  image_url: assets/images/logos/intramed.png
   website_url: https://www.intramed.nl/
+
+- title: Ivido
+  image_url: assets/images/logos/ivido.png
+  website_url: https://ivido.nl/
+
+- title: Jouw Omgeving
+  image_url: assets/images/logos/jouw-omgeving.png
+  website_url: https://www.jouwomgeving.nl/
+
+- title: Mextra
+  image_url: assets/images/logos/mextra.png
+  website_url: https://mextra.nl/
 
 - title: Miles Ahead
   image_url: assets/images/logos/milesahead.png
@@ -37,3 +57,7 @@
 - title: Vital Health Software
   image_url: assets/images/logos/vhs.png
   website_url: http://www.vitalhealthsoftware.nl/
+
+- title: Zorg op Orde
+  image_url: assets/images/logos/zorg-op-orde.png
+  website_url: https://www.zorgoporde.nl/

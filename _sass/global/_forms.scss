@@ -1,5 +1,5 @@
 input, button, .button, textarea   {
-  @include default_animation(border-color);
+  @include default-animation(border-color);
   @include border-radius(2em);
 
   display: inline-block;
@@ -18,7 +18,7 @@ input, button, .button, textarea   {
 }
 
 button, .button, input[type=submit] {
-  @include default_animation(background-color);
+  @include default-animation(background-color);
 
   padding: 0.8em 1.8em;
 

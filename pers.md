@@ -2,7 +2,7 @@
 layout: page
 title: Pers
 permalink: /pers/
-header_image: manifest
+header_image: press
 ---
 
 # Pers

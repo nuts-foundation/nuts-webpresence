@@ -8,14 +8,8 @@
     height: 100vh;
   }
 
-  // If you add an image to this list, don't forget to add it to the social
-  // media tags in _includes/head.html too.
-  &.front-page     { background-image: url('images/backgrounds/front-page.jpg');     }
-  &.position-paper { background-image: url('images/backgrounds/position-paper.jpg'); }
-  &.manifest       { background-image: url('images/backgrounds/manifest.jpg');       }
+  // We show these two fancy images on the front page:
   &.contact        { background-image: url('images/backgrounds/contact.jpg');
                      background-position: center 61%;                                }
-  &.components     { background-image: url('images/backgrounds/components.jpg');     }
-  &.community      { background-image: url('images/backgrounds/community.jpg');      }
   &.powerlines     { background-image: url('images/backgrounds/powerlines.jpg');     }
 }

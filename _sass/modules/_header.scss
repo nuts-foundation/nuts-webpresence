@@ -93,11 +93,15 @@
     }
   }
 
+  // If you add an image to this list, don't forget to add it to the social
+  // media tags in _includes/head.html too.
+
   &.full-screen {
     height: 100vh;
     background-image: url('images/backgrounds/front-page.jpg');
     background-position: center;
   }
+
   &.position-paper {
     background-image: url('images/backgrounds/position-paper.jpg');
     background-position: center 42%;
@@ -106,16 +110,30 @@
     background-image: url('images/backgrounds/manifest.jpg');
     background-position: center 65%;
   }
-  &.contact {
-    background-image: url('images/backgrounds/contact.jpg');
-    background-position: center 61%;
+
+  &.community {
+    background-image: url('images/backgrounds/community.jpg');
+    background-position: center;
   }
   &.components {
     background-image: url('images/backgrounds/components.jpg');
     background-position: center 20%;
   }
-  &.community {
+  &.meedoen {
     background-image: url('images/backgrounds/community.jpg');
+    background-position: center 30%;
+  }
+
+  &.press {
+    background-image: url('images/backgrounds/contact.jpg');
+    background-position: center 61%;
+  }
+  &.privacy-policy {
+    background-image: url('images/backgrounds/front-page.jpg');
     background-position: center;
+  }
+  &.contact {
+    background-image: url('images/backgrounds/contact.jpg');
+    background-position: center 61%;
   }
 }
