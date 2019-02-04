@@ -41,6 +41,7 @@ Deels omdat Nuts een kind van deze tijd is. We zien in de laatste jaren een aant
 * Het digitaal samenwerken in de zorg wordt steeds belangrijker.
 * Er is een steeds grotere behoeften aan systemen die privacy van de burgers kunnen waarborgen.
 * De technologie om decentraal en veilig informatie uit te wisselen wordt steeds volwassener.
+
 De bovenstaande punten vragen om een nieuwe aanpak en maken dat wij als leveranciers nu dit initiatief hebben opgestart. Iets wat een aantal jaren geleden nog niet mogelijk was.
 
 En deels misschien ook omdat het business model vrij lastig is. Het is een probleem waar iedereen last van heeft, maar zodra je er geld voor gaat vragen versnippert de markt en bereik je dus niet je doel. Dus moeten we dit pre-concurrentieel met elkaar oplossen.
