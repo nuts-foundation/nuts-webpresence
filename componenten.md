@@ -5,6 +5,21 @@ permalink: /componenten/
 header_image: components
 ---
 
+
+
+Stichting Nuts heeft haar doelstellingen ruim verwoord. Vervolgens is het aan de Nuts community om invulling te geven aan deze doelstellingen. Als kader gebruiken we onze gezamenlijke uitgangspunten uit [het manifest](/manifest). Om hier in praktische zin handen en voeten aan te geven hebben we de wijze waarop applicaties werken in vier lagen verdeeld:
+
+<img class="inline-image" src="/assets/images/layers.png" alt="Lagen uit het Nuts model" title="Lagen uit het Nuts model"/>
+
+Onderin staat het Internet. Het Internet is van nature al een decentraal systeem, waarmee apparaten en software met elkaar kunnen verbinden. We gaan uit van het Internet als stabiele basis, waarop we verder kunnen bouwen.
+
+Boven het Internet bevindt zich de laag waarmee we systemen met elkaar kunnen verbinden. Dit is waar wij ons op focussen. Hier staan dan ook de vier componenten waar Nuts aan werkt (zie verderop). Deze componenten zijn voor alle aangesloten leveranciers relevant en zouden daarom ook preconcurrentieel beschikbaar moeten komen. Bijvoorbeeld als een nutsvoorziening.
+
+De laag daarboven bevat de standaarden die worden gebruikt voor het uitwisselen van data. Onderwerpen zoals “eenheid van taal”, “informatiebouwstenen” en dergelijke horen hier thuis. Het gaat hier b.v. om berichtenstandaarden, messaging, kalenders en afsprakenstelsels. Op deze laag gaat het erom dat de verbonden systemen elkaars taal begrijpen. Vanuit [Nictiz](https://www.nictiz.nl/) en een programma zoals [MedMij](https://www.medmij.nl/) is hier al veel aandacht voor. Daarom kiezen we ervoor om hier als Nuts community niet op te focussen.
+
+De reden dat we gegevens willen uitwisselen tussen systemen is dat we de processen van zorgverleners willen ondersteunen. Dat is de bovenste laag. Dit zijn de applicaties en functionaliteiten die gebruikers te zien krijgen. Op deze laag leveren leveranciers de toegevoegde waarde en bieden zij concurrerende oplossingen aan. Deze laag heeft de andere lagen nodig om samen te kunnen werken met andere disciplines in de zorg. Het is goed dat er hier concurrentie plaatsvindt om innovatie in de markt te blijven stimuleren, maar wel op dusdanige wijze dat
+
+
 # Componenten
 
 Om invulling te geven aan de uitgangspunten in [het manifest]({{'manifest' | relative_url}}) hebben we natuurlijk concrete technologie nodig. Deze hoeft niet persé vanaf nul opgebouwd te worden. Als we oplossingen vinden die voldoen aan onze gestelde uitgangspunten dan kunnen we daar uiteraard gebruik van maken.
