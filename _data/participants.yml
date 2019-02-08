@@ -58,6 +58,14 @@
   image_url: assets/images/logos/vhs.png
   website_url: http://www.vitalhealthsoftware.nl/
 
+- title: Wijtz
+  image_url: assets/images/logos/wijtz.png
+  website_url: https://www.wijtz.nu/
+
 - title: Zorg op Orde
   image_url: assets/images/logos/zorg-op-orde.png
   website_url: https://www.zorgoporde.nl/
+
+- title: ZorgvoorKennis
+  image_url: assets/images/logos/zorgvoorkennis.png
+  website_url: https://www.zorgvoorkennis.nl/
