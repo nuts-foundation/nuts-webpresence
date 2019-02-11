@@ -19,6 +19,11 @@ Voor de online bijeenkomst maken we gebruik van de videoconferentie tool [Zoom](
 
 Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren beschikbaar.
 
+## Workshops
+
+We organiseren regelmatig technische workshops. Tijdens deze workshops kan je kennismaken met de technologie en ga je er zelf mee aan de slag. Op deze manier kom je er achter hoe de technologie werkt en ook hoe deze zich gedraagt in combinatie met jouw eigen applicaties. Een workshop is maximaal een dag en er zijn altijd mensen aanwezig die al ervaring hebben we de technologie waar we mee gaan werken. Je hoeft alleen je eigen laptop mee te nemen en te zorgen dat je toegang hebt tot je eigen applicaties. 
+Voor deelname aan de workshop vragen we een vergoeding van € 50,- per persoon. Daarmee kunnen we voornamelijk in de kosten van zaalhuur en lunch voorzien. De reeds geplande workshops staan in onderstaande kalender. Mocht je zelf behoefte hebben aan een workshop die er niet bij staat, laat het ons dan weten.
+
 ## Bestanden
 
 Bestanden voor de meetings en andere stukken die relevant zijn voor de community delen we op [onze publieke Google Drive](https://drive.google.com/drive/folders/1Cu-vC70UqXeJ4fFQm4ls8R8RHMBuJeom?usp=sharing). Hier staan onder andere de agenda's en opnames van de meetings.
