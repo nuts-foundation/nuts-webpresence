@@ -6,4 +6,5 @@ file:     assets/podcasts/devierthemas.mp3
 length:   27705089
 duration: "00:19:13"
 keywords: [thema's, identiteit, toestemming, adressering, logging, authenticatie, autorisatie, focus]
+guid:     podcast-2019-05-17-devierthemas
 ---

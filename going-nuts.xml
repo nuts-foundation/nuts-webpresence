@@ -41,6 +41,7 @@
       <itunes:duration>{{ post.duration }}</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>{{ post.keywords | join: ', ' }}</itunes:keywords>
+      <guid isPermaLink="false">{{ post.guid }}</guid>
     </item>
   {% endfor %}
 	</channel>
