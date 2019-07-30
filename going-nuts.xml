@@ -12,8 +12,8 @@
     <copyright>&#xA9;{{ site.time | date: "%Y" }}, copyleft gepubliceerd onder CC BY-SA 2.0 licentie</copyright>
     <itunes:subtitle>Alles over het Nuts-initiatief en wat daarmee samenhangt</itunes:subtitle>
     <itunes:author>Stichting Nuts</itunes:author>
-    <itunes:summary>Wat gebeurt er in de wereld van Nuts? Mark en Tim interviewen interessante mensen uit onze community of kletsen je bij over recente ontwikkelingen.</itunes:summary>
-    <description>Wat gebeurt er in de wereld van Nuts? Mark en Tim interviewen interessante mensen uit onze community of kletsen je bij over recente ontwikkelingen.</description>
+    <itunes:summary><![CDATA[Wat gebeurt er in de wereld van Nuts? Mark en Tim interviewen interessante mensen uit onze community of kletsen je bij over recente ontwikkelingen.<br/> <br/>Nuts is een samenwerkingsverband van partijen die geloven dat het tijd wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór iedereen. De noodzakelijke infrastructuur om digitaal te kunnen communiceren in de zorg.<br/> <br/>Zie voor meer informatie <a href="https://nuts.nl" target="blank">www.nuts.nl</a>]]></itunes:summary>
+    <description><![CDATA[Wat gebeurt er in de wereld van Nuts? Mark en Tim interviewen interessante mensen uit onze community of kletsen je bij over recente ontwikkelingen.<br/> <br/>Nuts is een samenwerkingsverband van partijen die geloven dat het tijd wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór iedereen. De noodzakelijke infrastructuur om digitaal te kunnen communiceren in de zorg.<br/> <br/>Zie voor meer informatie <a href="https://nuts.nl" target="blank">www.nuts.nl</a>]]></description>
     <webMaster>podcast@nuts.nl</webMaster>
     <itunes:owner>
       <itunes:name>Stichting Nuts</itunes:name>
