@@ -26,7 +26,11 @@ Voor deelname aan de workshop vragen we een vergoeding van € 50,- per persoon.
 
 ## Bestanden
 
-Bestanden voor de meetings en andere stukken die relevant zijn voor de community delen we op [onze publieke Google Drive](https://drive.google.com/drive/folders/1Cu-vC70UqXeJ4fFQm4ls8R8RHMBuJeom?usp=sharing). Hier staan onder andere de agenda's en opnames van de meetings.
+Bestanden voor de meetings en andere stukken die relevant zijn voor de community delen we op [onze publieke Google Drive](https://drive.google.com/drive/folders/1Cu-vC70UqXeJ4fFQm4ls8R8RHMBuJeom?usp=sharing). Hier staan onder andere ook de agenda's van onze meetings en notulen van de meetings op locatie.
+
+## Video's
+
+De online meetings worden opgenomen en kun je terugkijken via ons [YouTube kanaal](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ). Ook zijn andere relevante opnames terug te vinden, zoals uitleg over technische concepten en componenten die we in de open source community ontwikkelen.
 
 ## Kalender
 
