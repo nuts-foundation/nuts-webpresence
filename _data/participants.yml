@@ -13,7 +13,7 @@
 - title: De Heer Software
   image_url: assets/images/logos/dhs.png
   website_url: https://www.deheer-software.nl/
-  
+
 - title: Gerimedica
   image_url: assets/images/logos/gerimedica.png
   website_url: https://www.gerimedica.nl/
@@ -61,6 +61,10 @@
 - title: OZO Verbindzorg
   image_url: assets/images/logos/ozo.png
   website_url: https://www.ozoverbindzorg.nl/
+
+- title: Pact.care
+  image_url: assets/images/logos/pact.png
+  website_url: https://pact.care/
 
 - title: Privacy by design foundation
   image_url: assets/images/logos/pbd.png
