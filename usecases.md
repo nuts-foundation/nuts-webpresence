@@ -7,8 +7,7 @@ header_image: privacy-policy
 
 # Use cases
 
-Of ook wel concrete toepassingen. Wat kan je nu eigenlijk concreet gaan doen met de Nuts software waar echte mensen wat aan hebben? Het korte antwoord is nagenoeg alles, want Nuts is use case agnostisch. Dit betekent dat Nuts niet bepaalt welke gegevensuitwisselingen je wel of niet mag of kunt doen. Soms helpt het alleen als je een aantal voorbeelden hebt en gelukkig zijn die er. Hier volgen een aantal mogelijke use cases, maar dit is zeker geen uitputtende lijst. Een aantal van deze use cases worden al in de praktijk gebracht door de betrokken softwareleveranciers.
-
+Wat kun je nu eigenlijk concreet doen met de Nuts software, waar echte mensen wat aan hebben? Het korte antwoord is nagenoeg alles, want Nuts is _usecase-agnostisch_. Dit betekent dat Nuts niet bepaalt welke gegevensuitwisselingen je wel of niet mag of kunt doen. Maar vaak helpt het als je een aantal sprekende voorbeelden hebt. Hier volgen een aantal mogelijke use cases, maar dit is zeker geen uitputtende lijst. Een aantal van deze use cases worden al in de praktijk gebracht door de betrokken softwareleveranciers.
 
 ## Samenwerking zorg en huisarts
 
