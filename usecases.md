@@ -7,7 +7,7 @@ header_image: privacy-policy
 
 # Use cases
 
-Of ook wel concrete toepassingen. Wat kan je nu eigenlijk concreet gaan doen met de Nuts software waar echte mensen wat aan hebben? Het korte antwoord is nagenoeg alles, want Nuts is use case agnostisch. Dit betekent dat Nuts niet bepaalt welke gegevensuitwisselingen je wel of niet mag of kunt doen. Soms helpt het alleen als je een aantal voorbeelden hebt en gelukkig zijn die er. De eerste partijen die de Nuts software gebruiken in hun software applicaties, delen graag welke praktische toepassingen zij daarmee mogelijk maken of in de toekomst voor zich zien.
+Of ook wel concrete toepassingen. Wat kan je nu eigenlijk concreet gaan doen met de Nuts software waar echte mensen wat aan hebben? Het korte antwoord is nagenoeg alles, want Nuts is use case agnostisch. Dit betekent dat Nuts niet bepaalt welke gegevensuitwisselingen je wel of niet mag of kunt doen. Soms helpt het alleen als je een aantal voorbeelden hebt en gelukkig zijn die er. Hier volgen een aantal mogelijke use cases, maar dit is zeker geen uitputtende lijst. Een aantal van deze use cases worden al in de praktijk gebracht door de betrokken softwareleveranciers.
 
 
 ## Samenwerking zorg en huisarts
@@ -33,7 +33,7 @@ In deze use case beschrijven we een overdracht tussen een huisarts, ambulancehul
 
 [Use case complexe zorg](https://docs.google.com/document/d/1l7FrQDdy4AvSGVYlpODf-bdmXpJ74k3Zf40FYQvjOpY/edit?usp=sharing)
 
-## Gegevens delen met een PGO
+## Gegevens verzamelen voor een PGO
 
 In deze use case beschrijven we het verzamelen van gegevens door een cliënt (de zgn. use case verzamelen), die in zorg is bij de wijkverpleegkundige, op basis van door de wijkverpleegkundige in het elektronische dossier vastgelegde gegevens. Het verzamelen van de gegevens beperkt zich in deze case tot de (gegevensdienst) BGLZ (basisgegevens langdurige zorg).
 
