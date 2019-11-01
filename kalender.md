@@ -13,4 +13,4 @@ Voel je vrij om onaangekondigd aan te schuiven bij de maandelijkse Nuts communit
 
 &nbsp;
 
-<iframe src="https://calendar.google.com/calendar/b/1/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=nl&amp;bgcolor=%23ffffff&amp;src=nuts.nl_rd2e14gtq9oh3nqa30c74b4elc%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=Europe%2FAmsterdam" style="border-width:0; max-width: 100%;" width="768" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe class="wide-frame" src="https://calendar.google.com/calendar/b/1/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=700&amp;wkst=2&amp;hl=nl&amp;bgcolor=%23ffffff&amp;src=nuts.nl_rd2e14gtq9oh3nqa30c74b4elc%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=Europe%2FAmsterdam" style="border-width:0;" height="700" frameborder="0" scrolling="no"></iframe>
