@@ -20,11 +20,11 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 ## Bestuursleden
 
-<a href="https://www.linkedin.com/in/mark-weernink-4b3a5214/" target="\_blank">Mark Weernink</a> (voorzitter \| mark.weernink@nuts.nl)
+<a href="https://www.linkedin.com/in/mark-weernink-4b3a5214/" target="\_blank">Mark Weernink</a> (voorzitter \| [mark.weernink@nuts.nl](mailto:mark.weernink@nuts.nl))
 
-<a href="https://www.linkedin.com/in/steven-van-der-vegt-15a28118/" target="\_blank">Steven van der Vegt</a> (secretaris \| steven.vandervegt@nuts.nl)
+<a href="https://www.linkedin.com/in/steven-van-der-vegt-15a28118/" target="\_blank">Steven van der Vegt</a> (secretaris \| [steven.vandervegt@nuts.nl](mailto:steven.vandervegt@nuts.nl))
 
-<a href="https://www.linkedin.com/in/tim-franssen-0b9b9aa/" target="\_blank">Tim Franssen</a> (penningmeester \| tim.franssen@nuts.nl)
+<a href="https://www.linkedin.com/in/tim-franssen-0b9b9aa/" target="\_blank">Tim Franssen</a> (penningmeester \| [tim.franssen@nuts.nl](mailto:tim.franssen@nuts.nl))
 
 <a href="https://www.linkedin.com/in/jerryfortuin/" target="\_blank">Jerry Fortuin</a> (algemeen bestuurder)
 
@@ -32,7 +32,7 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 <a href="https://www.linkedin.com/in/thferguson/" target="\_blank">Thomas Ferguson</a> (algemeen bestuurder)
 
-Vrije positie [vacature](https://drive.google.com/open?id=1MsyqOzjLTJM9QKHumLAgZ_SEqiHJqPk5)
+Vrije positie: [vacature](https://drive.google.com/open?id=1MsyqOzjLTJM9QKHumLAgZ_SEqiHJqPk5)
 
 ## Documenten
 
