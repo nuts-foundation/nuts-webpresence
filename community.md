@@ -34,4 +34,4 @@ De online meetings worden opgenomen en kun je terugkijken via ons [YouTube kanaa
 
 ## Kalender
 
-Vanwege de populariteit is de [kalender](../kalender) gepromoveerd naar een hoger niveau menu item. 
+Vanwege de populariteit heeft de [kalender zijn eigen pagina gekregen]({{ 'kalender' | relative_url }}).
