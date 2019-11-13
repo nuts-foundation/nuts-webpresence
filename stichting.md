@@ -37,3 +37,9 @@ Vrije positie: [vacature](https://drive.google.com/open?id=1MsyqOzjLTJM9QKHumLAg
 ## Documenten
 
 Alle relevante documenten met betrekking tot de stichting zijn in te zien via onze publieke [Google Drive](https://drive.google.com/drive/u/1/folders/1-kzV5K3De3vfJOSZ-HfE2VvfKrmlFKDu). Hier staan onder andere de statuten, jaarplannen, begroting, schema van aftreden en de notulen van de bestuursvergaderingen.
+
+## Praktische informatie
+
+Stichting Nuts staat geregistreerd bij de Kamer van Koophandel onder nummer 73134562.<br>
+Postadres: Hoofdstraat 256, 3972LK, Driebergen-Rijsenburg<br>
+Bankrekening: NL21BUNQ2034219570
