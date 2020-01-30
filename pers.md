@@ -28,7 +28,7 @@ Nuts is een samenwerkingsverband dat tot op heden bestaat uit de volgende partij
 
 #### Over Nationale Privacy Conferentie
 
-De Nationale Privacy Conferentie is een initiatief van ECP|Platform voor de InformatieSamenleving en Privacy First. Deze conferentie brengt jaarlijks het Nederlandse bedrijfsleven, overheid, wetenschap en maatschappelijk middenveld bijeen om gezamenlijk te kunnen bouwen aan een privacyvriendelijke informatiemaatschappij. Missie van de Nationale Privacy Conferentie en Privacy First is de ontwikkeling van Nederland tot internationaal Privacy Gidsland. Privacy by design vormt daartoe de sleutel. [https://privacyawards.nl](https://privacyawards.nl)
+De Nationale Privacy Conferentie is een initiatief van ECP - Platform voor de InformatieSamenleving en Privacy First. Deze conferentie brengt jaarlijks het Nederlandse bedrijfsleven, overheid, wetenschap en maatschappelijk middenveld bijeen om gezamenlijk te kunnen bouwen aan een privacyvriendelijke informatiemaatschappij. Missie van de Nationale Privacy Conferentie en Privacy First is de ontwikkeling van Nederland tot internationaal Privacy Gidsland. Privacy by design vormt daartoe de sleutel. [https://privacyawards.nl](https://privacyawards.nl)
 
 <img class="inline-image" src="/assets/images/privacyawardsuitreiking.jpeg" alt="uitreiking" title="Privacy Award Uitreiking" />
 
