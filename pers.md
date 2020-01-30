@@ -13,7 +13,7 @@ Zoekt u contact met ons voor een publicatie? U kunt ons bereiken via [info@nuts.
 
 ### 30 januari 2020 - Persbericht: Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen.
 
-Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen
+_Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen_
 
 Doetinchem, 30 januari 2020 - Op de Europese Dag van de Privacy, 28 januari 2020, is de Nederlandse Privacy Award uitgereikt aan Stichting Nuts in de categorie bedrijfsoplossingen. NUTS is een samenwerkingsverband van partijen in de zorg om een decentraal communicatienetwerk voor de zorg te realiseren waarbij gegevens gemakkelijk, veilig en snel uitgewisseld kunnen worden tussen alle Nederlandse zorgverleners. De jury bestond uit 9 privacy-experts en de award werd uitgereikt door kamerlid van D66, Kees Verhoeven.
 
@@ -22,10 +22,12 @@ Voor de jury is stichting NUTS een mooi voorbeeld van een initiatief dat op een 
 Veilig medische gegevens uitwisselen
 Sergej van Middendorp van stichting Nuts: “Deze award is goed nieuws voor de zorg in Nederland. Omdat vertrouwen aan de basis ligt van samenwerken, is het belangrijk dat er een goede infrastructuur komt met privacy als uitgangspunt. Dat Nuts deze prijs wint betekent dat we hiermee een stap dichterbij zijn gekomen”. “Wij zien de prijs als een aanmoediging om door te gaan met ontwerpen volgens het principe Privacy by Design," zegt Tim Franssen van stichting Nuts. “En ook een aanmoediging voor organisaties in de zorg die gegevens namens Nederlandse burgers beheren om zich aan te sluiten bij ons initiatief."
 
-Over Stichting NUTS
+#### Over Stichting NUTS
+
 Nuts is een samenwerkingsverband dat tot op heden bestaat uit de volgende partijen: Avinty, Caren, Caresharing, De Heer Software, GeriMedica, I-logos, Infozorg, Intramed, Ivido, Jouw Omgeving, Lable Care, Medicore, Mextra, Miles Ahead, Nedap, OZO verbindzorg, Pact.care, Stichting Privacy by Design, Quli, Philips Vital Health Software, Wijtz, Zorg op Orde en Zorg voor Kennis. Het doel van de stichting is een decentraal communicatienetwerk in de zorg te realiseren waarbij gegevens gemakkelijk, veilig en snel uitgewisseld kunnen worden tussen alle Nederlandse zorgverleners. [https://nuts.nl](https://nuts.nl)
 
-Over Nationale Privacy Conferentie
+#### Over Nationale Privacy Conferentie
+
 De Nationale Privacy Conferentie is een initiatief van ECP|Platform voor de InformatieSamenleving en Privacy First. Deze conferentie brengt jaarlijks het Nederlandse bedrijfsleven, overheid, wetenschap en maatschappelijk middenveld bijeen om gezamenlijk te kunnen bouwen aan een privacyvriendelijke informatiemaatschappij. Missie van de Nationale Privacy Conferentie en Privacy First is de ontwikkeling van Nederland tot internationaal Privacy Gidsland. Privacy by design vormt daartoe de sleutel. [https://privacyawards.nl](https://privacyawards.nl)
 
 <img class="inline-image" src="/assets/images/privacyawardsuitreiking.jpeg" alt="uitreiking" title="Privacy Award Uitreiking" />
