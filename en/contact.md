@@ -2,6 +2,7 @@
 layout: english-page
 title: Nuts
 permalink: /en/contact/
+header_image: contact
 ---
 
 # Contact
