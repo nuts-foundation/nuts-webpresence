@@ -1,10 +1,6 @@
-<div class="page-content">
-  <p>Dit initiatief wordt nu al ondersteund door deze partijen:</p>
-</div>
-
 <div class="participants">
   {% for participant in site.data.participants %}
-    <div class="participant" style="background-image: url('{{participant.image_url}}');">
+    <div class="participant" style="background-image: url('{{participant.image_url | relative_url }}');">
       <a href="{{participant.website_url}}" target="_blank"></a>
     </div>
   {% endfor %}
