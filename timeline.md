@@ -9,7 +9,7 @@ header_image: timeline
 
 We willen zo snel mogelijk bewijzen dat een decentraal netwerk dezelfde uitdagingen op een betere manier kan oplossen dan systemen die op een gecentraliseerde manier gegevens uitwisselen. Daarom zijn vorig jaar de eerste productie-pilots gestart, waarbij verschillende softwareleveranciers decentraal data uitwisselen.
 
-<img class="inline-image" src="/assets/images/timeline2.png" alt="Tijdslijn" title="Tijdslijn"/>
+<img class="inline-image" src="/assets/images/timeline2020.png" alt="Tijdslijn" title="Tijdslijn"/>
 
 Wat gaan we dit jaar doen om dat doel te verwezenlijken?
 
