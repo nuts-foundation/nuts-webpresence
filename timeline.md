@@ -13,8 +13,10 @@ We willen zo snel mogelijk bewijzen dat een decentraal netwerk dezelfde uitdagin
 
 Wat gaan we dit jaar doen om dat doel te verwezenlijken?
 
-De componenten <em>identiteit</em> en <em>grondslag</em> zijn we ver genoeg om er gebruik van te kunnen maken. Dit jaar zijn we voornamelijk aan de slag met het <em>register</em> en de <em>logging</em>.
+De thema's <em>identiteit</em> en <em>grondslag</em> zijn ver genoeg ontwikkeld om er gebruik van te kunnen maken. Dit jaar zijn we voornamelijk aan het werken aan het <em>register</em> en de <em>logging</em>.
 
-Deze tools voor peer-2-peer gegevensuitwisseling zijn uiteraard geen doel op zich, maar een middel om dat mogelijk te maken. Vorig jaar hebben we dan ook de term "Bolts" toegevoegd aan ons initiatief. Een Bolt is een specifieke toepassing voor gegevensuitwisseling die gebruik maakt van de Nuts tools. Met het ondersteunen van deze Bolts verwachten we een versnelling en verbreding van de adoptie van de Nuts tools. De eerste Bolts zijn reeds in ontwikkeling door combinaties van softwareleveranciers.
+Naast het ontwikkelen van software verspreiden we ook de kennis die we samen opdoen. Gedurende het jaar organiseren we op diverse locaties door het land workshops om hands-on met de technologie aan de slag te gaan. Zo helpen we softwareontwikkelaars om Nuts te integreren in nieuwe en bestaande producten.
 
-Naast de ontwikkeling van software, verspreiden we ook de kennis die we samen opdoen. Gedurende het jaar organiseren we op diverse locaties door het land workshops om hands-on met de technologie aan de slag te gaan. Zo helpen we softwareontwikkelaars de Nuts-componenten te implementeren in nieuwe en bestaande producten.
+## Nuts & Bolts
+
+Deze ontwikkelingen zijn uiteraard geen doel op zich, maar een middel om samenwerking mogelijk te maken. Daarom hebben we vorig jaar de term <em>Bolts</em> geïntroduceerd. Een <em>Bolt</em> is een specifieke toepassing voor gegevensuitwisseling die gebruik maakt van Nuts. Met het ondersteunen van deze <em>Bolts</em> verwachten we de adoptie van Nuts te kunnen versnellen en verbreden. De eerste <em>Bolts</em> zijn reeds in ontwikkeling door combinaties van softwareleveranciers.
