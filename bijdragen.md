@@ -25,7 +25,7 @@ Organiseer je een evenement, workshop, beurs of bijeenkomst? Geef Nuts een podiu
 Als leverancier of organisatie kun je je naam en logo op deze website laten plaatsen indien je het eens bent met de uitgangspunten in het [manifest](/manifest) en het initiatief wilt ondersteunen. Neem hiervoor [contact met ons op](/contact).
 
 ### Testen
-Stap voor stap verzamelen en bouwen we de [componenten](/componenten) die nodig zijn om onze doelstelling te behalen. Zodra nieuwe componenten beschikbaar komen, kunnen we deze met elkaar gaan testen. Help mee door in deze fase aan de slag te gaan met de technologie. We organiseren regelmatig workshops over verschillende onderwerpen. Deze zijn te vinden in de kalender op de [community](/community) pagina. En neem ook eens deel aan één van onze maandelijkse online bijeenkomsten!
+Stap voor stap verzamelen en bouwen we de [software](/software) die nodig is om onze doelstelling te behalen. Zodra nieuwe software beschikbaar komt, kunnen we deze met elkaar gaan testen. Help mee door in deze fase aan de slag te gaan met de technologie. We organiseren regelmatig workshops over verschillende onderwerpen. Deze zijn te vinden in de kalender op de [community](/community) pagina. En neem ook eens deel aan één van onze maandelijkse online bijeenkomsten!
 
 ### Bouwen
-Je kunt ook meedoen door mee te bouwen aan de [componenten](/componenten). Met verschillende leveranciers werken we aan de decentrale infrastructuur. Door mee te bouwen realiseren we niet alleen sneller de oplossingen die we samen nodig hebben, maar krijg je zelf ook de nodige kennis van de achterliggende technologie.
+Je kunt ook meedoen door mee te bouwen aan de [software](/software). Met verschillende leveranciers werken we aan de decentrale infrastructuur. Door mee te bouwen realiseren we niet alleen sneller de oplossingen die we samen nodig hebben, maar krijg je zelf ook de nodige kennis van de achterliggende technologie.
