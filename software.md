@@ -7,11 +7,17 @@ header_image: software
 
 # Software
 
-Verschillende softwareleveranciers uit onze Nuts-community werken nu al samen aan het mogelijk maken van use-cases op basis van de principes van Nuts. We gebruiken deze hele concrete use-cases om te laten zien wat er vandaag al mogelijk is met een decentrale infrastructuur.
+Nuts is geen praatclubje. Voor elk van de thema's <em>identiteit</em>, <em>grondslag</em>, <em>register</em> en <em>logging</em> zoeken of ontwikkelen we zelf <em>Open Source</em> software. Met die software kunnen we dingen mogelijk maken die voorheen onmogelijk waren in het uitwisselen van medische gegevens.
 
-Samen werken we toe naar een systeemontwerp waarin we laten zien hoe de [verschillende componenten](/componenten) in elkaar grijpen, en hoe we deze kunnen inzetten om zorgverleners te ondersteunen. De resultaten van deze ontwerpsessies [zetten we online op read the docs](https://nuts-documentation.readthedocs.io), waar we de documentatie voor de "Nuts stack" steeds gedetailleerder willen gaan beschrijven naarmate deze meer concreet wordt.
+## Open Source
 
-Waar er bestaande technologie gevonden wordt ontwikkelen we een voorbeeldimplementatie. Wanneer we geen bestaande oplossingen vinden ontwikkelen we die zelf. In beide gevallen zal dit nieuwe <em>Open Source</em> software opleveren. Deze software zetten we op samenwerkingsplatform Github. Je kunt de eerste repositories met experimenten nu vinden op [github.com/nuts-foundation](https://www.github.com/nuts-foundation).
+<em>Open Source</em> betekent dat de broncode vrij beschikbaar is om van te leren, om aan verder te werken en om in te zetten voor (commerciële) toepassingen. De software van Nuts wordt dus door commerciële partijen ontwikkeld, maar is daarna van iedereen. Daardoor kan niemand een monopolie hebben op Nuts. De licentie op de software dwingt af dat Nuts vrij beschikbaar is, nu en in de toekomst.
+
+## Aan de slag
+
+Wil je aan de slag met de software van Nuts? Merk op dat Nuts geen software ontwikkelt voor eindgebruikers: als zorgprofessional zul je dus in gesprek moeten met je bestaande leveranciers om Nuts in te bouwen voor jouw proces.
+
+Voor developers hebben we onze [technische documentatie](/documentatie), waar ook een hoofdstuk <em>Getting started with Nuts</em> in zit. De broncode is verspreid over verschillende <em>repositories</em> op het samenwerkingsplatform Github: [github.com/nuts-foundation](https://www.github.com/nuts-foundation).
 
 ## Links
 

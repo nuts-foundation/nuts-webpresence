@@ -10,7 +10,7 @@ Op deze pagina hebben we de antwoorden verzameld op vragen die we regelmatig teg
 
 ## Wat is Nuts?
 
-Nuts is een samenwerkingsverband dat ervoor wil zorgen dat zorgverleners digitaal kunnen samenwerken. Als basis hanteren we een set uitgangspunten, die we hebben gevat in een [manifest](/manifest). Iedere partij die zich kan vinden in deze uitgangspunten, kan zich aansluiten bij Nuts. Op basis van deze uitgangspunten verzamelen en bouwen we de [technische componenten](/componenten) die nodig zijn.
+Nuts is een samenwerkingsverband dat ervoor wil zorgen dat zorgverleners digitaal kunnen samenwerken. Als basis hanteren we een set uitgangspunten, die we hebben gevat in een [manifest](/manifest). Iedere partij die zich kan vinden in deze uitgangspunten, kan zich aansluiten bij Nuts. Op basis van deze uitgangspunten verzamelen en ontwikkelen we de [software](/software) die nodig is.
 
 ## Hoe is Nuts ontstaan?
 
