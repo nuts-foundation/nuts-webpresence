@@ -32,7 +32,7 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 <a href="https://www.linkedin.com/in/thferguson/" target="\_blank">Thomas Ferguson</a> (algemeen bestuurder)
 
-Vrije positie: [vacature](https://drive.google.com/open?id=1MsyqOzjLTJM9QKHumLAgZ_SEqiHJqPk5)
+<a href="https://www.linkedin.com/in/marlenegigase/" target="\_blank">Marlene Gigase</a> (algemeen bestuurder)
 
 ## Documenten
 
