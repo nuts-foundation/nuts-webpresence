@@ -11,10 +11,13 @@ Het Nuts initiatief bestaat uit een stichting en een open source software commun
 
 <img class="inline-image" src="/assets/images/stichting-open-source.png" alt="Stichting-open-source" title="Stichting-open-source-community" style="border:1px solid black"/>
 
- De software community verzamelt, bouwt en test de software die we allemaal nodig hebben. De stichting faciliteert deze community door onder andere:
+De software community verzamelt, bouwt en test de software die we allemaal nodig hebben. De stichting faciliteert deze community door onder andere:
 - tools beschikbaar te stellen voor ontwikkeling en afstemming
 - technische workshops te organiseren voor ontwikkelaars
 - audits en tests te regelen
+
+De officiële doelstelling van de stichting luidt:
+> "Het stimuleren en uitvoeren van onderzoek naar manieren van uitwisseling van medische data tussen patiënten en zorgverleners en het bevorderen van samenwerking tussen ICT leveranciers in de gezondheidszorg en het verrichten van al wat hiermee verband houdt of daartoe bevorderlijk kan zijn."
 
 Naast het faciliteren van de software community, heeft de stichting een belangrijke taak in het uitdragen van het Nuts gedachtegoed. Vanuit de stichting worden kennisbijeenkomsten georganiseerd en worden presentaties op locatie verzorgd om uit te leggen wat Nuts doet (en wat niet). Het beheer van de Nuts social media kanalen ligt ook bij de stichting, evenals eventuele publicaties via klassieke media. Het contact vanuit softwareleveranciers, zorgorganisaties, belangenverenigingen, overheid en andere partijen met Nuts verloopt doorgaans via de bestuurders van de stichting.  
 
@@ -34,6 +37,17 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 <a href="https://www.linkedin.com/in/marlenegigase/">Marlene Gigase</a> (algemeen bestuurder)
 
+De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
+
 ## Documenten
 
-Alle relevante documenten met betrekking tot de stichting zijn in te zien via onze publieke [Google Drive](https://drive.google.com/drive/u/1/folders/1-kzV5K3De3vfJOSZ-HfE2VvfKrmlFKDu). Hier staan onder andere de statuten, jaarplannen, begroting, schema van aftreden en de notulen van de bestuursvergaderingen.
+* [Beleidsplan 2020](/assets/downloads/Stichting Nuts - plan 2020.pdf)
+
+## Contactinformatie
+
+Stichting Nuts<br/>
+Hoofdstraat 256<br/>
+3972 LK Driebergen-Rijsenburg<br/>
+Telefoon: [0544-471624](tel:0544-471624)<br/>
+[info@nuts.nl](mailto:info@nuts.nl)<br/>
+RSIN 859368452
