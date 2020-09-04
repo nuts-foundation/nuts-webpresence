@@ -41,7 +41,8 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
 ## Documenten
 
-* [Beleidsplan 2020](/assets/downloads/Stichting Nuts - plan 2020.pdf)
+* [Beleidsplan 2020](/downloads/Beleidsplan 2020.pdf)
+* [Jaarrekening 2019](/downloads/Jaarrekening 2019.pdf)
 
 ## Contactinformatie
 
