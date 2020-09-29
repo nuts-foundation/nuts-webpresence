@@ -112,7 +112,7 @@ Als we een nationaal (of mogelijk zelfs internationaal) systeem gaan ontwerpen v
 
 Wij zijn van mening dat we de privacy van patiënten alleen kunnen waarborgen door een systeem te bouwen waar toestemmingen al in het ontwerp zitten ingebakken. Het zou nooit mogelijk moeten zijn om informatie op te halen waar je niet expliciet toestemming voor hebt gekregen door een mens.
 
-Om dat mogelijk en gebruiksvriendelijk te maken willen we actief informatie te delen met een andere persoon in het netwerk. Dit betekent in de praktijk dat je een toestemming klaarzet dat die andere persoon gemachtigd is om de betreffende informatie te bekijken, waarvan de ander ook wordt genotificeerd. Ook willen we gebruikers in staat stellen om aan anderen in hun netwerk het verzoek te sturen om zo’n toestemming af te geven.
+Om dat mogelijk en gebruiksvriendelijk te maken willen we actief informatie delen met een andere persoon in het netwerk. Dit betekent in de praktijk dat je een toestemming klaarzet dat die andere persoon gemachtigd is om de betreffende informatie te bekijken, waarvan de ander ook wordt genotificeerd. Ook willen we gebruikers in staat stellen om aan anderen in hun netwerk het verzoek te sturen om zo’n toestemming af te geven.
 
 Daarbij is het van het grootste belang dat deze toestemmingen onweerlegbaar zijn en worden afgedwongen in het fundament van het netwerk. Ook moeten we ervoor waken dat aan de hand van alleen de toestemmingen niet al relaties kunnen worden afgeleid die medische feiten verraden.
 
