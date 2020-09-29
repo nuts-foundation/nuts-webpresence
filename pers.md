@@ -9,6 +9,46 @@ header_image: press
 
 Zoekt u contact met ons voor een publicatie? U kunt ons bereiken via [info@nuts.nl](mailto:info@nuts.nl) of [0544-471624](tel:0544-471624).
 
+## Beeldmateriaal
+
+### Woordmerk
+
+<section class="press-logos">
+  <figure>
+    <img src="/assets/images/downloads/nuts-logo-red.png" title="Woordmerk rood" alt="Woordmerk rood"/>
+    Download als: <a href="/assets/images/downloads/nuts-logo-red.png">PNG</a> <a href="/assets/images/downloads/nuts-logo-red.svg">SVG</a>
+  </figure>
+  <figure>
+    <img src="/assets/images/downloads/nuts-logo-black.png" title="Woordmerk zwart" alt="Woordmerk zwart"/>
+    Download als: <a href="/assets/images/downloads/nuts-logo-black.png">PNG</a> <a href="/assets/images/downloads/nuts-logo-black.svg">SVG</a>
+  </figure>
+  <figure>
+    <img src="/assets/images/downloads/nuts-logo-white.png" title="Woordmerk wit" alt="Woordmerk wit"/>
+    Download als: <a href="/assets/images/downloads/nuts-logo-white.png">PNG</a> <a href="/assets/images/downloads/nuts-logo-white.svg">SVG</a>
+  </figure>
+  <figure>
+    <img src="/assets/images/downloads/nuts-logo-white-with-shadow.png" title="Woordmerk wit met schaduw" alt="Woordmerk wit met schaduw"/>
+    Download als: <a href="/assets/images/downloads/nuts-logo-white-with-shadow.png">PNG</a>
+  </figure>
+</section>
+
+### Icoon
+
+<section class="press-logos">
+  <figure>
+    <img src="/assets/images/downloads/nuts-icon-red.png" title="Icoon rood" alt="Icoon rood"/>
+    Download als: <a href="/assets/images/downloads/nuts-icon-red.png">PNG</a> <a href="/assets/images/downloads/nuts-icon-red.svg">SVG</a>
+  </figure>
+  <figure>
+    <img src="/assets/images/downloads/nuts-icon-black.png" title="Icoon zwart" alt="Icoon zwart"/>
+    Download als: <a href="/assets/images/downloads/nuts-icon-black.png">PNG</a> <a href="/assets/images/downloads/nuts-icon-black.svg">SVG</a>
+  </figure>
+  <figure>
+    <img src="/assets/images/downloads/nuts-icon-white.png" title="Icoon wit" alt="Icoon wit"/>
+    Download als: <a href="/assets/images/downloads/nuts-icon-white.png">PNG</a> <a href="/assets/images/downloads/nuts-icon-white.svg">SVG</a>
+  </figure>
+</section>
+
 ## Persberichten
 
 ### 30 januari 2020 - Persbericht: Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen.
@@ -86,43 +126,3 @@ Stichting Nuts realiseert zich dat dit initiatief de markt op scherp zal zetten.
 #### Over Stichting Nuts
 
 Nuts is op zoek naar zorgverleners, softwareontwikkelaars en andere organisaties die zichzelf herkennen in de visie van Nuts en zich willen aansluiten om mee te werken aan dit initiatief. De position paper en het manifest zijn te lezen via https://nuts.nl. Stichting Nuts is een samenwerkingsverband dat tot op heden bestaat uit de volgende partijen: Avinty, Caren, GeriMedica, Intramed, Miles Ahead, Nedap, OZO verbindzorg, Stichting Privacy by Design, Quli en Vital Health. Het doel van de stichting is een decentraal communicatienetwerk in de zorg te realiseren waarbij gegevens gemakkelijk, veilig en snel uitgewisseld kunnen worden tussen alle Nederlandse zorgverleners.
-
-## Beeldmateriaal
-
-### Woordmerk
-
-<section class="press-logos">
-  <figure>
-    <img src="/assets/images/downloads/nuts-logo-red.png" title="Woordmerk rood" alt="Woordmerk rood"/>
-    Download als: <a href="/assets/images/downloads/nuts-logo-red.png">PNG</a> <a href="/assets/images/downloads/nuts-logo-red.svg">SVG</a>
-  </figure>
-  <figure>
-    <img src="/assets/images/downloads/nuts-logo-black.png" title="Woordmerk zwart" alt="Woordmerk zwart"/>
-    Download als: <a href="/assets/images/downloads/nuts-logo-black.png">PNG</a> <a href="/assets/images/downloads/nuts-logo-black.svg">SVG</a>
-  </figure>
-  <figure>
-    <img src="/assets/images/downloads/nuts-logo-white.png" title="Woordmerk wit" alt="Woordmerk wit"/>
-    Download als: <a href="/assets/images/downloads/nuts-logo-white.png">PNG</a> <a href="/assets/images/downloads/nuts-logo-white.svg">SVG</a>
-  </figure>
-  <figure>
-    <img src="/assets/images/downloads/nuts-logo-white-with-shadow.png" title="Woordmerk wit met schaduw" alt="Woordmerk wit met schaduw"/>
-    Download als: <a href="/assets/images/downloads/nuts-logo-white-with-shadow.png">PNG</a>
-  </figure>
-</section>
-
-### Icoon
-
-<section class="press-logos">
-  <figure>
-    <img src="/assets/images/downloads/nuts-icon-red.png" title="Icoon rood" alt="Icoon rood"/>
-    Download als: <a href="/assets/images/downloads/nuts-icon-red.png">PNG</a> <a href="/assets/images/downloads/nuts-icon-red.svg">SVG</a>
-  </figure>
-  <figure>
-    <img src="/assets/images/downloads/nuts-icon-black.png" title="Icoon zwart" alt="Icoon zwart"/>
-    Download als: <a href="/assets/images/downloads/nuts-icon-black.png">PNG</a> <a href="/assets/images/downloads/nuts-icon-black.svg">SVG</a>
-  </figure>
-  <figure>
-    <img src="/assets/images/downloads/nuts-icon-white.png" title="Icoon wit" alt="Icoon wit"/>
-    Download als: <a href="/assets/images/downloads/nuts-icon-white.png">PNG</a> <a href="/assets/images/downloads/nuts-icon-white.svg">SVG</a>
-  </figure>
-</section>
