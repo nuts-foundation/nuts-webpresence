@@ -45,6 +45,7 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 * [Jaarrekening 2019](/assets/downloads/Jaarrekening 2019.pdf)
 * [Activiteitenoverzicht 2019](/assets/downloads/Activiteiten 2019.pdf)
 * [Reactie op consultatie online toestemmingsvoorziening](/assets/downloads/Reactie Stichting Nuts op open consultatie voor online toestemmingsvoorziening.pdf)
+* [Brief Tweede Kamer - Oproep tot onderzoek haalbaarheid decentraal zorgnetwerk](/assets/downloads/Brief tweede kamer AO 8 oktober 2020.pdf)
 
 ## Contactinformatie
 
