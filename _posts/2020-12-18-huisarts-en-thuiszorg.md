@@ -6,5 +6,5 @@ file:     assets/podcasts/huisarts-en-thuiszorg.mp3
 length:   46262535
 duration: "00:32:03"
 keywords: [decentraal, samenwerking, stichting nuts, uitwisseling, data, zorg, huisarts, thuiszorg, dossier, patiëntendossier, koppeling, gegevensuitwisseling, aafje, zgwa, peter doelman, henk stout]
-guid:     podcast-2020-12-17-huisarts-en-thuiszorg
+guid:     podcast-2020-12-18-huisarts-en-thuiszorg
 ---
