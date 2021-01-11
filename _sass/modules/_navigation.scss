@@ -26,17 +26,17 @@
 .navigation {
   height: $base-line-height;
   box-sizing: content-box;
-  padding: 0;
+  padding: 0 2em;
 
   .small_logo {
-    @include default-animation(opacity);
+    @include default-animation(top, left, width, height);
 
     display: block;
     position: relative;
-    top: 20px;
-    left: -6px;
-    height: 50px;
-    width: 120px;
+    top: 40px;
+    left: 10px;
+    height: 90px;
+    width: 200px;
     float: left;
 
     background-image: url('images/nuts.png');
@@ -44,10 +44,11 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    opacity: 0;
-
     .fixed & {
-      opacity: 1;
+      top: 19px;
+      left: -6px;
+      height: 50px;
+      width: 120px;
     }
   }
 
@@ -70,11 +71,10 @@
       @include default-animation(color);
       display: inline-block;
       position: relative;
-      padding: 2em 0;
+      padding: 2em 1em 2em 0;
 
       color: $navigation-link;
       line-height: $base-line-height;
-      text-shadow: 0px 1px 8px rgba(0,0,0,0.8);
       cursor: pointer;
 
       a {
@@ -122,6 +122,16 @@
       &:hover ul {
         opacity: 1;
         visibility: visible;
+      }
+
+      &:after {
+        content: '❯';
+        font-size: 0.8em;
+        font-weight: 200;
+        position: absolute;
+        transform: rotateZ(90deg);
+        top: calc(2em + 7px);
+        right: 0px;
       }
     }
   }
