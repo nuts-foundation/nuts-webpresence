@@ -146,18 +146,24 @@
     padding: 0 1em;
 
     .nav-list > ul > li {
-      padding: 1em 0;
+      padding: 1em 1em 1em 0;
 
       ul {
         top: $base-line-height + 1.5em;
       }
+
+      &:after {
+        top: calc(1em + 5px);
+      }
     }
 
     .small_logo {
-      height: 25px;
-      width: 60px;
-      top: 17px;
-      left: -3px;
+      .fixed & {
+        height: 25px;
+        width: 60px;
+        top: 17px;
+        left: -3px;
+      }
     }
   }
 
@@ -204,36 +210,50 @@
       left: 0vw;
     }
 
-    .nav-list > ul > li {
-      display: block;
-      width: 100%;
-      padding: 2em 0 0 0;
+    .nav-list > ul {
+      padding: 0;
 
-      text-align: center;
-      color: $text-color;
-      text-shadow: none;
-      border-bottom: 1px solid $grey-color;
-      background-color: $grey-color-light;
-
-      &:hover {
-        color: $text-color;
-      }
-
-      ul {
-        position: static;
-        opacity: 1;
-        visibility: visible;
+      & > li {
+        display: block;
         width: 100%;
-        margin-top: 1em;
+        padding: 2em 0 0 0;
 
-        background-color: white;
-        border-radius: 0;
-        box-shadow: none;
+        text-align: center;
+        color: $text-color;
+        text-shadow: none;
+        border-bottom: 1px solid $grey-color;
+        background-color: $grey-color-light;
 
-        li a {
-          text-align: left;
-          border-top: 1px solid $grey-color;
-          padding: 1.5em 1em;
+        &:hover {
+          color: $text-color;
+        }
+
+        &:after {
+          content: '';
+        }
+
+        ul {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          width: 100%;
+          margin-top: 1em;
+          padding: 0;
+          border: 0px;
+
+          border-radius: 0;
+          box-shadow: none;
+
+          li {
+            padding: 0;
+            background-color: white;
+
+            a {
+              text-align: left;
+              border-top: 1px solid $grey-color;
+              padding: 1.5em 1em;
+            }
+          }
         }
       }
     }
