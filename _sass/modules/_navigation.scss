@@ -125,12 +125,42 @@
         }
       }
 
-      &:hover ul {
-        opacity: 1;
-        visibility: visible;
+      &:hover {
+        // Show submenu
+        ul, &:before {
+          opacity: 1;
+          visibility: visible;
+        }
+        // Rotate chevron
+        &:after {
+          transform: rotateZ(270deg);
+        }
       }
 
+      // White triangle pointing up from submenu
+      &:before {
+        @include default-animation(opacity, visibility);
+        content: '';
+        display: block;
+        position: absolute;
+        top: $base-line-height + 3em;
+        margin-top: -6px;
+        left: 30%;
+        width: 0;
+        height: 0;
+        z-index: 1;
+
+        border-left: 12px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 10px solid $grey-color-light;
+
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      // Chevron pointing down after menu items
       &:after {
+        @include default-animation(transform);
         content: '❯';
         font-size: 0.8em;
         font-weight: 200;
