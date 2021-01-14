@@ -1,14 +1,12 @@
 function updateFixedness() {
-  var scrolledDown   = window.pageYOffset > 0;
-  var mobileMenuOpen = document.getElementById('nav-trigger').checked;
-  const header       = document.getElementById("site-header");
-
-  if (!header) {return;}
+  const scrolledDown   = window.pageYOffset > 0;
+  const mobileMenuOpen = document.getElementById('nav-trigger').checked;
+  const body         = document.querySelector('body');
 
   if(scrolledDown || mobileMenuOpen) {
-    header.classList.add("fixed");
+    body.classList.add("fixed");
   } else {
-    header.classList.remove("fixed");
+    body.classList.remove("fixed");
   }
 }
 

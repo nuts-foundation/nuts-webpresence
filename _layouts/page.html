@@ -2,6 +2,10 @@
 layout: default
 ---
 
+{%- if page.header_image -%}
+  <header class="site-header {{page.header_image}}"></header>
+{%- endif -%}
+
 <div class="page-content">
   {{ content }}
 </div>

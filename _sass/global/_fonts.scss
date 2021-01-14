@@ -1,11 +1,14 @@
 @font-face {
   font-family: Metropolis;
-  src: url(fonts/Metropolis-Light.otf);
-  font-weight: lighter;
+  src: url(fonts/Metropolis/Metropolis-Light.otf);
 }
 
 @font-face {
   font-family: MetropolisBold;
-  src: url(fonts/Metropolis-Bold.otf);
-  font-weight: bold;
+  src: url(fonts/Metropolis/Metropolis-Bold.otf);
+}
+
+@font-face {
+  font-family: MetropolisExtraLight;
+  src: url(fonts/Metropolis/Metropolis-Thin.otf);
 }
