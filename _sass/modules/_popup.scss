@@ -1,0 +1,111 @@
+div.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+
+  @include default-animation(opacity, visibility);
+  opacity: 0;
+  visibility: hidden;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+section.popup {
+  position: relative;
+  width: 50vw;
+  height: 30vh;
+  min-width: 300px;
+  min-height: 250px;
+  max-width: 100vw;
+  max-height: 100vh;
+
+  @include border-radius(1em);
+  background-color: $grey-color-light;
+  border: 4px solid $navigation-background;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  z-index: 1;
+
+  @include default-animation(transform);
+  transform: scale(0.6);
+  div.overlay.active & {
+    transform: scale(1.0);
+  }
+  display: none;
+  &.active {
+    display: block;
+  }
+
+  div.close {
+    $size: 35px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: $size - 2 * 4px;
+    background-color: $input-color;
+    border: 4px solid $input-color;
+    color: $grey-color-light;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+
+    &:before {
+      content: '⨉';
+    }
+
+    &:hover {
+      background-color: $input-hover-color;
+      color: $grey-color-light;
+    }
+  }
+}
+
+// Video popup custom styling for aspect ratio
+section.popup#video {
+  width: 70vw;
+  height: auto;
+
+  figure.aspect-ratio {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding: 9 / 16 * 100% 0 0 0;
+    margin: 0;
+    position: relative;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Newsletter popup custom styling
+section.popup#nieuwsbrief {
+  padding: 3vh;
+
+  h2 {
+    font-weight: 1;
+  }
+}

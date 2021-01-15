@@ -2,38 +2,19 @@
 layout: default
 ---
 
-<section class="front-page-greeting">
-  <div class="page-content">
-    <h1>Nutsvoorzieningen voor zorg-brede gegevensuitwisseling</h1>
-    <p>Nuts is een nieuwe manier van kijken, een frisse blik op een oud probleem. Het is de realisatie dat de manier waarop we nu gegevens delen in de zorg best wel gek is.</p>
-    <!-- <iframe width="100%" height="430" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQSr77NH0YwU50qPYPv24dKm0mtQ-myn7" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe> -->
-    <ul>
-      <li>
-        <a href="#">Welke usecases ondersteunt Nuts?</a>
-      </li>
-      <li>
-        <a href="#">Welke usecases ondersteunt Nuts?</a>
-      </li>
-      <li>
-        <a href="#">Welke usecases ondersteunt Nuts?</a>
-      </li>
-    </ul>
-  </div>
-</section>
+<div class="overlay">
+  <section class="popup" id="video">
+    <div class="close"></div>
+    <figure class="aspect-ratio">
+      <iframe id="explainer-frame" width="100%" height="430" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQSr77NH0YwU50qPYPv24dKm0mtQ-myn7&enablejsapi=1&playerapiid=ytplayer" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </figure>
+  </section>
 
-<section class="front-page-explainer">
-  <div class="page-content">
-    <p>En Nuts is een samenwerkingsverband tussen partijen die geloven dat het tijd wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór iedereen. De noodzakelijke infrastructuur om te kunnen communiceren in de zorg.</p>
-    <p>Want samenwerken in de zorg kan gewoon met computers in plaats van faxmachines. En het kan veilig, vertrouwd en zonder extra kosten. Nieuwsgierig geworden? Lees dan [ons position paper](position-paper), sluit je aan bij onze [acht kernwaarden](manifest) en [doe mee](meedoen)!</p>
-  </div>
-</section>
-
-<div class="page-block">
-  <div class="page-content">
-
+  <section class="popup" id="nieuwsbrief">
+    <div class="close"></div>
     <h2 class="centered">Houd me op de hoogte van de ontwikkelingen</h2>
 
-    <form class="reduced-width" action="https://nuts.us19.list-manage.com/subscribe/post?u=3e7256ff066373fd17657bba0&amp;id=f44bdb4b26" method="post" target="_blank" rel="noreferrer" novalidate>
+    <form class="reduced-width" action="https://nuts.us19.list-manage.com/subscribe/post?u=3e7256ff066373fd17657bba0&amp;id=f44bdb4b26" method="post" target="_blank" rel="noreferrer" novalidate onsubmit="doClosePopups();">
       <input class="full-width centered" type="email" value="" name="EMAIL" placeholder="Jouw e-mailadres" required>
 
       <!-- Mailchimp says: real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -41,9 +22,47 @@ layout: default
 
       <input class="full-width" type="submit" value="Schrijf me in!" name="subscribe">
     </form>
-
-  </div>
+  </section>
 </div>
+
+<section class="front-page-greeting">
+  <div class="page-content">
+    <h1>Nutsvoorzieningen voor zorg-brede gegevensuitwisseling</h1>
+    <p>
+      Nuts is een nieuwe manier van kijken, een frisse blik op een oud probleem.
+      Het is het besef dat gegevens delen in de zorg ook open en eerlijk kan,
+      met behoud van privacy èn gebruiksgemak!
+    </p>
+    <ul>
+      <li>
+        <a href="#">Welke usecases ondersteunt Nuts?</a>
+      </li>
+      <li>
+        <a href="#video">Wat is Nuts?</a>
+      </li>
+      <li>
+        <a href="#nieuwsbrief">Schrijf je in voor onze nieuwsbrief!</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="front-page-explainer">
+  <div class="page-content">
+    <p>
+      Nuts is een samenwerkingsverband tussen partijen die geloven dat het tijd
+      wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór
+      iedereen. De noodzakelijke infrastructuur om te kunnen communiceren in de
+      zorg.
+    </p>
+    <p>
+      Want samenwerken in de zorg kan gewoon met computers in plaats van
+      faxmachines. En het kan veilig, vertrouwd en zonder extra kosten.
+      Nieuwsgierig geworden? Lees dan [ons position paper](position-paper),
+      sluit je aan bij onze [acht kernwaarden](manifest) en [doe mee](meedoen)!
+    </p>
+  </div>
+</section>
 
 <div class="page-block">
   <div class="fancy-image contact"></div>
@@ -51,7 +70,7 @@ layout: default
 
 <div>
   <div class="page-content">
-    <p>Dit initiatief wordt nu al ondersteund door deze partijen:</p>
+    <p>Dit initiatief wordt onder andere ondersteund door deze partijen:</p>
   </div>
 
   {%- include participants.html -%}
