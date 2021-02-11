@@ -35,8 +35,6 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 <a href="https://www.linkedin.com/in/thferguson/">Thomas Ferguson</a> (algemeen bestuurder)
 
-<a href="https://www.linkedin.com/in/marlenegigase/">Marlene Gigase</a> (algemeen bestuurder)
-
 De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
 ## Documenten
