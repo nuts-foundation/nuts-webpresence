@@ -45,6 +45,7 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 * [Reactie op consultatie online toestemmingsvoorziening](/assets/downloads/Reactie Stichting Nuts op open consultatie voor online toestemmingsvoorziening.pdf)
 * [Brief Tweede Kamer - Oproep tot onderzoek haalbaarheid decentraal zorgnetwerk](/assets/downloads/Brief tweede kamer AO 8 oktober 2020.pdf)
 * [Reactie op consultatie ZORG-AB](/assets/downloads/Reactie Stichting Nuts op open consultatie voor Zorg-AB.pdf)
+* [Brief CIBG - Verzoek tot cryptografisch ontsluiten van het LRZa](/assets/downloads/20210311 Brief CIBG - Cryptografisch ontsluiten van LRZa.pdf)
 
 ## Contactinformatie
 
