@@ -27,13 +27,13 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 <a href="https://www.linkedin.com/in/steven-van-der-vegt-15a28118/">Steven van der Vegt</a> (secretaris \| [steven.vandervegt@nuts.nl](mailto:steven.vandervegt@nuts.nl))
 
-<a href="https://www.linkedin.com/in/tim-franssen-0b9b9aa/">Tim Franssen</a> (penningmeester \| [tim.franssen@nuts.nl](mailto:tim.franssen@nuts.nl))
+<a href="https://www.linkedin.com/in/sergejvanmiddendorp/">Sergej van Middendorp</a> (penningmeester \| [info@nuts.nl](mailto:info@nuts.nl))
 
-<a href="https://www.linkedin.com/in/jerryfortuin/">Jerry Fortuin</a> (algemeen bestuurder)
+<a href="https://www.linkedin.com/in/jerryfortuin/">Jerry Fortuin</a> (algemeen bestuurder \| [info@nuts.nl](mailto:info@nuts.nl))
 
-<a href="https://www.linkedin.com/in/sergejvanmiddendorp/">Sergej van Middendorp</a> (algemeen bestuurder)
+<a href="https://www.linkedin.com/in/thferguson/">Thomas Ferguson</a> (algemeen bestuurder \| [info@nuts.nl](mailto:info@nuts.nl))
 
-<a href="https://www.linkedin.com/in/thferguson/">Thomas Ferguson</a> (algemeen bestuurder)
+<a href="https://www.linkedin.com/in/tim-franssen-0b9b9aa/">Tim Franssen</a> (algemeen bestuurder \| [tim.franssen@nuts.nl](mailto:tim.franssen@nuts.nl))
 
 De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
