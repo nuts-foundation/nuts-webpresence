@@ -1,26 +1,35 @@
 section.front-page-greeting {
   position: relative;
-  height: 50vw;
+  height: 90vh;
 
   background-color: $red;
   background-image: url(images/front-page.svg);
   background-size: contain;
-  background-position: left 20% bottom -1px;
+  background-position: right 80% bottom -1px;
   background-repeat: no-repeat;
   color: $navigation-link;
 
+  overflow: hidden;
+
+  @media screen and (max-width: 1000px) {
+    background-position: left 10% bottom -1px;
+    height: 99vw;
+  }
+
   .page-content {
     position: absolute;
-    right: 20%;
-    max-width: 30%;
+    left: 50%;
+    max-width: 30vw;
+    padding: 5vh 2vh;
 
     h1 {
-      margin-top: 5vw;
+      margin-top: 5vh;
+      min-height: 20vh;
 
       font-family: 'Avenir Next Ultra Light', 'MetropolisExtraLight';
-      font-size: 3vw;
+      font-size: calc((6vw + 2vh) / 2);
       font-weight: 1;
-      letter-spacing: 0.1vw;
+      letter-spacing: 0.1vh;
     }
 
     p {
@@ -38,17 +47,25 @@ section.front-page-greeting {
       display: flex;
       flex-direction: row;
 
-      li a {
-        display: block;
-        height: 5.5vw;
-        margin: 0px 0.5vw;
-        padding: 1vw;
+      li {
+        flex: 1 1 33%;
+        margin: 0px 0.1vw;
 
-        background-color: green;
-        border-radius: 0.5vw;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-        color: $navigation-link;
-        font-size: 0.9vw;
+        a {
+          flex: 0 0 auto;
+          display: block;
+          height: 5.5vw;
+          margin: 0px 0.5vw;
+          padding: 1vw;
+
+          background-color: #444;
+          border-radius: 0.5vw;
+          box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+          color: $navigation-link;
+          font-family: 'Avenir Next Ultra Light', 'MetropolisExtraLight';
+          font-size: 0.9vw;
+          font-weight: 1;
+        }
       }
     }
   }
@@ -57,7 +74,7 @@ section.front-page-greeting {
     content: '';
     display: block;
     position: absolute;
-    top: 43.5vw;
+    top: 90vh - 11.8vh;
     left: 37%;
     width: 65%;
     height: 8vw;
@@ -65,11 +82,10 @@ section.front-page-greeting {
     transform: rotateZ(5.5deg);
 
     background-color: $grey-color-light;
-    // background-color: green;
   }
 
   &:after {
-    top: 42.4vw;
+    top: 90vh - 13.5vh;
     width: 40%;
     transform-origin: top right;
     transform: translateX(-100%) rotateZ(-11deg);
