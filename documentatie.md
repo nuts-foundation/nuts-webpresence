@@ -18,7 +18,7 @@ Dat doen we door zogenaamde "Requests For Comments" te schrijven. Deze
 documenten moeten voldoende houvast bieden voor een onafhankelijke implementatie
 van de protocollen van Nuts, los van de Nuts node.
 
-[&raquo; Lees de Nuts standaarden](https://nuts-foundation.gitbook.io/drafts/)
+[&raquo; Lees de Nuts standaarden](https://nuts-foundation.gitbook.io/)
 
 Keywords: _Verifiable credentials, OAuth2, distributed network, decentralized identifiers, transactions_
 
@@ -29,7 +29,7 @@ kunt draaien, configureren en monitoren en hoe je hieraan als developer kunt
 bijdragen. Deze documentatie is gericht op het inzetten van de Nuts node als
 concrete implementatie van de hierboven beschreven Nuts standaarden.
 
-[&raquo; Lees de Nuts node documentatie](https://nuts-node.readthedocs.io/en/latest/)
+[&raquo; Lees de Nuts node documentatie](https://nuts-node.readthedocs.io/)
 
 Keywords: _Getting started, development, APIs, monitoring, configuratie, hosting_
 
