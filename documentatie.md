@@ -20,18 +20,21 @@ van de protocollen van Nuts, los van de Nuts node.
 
 [&raquo; Lees de Nuts standaarden](https://nuts-foundation.gitbook.io/)
 
-Keywords: _Verifiable credentials, OAuth2, distributed network, decentralized identifiers, transactions_
+Keywords: _Verifiable credentials, OAuth2, distributed network, decentralized
+identifiers, transactions_
 
 ## Nuts node
 
-De documentatie van de Nuts node beschrijft hoe de Nuts node werkt, hoe je deze
+De Nuts node is de referentie-implementatie van de Nuts standaarden. De
+documentatie van de Nuts node beschrijft hoe de Nuts node werkt, hoe je deze
 kunt draaien, configureren en monitoren en hoe je hieraan als developer kunt
 bijdragen. Deze documentatie is gericht op het inzetten van de Nuts node als
 concrete implementatie van de hierboven beschreven Nuts standaarden.
 
 [&raquo; Lees de Nuts node documentatie](https://nuts-node.readthedocs.io/)
 
-Keywords: _Getting started, development, APIs, monitoring, configuratie, hosting_
+Keywords: _Getting started, development, APIs, monitoring, configuratie,
+hosting_
 
 ## Bolts
 
@@ -46,4 +49,5 @@ technologie daarvoor inzetten. Daarvoor dient deze documentatie.
 
 [&raquo; Lees de Bolt specificaties](https://nuts-foundation.gitbook.io/bolts/)
 
-Keywords: _eOverdracht, Zorginzage, KIK-v, FHIR, ZIBs, CDA, OpenEHR, procesondersteuning_
+Keywords: _eOverdracht, Zorginzage, KIK-v, FHIR, ZIBs, CDA, OpenEHR,
+procesondersteuning_
