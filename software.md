@@ -7,7 +7,9 @@ header_image: software
 
 # Software
 
-Nuts is geen praatclubje. Voor elk van de thema's <em>identiteit</em>, <em>grondslag</em>, <em>register</em> en <em>logging</em> zoeken of ontwikkelen we zelf <em>Open Source</em> software. Met die software kunnen we dingen mogelijk maken die voorheen onmogelijk waren in het uitwisselen van medische gegevens.
+Nuts is geen praatclubje. Voor elk van de thema's <em>identiteit</em>, <em>grondslag</em>, <em>register</em> en <em>logging</em> zoeken, ontwikkelen of hebben we <em>Open Source</em> software. Met die software kunnen we dingen mogelijk maken die voorheen onmogelijk waren in het uitwisselen van medische gegevens.
+
+Wat wij de "Nuts node" noemen is een referentie-implementatie van onze <em>Nuts open standaarden</em>. Deze referentie-implementatie is geschikt voor gebruik in productietoepassingen met echte data. Daarnaast hebben we een aantal <em>Open Source</em> demo-applicaties waarin we het gebruik van de Nuts node laten zien; deze zijn niet geschikt voor gebruik met echte data.
 
 ## Open Source
 
@@ -15,11 +17,6 @@ Nuts is geen praatclubje. Voor elk van de thema's <em>identiteit</em>, <em>grond
 
 ## Aan de slag
 
-Wil je aan de slag met de software van Nuts? Merk op dat Nuts geen software ontwikkelt voor eindgebruikers: als zorgprofessional zul je dus in gesprek moeten met je bestaande leveranciers om Nuts in te bouwen voor jouw proces.
+Wil je aan de slag met de software van Nuts? Merk op dat Nuts geen software ontwikkelt voor eindgebruikers: als zorgprofessional zul je dus in gesprek moeten met de leverancier(s) van je dossiersysteem. Zij kunnen dan gegevensuitwisselingen op basis van Nuts inbouwen voor jouw processen.
 
-Voor developers hebben we onze [technische documentatie](/documentatie), waar ook een hoofdstuk <em>Getting started with Nuts</em> in zit. De broncode is verspreid over verschillende <em>repositories</em> op het samenwerkingsplatform Github: [github.com/nuts-foundation](https://www.github.com/nuts-foundation).
-
-## Links
-
-[Nuts op Read the Docs](https://nuts-documentation.readthedocs.io)<br/>
-[Nuts op Github](https://www.github.com/nuts-foundation)
+Voor developers en anderen bij leveranciers hebben we uitgebreide [technische documentatie](/documentatie) om mee aan de slag te gaan. De broncode van onze referentie-implementatie (de Nuts node) en de demo-applicaties die wij hebben ontwikkeld is zoals gezegd voor iedereen beschikbaar en staat online op [het samenwerkingsplatform Github](https://www.github.com/nuts-foundation).
