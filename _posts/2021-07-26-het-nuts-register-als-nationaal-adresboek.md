@@ -5,6 +5,6 @@ summary:  "In deze aflevering van Going Nuts nemen we eens goed de tijd om met W
 file:     assets/podcasts/het-nuts-register-als-nationaal-adresboek.mp3
 length:   67730556
 duration: "00:46:51"
-keywords: [decentraal, cryptografie, register, zorgadresboek, adresboek, verifiable credentials, W3C, distributed identifiers, self-sovereign identity, SSI, VC, stichting nuts, uitwisseling, data, zorg, dossier, patiëntendossier, elektronisch patiëntendossier, EPD, ECD, elektronische gegevensuitwisseling, koppeling, gegevensuitwisseling, Wout Slakhorst]
+keywords: [decentraal, cryptografie, register, zorgadresboek, adresboek, verifiable credentials, W3C, decentralized identifiers, self-sovereign identity, SSI, VC, stichting nuts, uitwisseling, data, zorg, dossier, patiëntendossier, elektronisch patiëntendossier, EPD, ECD, elektronische gegevensuitwisseling, koppeling, gegevensuitwisseling, Wout Slakhorst]
 guid:     podcast-2021-07-26-het-nuts-register-als-nationaal-adresboek
 ---
