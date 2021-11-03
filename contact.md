@@ -7,9 +7,10 @@ header_image: contact
 
 # Contact
 
-Wil je meedoen met ons initiatief of heb je vragen na het lezen van deze website? Neem dan contact met ons op via dit formulier:
+Heb je onze [leeswijzer](/leeswijzer) al bekeken, en heb je toch nog vragen over
+Nuts? Of ben je enthousiast geworden en wil je meedoen met ons initiatief? Maak
+dan gebruik van één van deze contactmogelijkheden:
 
-{% include signup.html -%}
-
-Liever even bellen? Dat kan ook: [0544-471624](tel:0544-471624).    
-Of stuur ons een e-mail via [info@nuts.nl](mailto:info@nuts.nl).
+  * Kom op onze [openbare Slack omgeving](https://join.slack.com/t/nuts-foundation/shared_invite/zt-yix61es0-kEMbrNdEgj89vyNZi49fYA)
+  * Kom naar één van onze meetings (zie de [kalender](/kalender) voor tijden en locaties)
+  * Stuur een e-mail naar [info@nuts.nl](mailto:info@nuts.nl)
