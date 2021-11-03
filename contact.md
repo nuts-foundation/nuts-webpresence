@@ -14,3 +14,9 @@ dan gebruik van één van deze contactmogelijkheden:
   * Kom op onze [openbare Slack omgeving](https://join.slack.com/t/nuts-foundation/shared_invite/zt-yix61es0-kEMbrNdEgj89vyNZi49fYA)
   * Kom naar één van onze meetings (zie de [kalender](/kalender) voor tijden en locaties)
   * Stuur een e-mail naar [info@nuts.nl](mailto:info@nuts.nl)
+
+## Responsible disclosure
+
+Heb je een fout ontdekt in de Nuts node of de Nuts specificaties? Neem dan
+contact met ons op via
+[responsible-disclosure@nuts.nl](mailto:responsible-disclosure@nuts.nl).
