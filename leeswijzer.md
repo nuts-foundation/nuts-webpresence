@@ -31,7 +31,7 @@ belangrijk zijn binnen Nuts. Deze staan beschreven in [ons manifest](/manifest).
 
 ## Verdieping
 
-  * Luister onze [Going Nuts podcasts](/podcast)
+  * Luister onze [Going Nuts podcast](/podcast)
   * Vind ons op [YouTube](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ)
   * Vind ons op [LinkedIn](https://www.linkedin.com/company/stichting-nuts)
   * Lees de [documentatie](https://join.slack.com/t/nuts-foundation/shared_invite/zt-yix61es0-kEMbrNdEgj89vyNZi49fYA) van de Nuts technologie en de Bolts
