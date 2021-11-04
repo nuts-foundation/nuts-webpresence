@@ -17,6 +17,4 @@ Voor onze periodieke e-mail maken we gebruik van de dienstverlening van [Mailchi
 
 Google Analytics gebruiken we om anoniem inzicht te krijgen in de aantallen bezoekers op deze website. Ten behoeve hiervan worden cookies geplaatst in uw browser. We kunnen deze bezoekersstatistieken niet tot de persoon herleiden. Daarnaast maken we gebruik van Google Calendar voor onze community kalender. Deze kalender wordt ingeladen vanaf het domein van Google als je op onze [community](/community) pagina komt. Tenslotte maken we gebruik van Google Fonts, die we ook inladen vanaf een domein van Google. Zie voor meer informatie de (zeer uitgebreide) [privacy policy van Google](https://policies.google.com/privacy?hl=nl).
 
-Wanneer je gebruik maakt van de [contact pagina](/contact) om ons een bericht te sturen dan wordt het bericht van de service van [Formspree](https://formspree.io/) naar ons verzonden. De gegevens die je invult worden daardoor gedeeld met Formspree. Zie voor meer informatie de [privacy policy van Formspree](https://docs.formspree.io/files/privacy.pdf).
-
 Mocht je suggesties hebben hoe we de privacy van onze bezoekers beter kunnen waarborgen dan hoe we dat nu doen, dan houden we ons van harte aanbevolen via [info@nuts.nl](mailto:info@nuts.nl).
