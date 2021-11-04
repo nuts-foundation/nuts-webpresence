@@ -17,6 +17,4 @@ We use the services of [Mailchimp](https://mailchimp.com/) for our mailing list.
 
 We use Google Analytics to gain anonymous insight into the number of visitors to this website. For this purpose cookies are placed in your browser. We cannot trace these visitor statistics back to individual people. In addition, we use Google Calendar for our community calendar. This calendar is loaded from the Google domain when you visit our [community](/community) page. Finally, we use Google Fonts, which we also load from a Google domain. For more information, see the (very extensive) [privacy policy of Google](https://policies.google.com/privacy?hl=en).
 
-When you use the Dutch [contact page](/contact) to send us a message, the message will be relayed through the [Formspree](https://formspree.io/) service. The data that you enter is therefore shared with Formspree. For more information, see the [Formspree privacy policy](https://docs.formspree.io/files/privacy.pdf).
-
 If you have any suggestions as to how we can better guarantee the privacy of our visitors, we would love to hear from you through [info@nuts.nl](mailto:info@nuts.nl).
