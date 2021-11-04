@@ -17,7 +17,4 @@ window.addEventListener('load', function() {
   bindSocialClick('.social-media-buttons .facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl);
   bindSocialClick('.social-media-buttons .twitter',  'https://twitter.com/intent/tweet?url=' + pageUrl + '&text=' + encodeURIComponent('Wat een goed idee! #nuts'));
   bindSocialClick('.social-media-buttons .linkedin', 'https://www.linkedin.com/shareArticle?mini=true&url=' + pageUrl);
-  bindSocialClick('.follow-us-on-twitter',           'https://twitter.com/intent/follow?screen_name=stichtingnuts');
-  bindSocialClick('.follow-us-on-twitter.english',   'https://twitter.com/intent/follow?screen_name=nutsfoundation');
-
 });
