@@ -18,7 +18,7 @@ hoogte.
 <iframe width="100%" height="432" src="https://www.youtube.com/embed/b3p5_0qWbBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Wellicht heb je na het kijken nog een aantal vragen. De meest voorkomende hebben
-we alvast voor je beantwoordt op onze [Q&A pagina](/q-and-a).
+we alvast voor je beantwoord op onze [Q&A pagina](/q-and-a).
 
 ## Inlezen in ons standpunt
 
@@ -34,7 +34,7 @@ belangrijk zijn binnen Nuts. Deze staan beschreven in [ons manifest](/manifest).
   * Luister onze [Going Nuts podcast](/podcast)
   * Vind ons op [YouTube](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ)
   * Vind ons op [LinkedIn](https://www.linkedin.com/company/stichting-nuts)
-  * Lees de [documentatie](https://join.slack.com/t/nuts-foundation/shared_invite/zt-yix61es0-kEMbrNdEgj89vyNZi49fYA) van de Nuts technologie en de Bolts
+  * Lees de [documentatie](/documentatie) van de Nuts technologie en de Bolts
 
 ## Contact opnemen
 
