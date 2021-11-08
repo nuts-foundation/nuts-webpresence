@@ -17,6 +17,5 @@ dan gebruik van één van deze contactmogelijkheden:
 
 ## Responsible disclosure
 
-Heb je een fout ontdekt in de Nuts node of de Nuts specificaties? Neem dan
-contact met ons op via
-[responsible-disclosure@nuts.nl](mailto:responsible-disclosure@nuts.nl).
+Heb je een fout ontdekt in de Nuts node of de Nuts specificaties? Kijk dan op
+[deze pagina op Github](https://github.com/nuts-foundation/nuts-node/security/policy).
