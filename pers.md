@@ -7,7 +7,7 @@ header_image: press
 
 # Pers
 
-Zoekt u contact met ons voor een publicatie? U kunt ons bereiken via [info@nuts.nl](mailto:info@nuts.nl) of [0544-471624](tel:0544-471624).
+Zoekt u contact met ons voor een publicatie? U kunt ons bereiken via [info@nuts.nl](mailto:info@nuts.nl).
 
 ## Beeldmateriaal
 
