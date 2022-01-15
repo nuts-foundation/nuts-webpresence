@@ -50,8 +50,12 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 ## Contactinformatie
 
 Stichting Nuts<br/>
-Hoofdstraat 256<br/>
-3972 LK Driebergen-Rijsenburg<br/>
+Postbus 80<br/>
+3940 AB Doorn<br/>
+<br/>
+De Horst 7<br/>
+Gebouw 'Vossesteijn'<br/>
+3971 KS Driebergen-Rijsenburg<br/>
 Telefoon: [0544-471624](tel:0544-471624)<br/>
 [info@nuts.nl](mailto:info@nuts.nl)<br/>
 RSIN 859368452
