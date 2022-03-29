@@ -12,7 +12,7 @@ display_big_header: false
 We’re looking for an experienced Go developer to join our development team. This assignment is for a duration of 1 year.
 
 ## About Nuts
-Nuts is an initiative by around 30 parties in the Dutch healthcare domain. We build open standards and a reference implementation to solve the tedious work of creating safe connections between electronic health records systems to exchange medical information. Every EHR system spins up a local Nuts-node which becomes part of a large trust network. Your job will be developing these standards and implementing them in the Nuts-node software.
+Nuts is an initiative by around 30 parties in the Dutch healthcare domain. We build open standards and software to standardize the tedious work of creating safe connections between electronic health records systems, required to exchange medical information. Every EHR system spins up a local Nuts-node which becomes part of a large and decentralized trust network. Your job will be developing these standards and implementing them in the Nuts-node software.
 
 ## What we expect of you
 You’ll be working on open-source software, so you are the type of person that likes to share your work with the world. You like working with decentralized identity frameworks, blockchain-like solutions, peer-2-peer technology and various cryptographic schemes. We’re not just trying to build a healthcare infrastructure, we’re building an infrastructure that is fair, future-proof and scalable! Do you want to work on next-gen technology and do something good for the world at the same time?
@@ -21,11 +21,11 @@ Since it’s an assignment for limited time, you’ll need to hit the ground run
 
 To sum it up, you have extensive experience with the following:
 * The Go programming language
-* Basic cryptographic schemes
-* Writing API specification using OpenAPI Specification (Swagger doc)
-* Writing reusable specifications
+* Several cryptographic schemes
+* Writing API specifications using OpenAPI Specification (Swagger doc)
+* Writing reusable software specifications (RFCs)
 * Distributed systems in general
-* Docker
+* Docker and basic DevOps
 
 ## Your employer
 Since Nuts is a decentralized initiative, the actual position is offered by one of the participating organisations. For this specific position, the offering organisation is [Nedap Healthcare](https://nedap.com/): A Dutch company located in Groenlo, the Netherlands.
