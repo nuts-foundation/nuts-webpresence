@@ -2,7 +2,7 @@
 layout: english-page
 title: Jobs
 permalink: /en/jobs
-header_image: components
+header_image: manifest
 ---
 
 # Jobs
