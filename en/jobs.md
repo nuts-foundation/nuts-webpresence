@@ -7,7 +7,10 @@ header_image: components
 
 # Jobs
 
-## Go Developer
+This is an overview of the Nuts-related jobs that we know are available in the
+healthcare IT market.
+
+## Go Developer at Nedap Healthcare
 
 We’re looking for an experienced Go developer to join our development team. This
 assignment is for a duration of 1 year and can be extended depending on the
