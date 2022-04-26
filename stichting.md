@@ -35,6 +35,8 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 <a href="https://www.linkedin.com/in/tim-franssen-0b9b9aa/">Tim Franssen</a> (algemeen bestuurder \| [tim.franssen@nuts.nl](mailto:tim.franssen@nuts.nl))
 
+<a href="https://www.linkedin.com/in/arnoud/?originalSubdomain=nl">Arnoud Martens</a> (algemeen bestuurder \| [info@nuts.nl](mailto:info@nuts.nl))
+
 De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
 ## Documenten
