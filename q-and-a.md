@@ -76,8 +76,7 @@ technisch steeds meer op dezelfde manier.
 
 Daardoor kan er meer energie gestoken worden in belangrijkere zaken, zoals een
 goede procesondersteuning. Dat resulteert uiteindelijk in veel betere producten
-waarmee de zorg beter kan samenwerken, en waarmee de softwareleverancier zijn
-positie kan versterken.
+waarmee de zorg beter kan samenwerken.
 
 ## Wat is het verdienmodel?
 
