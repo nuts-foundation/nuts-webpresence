@@ -150,8 +150,8 @@ test zij (laten) uitvoeren.
 ## Wie laat een partij toe tot de NUTS-community en netwerk?
 
 Tot de community kan een partij zichzelf uitnodigen. Onderschrijven van het manifest
-kan via een e-mail aan info@nuts.nl. Een partij die het initiatief ondersteunt komt dan op 
+kan via een e-mail aan [info@nuts.nl](mailto:info@nuts.nl). Een partij die het initiatief ondersteunt komt dan op 
 de website. Toegang tot het Nuts netwerk regelt de partij technisch zelf door het 
 opstarten van een Nuts-node i.c.m. een PKI Overheid certificaat. Aanvullend wordt 
-een deelnemers overeenkomst getekend met stichting Nuts. Hierin worden basis afspraken 
+een deelnemersovereenkomst getekend met stichting Nuts. Hierin worden basis afspraken 
 over bijvoorbeeld versie beheer en klachtenafhandeling vastgelegd.
