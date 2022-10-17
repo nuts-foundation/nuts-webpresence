@@ -128,3 +128,30 @@ we dit dus pre-concurrentieel en non-commercieel moesten gaan organiseren.
 Dat gezegd hebbende: Nuts bestaat natuurlijk niet in een vacuum. Veel mensen
 zetten zich al jaren in om onderdelen van deze problemen op te lossen, en daar
 maken wij heel dankbaar gebruik van.
+
+## Wie bepaalt de NUTS-standaarden?
+
+De Nuts community bepaalt samen de Nuts standaarden. Deze worden middels zogenaamde 
+RFC (Request for Comments) documenten gepubliceerd op de 
+[Nuts specificatie website](https://nuts-foundation.gitbook.io/v1/). Iedereen kan 
+een voorstel indienen. Community leden die al ervaring hebben met het schrijven van
+de specificaties kunnen helpen. Indien een voorstel voldoet aan de Nuts uitgangspunten 
+kan deze worden opgenomen in de specificaties.
+
+## Wie test of een leverancier voldoet aan deze standaarden?
+
+De bronhoudende leverancier is zelf verantwoordelijk voor de beveiliging van 
+de patiëntgegevens van de klanten. Dat is in het geval van Nuts niet anders.
+Door de diverse beveiligingslagen van het Nuts stelsel ligt het risico van een 
+beveiligingsincident voornamelijk bij de bronhoudende leverancier. Hierdoor kan 
+elke leverancier voor zichzelf een risico-inschatting maken welke aanvullende 
+test zij (laten) uitvoeren.
+
+## Wie laat een partij toe tot de NUTS-community en netwerk?
+
+Tot de community kan een partij zichzelf uitnodigen. Onderschrijven van het manifest
+kan via een e-mail aan [info@nuts.nl](mailto:info@nuts.nl). Een partij die het initiatief ondersteunt komt dan op 
+de website. Toegang tot het Nuts netwerk regelt de partij technisch zelf door het 
+opstarten van een Nuts-node i.c.m. een PKI Overheid certificaat. Aanvullend wordt 
+een deelnemersovereenkomst getekend met stichting Nuts. Hierin worden basis afspraken 
+over bijvoorbeeld versie beheer en klachtenafhandeling vastgelegd.
