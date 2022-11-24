@@ -78,6 +78,10 @@
   image_url: assets/images/logos/nedap-healthcare.png
   website_url: http://www.nedap-healthcare.com/
 
+- title: NLcom
+  image_url: assets/images/logos/nlcom.png
+  website_url: https://www.nlcom.nl/
+
 - title: OZO Verbindzorg
   image_url: assets/images/logos/ozo.png
   website_url: https://www.ozoverbindzorg.nl/
