@@ -82,6 +82,10 @@
   image_url: assets/images/logos/nlcom.png
   website_url: https://www.nlcom.nl/
 
+- title: OpenEHR
+  image_url: assets/images/logos/open-ehr.png
+  website_url: https://openehr.org/
+
 - title: OZO Verbindzorg
   image_url: assets/images/logos/ozo.png
   website_url: https://www.ozoverbindzorg.nl/
