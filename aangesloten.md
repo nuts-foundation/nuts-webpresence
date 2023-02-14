@@ -12,7 +12,7 @@ aan het Nuts-netwerk. De aansluitovereenkomst bevat afspraken over
 gegevensbeveiliging, aansprakelijkheid en bereikbaarheid bij calamiteiten,
 tijdigheid van updates, bemiddeling bij conflicten en meer van zulke zaken.
 
-Je kunt de aansluitovereenkomst <a href="/assets/downloads/aansluitovereenkomst-nuts.pdf">hier downloaden</a>.
+Je kunt de <a href="/assets/downloads/aansluitovereenkomst-nuts.pdf">aansluitovereenkomst hier downloaden</a>.
 
 |                       Organisatie                          |   Contactpersoon    |                                        E-mailadres                                       |
 |------------------------------------------------------------|---------------------|------------------------------------------------------------------------------------------|
@@ -28,6 +28,4 @@ Je kunt de aansluitovereenkomst <a href="/assets/downloads/aansluitovereenkomst-
 | [SDBGroep](https://www.sdbgroep.nl)                        | Bart Rings          | <a href="mailto:ecd@sdbgroep.nl">ecd@sdbgroep.nl</a>                                     |
 | [Tenzinger](https://tenzinger.com/)                        | Frans Plaisier      | <a href="mailto:frans.plaisier@tenzinger.com">frans.plaisier@tenzinger.com</a>           |
 | [Zorg & Welzijn Connect](https://www.zwconnect.nl/)        | Harrie Huisman      | <a href="mailto:harrie@zwconnect.nl">harrie@zwconnect.nl</a>                             |
-
-TODO:
- * Zorgdomein
+| [Zorgdomein](https://zorgdomein.com/)                      | Herre Uittenhout    | <a href="mailto:uittenhout@zorgdomein.nl">uittenhout@zorgdomein.nl</a>                   |
