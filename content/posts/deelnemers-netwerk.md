@@ -1,0 +1,92 @@
+---
+layout: page
+title: Partijen met een aansluitovereenkomst
+permalink: /deelnemers-netwerk/
+header_image: contact
+---
+
+# Partijen met een aansluitovereenkomst
+
+Dit is de actuele lijst van deelnemers met een officiële aansluitovereenkomst
+aan het Nuts-netwerk. De aansluitovereenkomst bevat afspraken over
+gegevensbeveiliging, aansprakelijkheid en bereikbaarheid bij calamiteiten,
+tijdigheid van updates, bemiddeling bij conflicten en meer van zulke zaken.
+
+Je kunt de <a href="/assets/downloads/aansluitovereenkomst-nuts.pdf">aansluitovereenkomst hier downloaden</a>.
+
+<table class="font-inter">
+    <thead>
+        <tr>
+            <th>Organisatie</th>
+            <th>Contactpersoon</th>
+            <th>E-mailadres</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="https://www.adapcare.nl">Adapcare</a></td>
+            <td>Paul van Zagten</td>
+            <td><a href="mailto:p.van.zagten@adapcare.nl">p.van.zagten@adapcare.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://bovenmaasprenataal.com/">BovenMaas prenataal bv</a></td>
+            <td>Eric Smith</td>
+            <td><a href="mailto:eric.smith@bovenmaasprenataal.com">eric.smith@bovenmaasprenataal.com</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://ecare.nl">Ecare Software B.V.</a></td>
+            <td>Dennis Snippert</td>
+            <td><a href="mailto:dennis.snippert@ecare.nl">dennis.snippert@ecare.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.gerimedica.nl">Gerimedica</a></td>
+            <td>Titia van Malestein</td>
+            <td><a href="mailto:t.vanmalestein@gerimedica.nl">t.vanmalestein@gerimedica.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://hinq.nl/">HINQ</a></td>
+            <td>Hans Niendieker</td>
+            <td><a href="mailto:hans.niendieker@hinq.nl">hans.niendieker@hinq.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.lable.nl">Lable</a></td>
+            <td>Taco Jan Osinga</td>
+            <td><a href="mailto:taco.jan.osinga@lable.nl">taco.jan.osinga@lable.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://nedap-healthcare.com/">Nedap Healthcare</a></td>
+            <td>Ruben Doornweerd</td>
+            <td><a href="mailto:ruben.doornweerd@nedap.com">ruben.doornweerd@nedap.com</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.nlcom.nl/">NLcom</a></td>
+            <td>Robin Diederen</td>
+            <td><a href="mailto:diederen@nlcom.nl">diederen@nlcom.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.pinkroccade-healthcare.nl/">PinkRoccade Care</a></td>
+            <td>Mark Byrman</td>
+            <td><a href="mailto:mark.byrman@pinkroccade.nl">mark.byrman@pinkroccade.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.sdbgroep.nl">SDBGroep</a></td>
+            <td>Bart Rings</td>
+            <td><a href="mailto:ecd@sdbgroep.nl">ecd@sdbgroep.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://tenzinger.com/">Tenzinger</a></td>
+            <td>Frans Plaisier</td>
+            <td><a href="mailto:frans.plaisier@tenzinger.com">frans.plaisier@tenzinger.com</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.zwconnect.nl/">Zorg & Welzijn Connect</a></td>
+            <td>Harrie Huisman</td>
+            <td><a href="mailto:harrie@zwconnect.nl">harrie@zwconnect.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://zorgdomein.com/">Zorgdomein</a></td>
+            <td>Herre Uittenhout</td>
+            <td><a href="mailto:uittenhout@zorgdomein.nl">uittenhout@zorgdomein.nl</a></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,51 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="alternate" type="application/rss+xml" title="Going Nuts Podcast" href="https://nuts.nl/going-nuts.xml"/>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129880281-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-129880281-1', { 'anonymize_ip': true });
+  </script>
+
+
+  <link rel="shortcut icon" type="image/ico" href="{{ "/assets/images/favicon.png" | relative_url }}" />
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <script type="text/javascript" src="{{ "/assets/javascripts/application.js" | relative_url }}"></script>
+  <title>Nuts — Een decentraal communicatienetwerk voor de zorg</title>
+
+  <meta property="og:title" content="Nuts{% if page.title %} — {{ page.title }}{% endif %}">
+  <meta property="og:description" content="Een decentraal communicatienetwerk voor de zorg">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  {% if page.header_image == 'position-paper' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/position-paper.jpg' | absolute_url }}">
+  {% elsif page.header_image == 'manifest' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/manifest.jpg' | absolute_url }}">
+
+  {% elsif page.header_image == 'community' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/community.jpg' | absolute_url }}">
+  {% elsif page.header_image == 'components' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/components.jpg' | absolute_url }}">
+  {% elsif page.header_image == 'meedoen' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/community.jpg' | absolute_url }}">
+
+  {% elsif page.header_image == 'press' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/contact.jpg' | absolute_url }}">
+  {% elsif page.header_image == 'privacy-policy' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/front-page.jpg' | absolute_url }}">
+  {% elsif page.header_image == 'contact' %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/contact.jpg' | absolute_url }}">
+
+  {% else %}
+    <meta property="og:image" content="{{ 'assets/images/backgrounds/front-page.jpg' | absolute_url }}">
+  {% endif %}
+
+</head>

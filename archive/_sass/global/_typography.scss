@@ -1,0 +1,59 @@
+body {
+  font: 400 #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  line-height: $base-line-height;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0 0 0 2em;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+details {
+  margin: 2em 0 3em 0;
+  padding: 2em 2em 1em 2em;
+  background-color: $grey-color-light;
+
+  summary {
+    font-style: italic;
+    cursor: pointer;
+    margin: 0 0 1em 0;
+  }
+}
+
+p {
+  line-height: 1.7em;
+}
+
+h1, h2, h3 {
+  margin: 1.2em 0 1em 0;
+  line-height: 1.2em;
+}
+
+.emphasis {
+  p {
+    font-size: 1.2em;
+  }
+}
+
+h1, h2, h3, p, a, input, textarea, button {
+  &.centered {
+    text-align: center;
+  }
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background: $grey-color;
+  margin: 3em 0;
+}

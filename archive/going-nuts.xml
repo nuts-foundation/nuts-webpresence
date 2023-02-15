@@ -1,0 +1,48 @@
+---
+
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="{{ site.lang }}">
+
+  <channel>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/podcast.rss" rel="self" type="application/rss+xml" />
+    <title>Going Nuts</title>
+    <link>{{ site.url }}{{ site.baseurl }}</link>
+    <language>nl</language>
+    <copyright>&#xA9;{{ site.time | date: "%Y" }}, copyleft gepubliceerd onder CC BY-SA 2.0 licentie</copyright>
+    <itunes:subtitle>Alles over het Nuts-initiatief en wat daarmee samenhangt</itunes:subtitle>
+    <itunes:author>Stichting Nuts</itunes:author>
+    <itunes:summary><![CDATA[Wat gebeurt er in de wereld van Nuts? Mark en Tim interviewen interessante mensen uit onze community of kletsen je bij over recente ontwikkelingen.<br/> <br/>Nuts is een samenwerkingsverband van partijen die geloven dat het tijd wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór iedereen. De noodzakelijke infrastructuur om digitaal te kunnen communiceren in de zorg.<br/> <br/>Zie voor meer informatie <a href="https://nuts.nl" target="blank">www.nuts.nl</a>]]></itunes:summary>
+    <description><![CDATA[Wat gebeurt er in de wereld van Nuts? Mark en Tim interviewen interessante mensen uit onze community of kletsen je bij over recente ontwikkelingen.<br/> <br/>Nuts is een samenwerkingsverband van partijen die geloven dat het tijd wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór iedereen. De noodzakelijke infrastructuur om digitaal te kunnen communiceren in de zorg.<br/> <br/>Zie voor meer informatie <a href="https://nuts.nl" target="blank">www.nuts.nl</a>]]></description>
+    <webMaster>podcast@nuts.nl</webMaster>
+    <itunes:owner>
+      <itunes:name>Stichting Nuts</itunes:name>
+      <itunes:email>podcast@nuts.nl</itunes:email>
+    </itunes:owner>
+    <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/images/going-nuts.jpg" />
+    <itunes:category text="Health" />
+    <itunes:category text="Technology" />
+    <itunes:category text="Government &amp; Organizations">
+      <itunes:category text="Non-Profit" />
+    </itunes:category>
+    <itunes:keywords>nuts, stichting nuts, going nuts, nuts initiatief, zorg, zorg ict, zorg it, samenwerking, digitalisering, gezondheidszorg, open source, community, decentraal, software, ziekenhuis, huisarts, thuiszorg, apotheek, patient</itunes:keywords>
+    <itunes:explicit>no</itunes:explicit>
+
+  {% for post in site.posts %}
+    <item>
+      <title>{{ post.title | xml_escape }}</title>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <description>{{ post.summary | xml_escape }}</description>
+      <enclosure url="{{ site.url }}{{ site.baseurl }}/{{ post.file }}" length="{{ post.length }}" type="audio/mp3"/>
+      <itunes:author>Stichting Nuts</itunes:author>
+      <itunes:subtitle>{{ post.subtitle | xml_escape }}</itunes:subtitle>
+      <itunes:summary>{{ post.summary | xml_escape }}</itunes:summary>
+      <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/images/going-nuts.jpg" />
+      <itunes:duration>{{ post.duration }}</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>{{ post.keywords | join: ', ' }}</itunes:keywords>
+      <guid isPermaLink="false">{{ post.guid }}</guid>
+    </item>
+  {% endfor %}
+	</channel>
+</rss>

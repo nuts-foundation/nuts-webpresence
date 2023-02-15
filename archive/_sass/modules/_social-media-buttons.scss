@@ -1,0 +1,69 @@
+.social-media-buttons {
+  padding: 0.5em 0;
+
+  p {
+    margin: 0 0 0.2em 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    margin-right: 0.5em;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    color: transparent;
+    cursor: pointer;
+
+    transition: background-size 0.2s ease;
+
+    &.facebook { background-image: url('images/social-media-icons/facebook.png'); }
+    &.twitter  { background-image: url('images/social-media-icons/twitter.png'); }
+    &.linkedin { background-image: url('images/social-media-icons/linkedin.png'); }
+
+    &:hover {
+      background-size: 100%;
+    }
+  }
+
+}
+
+.socials {
+  display: block;
+  margin: 1em 0 0 0;
+
+  color: $link-color;
+  cursor: pointer;
+
+  &:before {
+    content: ' ';
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.5em 0 0;
+    vertical-align: text-bottom;
+
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &.twitter:before {
+    background-image: url('images/social-media-icons/twitter.png');
+  }
+  &.facebook:before {
+    background-image: url('images/social-media-icons/facebook.png');
+  }
+  &.linkedin:before {
+    background-image: url('images/social-media-icons/linkedin.png')
+  }
+  &.youtube:before {
+    background-image: url('images/social-media-icons/youtube.png')
+  }
+  &.podcast:before {
+    background-image: url('images/social-media-icons/podcast.png')
+  }
+}

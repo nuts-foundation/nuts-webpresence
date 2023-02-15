@@ -1,0 +1,83 @@
+{
+  "links": [
+    {
+      "name": "Het initiatief",
+      "children": [
+        {
+          "name": "Position paper",
+          "href": "/position-paper"
+        },
+        {
+          "name": "Manifest",
+          "href": "/manifest"
+        },
+        {
+          "name": "Deelnemers netwerk",
+          "href": "/deelnemers-netwerk"
+        },
+        {
+          "name": "Veelgestelde vragen",
+          "href": "/q-and-a"
+        },
+        {
+          "name": "Podcast",
+          "href": "/podcast"
+        }
+      ]
+    },
+    {
+      "name": "Meedoen",
+      "children": [
+        {
+          "name": "Community",
+          "href": "/community"
+        },
+        {
+          "name": "Kalender",
+          "href": "/kalender"
+        },
+        {
+          "name": "Software",
+          "href": "/software"
+        },
+        {
+          "name": "Documentatie",
+          "href": "/documentatie"
+        }
+      ]
+    },
+    {
+      "name": "Over ons",
+      "children": [
+        {
+          "name": "Stichting Nuts",
+          "href": "/stichting"
+        },
+        {
+          "name": "Nuts in het nieuws",
+          "href": "/nieuws"
+        },
+        {
+          "name": "Leeswijzer",
+          "href": "/leeswijzer"
+        },
+        {
+          "name": "Voor de pers",
+          "href": "/pers"
+        },
+        {
+          "name": "Privacy policy",
+          "href": "/privacy-policy"
+        },
+        {
+          "name": "Jobs",
+          "href": "/en/jobs"
+        },
+        {
+          "name": "Contact",
+          "href": "/contact"
+        }
+      ]
+    }
+  ]
+}
