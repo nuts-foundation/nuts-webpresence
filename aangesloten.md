@@ -7,12 +7,17 @@ header_image: contact
 
 # Partijen met een aansluitovereenkomst
 
-Dit is de actuele lijst van deelnemers met een officiële aansluitovereenkomst
-aan het Nuts-netwerk. De aansluitovereenkomst bevat afspraken over
-gegevensbeveiliging, aansprakelijkheid en bereikbaarheid bij calamiteiten,
-tijdigheid van updates, bemiddeling bij conflicten en meer van zulke zaken.
+Dit zijn de deelnemers met een actuele aansluitovereenkomst met stichting Nuts. De 
+aansluitovereenkomst bevat afspraken over, onder meer, gegevensbeveiliging, aansprakelijkheid en bereikbaarheid 
+bij calamiteiten, tijdigheid van updates, en bemiddeling bij conflicten.
 
-Je kunt de <a href="/assets/downloads/aansluitovereenkomst-nuts.pdf">aansluitovereenkomst hier downloaden</a>.
+De procedure om deelnemer met een actuele aansluitoverenkomst te worden is als volgt:
+
+1. Neem de huidige versie van de aansluitovereenkomst door. Je kunt de <a href="/assets/downloads/aansluitovereenkomst-nuts.pdf">aansluitovereenkomst hier downloaden</a>.
+2. Neem bij vragen contact op met <a href="mailto:info@nuts.nl">info@nuts.nl</a>
+3. Indien akkoord, stuur een e-mail aan info@nuts.nl met daarin de gegevens van de organisatie en de tekenbevoegde(n) zoals in de overeenkomst gevraagd onder "partijen" en het/de e-mail adres(sen) van de tekenbevoegde(n) van je organisatie in cc.
+4. Daarna volgt een uitnodiging naar dit/deze e-mail adressen van Docusign om de overeenkomst digitaal te tekenen.
+5. Nadat iedereen de overeenkomst digitaal getekend heeft, wordt je aan de lijst van deelnemers met een actuele aansluitovereenkomst met stichting Nuts toegevoegd.
 
 |                       Organisatie                          |   Contactpersoon    |                                        E-mailadres                                       |
 |------------------------------------------------------------|---------------------|------------------------------------------------------------------------------------------|
