@@ -23,6 +23,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username:
 github_username:
 
+# Slack invite link, expires every 30 days. Current link expires on 2023-03-31
+slack_invite_url: https://join.slack.com/t/nuts-foundation/shared_invite/zt-1qfkrwpm9-RXREwsmXGpp0bGbONOIx6g
+
 # Build settings
 markdown: kramdown
 # plugins:
