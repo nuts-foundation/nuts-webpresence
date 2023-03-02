@@ -10,7 +10,7 @@ header_image: contact
 De aansluitovereenkomst bevat afspraken over, onder meer, gegevensbeveiliging, aansprakelijkheid en bereikbaarheid 
 bij calamiteiten, tijdigheid van updates, en bemiddeling bij conflicten. 
 
-Op deze pagina vind je de [actuele lijst](#list) en een de [aansluitprocedure](#procedure).
+Op deze pagina vind je de [deelnemers](#list) met een actuele aansluitovereenkomst met stichting Nuts en [de procedure](#procedure) om deelnemer te worden.
 
 ## <a name="list"></a>Actuele lijst van deelnemers
 
