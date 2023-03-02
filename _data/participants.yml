@@ -86,6 +86,10 @@
   image_url: assets/images/logos/open-ehr.png
   website_url: https://openehr.org/
 
+- title: Open Line
+  image_url: assets/images/logos/openline.svg
+  website_url: https://openline.nl
+
 - title: OZO Verbindzorg
   image_url: assets/images/logos/ozo.png
   website_url: https://www.ozoverbindzorg.nl/
