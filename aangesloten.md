@@ -20,7 +20,7 @@ Dit zijn de deelnemers met een actuele aansluitovereenkomst met stichting Nuts.
 |------------------------------------------------------------|---------------------|------------------------------------------------------------------------------------------|
 | [Adapcare](https://www.adapcare.nl)                        | Paul van Zagten     | <a href="mailto:p.van.zagten@adapcare.nl">p.van.zagten@adapcare.nl</a>                   |
 | [BovenMaas prenataal bv](https://bovenmaasprenataal.com/)  | Eric Smith          | <a href="mailto:eric.smith@bovenmaasprenataal.com">eric.smith@bovenmaasprenataal.com</a> |
-| [Deloite Consulting bv](https://www2.deloitte.com/nl/nl/services/consulting-deloitte.html)  | Maurice Fransen          | <a href="mailto:mfransen@deloitte.nl">mfransen@deloitte.nl</a> |
+| [Deloitte Consulting bv](https://www2.deloitte.com/nl/nl/services/consulting-deloitte.html)  | Maurice Fransen          | <a href="mailto:mfransen@deloitte.nl">mfransen@deloitte.nl</a> |
 | [Ecare Software B.V.](https://ecare.nl)                    | Dennis Snippert     | <a href="mailto:dennis.snippert@ecare.nl">dennis.snippert@ecare.nl</a>                   |
 | [Gerimedica](https://www.gerimedica.nl)                    | Titia van Malestein | <a href="mailto:t.vanmalestein@gerimedica.nl">t.vanmalestein@gerimedica.nl</a>           |
 | [HINQ](https://hinq.nl/)                                   | Hans Niendieker     | <a href="mailto:hans.niendieker@hinq.nl">hans.niendieker@hinq.nl</a>                     |
