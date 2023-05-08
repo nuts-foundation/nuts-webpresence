@@ -30,5 +30,5 @@ our cause!
 ## For developers
 
 Our [Github](https://github.com/nuts-foundation) organisation and our
-[technical documentation](https://nuts-documentation.readthedocs.io/) are both
+[technical documentation](https://nuts-node.readthedocs.io/) are both
 in English!

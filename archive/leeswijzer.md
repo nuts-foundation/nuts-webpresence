@@ -38,6 +38,6 @@ belangrijk zijn binnen Nuts. Deze staan beschreven in [ons manifest](/manifest).
 
 ## Contact opnemen
 
-  * Kom op onze [openbare Slack omgeving](https://join.slack.com/t/nuts-foundation/shared_invite/zt-yix61es0-kEMbrNdEgj89vyNZi49fYA)
+  * Kom op onze [openbare Slack omgeving](https://join.slack.com/t/nuts-foundation/shared_invite/zt-1qfkrwpm9-RXREwsmXGpp0bGbONOIx6g)
   * Kom naar één van onze meetings (zie de [kalender](/kalender) voor tijden en locaties)
   * Stuur een e-mail naar [info@nuts.nl](mailto:info@nuts.nl)

@@ -85,6 +85,11 @@
     "url": "http://www.nedap-healthcare.com/"
   },
   {
+    "title": "Open Line",
+    "logoUrl": "/logos/openline.svg",
+    "url": "https://openline.nl"
+  },
+  {
     "title": "OZO Verbindzorg",
     "logoUrl": "/logos/ozo.png",
     "url": "https://www.ozoverbindzorg.nl/"
@@ -118,6 +123,11 @@
     "title": "Tenzinger",
     "logoUrl": "/logos/tenzinger.png",
     "url": "https://tenzinger.com/"
+  },
+  {
+    "title": "Tribe Agency",
+    "logoUrl": "/logos/tribe.png",
+    "url": "https://tribeagency.nl/"
   },
   {
     "title": "Vital Health Software",
