@@ -35,6 +35,11 @@
     "url": "https://www.headease.nl/"
   },
   {
+    "title": "HINQ",
+    "logoUrl": "/logos/hinq.png",
+    "url": "https://hinq.nl/"
+  },
+  {
     "title": "I Logos",
     "logoUrl": "/logos/ilogos.png",
     "url": "https://www.ilogos.nl/"
@@ -55,9 +60,19 @@
     "url": "https://ivido.nl/"
   },
   {
+    "title": "J4Care",
+    "logoUrl": "/logos/j4care.png",
+    "url": "https://www.j4care.com"
+  },
+  {
     "title": "Jouw Omgeving",
     "logoUrl": "/logos/jouw-omgeving.png",
     "url": "https://www.jouwomgeving.nl/"
+  },
+  {
+    "title": "Kiesz",
+    "logoUrl": "/logos/kiesz.png",
+    "url": "https://www.kiesz.nl/"
   },
   {
     "title": "Lable Care",
@@ -83,6 +98,16 @@
     "title": "Nedap Healthcare",
     "logoUrl": "/logos/nedap-healthcare.png",
     "url": "http://www.nedap-healthcare.com/"
+  },
+  {
+    "title": "NLcom",
+    "logoUrl": "/logos/nlcom.png",
+    "url": "https://www.nlcom.nl/"
+  },
+  {
+    "title": "OpenEHR",
+    "logoUrl": "/logos/open-ehr.png",
+    "url": "https://openehr.org/"
   },
   {
     "title": "Open Line",
@@ -123,6 +148,11 @@
     "title": "Tenzinger",
     "logoUrl": "/logos/tenzinger.png",
     "url": "https://tenzinger.com/"
+  },
+  {
+    "title": "Timeff",
+    "logoUrl": "/logos/timeff.png",
+    "url": "https://timeff.com/"
   },
   {
     "title": "Tribe Agency",
