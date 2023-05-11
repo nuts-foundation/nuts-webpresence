@@ -1,4 +1,4 @@
-import Head from "next/head"
+import { NextSeo } from "next-seo"
 import { GetStaticPaths, GetStaticPathsContext, GetStaticPropsContext, InferGetStaticPropsType } from "next"
 
 import Layout from "../../components/Layout"
@@ -10,9 +10,7 @@ interface PostProps extends InferGetStaticPropsType<typeof getStaticProps> {
 export default function UseCase({ post }: PostProps) {
   return (
     <Layout>
-      <Head>
-        <title>{post.meta["title"]}</title>
-      </Head>
+      <NextSeo openGraph={{ title: `Nuts - ${post.meta["title"]}` }} />
 
       <article
         className="prose text-sm md:text-md xl:prose-lg mx-auto my-12 md:my-24"
