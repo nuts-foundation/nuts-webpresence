@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 /* Can't get this to work in Tailwind config */
-.prose ul li::before {
-    content: "- ";
-}
-
-.prose ol li {
+.prose ol > li {
     list-style-type: number;
+}
+.prose ul > li {
+    list-style-type: disc;
 }
 
 .press {
