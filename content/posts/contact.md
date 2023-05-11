@@ -15,6 +15,12 @@ dan gebruik van één van deze contactmogelijkheden:
   * Kom naar één van onze meetings (zie de [kalender](/kalender) voor tijden en locaties)
   * Stuur een e-mail naar [info@nuts.nl](mailto:info@nuts.nl)
 
+Of verbind met ons op sociale media:
+
+  * [Nuts op LinkedIn](https://linkedin.com/company/stichting-nuts)
+  * [Ons YouTube kanaal](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ)
+  * [Onze podcast "Going Nuts"](/podcast)
+
 ## Responsible disclosure
 
 Heb je een fout ontdekt in de Nuts node of de Nuts specificaties? Kijk dan op
