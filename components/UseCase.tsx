@@ -5,6 +5,7 @@ import Markdown from "../components/Markdown"
 import Arrow from "../icons/arrow.svg"
 
 interface Props {
+  blurb: string;
   slug: string;
   title: string;
   color: string;

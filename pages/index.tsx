@@ -105,64 +105,6 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
         </a>))} />
       </div>
 
-      {/* <div className="bg-light">
-        <Section>
-          <div className="md:grid grid-cols-2 gap-10">
-            <div></div>
-            <div>
-              <Heading>{usecases.meta["title"]}</Heading>
-              <Markdown className="font-inter mb-24" html={usecases.content} />
-            </div>
-          </div>
-
-          <div className="md:grid grid-cols-4 gap-10">
-            <UseCase
-              slug="community"
-              title="Nuts Community"
-              blurb="Hoe hebben we onszelf georganiseerd? Wanneer zijn de belangrijkste meetings? Welke afspraken liggen er?"
-              color="#799938"
-              images={{
-                small: ZorgInzageSm,
-                large: ZorgInzage,
-              }}
-            />
-
-            <UseCase
-              slug="node"
-              title="De functies van het Nuts netwerk"
-              blurb="Alles over de generieke functies die de vertrouwenslaag van Nuts biedt: Autorisatie, authenticatie, logging en register."
-              color="#245371"
-              images={{
-                small: eOverdrachtSm,
-                large: eOverdracht,
-              }}
-            />
-
-            <UseCase
-              slug="babyconnect"
-              title="Integrale samenwerking"
-              blurb="Hoe Nuts de zorg helpt met het oplossen van praktische vraagstukken in digitale samenwerking."
-              color="#D15949"
-              images={{
-                small: BabyConnectSm,
-                large: BabyConnect,
-              }}
-            />
-
-            <UseCase
-              slug="kik-v"
-              title="Secundair datagebruik"
-              blurb="Hoe Nuts het mogelijk maakt om veilig en met respect voor de privacy van de patiënt data beschikbaar te stellen voor onderzoek."
-              color="#3A9DD8"
-              images={{
-                small: KikVSm,
-                large: KikV,
-              }}
-            />
-          </div>
-        </Section>
-      </div> */}
-
       <Section>
         <div className="mx-auto text-center max-w-lg">
           <div>
