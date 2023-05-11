@@ -9,9 +9,9 @@
     <copyright>©2022, copyleft gepubliceerd onder CC BY-SA 2.0 licentie</copyright>
     <webMaster>podcast@nuts.nl</webMaster>
     <pubDate>Mon, 26 Jul 2021 00:00:00 GMT</pubDate>
-    <category>Health</category>
-    <category>Technology</category>
-    <generator>jsonfeed-to-rss 3.0.6 (https://github.com/bcomnes/jsonfeed-to-rss#readme)</generator>
+    <itunes:category text="Health &amp; Fitness"></itunes:category>
+    <itunes:category text="Technology"></itunes:category>
+    <generator>jsonfeed-to-rss 3.0.7 (https://github.com/bcomnes/jsonfeed-to-rss#readme)</generator>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <itunes:author>Stichting Nuts</itunes:author>
     <itunes:summary>Wat gebeurt er in de wereld van Nuts? Mark en Tim interviewen interessante mensen uit onze community of kletsen je bij over recente ontwikkelingen.&lt;br/&gt; &lt;br/&gt;Nuts is een samenwerkingsverband van partijen die geloven dat het tijd wordt voor een gedeelde voorziening, een netwerk van iedereen en vóór iedereen. De noodzakelijke infrastructuur om digitaal te kunnen communiceren in de zorg.&lt;br/&gt; &lt;br/&gt;Zie voor meer informatie &lt;a href="https://nuts.nl" target="blank"&gt;www.nuts.nl&lt;/a&gt;</itunes:summary>

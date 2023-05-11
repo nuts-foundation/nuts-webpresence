@@ -20,6 +20,8 @@ async function main() {
       subtitle: podcast.subtitle,
       author: podcast.author.name,
       summary: podcast.summary,
+      // Add a random prefix so that the categories aren't valid iTunes categories
+      category: podcast.category.map(c => `_${c}`),
       owner: {
         name: podcast.author.name,
         email: podcast.author.email,
@@ -41,7 +43,6 @@ async function main() {
       content_html: episode.summary,
       image: podcast.image,
       date_published: new Date(episode.publishedAt).toISOString(),
-      //tags: episode.keywords,
       _itunes: {
         author: podcast.author.name,
         subtitle: episode.subtitle,
@@ -62,10 +63,12 @@ async function main() {
   await fs.writeFile("public/going-nuts.xml", jsonfeedToRSS(feed, {
     itunes: true,
     language: "nl",
-    category: podcast.categories,
     webMaster: podcast.author.email,
     copyright: "©2022, copyleft gepubliceerd onder CC BY-SA 2.0 licentie"
-  }))
+  })
+    // Fix for multiple categories that aren't supported
+    .replace(/<category>_/g, '<itunes:category text="')
+    .replace(/<\/category>/g, '"></itunes:category>'))
 }
 
 console.log("generating...")
