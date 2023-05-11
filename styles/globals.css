@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Can't get this to work in Tailwind config */
+.prose ul li::before {
+    content: "- ";
+}
+
+.prose ol li {
+    list-style-type: number;
+}
+
+.press {
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.press figure {
+    margin: 0;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #eee;
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-image: linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd), linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd);
+}
+
+.press figure img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+article.prose details>summary::marker {
+    content: "";
+}
+
+article.prose details>summary {
+    cursor: pointer;
+    font-family: Inter;
+    font-size: 1.125em;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+article.prose details>summary:after {
+    top: 6px;
+    width: 22px;
+    height: 22px;
+    content: "";
+    position: relative;
+    margin-left: 1rem;
+    display: inline-block;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjRTc0RTNCIi8+CjxwYXRoIGQ9Ik0xMiAxNkw2LjgwMzg1IDkuMjVMMTcuMTk2MiA5LjI1TDEyIDE2WiIgZmlsbD0iI0YxRjFFQSIvPgo8L3N2Zz4K);
+}
