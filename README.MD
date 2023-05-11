@@ -1,8 +1,7 @@
 # www.nuts.nl
 
 The "webpresence" site for Nuts, where we tell the world who we are. Nothing
-very complicated or special, it's a regular statically generated
-[Jekyll](https://jekyllrb.com/) site.
+very complicated or special, it's a regular statically generated Next.js site.
 
 Hosting is done through [Github pages](https://pages.github.com/). So be advised
 that pushing to master is equal to deploying.
