@@ -1,7 +1,0 @@
-<div class="participants">
-  {% for participant in site.data.participants %}
-    <div class="participant" style="background-image: url('{{participant.image_url | relative_url }}');">
-      <a href="{{participant.website_url}}" target="_blank" rel="noreferrer"></a>
-    </div>
-  {% endfor %}
-</div>
