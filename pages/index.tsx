@@ -66,7 +66,7 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
             </div>
 
             <div>
-              <Video src="/no_fax.mp4" />
+              <img src="/collaboration.png" className="rounded-3xl shadow-md" loading="lazy" />
             </div>
           </div>
         </Section>
