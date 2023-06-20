@@ -100,7 +100,7 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
           <img
             src={participant.logoUrl}
             loading="lazy"
-            className="h-full object-cover"
+            style={{ objectFit: "contain", height: "100%", display: "inline-block" }}
           />
         </a>))} />
       </div>

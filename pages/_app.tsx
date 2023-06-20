@@ -1,4 +1,6 @@
 import "../styles/globals.css"
+import "swiper/css"
+
 import { DefaultSeo } from "next-seo"
 import type { AppProps } from "next/app"
 import { GoogleAnalytics } from "nextjs-google-analytics"
