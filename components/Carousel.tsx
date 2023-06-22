@@ -10,6 +10,7 @@ export default function Carousel({ items }: Props) {
     style={{ height: "100%" }}
     modules={[Autoplay]}
     spaceBetween="40"
+    grabCursor={true}
     breakpoints={{
       768: {
         width: 768,
