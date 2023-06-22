@@ -27,7 +27,7 @@ export default function Carousel({ items }: Props) {
       pauseOnMouseEnter: true,
       stopOnLastSlide: false
     }}>
-    {items.map((item, i) => (<SwiperSlide
+    {items.sort(() => Math.random() - 0.5).map((item, i) => (<SwiperSlide
       style={{ textAlign: "center" }}
       key={i}>
       {item}
