@@ -9,17 +9,23 @@ export default function Carousel({ items }: Props) {
   return (<Swiper
     style={{ height: "100%" }}
     modules={[Autoplay]}
-    spaceBetween="40"
-    grabCursor={true}
     loop={true}
+    grabCursor={true}
+    centeredSlides={true}
     breakpoints={{
+      100: {
+        slidesPerView: 1,
+      },
       768: {
-        width: 768,
         slidesPerView: 2,
       },
       1024: {
-        width: 1024,
-        slidesPerView: 4
+        spaceBetween: 40,
+        slidesPerView: 4,
+      },
+      1920: {
+        spaceBetween: 50,
+        slidesPerView: 5
       }
     }}
     autoplay={{
@@ -27,10 +33,8 @@ export default function Carousel({ items }: Props) {
       pauseOnMouseEnter: true,
       stopOnLastSlide: false
     }}>
-    {items.sort(() => Math.random() - 0.5).map((item, i) => (<SwiperSlide
+    {items.map((item, i) => (<SwiperSlide
       style={{ textAlign: "center" }}
-      key={i}>
-      {item}
-    </SwiperSlide>))}
+      key={i}>{item}</SwiperSlide>))}
   </Swiper>)
 }
