@@ -91,7 +91,7 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
         <Markdown className="font-inter" html={community.content} />
       </Section>
 
-      <div className="mb-36 h-[65px]">
+      <div className="my-20 mx-5 h-[65px]">
         <Carousel items={config.participants.map(participant => (<a
           href={participant.url}
           key={participant.title}
@@ -100,7 +100,7 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
           <img
             src={participant.logoUrl}
             loading="lazy"
-            className="h-full object-cover"
+            style={{ objectFit: "contain", height: "100%", display: "inline-block" }}
           />
         </a>))} />
       </div>
