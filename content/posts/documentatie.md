@@ -36,18 +36,15 @@ concrete implementatie van de hierboven beschreven Nuts standaarden.
 Keywords: _Getting started, development, APIs, monitoring, configuratie,
 hosting_
 
-## Bolts
+## Toepassingen op Nuts
 
-Een moer is waardeloos zonder een bout, en evenzo is Nuts waardeloos zonder een
-Bolt. "Bolt" is onze term voor een concrete toepassing van het [Nuts
-gedachtengoed](/manifest) en de Nuts standaarden om een tastbare use-case in de
-zorg mogelijk te maken. Daarvoor hebben we meer informatie nodig dan alleen dat
-wat hierboven beschreven staat. We moeten ook afspraken maken over
-data-inhoudelijke standaarden, zoals FHIR, CDA, ZIBs, OpenEHR et cetera. Ook
-moeten we met elkaar afspreken welke processen we ondersteunen, en hoe we
-technologie daarvoor inzetten. Daarvoor dient deze documentatie.
+Een Toepassing op het Nuts-netwerk is een specifieke toepassing die gebruik maakt van de Nuts-specificatie en waarover partijen aanvullende openbare eisen en specificaties hebben afgesproken. Omdat het Nuts-netwerk als vertrouwenslaag dient, is het geschikt voor vele toepassingen. Iedereen kan een toepassing op het Nuts netwerk maken. Een "Toepassing op Nuts" is dan ook een praktische toepassing van het [Nuts gedachtengoed](/manifest) en open technologie om een tastbare usecase in de zorg mogelijk te maken.
 
-[&raquo; Lees de Bolt specificaties](https://nuts-foundation.gitbook.io/bolts/)
+In de pioniersfase van de Nuts-community hebben we de metaforen Nuts and Bolts gebruikt om de Nuts-specificatie (destijds “Nuts”) en de specifieke toepassingen (destijds “Bolts”) te duiden. De term "Bolt" is vervangen door “Toepassing op Nuts” om juist de onafhankelijkheid van de toepassingen en de vertrouwenslaag op het internet en de daarmee gepaard gaande schaalbaarheid van de Nuts-specificatie te benadrukken. Ook was het voor nieuwe partijen die met de Nuts-specificatie aan de slag gingen, jargon dat afleidt van waar het over gaat. De term ‘Bolt’ wordt daarom in de nieuwe documentatie niet meer gebruikt. 
+
+Er zijn reeds vele voorbeelden beschikbaar in verschillende ontwikkelstadia. Bijvoorbeeld bij de overdracht van zorg (eOverdracht), bij inzage (Huisarts inzage wijkzorg), ten behoeve van secundair gebruik van data (KIK-V) en bij meer integrale vormen van zorgtoepassingen (geboortezorg en Avond, Nacht en Weekendzorg). 
+
+[&raquo; Lees de Toepassingen op Nuts](https://nuts-foundation.gitbook.io/bolts/)
 
 Keywords: _eOverdracht, Zorginzage, KIK-v, FHIR, ZIBs, CDA, OpenEHR,
 procesondersteuning_
