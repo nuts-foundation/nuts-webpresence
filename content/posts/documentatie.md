@@ -7,33 +7,26 @@ header_image: components
 
 # Documentatie
 
-Wil jij aan de slag met Nuts om informatiedeling in de zorg te verbeteren? Deze documentatie bevat informatie over Nuts standaarden, Nuts node en Toepassingen op Nuts om een optimale samenwerking tussen gegevensverwerkende programmatuur mogelijk te maken. 
+Wil jij aan de slag met Nuts om informatiedeling in de zorg te verbeteren? Deze documentatie bevat informatie over Nuts-specificatie, Nuts-node en Toepassingen op Nuts om een optimale samenwerking tussen gegevensverwerkende programmatuur mogelijk te maken. 
 
-De Nuts-broncode is Open Source beschikbaar om deze te bewerken en te verspreiden op basis van de Nuts-specificatie. De Nuts-node vervult hierin vier kernfuncties die te maken hebben met identiteit, autorisatie, register en logging. Daarbij helpt de Nuts-node bij zaken als het kunnen vinden van de andere nodes en services van leveranciers of zorgaanbieders, het publiceren van gegevens over de eigen diensten, het uitwisselen van autorisaties en het identificeren van gebruikers. Doordat elke partij de Nuts-node zelf kan installeren en beheren, de specificatie en broncode openbaar zijn, hoeft niemand op een derde (centrale) partij te vertrouwen. De broncode van onze referentie-implementatie (de Nuts node) en de demo-applicaties die wij hebben ontwikkeld is zoals gezegd voor iedereen beschikbaar en staat online op het samenwerkingsplatform Github.
-<br>
->Ben jij een zorgprofessional en wil jij als eindgebruiker optimaal en veilig medische gegevens uitwisselen? Ga dan in gesprek met je software leverancier(s) om gegevensuitwisselingen op basis van Nuts in te bouwen in jouw werkprocessen. [Bekijk de actuele lijst van Nuts-dienstverleners.](https://www.nuts.nl/deelnemers-netwerk)
+> Ben jij een zorgprofessional en wil jij als eindgebruiker optimaal en veilig medische gegevens uitwisselen? Ga dan in gesprek met je software leverancier(s) om gegevensuitwisselingen op basis van Nuts in te bouwen in jouw werkprocessen. [Bekijk de actuele lijst](/deelnemers-netwerk) van Nuts-dienstverleners.
 &nbsp; 
 
-## 1. Nuts standaarden (RFCs)
+## 1. Nuts-specificatie (RFC's)
 
-De Nuts standaarden beschrijven "hoe Nuts werkt". Het zijn de afspraken die we
-maken over hoe IT leveranciers gegevens kunnen uitwisselen op basis van Nuts.
-Dat doen we door zogenaamde "Requests For Comments" te schrijven. Deze
-documenten moeten voldoende houvast bieden voor een onafhankelijke implementatie
-van de protocollen van Nuts, los van de Nuts node.
+De Nuts-specificatie is beschikbaar als Request for Comments (RFC) die openstaat voor alle belanghebbenden en specialisten voor feedback, ideeën en input om de Nuts-specificaties te verbeteren en aan te scherpen. Het is een Creative Commons internationale open standaard (Verifiable Credentials (VC), Decentralized IDentifiers (DID), OAuth, mTLS en gPRC) en kan worden bekeken op https://nuts-foundation.gitbook.io/v1/. Wat de Nuts-specificatie onderscheidt is de algemeenheid, wat betekent dat dezelfde specificatie toepasbaar is voor verschillende toepassingen.
 
-[&raquo; Lees de Nuts standaarden](https://nuts-foundation.gitbook.io/)
+
+[&raquo; Lees de Nuts specificaties](https://nuts-foundation.gitbook.io/)
 
 Keywords: _Verifiable credentials, OAuth2, distributed network, decentralized
 identifiers, transactions_
 
-## 2. Nuts node
+## 2. Nuts-node
 
-De Nuts node is de referentie-implementatie van de Nuts standaarden. De
-documentatie van de Nuts node beschrijft hoe de Nuts node werkt, hoe je deze
-kunt draaien, configureren en monitoren en hoe je hieraan als developer kunt
-bijdragen. Deze documentatie is gericht op het inzetten van de Nuts node als
-concrete implementatie van de hierboven beschreven Nuts standaarden.
+De Nuts-node is een open-source software referentie-implementatie van de Nuts-specificatie. Iedereen heeft de mogelijkheid om een Nuts-node te ontwikkelen. De Nuts-node draait dan ook als component van de gegevensverwerkende applicatie. De Nuts-node draait als applicatie component van de gegevensverwerkende programmatuur. Partijen gebruiken het om verbinding te maken met andere Nuts-nodes, waardoor het Nuts-netwerk ontstaat. Het fungeert als een soort sleutelkast die de toegang tot de gegevens van de zorgverlener en haar patiënten bewaakt. Ook is de Nuts-broncode open source beschikbaar om deze te bewerken en te verspreiden op basis van de Nuts-specificatie. De Nuts-node vervult hierin vier kernfuncties die te maken hebben met identiteit, autorisatie, register en logging. Daarbij helpt de Nuts-node bij zaken als het kunnen vinden van de andere nodes en services van leveranciers of zorgaanbieders, het publiceren van gegevens over de eigen diensten, het uitwisselen van autorisaties en het identificeren van gebruikers. Doordat elke partij de Nuts-node zelf kan installeren en beheren, de specificatie en broncode openbaar zijn, hoeft niemand op een derde (centrale) partij te vertrouwen.
+
+De broncode van onze referentie-implementatie (de Nuts node) en de demo-applicaties die wij hebben ontwikkeld is zoals gezegd voor iedereen beschikbaar en staat online op het samenwerkingsplatform Github.
 
 [&raquo; Lees de Nuts node documentatie](https://nuts-node.readthedocs.io/)
 
@@ -49,6 +42,7 @@ In de pioniersfase van de Nuts-community hebben we de metaforen Nuts and Bolts g
 Er zijn reeds vele voorbeelden beschikbaar in verschillende ontwikkelstadia. Bijvoorbeeld bij de overdracht van zorg (eOverdracht), bij inzage (Huisarts inzage wijkzorg), ten behoeve van secundair gebruik van data (KIK-V) en bij meer integrale vormen van zorgtoepassingen (geboortezorg en Avond, Nacht en Weekendzorg). 
 
 [&raquo; Lees de Toepassingen op Nuts](https://nuts-foundation.gitbook.io/bolts/)
+
 
 
 
