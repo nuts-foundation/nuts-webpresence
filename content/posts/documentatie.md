@@ -7,10 +7,14 @@ header_image: components
 
 # Documentatie
 
-We hebben de documentatie over Nuts opgesplitst in drie delen. Hierdoor kunnen
-we beter waarborgen dat deze delen duidelijk van elkaar gescheiden blijven.
+Wil jij aan de slag met Nuts om informatiedeling in de zorg te verbeteren? Deze documentatie bevat informatie over Nuts standaarden, Nuts node en Toepassingen op Nuts om een optimale samenwerking tussen gegevensverwerkende programmatuur mogelijk te maken. 
 
-## Nuts standaarden (RFCs)
+De Nuts-broncode is Open Source beschikbaar om deze te bewerken en te verspreiden op basis van de Nuts-specificatie. De Nuts-node vervult hierin vier kernfuncties die te maken hebben met identiteit, autorisatie, register en logging. Daarbij helpt de Nuts-node bij zaken als het kunnen vinden van de andere nodes en services van leveranciers of zorgaanbieders, het publiceren van gegevens over de eigen diensten, het uitwisselen van autorisaties en het identificeren van gebruikers. Doordat elke partij de Nuts-node zelf kan installeren en beheren, de specificatie en broncode openbaar zijn, hoeft niemand op een derde (centrale) partij te vertrouwen. De broncode van onze referentie-implementatie (de Nuts node) en de demo-applicaties die wij hebben ontwikkeld is zoals gezegd voor iedereen beschikbaar en staat online op het samenwerkingsplatform Github.
+<br>
+>Ben jij een zorgprofessional en wil jij als eindgebruiker optimaal en veilig medische gegevens uitwisselen? Ga dan in gesprek met je software leverancier(s) om gegevensuitwisselingen op basis van Nuts in te bouwen in jouw werkprocessen. [Bekijk de actuele lijst van Nuts-dienstverleners.](https://www.nuts.nl/deelnemers-netwerk)
+&nbsp; 
+
+## 1. Nuts standaarden (RFCs)
 
 De Nuts standaarden beschrijven "hoe Nuts werkt". Het zijn de afspraken die we
 maken over hoe IT leveranciers gegevens kunnen uitwisselen op basis van Nuts.
@@ -23,7 +27,7 @@ van de protocollen van Nuts, los van de Nuts node.
 Keywords: _Verifiable credentials, OAuth2, distributed network, decentralized
 identifiers, transactions_
 
-## Nuts node
+## 2. Nuts node
 
 De Nuts node is de referentie-implementatie van de Nuts standaarden. De
 documentatie van de Nuts node beschrijft hoe de Nuts node werkt, hoe je deze
@@ -36,7 +40,7 @@ concrete implementatie van de hierboven beschreven Nuts standaarden.
 Keywords: _Getting started, development, APIs, monitoring, configuratie,
 hosting_
 
-## Toepassingen op Nuts
+## 3. Toepassingen op Nuts
 
 Een Toepassing op het Nuts-netwerk is een specifieke toepassing die gebruik maakt van de Nuts-specificatie en waarover partijen aanvullende openbare eisen en specificaties hebben afgesproken. Omdat het Nuts-netwerk als vertrouwenslaag dient, is het geschikt voor vele toepassingen. Iedereen kan een toepassing op het Nuts netwerk maken. Een "Toepassing op Nuts" is dan ook een praktische toepassing van het [Nuts gedachtengoed](/manifest) en open technologie om een tastbare usecase in de zorg mogelijk te maken.
 
@@ -45,6 +49,11 @@ In de pioniersfase van de Nuts-community hebben we de metaforen Nuts and Bolts g
 Er zijn reeds vele voorbeelden beschikbaar in verschillende ontwikkelstadia. Bijvoorbeeld bij de overdracht van zorg (eOverdracht), bij inzage (Huisarts inzage wijkzorg), ten behoeve van secundair gebruik van data (KIK-V) en bij meer integrale vormen van zorgtoepassingen (geboortezorg en Avond, Nacht en Weekendzorg). 
 
 [&raquo; Lees de Toepassingen op Nuts](https://nuts-foundation.gitbook.io/bolts/)
+
+
+
+
+
 
 Keywords: _eOverdracht, Zorginzage, KIK-v, FHIR, ZIBs, CDA, OpenEHR,
 procesondersteuning_
