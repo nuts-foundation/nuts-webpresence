@@ -15,11 +15,27 @@ dan gebruik van één van deze contactmogelijkheden:
   * Kom naar één van onze meetings (zie de [kalender](/kalender) voor tijden en locaties)
   * Stuur een e-mail naar [info@nuts.nl](mailto:info@nuts.nl)
 
+## Social media 
 Of verbind met ons op sociale media:
 
   * [Nuts op LinkedIn](https://linkedin.com/company/stichting-nuts)
   * [Ons YouTube kanaal](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ)
   * [Onze podcast "Going Nuts"](/podcast)
+
+## Contactgegevens
+**Stichting Nuts**<br>
+Postbus 80 <br>
+3940 AB Doorn <br>
+
+Telefoon: 0544-471624 <br>
+info@nuts.nl <br>
+RSIN 859368452<br>
+
+Bezoekadres: <br>
+De Horst 7 - Gebouw ‘Vossesteijn’ <br>
+3971 KS Driebergen-Rijsenburg<br> 
+
+
 
 ## Responsible disclosure
 
