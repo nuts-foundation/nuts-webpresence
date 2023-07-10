@@ -108,7 +108,7 @@ Dit zijn de deelnemers met een actuele aansluitovereenkomst met stichting Nuts.
 De procedure om deelnemer met een actuele aansluitoverenkomst te worden is als volgt:
 
 1. Neem de huidige versie van de aansluitovereenkomst door. Je kunt de aansluitovereenkomst [hier downloaden](/assets/downloads/aansluitovereenkomst-nuts.pdf).
-   You can review and download the English version of the Connection agreement [here](assets/downloads/aansluitovereenkomst-nuts-english.pdf).
+   You can review and download the English version of the Connection agreement [here](/assets/downloads/aansluitovereenkomst-nuts-english.pdf).
 2. Neem bij vragen contact op met [info@nuts.nl](mailto:info@nuts.nl)
 3. Indien akkoord, stuur een email naar [info@nuts.nl](mailto:info@nuts.nl) met daarin: 
       * Naam van de organisatie zoals geregistreerd bij de Kamer van Koophandel (KvK)
