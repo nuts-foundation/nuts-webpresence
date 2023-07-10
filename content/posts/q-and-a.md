@@ -8,7 +8,10 @@ permalink: /q-and-a/
 
 Op deze pagina hebben we de antwoorden verzameld op vragen die we regelmatig
 tegenkomen. Mis je een vraag? Of wil je ergens over doorpraten? [Stuur ons dan
-een bericht](/contact).
+een bericht](/contact). 
+
+Met de Nuts Wiki ondersteunen wij de community met een toegankelijke plek voor het vastleggen en delen van informatie. 
+[&raquo; Lees de Nuts Wiki](https://wiki.nuts.nl/)
 
 ## Wat is Nuts?
 
@@ -21,15 +24,7 @@ standaarden implementeren we vervolgens in onze _Open Source_ "Nuts node".
 
 ## Wat is een Nuts node?
 
-De Nuts node is een implementatie van onze open standaarden, in de vorm van een
-_Open Source_ applicatie waarmee softwareleveranciers samen een decentraal (ook
-wel federatief, gedistribueerd of _peer-to-peer_ genoemd) netwerk kunnen
-opzetten. De Nuts node werkt vervolgens als een Zwitsers zakmes dat de
-leverancier helpt bij zaken als het kunnen vinden van de andere leveranciers,
-het publiceren van gegevens over de eigen diensten, het uitwisselen van
-autorisaties, het identificeren van gebruikers en nog veel meer. Doordat elke
-leverancier de Nuts node zelf kan installeren en beheren, en de broncode
-openbaar is, hoeft niemand op een derde partij te vertrouwen.
+De Nuts-node is een open-source software referentie-implementatie van de Nuts-specificatie. Iedereen heeft de mogelijkheid om een Nuts-node te ontwikkelen. De Nuts-node draait als applicatie component binnen de infrastructuur van gegevensverwerkende programmatuur. Partijen gebruiken het om verbinding te maken met andere Nuts-nodes, waardoor het Nuts-netwerk ontstaat. Het fungeert als een soort sleutelkast die de toegang tot de gegevens van de zorgverlener en haar patiënten bewaakt. Ook is de Nuts-broncode open source beschikbaar om deze te bewerken en te verspreiden op basis van de Nuts-specificatie. De Nuts-node vervult hierin vier kernfuncties die te maken hebben met identiteit, autorisatie, register en logging. Daarbij helpt de Nuts-node bij zaken als het kunnen vinden van de andere nodes en services van leveranciers of zorgaanbieders, het publiceren van gegevens over de eigen diensten, het uitwisselen van autorisaties en het identificeren van gebruikers. Doordat elke partij de Nuts-node zelf kan installeren en beheren, de specificatie en broncode openbaar zijn, hoeft niemand op een derde (centrale) partij te vertrouwen.
 
 ## Wat is _Open Source_?
 
