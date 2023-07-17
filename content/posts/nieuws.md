@@ -10,12 +10,34 @@ header_image: press
 _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
 Index:
+* [Geheelmeesters gesprekken: Helemaal Nuts op Interoperabiliteit](#20230615)
 * [Twiin & Nuts schrijven gezamenlijk groeipad](#20221018)
 * [Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen](#20200130)
 * [Persbericht: ICT leveranciers community Centrale voorzieningen goes Nuts.](#20200120)
 * [Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren](#20181203)
 
 <hr/>
+
+<a name="20230615"></a>
+
+### 15 juni 2023 - Geheelmeester gesprekken: Helemaal Nuts op Interoperabiliteit.
+
+“We moeten een #evolutie aanjagen van een #zorgsysteem gebaseerd op #controle naar een zorgsysteem gebaseerd op #vertrouwen.”
+
+In deze aflevering niet één maar twee inspirerende geheelmeesters: één #zorgverlener die vanuit frustratie #tech is gaan ontwikkelen en één techie die voor (gefrustreerde) zorgverleners het werk makkelijker wil maken.
+
+Ze zijn als leveranciers #concurrenten van elkaar, maar tegelijkertijd ook mede-bestuursleden bij Nuts.
+
+Een mooi gesprek met enkele rake #inzichten:
+* Hun #doel? “#Onzin weghalen uit de zorg.”
+* Samenwerken als concurrenten? “Als je dat wilt oplossen kun je dat niet alleen.”
+* Hun visie op #eigenaarschap van data? “Je gunt het de zorg dat er geen #business is op het hebben van #data.”
+* Is het makkelijk? “De makkelijke problemen zijn al opgelost.”
+
+Laat je inspireren door Mark Weernink (van Nedap) en Thomas Ferguson (van Gerimedica) en ga voor nuts: “het beste idee sinds hagelslag” (quote Thomas)
+
+[Luister hier naar de podcast](https://app.springcast.fm/16406/geheelmeesters-gesprekken-thomas-ferguson-mark-weernink).
+
 
 <a name="20221018"></a>
 
