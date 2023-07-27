@@ -32,3 +32,12 @@ our cause!
 Our [Github](https://github.com/nuts-foundation) organisation and our
 [technical documentation](https://nuts-node.readthedocs.io/) are both
 in English!
+
+## Connection agreement
+The Connection agreement contains agreements on, among other things, data security, liability and accessibility in case of calamities, timeliness of updates, and mediation in case of conflicts.
+
+[On this page](/assets/downloads/aansluitovereenkomst-nuts-english.pdf) you will find a current Connection agreement with Nuts Foundation and the procedure to become a participant.
+
+
+
+
