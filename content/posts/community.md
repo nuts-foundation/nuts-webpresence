@@ -9,15 +9,16 @@ header_image: community
 
 Nuts is een community-initiatief waarbij we samen bouwen aan een decentrale
 infrastructuur voor de zorg. Voor een effectieve samenwerking is het essentieel
-dat we elkaar kunnen ontmoeten en informeren over de voortgang.
+dat we elkaar kunnen ontmoeten en informeren over de voortgang. 
 
-## De online bijeenkomst
+## De Nuts community meetings 
 
-Voor de online bijeenkomst maken we gebruik van de videoconferentie tool Zoom.
-Zoom werkt zonder extra software in een moderne browser. Voor extra
-functionaliteiten zoals het delen van je desktop raden we het installeren van de
-[desktop applicatie](https://zoom.us/download) aan. De link voor toegang tot de
-Nuts meeting staat in de [kalender-afspraak](/kalender).
+Wil jij ook deelnemen aan één van onze Nuts community meetings? Je bent welkom zonder voorafgaande inschrijving. De link voor toegang tot de online
+meeting staat in de [kalender-afspraak](/kalender).
+
+We maken gebruik van de videoconferentie tool Zoom. Zo kun je direct via je browser online deelnemen en is het niet nodig om extra software te installeren. 
+Voor extra functionaliteiten zoals het delen van je desktop raden we het installeren van de 
+[Zoom desktop applicatie](https://zoom.us/download) aan. 
 
 Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via
 [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren
@@ -39,7 +40,7 @@ toegang hebt tot je eigen applicaties.
 
 Voor deelname aan de workshop vragen we een vergoeding van € 50,- per persoon.
 Daarmee kunnen we voornamelijk in de kosten van zaalhuur en lunch voorzien. De
-reeds geplande workshops staan in de kalender. Mocht je zelf behoefte hebben aan
+reeds geplande workshops staan in de [kalender](/kalender). Mocht je zelf behoefte hebben aan
 een workshop die er niet bij staat, laat het ons dan weten.
 
 ## Bestanden
