@@ -47,9 +47,10 @@ function Hamburger() {
 }
 
 export default function Menu({ items, onOpen, onClose }: Props) {
+  const router = useRouter()
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
-  const router = useRouter()
+  const isEnglish = router.asPath.startsWith("/en/")
 
   useEffect(() => {
     if (open) {
@@ -111,7 +112,7 @@ export default function Menu({ items, onOpen, onClose }: Props) {
               <Close />
             </a>
           </div>
-          <div className={`grid grid-flow-row gap-6 md:!grid md:!grid-flow-col md:gap-12`}>
+          <div className={`grid grid-flow-row items-center gap-6 md:!grid md:!grid-flow-col md:gap-12`}>
             {items.map(item => (<Dropdown
               active={active === item.name}
               key={item.name}
@@ -126,6 +127,11 @@ export default function Menu({ items, onOpen, onClose }: Props) {
                 </a>
               </Link>))}
             </Dropdown>))}
+            <div className="text-white text-sm">
+              <Link href="/"><a className={`font-semibold ${!isEnglish ? "underline" : ""}`}>NL</a></Link>
+              &nbsp;|&nbsp;
+              <Link href="/en"><a className={`font-semibold ${isEnglish ? "underline" : ""}`}>EN</a></Link>
+            </div>
           </div>
         </div>
       </div>
