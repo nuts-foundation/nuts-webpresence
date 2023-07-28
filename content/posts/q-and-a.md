@@ -25,7 +25,7 @@ standaarden implementeren we vervolgens in onze _Open Source_ "Nuts-node".
 
 ## Wat is een Nuts-node?
 
-De Nuts-node is een open-source software referentie-implementatie van de Nuts-specificatie. Iedereen heeft de mogelijkheid om een Nuts-node te ontwikkelen. De Nuts-node draait als applicatie component binnen de infrastructuur van gegevensverwerkende programmatuur. <p><details markdown="1"><summary>Lees verder</summary> Partijen gebruiken het om verbinding te maken met andere Nuts-nodes, waardoor het Nuts-netwerk ontstaat. Het fungeert als een soort sleutelkast die de toegang tot de gegevens van de zorgverlener en haar patiënten bewaakt. Ook is de Nuts-broncode open source beschikbaar om deze te bewerken en te verspreiden op basis van de Nuts-specificatie. De Nuts-node vervult hierin vier kernfuncties die te maken hebben met identiteit, autorisatie, register en logging. Daarbij helpt de Nuts-node bij zaken als het kunnen vinden van de andere nodes en services van leveranciers of zorgaanbieders, het publiceren van gegevens over de eigen diensten, het uitwisselen van autorisaties en het identificeren van gebruikers. Doordat elke partij de Nuts-node zelf kan installeren en beheren, de specificatie en broncode openbaar zijn, hoeft niemand op een derde (centrale) partij te vertrouwen.
+De Nuts-node is een open-source software referentie-implementatie van de Nuts-specificatie. Iedereen heeft de mogelijkheid om een Nuts-node te ontwikkelen. De Nuts-node draait als applicatie component binnen de infrastructuur van gegevensverwerkende programmatuur. Partijen gebruiken het om verbinding te maken met andere Nuts-nodes, waardoor het Nuts-netwerk ontstaat. Het fungeert als een soort sleutelkast die de toegang tot de gegevens van de zorgverlener en haar patiënten bewaakt. Ook is de Nuts-broncode open source beschikbaar om deze te bewerken en te verspreiden op basis van de Nuts-specificatie. De Nuts-node vervult hierin vier kernfuncties die te maken hebben met identiteit, autorisatie, register en logging. Daarbij helpt de Nuts-node bij zaken als het kunnen vinden van de andere nodes en services van leveranciers of zorgaanbieders, het publiceren van gegevens over de eigen diensten, het uitwisselen van autorisaties en het identificeren van gebruikers. Doordat elke partij de Nuts-node zelf kan installeren en beheren, de specificatie en broncode openbaar zijn, hoeft niemand op een derde (centrale) partij te vertrouwen.
 
 ## Is Nuts Open Source?
 
@@ -41,7 +41,7 @@ de software dwingt af dat Nuts vrij beschikbaar is, nu en in de toekomst.
 Nuts is ontstaan vanuit een gedeelde realisatie onder softwareleveranciers: we
 zijn veel tijd kwijt met het bouwen van talloze maatwerk koppelingen tussen onze
 systemen. Deze koppelingen zijn meestal kostbaar, tijdrovend en foutgevoelig en
-worden daardoor in een veel te laag tempo ontwikkeld. <p><details markdown="1"><summary>Lees verder</summary> Hierdoor is het voor veel
+worden daardoor in een veel te laag tempo ontwikkeld. Hierdoor is het voor veel
 zorgverleners niet goed mogelijk om digitaal samen te werken met collega's die
 gebruik maken van een ander ICT-systeem. In 2018 hebben deze leveranciers de
 handen in één geslagen en zijn het Nuts initiatief gestart.
@@ -66,7 +66,7 @@ clienten. Zo blijft het netwerk voor iedereen beschikbaar. Bekijk ons
 ICT leveranciers in de zorg staan allemaal voor dezelfde uitdaging: het leggen
 van een digitaal lijntje met elke andere leverancier. Deze koppelingen leggen we
 nu vaak één-op-één tussen twee leveranciers, wat kostbaar, tijdrovend en
-foutgevoelig is. <p><details markdown="1"><summary>Lees verder</summary> Een softwarepakket onderhoudt al snel tientallen tot honderden
+foutgevoelig is. Een softwarepakket onderhoudt al snel tientallen tot honderden
 verschillende koppelingen met andere leveranciers. Door gebruik te maken van de
 open standaarden en de technologie van Nuts wordt het voor leveranciers veel
 makkelijker en goedkoper om een koppeling te realiseren, en gaan koppelingen
@@ -80,8 +80,7 @@ waarmee de zorg beter kan samenwerken.
 
 Nuts heeft geen verdienmodel. Er is wel een kostenmodel: iedere aangesloten leverancier beheert zijn eigen
 Nuts node. Doorontwikkeling vindt plaats op basis van de behoefte van partijen
-om gegevensuitwisselingen te realiseren.<p><details markdown="1"><summary>Lees verder</summary>
-Door samen te werken aan een gedeelde infrastructuur pakt elke leverancier een
+om gegevensuitwisselingen te realiseren. Door samen te werken aan een gedeelde infrastructuur pakt elke leverancier een
 deel van de rekening op. Dit laat zich terugbetalen in lagere kosten voor het
 bouwen en beheren van koppelingen en het verbeteren van de procesondersteuning
 voor gebruikers.
@@ -127,7 +126,7 @@ maken wij heel dankbaar gebruik van.
 
 De Nuts community bepaalt samen de Nuts standaarden. Deze worden middels
 zogenaamde RFC (Request for Comments) documenten gepubliceerd op de [Nuts-
-specificaties](https://nuts-foundation.gitbook.io/v1/). <p><details markdown="1"><summary>Lees verder</summary> Iedereen kan een
+specificaties](https://nuts-foundation.gitbook.io/v1/). Iedereen kan een
 voorstel indienen. Community leden die al ervaring hebben met het schrijven van
 de specificaties kunnen helpen. Indien een voorstel voldoet aan de Nuts
 uitgangspunten kan deze worden opgenomen in de specificaties. 
@@ -135,7 +134,7 @@ uitgangspunten kan deze worden opgenomen in de specificaties.
 ## Wie test of een leverancier voldoet aan deze specificaties?
 
 De bronhoudende leverancier is zelf verantwoordelijk voor de beveiliging van de
-patiëntgegevens van de klanten. Dat is in het geval van Nuts niet anders. <p><details markdown="1"><summary>Lees verder</summary> Door
+patiëntgegevens van de klanten. Dat is in het geval van Nuts niet anders. Door
 de diverse beveiligingslagen van het Nuts stelsel ligt het risico van een
 beveiligingsincident voornamelijk bij de bronhoudende leverancier. Hierdoor kan
 elke leverancier voor zichzelf een risico-inschatting maken welke aanvullende
