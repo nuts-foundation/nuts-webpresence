@@ -17,6 +17,7 @@ In deze podcast interviewen Mark en Tim interessante mensen uit onze community o
 
 Heb je een vraag naar aanleiding van de podcast, heb je zelf een leuk onderwerp of een gast die goed zou passen? Laat het ons dan weten door een mail te sturen naar [podcast@nuts.nl](mailto:podcast@nuts.nl).
 
-Luister hier meteen de nieuwste aflevering via Spotify:
+Luister hier meteen de nieuwste aflevering via Spotify van twee concurrenten die beiden het grote nut zien :wink: van de Nuts-community en het Nuts-gedachtegoed 
+<iframe src="https://app.springcast.fm/16406/geheelmeesters-gesprekken-thomas-ferguson-mark-weernink" with="100%" height="100% </iframe> 
 
-<iframe src="https://open.spotify.com/embed-podcast/show/59V4WgEKfbWhMvzSf8AKlE" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6zsdfgEhbREQaDZQij7RsW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
