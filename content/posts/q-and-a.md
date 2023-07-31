@@ -22,6 +22,8 @@ uitgangspunten kan zich aansluiten bij Nuts. Op basis van deze uitgangspunten
 verzamelen en ontwikkelen we open standaarden voor samenwerking. Die open
 standaarden implementeren we vervolgens in onze _Open Source_ "Nuts-node".
 
+## Welke "Nuts-termen" kennen we en hoe hangen ze met elkaar samen? 
+Een overzicht vind je in het [document eenheid van taal](https://docs.google.com/document/d/1w2Nt2zBdrUc2ksstbVhB2yhDADa4DfuGD7IVleuYkeg/edit#heading=h.z2q3e3pk79va). 
 
 ## Wat is een Nuts-node?
 
@@ -148,3 +150,4 @@ die het initiatief ondersteunt komt dan op de website. Toegang tot het Nuts-netw
 i.c.m. een PKI Overheid certificaat. Aanvullend wordt een aansluitovereenkomst
 getekend met Stichting Nuts. Hierin worden basis afspraken over bijvoorbeeld
 versie beheer en klachtenafhandeling vastgelegd. 
+
