@@ -4,7 +4,7 @@ title: Q&A
 permalink: /q-and-a/
 ---
 
-# Q&A
+# Q&A 
 
 Op deze pagina hebben we de antwoorden verzameld op vragen die we regelmatig
 tegenkomen. Mis je een vraag? Of wil je ergens over doorpraten? [Stuur ons dan
