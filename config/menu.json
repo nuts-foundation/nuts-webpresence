@@ -19,12 +19,6 @@
           "name": "Veelgestelde vragen",
           "href": "/q-and-a"
         },
-        {
-          "name": "Podcast",
-          "href": "/podcast"
-        }
-      ]
-    },
     {
       "name": "Meedoen",
       "children": [
@@ -33,7 +27,7 @@
           "href": "/community"
         },
         {
-          "name": "Kalender",
+          "name": "Activiteiten",
           "href": "/kalender"
         },
         {
@@ -46,16 +40,29 @@
         }
       ]
     },
+ {
+      "name": "Actueel",
+      "children": [
+        {
+          "name": "Nuts in het nieuws",
+          "href": "/nieuws"
+        },
+        {
+          "name": "Kalender",
+          "href": "/kalender"
+        },
+       {
+          "name": "Podcast",
+          "href": "/podcast"
+        }
+      ]
+    },
     {
       "name": "Over ons",
       "children": [
         {
           "name": "Stichting Nuts",
           "href": "/stichting"
-        },
-        {
-          "name": "Nuts in het nieuws",
-          "href": "/nieuws"
         },
         {
           "name": "Leeswijzer",
