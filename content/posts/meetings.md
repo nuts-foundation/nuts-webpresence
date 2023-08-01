@@ -6,9 +6,10 @@ header_image: meetings
 ---
 
 # Community Meetings
-NUTS maakt het mogelijk dat softwareapplicaties in de zorg met elkaar op een vertrouwelijke, veilige en toegankelijke manier kunnen communiceren. Tijdens onze maandelijkse communitymeetings praten wij je bij over Nuts en aan Nuts gerelateerde onderwerpen.   
+Nuts maakt het mogelijk dat softwareapplicaties in de zorg met elkaar op een vertrouwelijke, veilige en toegankelijke manier kunnen communiceren. Tijdens onze maandelijkse communitymeetings praten wij je bij over Nuts en aan Nuts gerelateerde onderwerpen.   
 
-* Kom naar één van onze meetings (zie de [kalender](/kalender) voor tijden en locaties)
+Kom naar één van onze meetings (zie de [kalender](/kalender) voor tijden en locaties). Je bent welkom zonder voorafgaande inschrijving! 
+Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via info@nuts.nl. De agenda komt uiterlijk 24 uur van tevoren beschikbaar.
 
 Bekijk de meest recente meeting terug op YouTube.
 
