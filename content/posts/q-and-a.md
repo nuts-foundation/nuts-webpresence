@@ -16,7 +16,7 @@ Met de Nuts Wiki ondersteunen wij de community met een toegankelijke plek voor h
 ## Wat is Nuts?
 
 Nuts is een initiatief dat ervoor zorgt dat zorgverleners digitaal kunnen
-samenwerken.Als basis hanteren we een set uitgangspunten, die we hebben gevat
+samenwerken. Als basis hanteren we een set uitgangspunten, die we hebben gevat
 in een [manifest](/manifest). Iedere partij die zich kan vinden in deze
 uitgangspunten kan zich aansluiten bij Nuts. Op basis van deze uitgangspunten
 verzamelen en ontwikkelen we open standaarden voor samenwerking. Die open
