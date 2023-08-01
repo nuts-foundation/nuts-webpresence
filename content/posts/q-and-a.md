@@ -36,7 +36,6 @@ aan verder te werken en om in te zetten voor (commerciële) toepassingen. De
 software van Nuts wordt dus door commerciële partijen ontwikkeld, maar is daarna
 van iedereen. Daardoor kan niemand een monopolie hebben op Nuts. De licentie op
 de software dwingt af dat Nuts vrij beschikbaar is, nu en in de toekomst.
-</details></p>
 
 ## Hoe is Nuts ontstaan?
 
