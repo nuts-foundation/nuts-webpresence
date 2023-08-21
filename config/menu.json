@@ -14,10 +14,9 @@
         {
           "name": "Veelgestelde vragen",
           "href": "/q-and-a"
-        },
+        }
       ]
     },
-
     {
       "name": "Meedoen",
       "children": [
@@ -29,19 +28,20 @@
           "name": "Activiteiten",
           "href": "/kalender"
         },
-  {
+        {
           "name": "Aansluiten Nuts",
           "href": "/deelnemers-netwerk"
         },
-   {
+        {
           "name": "Documentatie",
           "href": "/documentatie"
         }
-
-   {
+      ]
+    },
+    {
       "name": "Actueel",
       "children": [
-           {
+        {
           "name": "Nuts in het nieuws",
           "href": "/nieuws"
         },
@@ -53,7 +53,6 @@
           "name": "Podcast",
           "href": "/podcast"
         }
-     
       ]
     },
     {
