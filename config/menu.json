@@ -14,7 +14,12 @@
         {
           "name": "Veelgestelde vragen",
           "href": "/q-and-a"
+        },
+        {
+          "name": "Deelnemers",
+          "href": "/deelnemers-netwerk"
         }
+
       ]
     },
     {
@@ -30,7 +35,7 @@
         },
         {
           "name": "Aansluiten Nuts",
-          "href": "/deelnemers-netwerk"
+          "href": "/aansluiten"
         },
         {
           "name": "Documentatie",
