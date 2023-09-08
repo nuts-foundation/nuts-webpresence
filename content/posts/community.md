@@ -26,7 +26,7 @@ beschikbaar.
 
 Daarnaast hebben we voor tussen de meetings door een Slack workspace waarin we
 met elkaar kunnen samenwerken. Om toegevoegd te worden aan de Slack workspace
-kun je [deze link volgen](https://join.slack.com/t/nuts-foundation/shared_invite/zt-1yd0pvbpw-3AyBQ8uWbM1EYCdDny~Ahw).
+kun je [deze link volgen](https://join.slack.com/t/nuts-foundation/shared_invite/zt-235ww08nk-halwcet23WCHclmlFd0lLg).
 
 ## Workshops
 
