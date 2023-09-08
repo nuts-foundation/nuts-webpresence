@@ -11,6 +11,7 @@ _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
 Index:
 * [Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts](#20230818)
+* [Kamerbrief over landelijk dekkend netwerk infrastructuren](#20230413)
 * [Twiin & Nuts schrijven gezamenlijk groeipad](#20221018)
 * [Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen](#20200130)
 * [Persbericht: ICT leveranciers community Centrale voorzieningen goes Nuts.](#20200120)
@@ -37,8 +38,15 @@ We bieden het daarom met goedkeuring van de auteurs en opdrachtgevers hier graag
 Vragen specifiek over het rapport kunnen gesteld worden via
 eoverdracht@ictu.nl, overige vragen over Nuts kunnen gesteld worden via info@nuts.nl.
 
-<a name="20221018"></a>
 
+<a name="20230413"></a>
+### 13 april 2023 - Kamerbrief over landelijk dekkend netwerk infrastructuren
+Nuts is in gesprek met VWS en Twiin hoe we samen het groeipad zoals in de brief genoemd gaan uitwerken in vertrouwensmodel en specifieke projecten om de verbindingen tussen bestaande infrastructuren en de Nuts open specificaties te maken de komende jaren. Zodat, en dat is het doel, deze stap voor stap gebruik kunnen gaan maken van internationale open standaarden om een gedistribueerd netwerk te vormen. Investeren in Nuts is investeren in toepassing van internationale open standaarden voor schaalbare gegevensuitwisseling zorgdomeinoverstijgend.
+
+[Download hier het rapport](https://www.rijksoverheid.nl/documenten/kamerstukken/2023/04/13/kamerbrief-over-landelijk-dekkend-netwerk-van-infrastructuren)
+
+
+<a name="20221018"></a>
 ### 18 oktober 2022 - Twiin & Nuts schrijven gezamenlijk groeipad.
 
 **Nuts** wordt voor steeds meer zorgtoepassingen als infrastructuur gebruikt, waaronder voor de verpleegkundige overdracht (eOverdracht).
