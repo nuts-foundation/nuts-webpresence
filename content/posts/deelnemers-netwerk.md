@@ -36,6 +36,11 @@ Dit zijn de deelnemers met een actuele aansluitovereenkomst met stichting Nuts.
             <td><a href="mailto:eric.smith@bovenmaasprenataal.com">eric.smith@bovenmaasprenataal.com</a></td>
         </tr>
         <tr>
+            <td><a href="https://www.careconnections.nl/">CareConnections B.V.</a></td>
+            <td>Jos Koppelaar</td>
+            <td><a href="mailto:jos@careconnections.nl">jos@careconnections.nl</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www2.deloitte.com/nl/nl/services/consulting-deloitte.html">Deloitte Consulting bv</a></td>
             <td>Maurice Fransen</td>
             <td><a href="mailto:mfransen@deloitte.nl">mfransen@deloitte.nl</a></td>
