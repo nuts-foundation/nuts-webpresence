@@ -18,7 +18,8 @@ In de Nuts podcast interviewen Mark en Tim interessante mensen uit onze communit
 Heb je een vraag naar aanleiding van de podcast, heb je zelf een leuk onderwerp of een gast die goed zou passen? Laat het ons dan weten door een mail te sturen naar [podcast@nuts.nl](mailto:podcast@nuts.nl).
 
 ## Geheelmeesters gesprekken
-Beluister het Geheelmeesters gesprek via Spotify van twee concurrenten, die beiden het grote nut zien van de Nuts-community en het Nuts-gedachtegoed. 
-<iframe src="https://app.springcast.fm/16406/geheelmeesters-gesprekken-thomas-ferguson-mark-weernink" with="100%" height="100%"></iframe> 
+Beluister het Geheelmeesters gesprek via Spotify van twee concurrenten, die beiden het grote nut zien van de Nuts-community en het Nuts-gedachtegoed.
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6zsdfgEhbREQaDZQij7RsW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe src="https://app.springcast.fm/player/episode/65513?theme=springcast" width="100%" height="260" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6zsdfgEhbREQaDZQij7RsW?utm_source=generator" width="100%" height="260" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
