@@ -34,13 +34,15 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
 ## Documenten
 
+  * [Brief eerste kamer Wegiz](/assets/downloads/Brief%20eerste%20kamer%20Wegiz-20230223.pdf)
+  * [Brief tweede kamer Wegiz](/assets/downloads/Brief%20tweede%20kamer%20Wegiz-20230114.pdf)
+  * [Brief CIBG - Verzoek tot cryptografisch ontsluiten van het LRZa](/assets/downloads/20210311%20Brief%20CIBG%20-%20Cryptografisch%20ontsluiten%20van%20LRZa.pdf)
   * [Beleidsplan 2020](/assets/downloads/Beleidsplan%202020.pdf)
   * [Jaarrekening 2019](/assets/downloads/Jaarrekening%202019.pdf)
   * [Activiteitenoverzicht 2019](/assets/downloads/Activiteiten%202019.pdf)
   * [Reactie op consultatie online toestemmingsvoorziening](/assets/downloads/Reactie%20Stichting%20Nuts%20op%20open%20consultatie%20voor%20online%20toestemmingsvoorziening.pdf)
   * [Brief Tweede Kamer - Oproep tot onderzoek haalbaarheid decentraal zorgnetwerk](/assets/downloads/Brief%20tweede%20kamer%20AO%208%20oktober%202020.pdf)
   * [Reactie op consultatie ZORG-AB](/assets/downloads/Reactie%20Stichting%20Nuts%20op%20open%20consultatie%20voor%20Zorg-AB.pdf)
-  * [Brief CIBG - Verzoek tot cryptografisch ontsluiten van het LRZa](/assets/downloads/20210311%20Brief%20CIBG%20-%20Cryptografisch%20ontsluiten%20van%20LRZa.pdf)
 
 ## Contactinformatie
 
