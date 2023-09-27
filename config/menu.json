@@ -12,17 +12,14 @@
           "href": "/manifest"
         },
         {
-          "name": "Deelnemers netwerk",
-          "href": "/deelnemers-netwerk"
-        },
-        {
           "name": "Veelgestelde vragen",
           "href": "/q-and-a"
         },
         {
-          "name": "Podcast",
-          "href": "/podcast"
+          "name": "Deelnemers",
+          "href": "/deelnemers-netwerk"
         }
+
       ]
     },
     {
@@ -33,16 +30,33 @@
           "href": "/community"
         },
         {
-          "name": "Kalender",
+          "name": "Activiteiten",
           "href": "/kalender"
         },
         {
-          "name": "Software",
-          "href": "/software"
+          "name": "Aansluiten Nuts",
+          "href": "/aansluiten"
         },
         {
           "name": "Documentatie",
           "href": "/documentatie"
+        }
+      ]
+    },
+    {
+      "name": "Actueel",
+      "children": [
+        {
+          "name": "Nuts in het nieuws",
+          "href": "/nieuws"
+        },
+        {
+          "name": "Kalender",
+          "href": "/kalender"
+        },
+        {
+          "name": "Podcast",
+          "href": "/podcast"
         }
       ]
     },
@@ -52,10 +66,6 @@
         {
           "name": "Stichting Nuts",
           "href": "/stichting"
-        },
-        {
-          "name": "Nuts in het nieuws",
-          "href": "/nieuws"
         },
         {
           "name": "Leeswijzer",
