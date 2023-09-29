@@ -47,6 +47,10 @@
       "name": "Actueel",
       "children": [
         {
+          "name": "Meetings",
+          "href": "/meetings"
+        },
+        {
           "name": "Nuts in het nieuws",
           "href": "/nieuws"
         },
