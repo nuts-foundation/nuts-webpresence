@@ -16,8 +16,7 @@ export default function Footer({ items }: Props) {
             <a href={href} className="text-white hover:underline">{name}</a>
           </div>))}
         </div>))}
-        <div className="text-center sm:text-left col-span-12 pt-5 md:pt-0 sm:col-span-6 md:col-span-3 space-y-5">
-        
+      </div>
     </div>
     <div className="bg-dark py-8">
       <div className="text-white container mx-auto flex justify-between items-center">
