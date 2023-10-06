@@ -14,19 +14,20 @@ dat we elkaar kunnen ontmoeten en informeren over de voortgang.
 ## De Nuts community meetings 
 
 Wil jij ook deelnemen aan één van onze Nuts community meetings? Je bent welkom zonder voorafgaande inschrijving. De link voor toegang tot de online
-meeting staat in de [kalender-afspraak](/kalender).
-
-We maken gebruik van de videoconferentie tool Zoom. Zo kun je direct via je browser online deelnemen en is het niet nodig om extra software te installeren. 
-Voor extra functionaliteiten zoals het delen van je desktop raden we het installeren van de 
+meeting staat in de [kalender-afspraak](/kalender). We maken gebruik van de videoconferentie tool Zoom. Zo kun je direct via je browser online deelnemen en is het niet nodig om extra software te installeren. Voor extra functionaliteiten zoals het delen van je desktop raden we het installeren van de 
 [Zoom desktop applicatie](https://zoom.us/download) aan. 
 
+### Agendapunten
 Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via
 [info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren
 beschikbaar.
 
-Daarnaast hebben we voor tussen de meetings door een Slack workspace waarin we
-met elkaar kunnen samenwerken. Om toegevoegd te worden aan de Slack workspace
+### Samenwerken in Slack 
+Tussen de meetings door werken wij samen via de communicatietool Slack. Om toegevoegd te worden aan de Slack workspace
 kun je [deze link volgen](https://join.slack.com/t/nuts-foundation/shared_invite/zt-235ww08nk-halwcet23WCHclmlFd0lLg).
+
+### Nuts community meeting gemist?
+[Je kunt onze opgenomen Nuts community meetings terugvinden op ons YouTube-kanaal](https://www.youtube.com/playlist?list=PLQSr77NH0YwWhGNZpLLrNATib07dZ9cZl).
 
 ## Workshops
 
@@ -57,3 +58,5 @@ De online meetings worden opgenomen en kun je terugkijken via ons [YouTube
 kanaal](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ). Ook zijn
 andere relevante opnames terug te vinden, zoals uitleg over technische concepten
 en componenten die we in de open source community ontwikkelen.
+
+
