@@ -43,7 +43,7 @@ eoverdracht@ictu.nl, overige vragen over Nuts kunnen gesteld worden via info@nut
 ### 13 april 2023 - Kamerbrief over landelijk dekkend netwerk infrastructuren
 Nuts is in gesprek met VWS en Twiin hoe we samen het groeipad zoals in de brief genoemd gaan uitwerken in vertrouwensmodel en specifieke projecten om de verbindingen tussen bestaande infrastructuren en de Nuts open specificaties te maken de komende jaren. Zodat, en dat is het doel, deze stap voor stap gebruik kunnen gaan maken van internationale open standaarden om een gedistribueerd netwerk te vormen. Investeren in Nuts is investeren in toepassing van internationale open standaarden voor schaalbare gegevensuitwisseling zorgdomeinoverstijgend.
 
-[Download hier het rapport](https://www.rijksoverheid.nl/documenten/kamerstukken/2023/04/13/kamerbrief-over-landelijk-dekkend-netwerk-van-infrastructuren)
+[Download hier de brief](https://www.rijksoverheid.nl/documenten/kamerstukken/2023/04/13/kamerbrief-over-landelijk-dekkend-netwerk-van-infrastructuren)
 
 
 <a name="20221018"></a>
