@@ -72,6 +72,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:diederen@nlcom.nl">diederen@nlcom.nl</a></td>
         </tr>
         <tr>
+            <td><a href="https://parsek.com/">Parsek</a></td>
+            <td>Gasper Andrejc</td>
+            <td><a href="mailto:healthcare@parsek.com">healthcare@parsek.com</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.pinkroccade-healthcare.nl/">PinkRoccade Care</a></td>
             <td>Mark Byrman</td>
             <td><a href="mailto:mark.byrman@pinkroccade.nl">mark.byrman@pinkroccade.nl</a></td>
