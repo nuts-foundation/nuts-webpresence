@@ -56,3 +56,13 @@ article.prose details>summary:after {
     display: inline-block;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjRTc0RTNCIi8+CjxwYXRoIGQ9Ik0xMiAxNkw2LjgwMzg1IDkuMjVMMTcuMTk2MiA5LjI1TDEyIDE2WiIgZmlsbD0iI0YxRjFFQSIvPgo8L3N2Zz4K);
 }
+
+/* Styles for the "sponsors.md" page */
+div.sponsors img {
+    max-height: 70px;
+    max-width: 150px;
+}
+
+div.sponsors td {
+    vertical-align: middle;
+}
