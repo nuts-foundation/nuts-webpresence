@@ -17,7 +17,7 @@ Om de stichting en de community te ondersteunen haar doelen te halen heeft het b
 | Niveau         | Sponsor           | Logo                                                  |
 |----------------|-------------------|-------------------------------------------------------|
 | Goud sponsor   | Adapcare          | ![Adapcare logo](/logos/adapcare.svg)                 |
-| Goud sponsor   | eCare             | ![eCare logo](/logos/eCare.png)                       |
+| Goud sponsor   | eCare             | ![eCare logo](/logos/ecare.png)                       |
 | Goud sponsor   | Gerimedica        | ![Gerimedica logo](/logos/gerimedica.png)             |
 | Goud sponsor   | Nedap Healthcare  | ![Nedap Healthcare logo](/logos/nedap-healthcare.png) |
 | Zilver sponsor | Hinq              | ![Hinq logo](/logos/hinq.png)                         |
