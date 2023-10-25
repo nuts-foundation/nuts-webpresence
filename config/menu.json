@@ -18,8 +18,11 @@
         {
           "name": "Deelnemers",
           "href": "/deelnemers-netwerk"
+        },
+        {
+          "name": "Sponsors",
+          "href": "/sponsors"
         }
-
       ]
     },
     {
