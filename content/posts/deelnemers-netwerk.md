@@ -47,6 +47,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:dennis.snippert@ecare.nl">dennis.snippert@ecare.nl</a></td>
         </tr>
         <tr>
+            <td><a href="https://enovationgroup.com/nl/">Enovation B.V.</a></td>
+            <td>Anne Roeleveld</td>
+            <td><a href="mailto:anne.roeleveld@enovationgroup.com">anne.roeleveld@enovationgroup.com</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.gerimedica.nl">Gerimedica</a></td>
             <td>Titia van Malestein</td>
             <td><a href="mailto:t.vanmalestein@gerimedica.nl">t.vanmalestein@gerimedica.nl</a></td>
@@ -85,6 +90,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="https://www.sdbgroep.nl">SDBGroep</a></td>
             <td>Bart Rings</td>
             <td><a href="mailto:ecd@sdbgroep.nl">ecd@sdbgroep.nl</a></td>
+        </tr>
+         <tr>
+            <td><a href="https://syntilio.com/nl">Syntilio B.V.</a></td>
+            <td>Raoul Zaal</td>
+            <td><a href="mailto:raoul@syntilio.com">raoul@syntilio.com</a></td>
         </tr>
         <tr>
             <td><a href="https://tenzinger.com/">Tenzinger</a></td>
