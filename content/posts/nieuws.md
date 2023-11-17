@@ -10,7 +10,7 @@ header_image: press
 _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
 Index:
-* [Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts](#20230818)
+* [Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts](#Rapportage-Hooghiemstra-Partners-Nuts)
 * [Kamerbrief over landelijk dekkend netwerk infrastructuren](#20230413)
 * [Twiin & Nuts schrijven gezamenlijk groeipad](#20221018)
 * [Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen](#20200130)
@@ -19,7 +19,7 @@ Index:
 
 <hr/>
 
-<a name="20230818"></a>
+<a name="Rapportage-Hooghiemstra-Partners-Nuts"></a>
 ### 18 augustus 2023 - Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts 
 
 Het recent verschene rapport van Hooghiemstra en Partners in opdracht van VWS, beschrijft op
