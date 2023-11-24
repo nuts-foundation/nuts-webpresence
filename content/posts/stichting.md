@@ -28,7 +28,7 @@ De missie van de Nuts-community is een nutsvoorziening te bieden aan de zorgsect
 Open-source betekent dat de broncode toegankelijk is voor iedereen, waardoor er geen monopolie kan worden gecreëerd op de Nuts-specificatie of de Nuts-node. De licentie van de software (Creative Commons) garandeert dat de referentie-implementatie zonder kosten beschikbaar is, zowel nu als in de toekomst. 
 
 ## Onze missie
-De missie van de Nuts-community is een nutsvoorziening te bieden aan de zorgsector om de informatiedeling in de zorg te verbeteren en optimale samenwerking te ondersteunen. Een nutsvoorziening in het algemeen belang door inzet van internationale open standaarden, open specificaties en een open-source software referentie-implementatie in de vorm van broncode en een nuts-Node voor iedereen en daardoor ook ván iedereen. Voor het algemeen nut, en dat is ook wat de Nuts-community beoogt.
+De missie van de Nuts-community is een nutsvoorziening te bieden aan de zorgsector om de informatiedeling in de zorg te verbeteren en optimale samenwerking te ondersteunen. Een nutsvoorziening in het algemeen belang door inzet van internationale open standaarden, open specificaties en een open-source software referentie-implementatie in de vorm van broncode en een Nuts-node voor iedereen en daardoor ook ván iedereen. Voor het algemeen nut, en dat is ook wat de Nuts-community beoogt.
 
 Open-source betekent dat de broncode toegankelijk is voor iedereen, waardoor er geen monopolie kan worden gecreëerd op de Nuts-specificatie of de Nuts-node. De licentie van de software (GPLv3) garandeert dat de referentie-implementatie zonder kosten beschikbaar is, zowel nu als in de toekomst.
 
