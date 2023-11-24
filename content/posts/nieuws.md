@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Nieuws- en persberichten
+title: Nieuws- en persberichten Nuts
+Description: Nieuws en persberichten - Nuts maakt dat softwareapplicaties in de zorg kunnen communiceren.
 permalink: /nieuws/
 header_image: press
 ---
@@ -11,11 +12,11 @@ _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
 Index:
 * [Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts](#Rapportage-Hooghiemstra-Partners-Nuts)
-* [Kamerbrief over landelijk dekkend netwerk infrastructuren](#20230413)
-* [Twiin & Nuts schrijven gezamenlijk groeipad](#20221018)
-* [Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen](#20200130)
-* [Persbericht: ICT leveranciers community Centrale voorzieningen goes Nuts.](#20200120)
-* [Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren](#20181203)
+* [Kamerbrief over landelijk dekkend netwerk infrastructuren](#Kamerbrief-landelijke-dekkend-netwerk-infrastructuren)
+* [Twiin & Nuts schrijven gezamenlijk groeipad](#Twiin-Nuts-gezamenlijke-groeipad)
+* [Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen](#Stichting-Nuts-Nederlandse-Privacy-Award-bedrijfsoplossingen)
+* [Persbericht: ICT leveranciers community Centrale voorzieningen goes Nuts.](#ICT-leveranciers-community-centrale-voorzieningen-goes-Nuts)
+* [Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren](#Zorg-it-leveranciers-decentraal-communicatienetwerk-zorg)
 
 <hr/>
 
@@ -39,14 +40,14 @@ Vragen specifiek over het rapport kunnen gesteld worden via
 eoverdracht@ictu.nl, overige vragen over Nuts kunnen gesteld worden via info@nuts.nl.
 
 
-<a name="20230413"></a>
+<a name="Kamerbrief-landelijke-dekkend-netwerk-infrastructuren"></a>
 ### 13 april 2023 - Kamerbrief over landelijk dekkend netwerk infrastructuren
 Nuts is in gesprek met VWS en Twiin hoe we samen het groeipad zoals in de brief genoemd gaan uitwerken in vertrouwensmodel en specifieke projecten om de verbindingen tussen bestaande infrastructuren en de Nuts open specificaties te maken de komende jaren. Zodat, en dat is het doel, deze stap voor stap gebruik kunnen gaan maken van internationale open standaarden om een gedistribueerd netwerk te vormen. Investeren in Nuts is investeren in toepassing van internationale open standaarden voor schaalbare gegevensuitwisseling zorgdomeinoverstijgend.
 
 [Download hier de brief](https://www.rijksoverheid.nl/documenten/kamerstukken/2023/04/13/kamerbrief-over-landelijk-dekkend-netwerk-van-infrastructuren)
 
 
-<a name="20221018"></a>
+<a name="Twiin-Nuts-gezamenlijke-groeipad"></a>
 ### 18 oktober 2022 - Twiin & Nuts schrijven gezamenlijk groeipad.
 
 **Nuts** wordt voor steeds meer zorgtoepassingen als infrastructuur gebruikt, waaronder voor de verpleegkundige overdracht (eOverdracht).
@@ -62,7 +63,7 @@ Wil je meer weten? [Download dan hier het rapport](/assets/downloads/TxN%202026%
 
 <hr/>
 
-<a name="20200130"></a>
+<a name="Stichting-Nuts-Nederlandse-Privacy-Award-bedrijfsoplossingen"></a>
 
 ### 30 januari 2020 - Persbericht: Stichting NUTS wint Nederlandse Privacy Award categorie bedrijfsoplossingen.
 
@@ -89,7 +90,7 @@ De Nationale Privacy Conferentie is een initiatief van ECP - Platform voor de In
 
 <hr/>
 
-<a name="20200120"></a>
+<a name="ICT-leveranciers-community-centrale-voorzieningen-goes-Nuts"></a>
 
 ### 20 januari 2020 - Persbericht: ICT leveranciers community Centrale voorzieningen goes Nuts.
 
@@ -127,7 +128,7 @@ Centrale voorzieningen is een samenwerkingsverband met als doel om pre-concurren
 
 <hr/>
 
-<a name="20181203"></a>
+<a name="Zorg-it-leveranciers-decentraal-communicatienetwerk-zorg"></a>
 
 ### 3 december 2018 - Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren.
 
