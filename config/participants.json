@@ -1,7 +1,7 @@
 [
   {
     "title": "Adapcare",
-    "logoUrl": "/logos/adapcare.png",
+    "logoUrl": "/logos/Adapcare.png",
     "url": "https://www.adapcare.nl/"
   }, 
  {
@@ -31,10 +31,9 @@
   },
  {
     "title": "Firefly",
-    "logoUrl": "/logos/firely.jpg",
+    "logoUrl": "/logos/Firely.jpg",
     "url": "https://fire.ly/"
   },
-
   {
     "title": "Gerimedica",
     "logoUrl": "/logos/gerimedica.png",
@@ -142,10 +141,9 @@
   },
 {
     "title": "Parsek",
-    "logoUrl": "/logos/parsek.svg",
+    "logoUrl": "/logos/Parsek.svg",
     "url": "https://pact.care/"
   },
-
   {
     "title": "Pinkroccare Care",
     "logoUrl": "/logos/pink.png",
