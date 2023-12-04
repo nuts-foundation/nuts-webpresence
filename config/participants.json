@@ -1,5 +1,10 @@
 [
   {
+    "title": "Adapcare",
+    "logoUrl": "/logos/Adapcare.png",
+    "url": "https://www.adapcare.nl/"
+  }, 
+ {
     "title": "Avinty",
     "logoUrl": "/logos/avinty.png",
     "url": "https://www.avinty.com/"
@@ -28,6 +33,11 @@
     "title": "Enovation",
     "logoUrl": "/logos/enovation.png",
     "url": "https://www.enovationgroup.com/"
+  },
+ {
+    "title": "Firefly",
+    "logoUrl": "/logos/Firely.jpg",
+    "url": "https://fire.ly/"
   },
   {
     "title": "Gerimedica",
@@ -84,6 +94,11 @@
     "logoUrl": "/logos/lable.png",
     "url": "https://www.lablecare.nl/"
   },
+ {
+    "title": "Medikit",
+    "logoUrl": "/logos/medikit.png",
+    "url": "https://meditools.nl/"
+  }, 
   {
     "title": "Mextra",
     "logoUrl": "/logos/mextra.png",
@@ -124,6 +139,11 @@
     "logoUrl": "/logos/pact.png",
     "url": "https://pact.care/"
   },
+{
+    "title": "Parsek",
+    "logoUrl": "/logos/Parsek.svg",
+    "url": "https://pact.care/"
+  },
   {
     "title": "Pinkroccare Care",
     "logoUrl": "/logos/pink.png",
@@ -143,6 +163,11 @@
     "title": "SDB Groep",
     "logoUrl": "/logos/sdb.png",
     "url": "https://www.sdbgroep.nl/"
+  },
+ {
+    "title": "Syntilio",
+    "logoUrl": "/logos/syntilio.svg",
+    "url": "https://https://syntilio.com/nl/"
   },
   {
     "title": "Tenzinger",
