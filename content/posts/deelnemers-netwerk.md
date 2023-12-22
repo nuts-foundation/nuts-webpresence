@@ -48,8 +48,8 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
         </tr>
         <tr>
             <td><a href="https://enovationgroup.com/nl/">Enovation B.V.</a></td>
-            <td>Anne Roeleveld</td>
-            <td><a href="mailto:anne.roeleveld@enovationgroup.com">anne.roeleveld@enovationgroup.com</a></td>
+            <td>Daniël Schut</td>
+            <td><a href="mailto:daniel.schut@enovationgroup.com">daniel.schut@enovationgroup.com</a></td>
         </tr>
         <tr>
             <td><a href="https://www.gerimedica.nl">Gerimedica</a></td>
