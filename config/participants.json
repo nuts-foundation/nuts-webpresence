@@ -4,7 +4,7 @@
     "logoUrl": "/logos/Adapcare.png",
     "url": "https://www.adapcare.nl/"
   }, 
- {
+  {
     "title": "Avinty",
     "logoUrl": "/logos/avinty.png",
     "url": "https://www.avinty.com/"
@@ -34,7 +34,7 @@
     "logoUrl": "/logos/enovation.png",
     "url": "https://www.enovationgroup.com/"
   },
- {
+  {
     "title": "Firefly",
     "logoUrl": "/logos/Firely.jpg",
     "url": "https://fire.ly/"
@@ -96,7 +96,7 @@
   },
   {
     "title": "Linksight",
-    "logoUrl": "logos/linksight.svg",
+    "logoUrl": "/logos/linksight.svg",
     "url": "https://www.linksight.nl/"
   },
   {
@@ -144,7 +144,7 @@
     "logoUrl": "/logos/pact.png",
     "url": "https://pact.care/"
   },
-{
+  {
     "title": "Parsek",
     "logoUrl": "/logos/Parsek.svg",
     "url": "https://pact.care/"
@@ -168,6 +168,11 @@
     "title": "SDB Groep",
     "logoUrl": "/logos/sdb.png",
     "url": "https://www.sdbgroep.nl/"
+  },
+  {
+    "title": "Solid Community",
+    "logoUrl": "/logos/solid-community.png",
+    "url": "https://www.solidcommunity.nl/"
   },
  {
     "title": "Syntilio",
