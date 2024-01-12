@@ -18,7 +18,7 @@ dan gebruik van één van deze contactmogelijkheden:
 ## Social media 
 Of verbind met ons op sociale media:
 
-[![LinkedIN](https://github.com/nuts-foundation/nuts-webpresence/blob/master/public/images/LinkedIn-Nuts.svg)](https://linkedin.com/company/stichting-nuts)
+[![LinkedIn](https://github.com/nuts-foundation/nuts-webpresence/blob/master/public/images/LinkedIn-Nuts.svg)](https://linkedin.com/company/stichting-nuts)
 [![YouTube](https://github.com/nuts-foundation/nuts-webpresence/blob/master/public/images/Youtube-Nuts.svg)](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ)
 [![Podcast](https://github.com/nuts-foundation/nuts-webpresence/blob/master/public/images/Podcast-Nuts.svg)](/podcast)
 
