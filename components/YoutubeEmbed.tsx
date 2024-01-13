@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/future/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
 import Play from "../icons/play.svg";
