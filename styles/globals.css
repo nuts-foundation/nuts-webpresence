@@ -66,3 +66,12 @@ div.sponsors img {
 div.sponsors td {
     vertical-align: middle;
 }
+
+/* Styles for the "6-bottom-call-to-action.md" page */
+div.call-to-action img {
+    display: inline-block;
+    line-height: 150%;
+}
+div.call-to-action p {
+    margin-top: 15px;
+}
