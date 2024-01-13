@@ -8,11 +8,8 @@ interface Props {
 }
 
 export default function Button({ secondary, href, children }: Props) {
-  return (<Link href={href}>
-    <a href={""}
-      className={`inline-block px-6 py-3 rounded-full text-sm font-inter transition-colors ${secondary ? "bg-button hover:bg-button-hover" : "bg-brand hover:bg-dark text-white"}`}>
+  return (<Link href={href} className={`inline-block px-6 py-3 rounded-full text-sm font-inter transition-colors ${secondary ? "bg-button hover:bg-button-hover" : "bg-brand hover:bg-dark text-white"}`}>
       {children}
-    </a>
   </Link>);
 }
 

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image, { StaticImageData } from "next/future/image"
+import Image, { StaticImageData } from "next/image"
 import Markdown from "../components/Markdown"
 
 import Arrow from "../icons/arrow.svg"

@@ -95,9 +95,7 @@ export default function Menu({ items, onOpen, onClose }: Props) {
   return (<div className="bg-brand relative py-4 h-16 backdrop-filter-none md:h-auto">
     <div className="container mx-auto flex justify-between items-center">
       <Link href="/">
-        <a>
-          <Logo />
-        </a>
+        <Logo />
       </Link>
 
       <div className="md:hidden" onClick={click}>
@@ -121,16 +119,15 @@ export default function Menu({ items, onOpen, onClose }: Props) {
             >
               {item.children.map(child => (<Link
                 href={child.href}
-                key={child.href}>
-                <a className="block px-3.5 py-3 md:py-4 text-dark-gray align-baseline text-sm md:transition-colors md:bg-white md:hover:bg-menu-hover md:hover:text-brand">
+                key={child.href}
+                className="block px-3.5 py-3 md:py-4 text-dark-gray align-baseline text-sm md:transition-colors md:bg-white md:hover:bg-menu-hover md:hover:text-brand">
                   {child.name}
-                </a>
               </Link>))}
             </Dropdown>))}
             <div className="text-white text-sm">
-              <Link href="/"><a className={`font-semibold ${!isEnglish ? "underline" : ""}`}>NL</a></Link>
+              <Link href="/" className={`font-semibold ${!isEnglish ? "underline" : ""}`}>NL</Link>
               &nbsp;|&nbsp;
-              <Link href="/en"><a className={`font-semibold ${isEnglish ? "underline" : ""}`}>EN</a></Link>
+              <Link href="/en" className={`font-semibold ${isEnglish ? "underline" : ""}`}>EN</Link>
             </div>
           </div>
         </div>
