@@ -109,7 +109,7 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
         <div className="mx-auto text-center max-w-lg">
           <div>
             <Heading>{callToAction.meta["title"]}</Heading>
-            <Markdown className="font-inter leading-loose mb-8" html={callToAction.content} />
+            <Markdown className="font-inter leading-loose mb-8 call-to-action" html={callToAction.content} />
 
             <form action="https://nuts.us19.list-manage.com/subscribe/post?u=3e7256ff066373fd17657bba0&id=f44bdb4b26" method="POST">
               <InputButton inputName="EMAIL" placeholderText="Vul hier je e-mailadres in" buttonText="Houd me op de hoogte!" buttonType="submit" />
