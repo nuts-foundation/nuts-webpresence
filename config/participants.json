@@ -90,6 +90,16 @@
     "url": "https://www.kiesz.nl/"
   },
   {
+    "title": "KPN",
+    "logoUrl": "/logos/kpn.svg",
+    "url": "https://www.kpn.com/zakelijk/branches/zorg/"
+  },
+  {
+    "title": "KPN",
+    "logoUrl": "/logos/kpn-health.svg",
+    "url": "https://www.kpn.com/zakelijk/branches/zorg/"
+  },
+  {
     "title": "Lable Care",
     "logoUrl": "/logos/lable.png",
     "url": "https://www.lablecare.nl/"
