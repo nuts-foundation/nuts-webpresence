@@ -101,6 +101,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td>Frans Plaisier</td>
             <td><a href="mailto:frans.plaisier@tenzinger.com">frans.plaisier@tenzinger.com</a></td>
         </tr>
+         <tr>
+            <td><a href="https://topicus.nl/sectoren/zorg">Topicus</a></td>
+            <td>Hugo Brand</td>
+            <td><a href="mailto:hugo.brand@topicus.nl">hugo.brand@topicus.nl</a></td>
+        </tr>
         <tr>
             <td><a href="https://tribeagency.nl/">Tribe Agency B.V.</a></td>
             <td>Daan Gönning</td>
