@@ -1,0 +1,113 @@
+{
+  "links": [
+    {
+      "name": "Het initiatief",
+      "children": [
+        {
+          "name": "Position paper",
+          "href": "/position-paper"
+        },
+        {
+          "name": "Manifest",
+          "href": "/manifest"
+        },
+        {
+          "name": "Veelgestelde vragen",
+          "href": "/q-and-a"
+        },
+        {
+          "name": "Deelnemers",
+          "href": "/deelnemers-netwerk"
+        },
+        {
+          "name": "Sponsors",
+          "href": "/sponsors"
+        },
+        {
+          "name": "Nuts webshop",
+          "href": "https://nuts.myspreadshop.nl"
+        }
+      ]
+    },
+    {
+      "name": "Meedoen",
+      "children": [
+        {
+          "name": "Community",
+          "href": "/community"
+        },
+        {
+          "name": "Activiteiten",
+          "href": "/kalender"
+        },
+        {
+          "name": "Aansluiten Nuts",
+          "href": "/aansluiten"
+        },
+        {
+          "name": "Documentatie",
+          "href": "/documentatie"
+        }
+      ]
+    },
+    {
+      "name": "Actueel",
+      "children": [
+        {
+          "name": "Nuts in het nieuws",
+          "href": "/nieuws"
+        },
+        {
+          "name": "Kalender",
+          "href": "/kalender"
+        },
+        {
+          "name": "Podcast",
+          "href": "/podcast"
+        }
+      ]
+    },
+    {
+      "name": "Over ons",
+      "children": [
+        {
+          "name": "Stichting Nuts",
+          "href": "/stichting"
+        },
+        {
+          "name": "Leeswijzer",
+          "href": "/leeswijzer"
+        },
+        {
+          "name": "Voor de pers",
+          "href": "/pers"
+        },
+        {
+          "name": "Privacy policy",
+          "href": "/privacy-policy"
+        },
+        {
+          "name": "Contact",
+          "href": "/contact"
+        }
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "href": "https://linkedin.com/company/stichting-nuts",
+      "icon": "/images/linkedin-nuts.svg"
+    },
+    {
+      "name": "YouTube",
+      "href": "https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ",
+      "icon": "/images/youtube-nuts.svg"
+    },
+    {
+      "name": "Podcast",
+      "href": "/podcast",
+      "icon": "/images/podcast-nuts.svg"
+    }
+  ]
+}

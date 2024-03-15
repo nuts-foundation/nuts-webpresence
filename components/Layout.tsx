@@ -16,6 +16,6 @@ export default function Layout({ children }: Props) {
     <div className="grow">
       {children}
     </div>
-    <Footer items={config.footer.links} />
+    <Footer items={config.footer.links} socials={config.footer.socials} />
   </div>);
 }
