@@ -2,17 +2,12 @@
 title: Wat doet Nuts?
 ---
 
-Nuts ontwikkelt en beheert een nutsvoorziening die het delen van
-zorg-gerelateerde informatie over het Internet mogelijk maakt op een
-vertrouwelijke, veilige en toegankelijke manier. Met als doel om digitale
-samenwerking in de gehele zorg te faciliteren — en zo de zorg te verbeteren.
+Nuts is een open [community](./community) die wordt ondersteund door een [stichting](./stichting).
 
-Nuts is georganiseerd in een [community](./community) en een
-[stichting](./stichting). Nuts wordt ondersteund en gedreven door een
-veelzijdige groep vooruitstrevende mensen en organisaties die samen, in het
-algemeen belang, een positieve impact willen maken op het (digitale)
-zorglandschap. We laten ons leiden door een gezamenlijk [manifest](./manifest).
+De community werkt samen aan een landelijk netwerk waarin zorginstellingen elkaar kunnen vinden en vertrouwen. Om dit te realiseren ontwikkelen we standaarden en maken we samen afspraken.
 
-We ontwerpen, specificeren en bouwen noodzakelijke bouwstenen voor
-gegevensuitwisseling in de zorg. Want alleen door _te doen_ kunnen we echt
-impact maken.
+Het netwerk wordt ontwikkeld op basis van internationale open standaarden. Hierdoor zorgen we ervoor dat we niet alleen in Nederland, maar ook in het buitenland kunnen samenwerken.
+
+We laten ons leiden door een gezamenlijk [manifest](./manifest) waarin we onze visie en missie hebben vastgelegd.
+
+Bij Nuts zijn we niet bang om onze handen vuil te maken. Naast ontwerpen en praten zit onze kracht in het bouwen van werkende software. Want alleen door te bouwen kunnen we echt impact maken.
