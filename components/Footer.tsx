@@ -20,8 +20,8 @@ export default function Footer({ items, socials }: Props) {
         </div>))}
       </div>
       <div className="flex justify-center py-4">
-    {socials.map(({ name, href, icon }) => (
-      <a target="_blank" href={href}>
+    {socials.map(({ name, href, icon }, i) => (
+      <a key={i} target="_blank" rel="noopener noreferrer" href={href}>
         <img src={icon} alt={name} />
       </a>
     ))}
