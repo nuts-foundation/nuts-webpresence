@@ -22,6 +22,7 @@ Om de stichting en de community te ondersteunen haar doelen te halen heeft het b
 | Goud sponsor   | Nedap Healthcare  | ![Nedap Healthcare logo](/logos/nedap-healthcare.png) |
 | Zilver sponsor | Hinq              | ![Hinq logo](/logos/hinq.png)                         |
 | Zilver sponsor | LableCare         | ![LableCare logo](/logos/lable.png)                   |
+| Zilver sponsor | NLCom             | ![NLCom logo](logos/nlcom.png)                        |
 | Zilver sponsor | Pink Roccade Care | ![Pink Roccade Care logo](/logos/pink.png)            |
 
 </div>
