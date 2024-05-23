@@ -53,8 +53,8 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
         </tr>
         <tr>
             <td><a href="https://www.gerimedica.nl">Gerimedica</a></td>
-            <td>Titia van Malestein</td>
-            <td><a href="mailto:t.vanmalestein@gerimedica.nl">t.vanmalestein@gerimedica.nl</a></td>
+            <td>Floris van Dijk</td>
+            <td><a href="mailto:f.vandijk@gerimedica.nl">f.vandijk@gerimedica.nl</a></td>
         </tr>
         <tr>
             <td><a href="https://hinq.nl/">HINQ</a></td>
@@ -75,6 +75,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="https://www.nlcom.nl/">NLcom</a></td>
             <td>Robin Diederen</td>
             <td><a href="mailto:diederen@nlcom.nl">diederen@nlcom.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.ozoverbindzorg.nl/">OZO Verbindzorg</a></td>
+            <td>Christel Engbers</td>
+            <td><a href="mailto:christel@ozoverbindzorg.nl">christel@ozoverbindzorg.nl</a></td>
         </tr>
         <tr>
             <td><a href="https://parsek.com/">Parsek</a></td>
