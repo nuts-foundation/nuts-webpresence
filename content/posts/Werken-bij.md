@@ -5,9 +5,15 @@ permalink: /werken-bij/
 header_image: community
 ---
 
-# Leeswijzer
+# Werken bij
 
 Wil jij als ZZP'er een significante impact maken in de zorgsector? Bij Stichting Nuts streven we ernaar om softwareapplicaties in de zorg met elkaar te laten communiceren. Sluit je aan en word onderdeel van ons netwerk dat zich inzet voor iedereen en vóór iedereen. Met jouw bijdrage kunnen we niet alleen de apotheek om de hoek verbinden, maar ook het ziekenhuis in Helsinki bereiken. 
+
+## Vacatures
+
+  * Developer [Going Nuts podcast](/podcast)
+  * Social media expert [YouTube](https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ)
+
 
 ## Inleiding in Nuts
 
