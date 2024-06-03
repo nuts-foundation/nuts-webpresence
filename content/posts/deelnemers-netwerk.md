@@ -127,7 +127,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:uittenhout@zorgdomein.nl">uittenhout@zorgdomein.nl</a></td>
         </tr>
         <tr>
-            <td><a href="[https://www.zorginstituutnederland.nl/](https://www.zorginstituutnederland.nl/)/">Zorginstituut Nederland</a></td>
+            <td><a href="https://www.zorginstituutnederland.nl">Zorginstituut Nederland</a></td>
             <td>Peter Snaterse</td>
             <td><a href="mailto:">psnaterse@zinl.nl</a></td>
         </tr>
