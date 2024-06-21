@@ -1,5 +1,5 @@
 ---
-permalink: /use-case/zorinzage
+permalink: /use-case/zorinzage/
 title: zorginzage
 ---
 
