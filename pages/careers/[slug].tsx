@@ -7,7 +7,7 @@ import { getPost, getPosts } from "../../lib/api"
 interface PostProps extends InferGetStaticPropsType<typeof getStaticProps> {
 }
 
-export default function UseCase({ post }: PostProps) {
+export default function Careers({ post }: PostProps) {
   return (
     <Layout>
       <NextSeo openGraph={{ title: `Nuts - ${post.meta["title"]}` }} />
@@ -25,7 +25,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     throw new Error("invalid param");
   }
 
-  const post = await getPost(params["slug"] as string, { dir: "use-case" });
+  const post = await getPost(params["slug"] as string, { dir: "careers" });
 
   return {
     props: {
@@ -39,7 +39,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async ({ }: GetStaticPathsContext) => {
-  const posts = await getPosts({ dir: "use-case" });
+  const posts = await getPosts({ dir: "careers" });
 
   return {
     fallback: "blocking",

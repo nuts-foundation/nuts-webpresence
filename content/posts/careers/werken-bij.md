@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Werken-bij
-permalink: /werken-bij/
+permalink: /careers/werken-bij/
 header_image: community
 ---
 
