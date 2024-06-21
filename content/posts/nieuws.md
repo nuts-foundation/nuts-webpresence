@@ -10,6 +10,7 @@ header_image: press
 _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
 Index:
+* [Livegang van Nuts-toepassing voor ANW-zorg](#Livegang-nuts-ANW-zorg)
 * [Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts](#Rapportage-Hooghiemstra-Partners-Nuts)
 * [Kamerbrief over landelijk dekkend netwerk infrastructuren](#20230413)
 * [Twiin & Nuts schrijven gezamenlijk groeipad](#20221018)
@@ -18,6 +19,22 @@ Index:
 * [Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren](#20181203)
 
 <hr/>
+
+<a name="Livegang-nuts-ANW-zorg"></a>
+### 10 juni 2024 - Livegang van Nuts-toepassing voor ANW-zorg
+
+Op 10 juni is een belangrijke stap gezet: een toepassing gebaseerd op Nuts is live in productie gegaan. Deze toepassing is gericht op het ondersteunen van avond-, nacht- en weekendzorg (ANW) binnen de verpleging, verzorging en thuiszorg (VVT). De toepassing maakt gebruik van de Nuts-vertrouwenslaag en is de eerste van minimaal vier toepassingen die in de komende twee jaar live moeten gaan, zoals vermeld in de intentieverklaring.
+
+[Lees de intentieverklaring](https://www.actiz.nl/altijd-de-juiste-clientinformatie-unieke-samenwerking-actiz-en-nuts-om-gegevensuitwisseling-te)
+
+#### Samenwerking Nuts-deelnemers
+De Nuts-deelnemers van het eerste uur, namelijk SDB Groep, Nedap en Ecare, hebben de handschoen goed opgepakt. Kort na de ANW Service Design Week is de toepassing in zeer korte tijd tot een productiewaardige oplossing gebracht. Met hulp van Arjo Rozeboom en Jochem van Hal is de toepassing zowel technisch als functioneel goed beschreven en zijn er verschillende bijeenkomsten en online samenwerksessies georganiseerd. Dit heeft geleid tot de livegang van een eerste minimale versie en afspraken die het mogelijk maken door te bouwen.
+
+#### Trots op onze Nuts-community
+We zijn er trots op dat dit binnen de Nuts-community snel en met een open karakter tot stand is gekomen. Dit biedt ook ruimte en lessen voor de volgende drie toepassingen in de komende twee jaar. Op 9 juli staat er nog een “afhechtdag” gepland waarbij de huidige leveranciers alle minimale functionaliteiten breed hebben geïmplementeerd om verdere live gangen  te kunnen ondersteunen.
+
+<img src="/images/Intentieverklaring-Nuts-Actiz.jpeg" alt="Intentieverklaring Actiz en Nuts" title="Intentieverklaring Actiz en Nuts " />
+
 
 <a name="Rapportage-Hooghiemstra-Partners-Nuts"></a>
 ### 18 augustus 2023 - Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts 
