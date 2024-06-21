@@ -1,8 +1,7 @@
-
 ---
 layout: page
 title: System architect
-permalink: /system-architect.md
+permalink: /careers/system-architect/
 header_image: community
 ---
 
