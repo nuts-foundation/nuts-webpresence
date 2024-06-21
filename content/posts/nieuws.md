@@ -33,8 +33,7 @@ De Nuts-deelnemers van het eerste uur, namelijk SDB Groep, Nedap en Ecare, hebbe
 #### Trots op onze Nuts-community
 We zijn er trots op dat dit binnen de Nuts-community snel en met een open karakter tot stand is gekomen. Dit biedt ook ruimte en lessen voor de volgende drie toepassingen in de komende twee jaar. Op 9 juli staat er nog een “afhechtdag” gepland waarbij de huidige leveranciers alle minimale functionaliteiten breed hebben geïmplementeerd om verdere live gangen  te kunnen ondersteunen.
 
-<img src="/images/intentieverklaring-nuts-actiz.jpg" alt="Intentieverklaring Actiz en Nuts" title="Intentieverklaring Actiz en Nuts" />
-
+<img src="/images/intentieverklaring-actiz-nuts.jpg" alt="Intentieverklaring Actiz en Nuts" title="Intentieverklaring Actiz en Nuts" />
 
 <a name="Rapportage-Hooghiemstra-Partners-Nuts"></a>
 ### 18 augustus 2023 - Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts 
