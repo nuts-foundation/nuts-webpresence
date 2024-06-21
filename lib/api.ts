@@ -48,13 +48,14 @@ function getDirname(opts?: Opts): string {
 }
 
 export async function getPost(name: string, opts?: Opts): Promise<Post> {
-  if (!/^[a-zA-Z0-9-_\/]+$/.test(name)) {
+  if (!/^[a-zA-Z0-9-_]+$/.test(name)) {
     throw new Error(`invalid post name: ${name}`);
   }
 
   const source = await readFile(`${getDirname(opts)}/${name}.md`, "utf8");
   const { data, content } = matter(source);
   const output = await render(content);
+
   return new Post(name, data, output);
 }
 
