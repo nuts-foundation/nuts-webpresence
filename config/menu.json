@@ -89,7 +89,12 @@
         {
           "name": "Contact",
           "href": "/contact"
+        },
+       {
+          "name": "Werken bij",
+          "href": "/careers/werken-bij/"
         }
+
       ]
     }
   ]
