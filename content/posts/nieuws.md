@@ -9,7 +9,9 @@ header_image: press
 
 _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
-Index:
+Index:Proof of Concept (PoC) Mitz x Nuts
+
+* [PoC van Nuts en Mitz is succesvol: eerste stap gezet in realisatie koppeling](#Proof-of-concept-Mitz-Nuts)
 * [Livegang van Nuts-toepassing voor ANW-zorg](#Livegang-nuts-ANW-zorg)
 * [Rapportage van Hooghiemstra en Partners: Juridische vragen Nuts](#Rapportage-Hooghiemstra-Partners-Nuts)
 * [Kamerbrief over landelijk dekkend netwerk infrastructuren](#20230413)
@@ -19,6 +21,43 @@ Index:
 * [Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren](#20181203)
 
 <hr/>
+
+<a name="Proof-of-concept-Mitz-Nuts"></a>
+### 12 juli 2024 - PoC van Nuts en Mitz is succesvol: eerste stap gezet in realisatie koppeling
+Mitz komt de komende jaren steeds breder beschikbaar als afsprakenstelsel en toestemmingsvoorziening voor het registreren en beheren van toestemming. Nuts wordt de komende jaren steeds verder geadopteerd door zorgaanbieders en hun ICT leveranciers. In verschillende toepassingen op Nuts bestaat de behoefte om toestemmingen volgens het Mitz afsprakenstelsel te gebruiken als grondslag voor het delen van gegevens. Het doel van deze PoC is om aan te tonen dat Mitz en Nuts samen kunnen werken op technisch niveau (interoperabel te maken) en op basis van internationale open standaarden. 
+
+#### De waarde van het PoC
+De waarde van het PoC zit in de keuzevrijheid die gerealiseerd wordt als Mitz-toestemmingen onafhankelijk van een aansluiting van een van de betrokken partijen in de uitwisseling interoperabel zijn met toepassingen op Nuts. Daarmee wordt het bereik van Mitz vergroot en de toegevoegde waarde van een aansluiting op Nuts ook. Het schept daarnaast ook de voorwaarden om te komen tot een landelijk dekkend netwerk van infrastructuren voor het delen van gegevens omdat het standaardiseren van de techniek en de governance Mitz en Nuts makkelijker in het landelijk vertrouwensstelsel (LVS) en de Generieke Functies passen.
+
+#### Resultaten PoC
+De Proof of Concept is een succes. Nuts en Mitz hebben gezamenlijk een eerste stap gezet in het realiseren van een koppeling. Waarbij een raadpleger zonder Mitz-aansluiting een Mitz-bron heeft geraadpleegd. Hiermee heeft de PoC het volgende aangetoond:
+
+* Mitz en Nuts kunnen samenwerken op technisch niveau en op basis van internationale open standaarden.
+* Een bron die gegevens uitwisselt via het Nuts protocol, kan besluiten Mitz te gaan gebruiken voor toestemmingen, zonder dat de raadplegende zorgaanbieders Mitz al gebruiken. 
+* Een zorgaanbieder met een Nuts-aansluiting kan een Mitz-toestemming raadplegen.
+* Techniek vanuit Mitz en Nuts, gebruikt voor deze PoC, past binnen de infrastructuur voor een Landelijk Dekkend Netwerk.
+
+Aanvullend is ook aangetoond:
+* De werking van een proces voor het uitgeven van digitale bewijzen uit vertrouwde bronnen voor UZI, URA en Vektis identiteitsinformatie.
+* Het kunnen aantonen en vaststellen van de raadplegende organisatie- en gebruikersidentiteit, zonder gebruik te hoeven maken van een elektronisch uitwisselsysteem.
+* De haalbaarheid en nut van persoonlijke en organisatie wallets conform de EUDI Wallet in een landelijke zorgarchitectuur.
+* De partijen kijken terug op een goede en succesvolle samenwerking tussen Nuts, Mitz, Itzos, Headease en VZVZ PROVES.
+
+<iframe
+  width="100%"
+  height="432"
+  src="[https://www.youtube.com/embed/b3p5_0qWbBA](https://youtu.be/BsSGEkE3OJ8)"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe></> 
+
+
+####
+[Lees de volledige uitwerking op GitHub PoC Mitz x Nuts](https://github.com/nuts-foundation/poc-mitz-nuts)  
+
+
+<a name="Proof-of-concept-Mitz-Nuts"></a>
 
 <a name="Livegang-nuts-ANW-zorg"></a>
 ### 10 juni 2024 - Livegang van Nuts-toepassing voor ANW-zorg
