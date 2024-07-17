@@ -54,10 +54,7 @@ Aanvullend is ook aangetoond:
 
 
 ####
-[Lees de volledige uitwerking op GitHub PoC Mitz x Nuts](https://github.com/nuts-foundation/poc-mitz-nuts)  
-
-
-<a name="Proof-of-concept-Mitz-Nuts"></a>
+[Lees de volledige uitwerking op GitHub PoC Mitz x Nuts](https://github.com/nuts-foundation/poc-mitz-nuts)
 
 <a name="Livegang-nuts-ANW-zorg"></a>
 ### 10 juni 2024 - Livegang van Nuts-toepassing voor ANW-zorg
