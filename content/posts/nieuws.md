@@ -9,7 +9,7 @@ header_image: press
 
 _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
-Index:Proof of Concept (PoC) Mitz x Nuts
+Index:
 
 * [PoC van Nuts en Mitz is succesvol: eerste stap gezet in realisatie koppeling](#Proof-of-concept-Mitz-Nuts)
 * [Livegang van Nuts-toepassing voor ANW-zorg](#Livegang-nuts-ANW-zorg)
@@ -46,7 +46,7 @@ Aanvullend is ook aangetoond:
 <iframe
   width="100%"
   height="432"
-  src="[https://www.youtube.com/embed/b3p5_0qWbBA](https://youtu.be/BsSGEkE3OJ8)"
+  src="https://www.youtube.com/embed/b3p5_0qWbBA"
   frameborder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
