@@ -52,8 +52,6 @@ Aanvullend is ook aangetoond:
   allowfullscreen
 ></iframe></> 
 
-
-####
 [Lees de volledige uitwerking op GitHub PoC Mitz x Nuts](https://github.com/nuts-foundation/poc-mitz-nuts)
 
 <a name="Livegang-nuts-ANW-zorg"></a>
