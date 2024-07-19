@@ -43,16 +43,11 @@ Aanvullend is ook aangetoond:
 * De haalbaarheid en nut van persoonlijke en organisatie wallets conform de EUDI Wallet in een landelijke zorgarchitectuur.
 * De partijen kijken terug op een goede en succesvolle samenwerking tussen Nuts, Mitz, Itzos, Headease en VZVZ PROVES.
 
-<iframe
-  width="100%"
-  height="432"
-  src="https://www.youtube.com/watch?v=F0LPSHFb31I&t=111s"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe></> 
-
 [Lees de volledige uitwerking op GitHub PoC Mitz x Nuts](https://github.com/nuts-foundation/poc-mitz-nuts)
+
+[Bekijk het resultaat op Youtube](https://youtu.be/BsSGEkE3OJ8)
+
+[Download de volledige eindrapportage](/assets/downloads/Eindrapportage-POC-Mitz-Nuts.pdf)
 
 <a name="Livegang-nuts-ANW-zorg"></a>
 ### 10 juni 2024 - Livegang van Nuts-toepassing voor ANW-zorg
