@@ -47,7 +47,7 @@ Aanvullend is ook aangetoond:
 
 [Bekijk het resultaat op Youtube](https://youtu.be/BsSGEkE3OJ8)
 
-[Download de volledige eindrapportage](/assets/downloads/Eindrapportage-POC-Mitz-Nuts.pdf)
+[Download de volledige eindrapportage](/assets/downloads/Eindrapportage%20PoC%20Mitz%20x%20Nuts%20v1.0.pdf)
 
 <a name="Livegang-nuts-ANW-zorg"></a>
 ### 10 juni 2024 - Livegang van Nuts-toepassing voor ANW-zorg
