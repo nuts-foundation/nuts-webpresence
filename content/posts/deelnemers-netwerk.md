@@ -62,6 +62,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:hans.niendieker@hinq.nl">hans.niendieker@hinq.nl</a></td>
         </tr>
         <tr>
+            <td><a href="https://www.kpn.com/zakelijk/grootzakelijk/branches/zorg/over-ons">KPN Health</a></td>
+            <td>Bonne Beenen</td>
+            <td><a href="mailto:bonnebeenen@itzos.com">bonnebeenen@itzos.com</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.lable.nl">Lable</a></td>
             <td>Taco Jan Osinga</td>
             <td><a href="mailto:taco.jan.osinga@lable.nl">taco.jan.osinga@lable.nl</a></td>
