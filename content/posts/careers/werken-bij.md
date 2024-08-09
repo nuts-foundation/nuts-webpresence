@@ -17,7 +17,7 @@ Word dan lid van de Nuts Community als...
 <img src="/images/werken-bij-nuts.jpeg" alt="uitreiking" title="Werken bij Nuts" />
 
 ## Vacatures
-  * [System architect](/careers/system-architect)
+Momenteel zijn er geen openstaande vacatures.
 
 ## Contact opnemen
 
