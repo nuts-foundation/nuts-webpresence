@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Actiz x Nuts
-permalink: /actiz.md/
+permalink: /actiz/
 header_image: Actiz
 ---
 
