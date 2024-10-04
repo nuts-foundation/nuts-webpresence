@@ -37,6 +37,7 @@ Na een goede kick-off bijeenkomst in mei hebben we samen met de projectpartners 
 #### De partners
 Welldata, DataRuimtevoorPreventie is een Interreg Vlaanderen-Nederland project in samenwerking met deze Vlaamse en Nederlandse partners: Domus Medica vzw, Zorgzaam Leuven, Gaston Remmers - Stichting Mijn Data Onze Gezondheid, NSX - Normalized Systems, Selfcare BV, Sport Vlaanderen, Care Innovation Center West-Brabant, Nuts, Eindhoven University of Technology, LiCalab - Living & Care Lab, TNO, Vito, VAN | Vlaams Apothekers Netwerk, Lokaal bestuur Vorselaar.
 
+<img src="/images/welldata.svg" alt="Welldata" title="Welldata" />
 
 <a name="Proof-of-concept-Mitz-Nuts"></a>
 ### 12 juli 2024 - PoC van Nuts en Mitz is succesvol: eerste stap gezet in realisatie koppeling
