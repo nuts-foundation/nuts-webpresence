@@ -72,7 +72,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:taco.jan.osinga@lable.nl">taco.jan.osinga@lable.nl</a></td>
         </tr>
         <tr>
-            <td><a href="https://nedap-healthcare.com/">Nedap Healthcare</a></td>
+            <td><a href="https://nedap.com/nl/healthcare/">Nedap Healthcare</a></td>
             <td>Ruben Doornweerd</td>
             <td><a href="mailto:ruben.doornweerd@nedap.com">ruben.doornweerd@nedap.com</a></td>
         </tr>
