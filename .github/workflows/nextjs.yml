@@ -1,6 +1,6 @@
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Next.js site to Pages
+name: Build
 
 on:
   # Runs on pushes targeting the default branch
@@ -81,6 +81,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        # Skip artifact on pull requests, only on merge (lets safe some bytes)
+        if: ${{ github.event_name != 'pull_request' }}
         with:
           path: ./out
 
@@ -90,7 +92,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    # Skip deployment on pull requests, only on merge to main
+    # Skip deployment on pull requests, only on merge
     if: ${{ github.event_name != 'pull_request' }}
     needs: build
     steps:
