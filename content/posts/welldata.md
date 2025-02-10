@@ -2,7 +2,7 @@
 layout: page
 title: WellData
 permalink: /welldata/
-header_image: Welldata
+header_image: Welldata 
 ---
 
 # WellData
