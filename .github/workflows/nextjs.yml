@@ -81,7 +81,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        # Skip artifact on pull requests, only on merge (lets safe some bytes)
+        # Skip artifact on pull requests, only on merge (lets save some bytes)
         if: ${{ github.event_name != 'pull_request' }}
         with:
           path: ./out
