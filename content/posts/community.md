@@ -17,14 +17,12 @@ Wil jij ook deelnemen aan één van onze Nuts community meetings? Je bent welkom
 meeting staat in de [kalender-afspraak](/kalender). We maken gebruik van de videoconferentie tool Zoom. Zo kun je direct via je browser online deelnemen en is het niet nodig om extra software te installeren. Voor extra functionaliteiten zoals het delen van je desktop raden we het installeren van de 
 [Zoom desktop applicatie](https://zoom.us/download) aan. 
 
-### Agendapunten
-Agendapunten indienen kan tot 48 uur voorafgaand aan de bijeenkomst via
-[info@nuts.nl](mailto:info@nuts.nl). De agenda komt uiterlijk 24 uur van tevoren
-beschikbaar.
-
 ### Samenwerken in Slack 
-Tussen de meetings door werken wij samen via de communicatietool Slack. Om toegevoegd te worden aan de Slack workspace
+Tussen de meetings door werken we samen via de communicatietool Slack en iedereen is welkom! Om toegevoegd te worden aan de Slack workspace
 kun je [deze link volgen](https://join.slack.com/t/nuts-foundation/shared_invite/zt-235ww08nk-halwcet23WCHclmlFd0lLg).
+
+### Agendapunten
+Heb je een idee, vraag of onderwerp dat je in de Nuts community meeting wilt bespreken? Deel je agendapunt(en) in ons [Slack-kanaal](https://join.slack.com/t/nuts-foundation/shared_invite/zt-235ww08nk-halwcet23WCHclmlFd0lLg), tot 48 uur vóór de meeting! De definitieve agenda volgt uiterlijk 24 uur van tevoren.
 
 ### Nuts community meeting gemist?
 [Je kunt onze opgenomen Nuts community meetings terugvinden op ons YouTube-kanaal](https://www.youtube.com/playlist?list=PLQSr77NH0YwWhGNZpLLrNATib07dZ9cZl).
