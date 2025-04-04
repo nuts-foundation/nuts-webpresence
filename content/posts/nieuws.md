@@ -22,8 +22,8 @@ Index:
 * [Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren](#20181203)
 
 <hr/>
-<a name="Nuts-databeschikbaarheid-grenzen"></a>
 
+<a name="Nuts-databeschikbaarheid-grenzen"></a>
 ### 3 april 2025 - Nuts en databeschikbaarheid: over de grenzen van zorg en ondersteuning
 
 Wat als een huisarts, thuiszorgteam en mantelzorger realtime zouden kunnen zien wie wat doet voor een patiënt met dementie? Of als verpleegkundigen direct toegang hebben tot iemands vaccinatiegeschiedenis in plaats van te moeten zoeken in papieren dossiers? 
