@@ -10,7 +10,7 @@ header_image: press
 _Schrijf je zelf over Nuts? Kijk dan eens op onze [perspagina](/pers)._
 
 Index:
-
+* [Nuts en databeschikbaarheid: over de grenzen van zorg en ondersteuning](#Nuts-databeschikbaarheid-grenzen)
 * [Stichting Nuts werkt samen met 14 partners in het mede door de EU gefinancierde WellData project](#Nuts-partner-in-WellData)
 * [PoC van Nuts en Mitz is succesvol: eerste stap gezet in realisatie koppeling](#Proof-of-concept-Mitz-Nuts)
 * [Livegang van Nuts-toepassing voor ANW-zorg](#Livegang-nuts-ANW-zorg)
@@ -22,6 +22,19 @@ Index:
 * [Persbericht: Zorg IT-leveranciers gaan decentraal communicatienetwerk voor zorg realiseren](#20181203)
 
 <hr/>
+
+<a name="Nuts-databeschikbaarheid-grenzen"></a>
+### 3 april 2025 - Nuts en databeschikbaarheid: over de grenzen van zorg en ondersteuning
+
+Wat als een huisarts, thuiszorgteam en mantelzorger realtime zouden kunnen zien wie wat doet voor een patiënt met dementie? Of als verpleegkundigen direct toegang hebben tot iemands vaccinatiegeschiedenis in plaats van te moeten zoeken in papieren dossiers? 
+
+Tijdens de bijeenkomst van Platform IZO liet Sergej van Middendorp van Stichting Nuts zien hoe dit mogelijk kan worden. Nuts werkt aan veilige en gestandaardiseerde databeschikbaarheid binnen en tussen sectoren. Tijdens de bijeenkomst bespraken de deelnemers waar betere gegevensuitwisseling het verschil kan maken. Zij bedachten scenario’s waarin databeschikbaarheid over de grenzen van zorg en welzijn heen grote voordelen zou kunnen hebben. Dat ging van betere samenwerking tussen huisartsenzorg en het sociaal domein tot transparantere informatie over voedingsmiddelen voor preventie. 
+
+Om de inspiratie op gang te brengen liet Sergej inspirerende voorbeelden zien hoe Nuts binnen de zorgsector actief is én daarbuiten verbinding zoekt met andere domeinen via het project WellData.
+
+<img src="/images/welldata.svg" alt="Welldata" title="Welldata" />
+
+#### [Lees het complete artikel op Platform IZO](https://www.infoizo.nl/nieuws/bericht/nuts-en-databeschikbaarheid-over-de-grenzen-van-zorg-en-ondersteuning).
 
 <a name="Nuts-partner-in-WellData"></a>
 ### 21 augustus 2024 - Stichting Nuts werkt samen met 14 partners in het mede door de EU gefinancierde WellData project aan het internationaal delen van gegevens voor gezondheidsbevordering en preventie
