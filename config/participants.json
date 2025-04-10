@@ -189,7 +189,7 @@
     "logoUrl": "/logos/Solid-Community.png",
     "url": "https://www.solidcommunity.nl/"
   },
- {
+  {
     "title": "Syntilio",
     "logoUrl": "/logos/syntilio.svg",
     "url": "https://https://syntilio.com/nl/"
@@ -204,7 +204,7 @@
     "logoUrl": "/logos/timeff.png",
     "url": "https://timeff.com/"
   },
-   {
+  {
     "title": "Topicus",
     "logoUrl": "/logos/topicus.png",
     "url": "https://topicus.nl/sectoren/zorg"
@@ -228,5 +228,10 @@
     "title": "ZorgvoorKennis",
     "logoUrl": "/logos/zorgvoorkennis.png",
     "url": "https://www.zorgvoorkennis.nl/"
+  },
+  {
+    "title": "Pharmapartners",
+    "logoUrl": "/logos/pharmapartners.png",
+    "url": "https://www.pharmapartners.nl/"
   }
 ]
