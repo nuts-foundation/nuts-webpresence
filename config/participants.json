@@ -234,4 +234,14 @@
     "logoUrl": "/logos/pharmapartners.png",
     "url": "https://www.pharmapartners.nl/"
   }
+   {
+    "title": "Zorgly",
+    "logoUrl": "/logos/Zorgly.png",
+    "url": "https://www.zorgly.nl/"
+  }
+    {
+    "title": "Sanday",
+    "logoUrl": "/logos/Sanday.svg",
+    "url": "https://www.sanday.com/"
+  }
 ]
