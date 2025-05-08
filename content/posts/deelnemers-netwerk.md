@@ -97,6 +97,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:mark.byrman@pinkroccade.nl">mark.byrman@pinkroccade.nl</a></td>
         </tr>
         <tr>
+            <td><a href="https://sanday.com/">Sanday</a></td>
+            <td>Martin Pruijsers</td>
+            <td><a href="mailto:martin.pruijsers@sanday.com">martin.pruijsers@sanday.com</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.sdbgroep.nl">SDBGroep</a></td>
             <td>Bart Rings</td>
             <td><a href="mailto:ecd@sdbgroep.nl">ecd@sdbgroep.nl</a></td>
