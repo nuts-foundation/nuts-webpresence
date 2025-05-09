@@ -39,7 +39,6 @@ Open-source betekent dat de broncode toegankelijk is voor iedereen, waardoor er 
 <a href="https://www.linkedin.com/in/steven-van-der-vegt-15a28118/">Steven van der Vegt</a> (secretaris \| [steven.vandervegt@nuts.nl](mailto:steven.vandervegt@nuts.nl))<br/>
 <a href="https://www.linkedin.com/in/thferguson/">Thomas Ferguson</a> (penningmeester \| [info@nuts.nl](mailto:info@nuts.nl))<br/>
 <a href="https://www.linkedin.com/in/jerryfortuin/">Jerry Fortuin</a> (algemeen bestuurder \| [info@nuts.nl](mailto:info@nuts.nl))<br/>
-<a href="https://www.linkedin.com/in/aniek-fikken/">Aniek Fikken</a> (algemeen bestuurder \| [aniek.fikken@ecare.nl](mailto:aniek.fikken@ecare.nl))<br/>
 <a href="https://www.linkedin.com/in/sergejvanmiddendorp/">Sergej van Middendorp</a> (algemeen bestuurder \| [sergej.van.middendorp@nuts.nl](mailto:sergej.van.middendorp@nuts.nl))<br/>
 
 De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
