@@ -33,8 +33,8 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
         </tr>
         <tr>
             <td><a href="https://www.careconnections.nl/">CareConnections B.V.</a></td>
-            <td>Jos Koppelaar</td>
-            <td><a href="mailto:jos@careconnections.nl">jos@careconnections.nl</a></td>
+            <td>Frans Plaisier</td>
+            <td><a href="mailto:frans@careconnections.nl">frans@careconnections.nl</a></td>
         </tr>
         <tr>
             <td><a href="https://www2.deloitte.com/nl/nl/services/consulting-deloitte.html">Deloitte Consulting bv</a></td>
