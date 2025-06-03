@@ -22,6 +22,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
     </thead>
     <tbody>
         <tr>
+            <td><a href="https://www.am-impact.nl/">a&mimpact</a></td>
+            <td>Arjan Vijn</td>
+            <td><a href="mailto:a.vijn@am-impact.nl">a.vijn@am-impact.nl</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.adapcare.nl">Adapcare</a></td>
             <td>Paul van Zagten</td>
             <td><a href="mailto:p.van.zagten@adapcare.nl">p.van.zagten@adapcare.nl</a></td>
