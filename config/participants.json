@@ -4,6 +4,11 @@
     "logoUrl": "/logos/Adapcare.png",
     "url": "https://www.adapcare.nl/"
   },
+ {
+    "title": "A&mimpact",
+    "logoUrl": "/logos/a&mimpact.jpeg",
+    "url": "https://www.am-impact.nl"
+  },
   {
     "title": "Avinty",
     "logoUrl": "/logos/avinty.png",
@@ -185,6 +190,11 @@
     "url": "https://www.sdbgroep.nl/"
   },
   {
+    "title": "Sanday",
+    "logoUrl": "/logos/Sanday.svg",
+    "url": "https://www.sanday.com/"
+  },
+  {
     "title": "Solid Community",
     "logoUrl": "/logos/Solid-Community.png",
     "url": "https://www.solidcommunity.nl/"
@@ -238,10 +248,5 @@
     "title": "Zorgly",
     "logoUrl": "/logos/Zorgly.png",
     "url": "https://www.zorgly.nl/"
-  },
-    {
-    "title": "Sanday",
-    "logoUrl": "/logos/Sanday.svg",
-    "url": "https://www.sanday.com/"
   }
 ]
