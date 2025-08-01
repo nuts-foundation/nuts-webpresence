@@ -102,6 +102,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:mark.byrman@pinkroccade.nl">mark.byrman@pinkroccade.nl</a></td>
         </tr>
         <tr>
+            <td><a href="https://www.rivo-noord.nl/">Rivo Noord</a></td>
+            <td>Jan-Joost van Walsum</td>
+            <td><a href="mailto:c.j.j.van.walsum@umcg.nl">c.j.j.van.walsum@umcg.nl</a></td>
+        </tr>
+        <tr>
             <td><a href="https://sanday.com/">Sanday</a></td>
             <td>Martin Pruijsers</td>
             <td><a href="mailto:martin.pruijsers@sanday.com">martin.pruijsers@sanday.com</a></td>
