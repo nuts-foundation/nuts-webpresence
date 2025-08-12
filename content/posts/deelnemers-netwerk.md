@@ -57,6 +57,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:daniel.schut@enovationgroup.com">daniel.schut@enovationgroup.com</a></td>
         </tr>
         <tr>
+            <td><a href="http://www.erasmusmc.nl/">Erasmus MC</a></td>
+            <td>Aart-Jan Boor</td>
+            <td><a href="mailto:a.boor@erasmusmc.nl">a.boor@erasmusmc.nl</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.gerimedica.nl">Gerimedica</a></td>
             <td>Floris van Dijk</td>
             <td><a href="mailto:f.vandijk@gerimedica.nl">f.vandijk@gerimedica.nl</a></td>
