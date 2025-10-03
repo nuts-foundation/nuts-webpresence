@@ -6,7 +6,7 @@
   },
  {
     "title": "A&mimpact",
-    "logoUrl": "/logos/a&mimpact.jpeg",
+    "logoUrl": "/logos/aenmimpact.jpg",
     "url": "https://www.am-impact.nl"
   },
   {
@@ -198,6 +198,11 @@
     "title": "Solid Community",
     "logoUrl": "/logos/Solid-Community.png",
     "url": "https://www.solidcommunity.nl/"
+  },
+  {
+    "title": "SureSync",
+    "logoUrl": "/logos/suresync.png",
+    "url": "https://suresync.nl"
   },
   {
     "title": "Syntilio",
