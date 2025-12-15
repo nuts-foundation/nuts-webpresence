@@ -84,7 +84,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
         <tr>
             <td><a href="https://https://www.mst.nl/">Medisch Spectrum Twente (Versneld Verbinden)</a></td>
             <td>Steven Bosems</td>
-            <td><a href="mailto:Steven.Bosems@mst.nl">Steven.Bosems@mst.nl</a></td>
+            <td><a href="mailto:steven.bosems@mst.nl">steven.bosems@mst.nl</a></td>
         </tr>
         <tr>
             <td><a href="https://nedap.com/nl/healthcare/">Nedap Healthcare</a></td>
