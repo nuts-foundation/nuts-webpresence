@@ -27,7 +27,6 @@ Of verbind met ons op sociale media:
 Postbus 80 <br>
 3940 AB Doorn <br>
 
-Telefoon: 0544-471624 <br>
 info@nuts.nl <br>
 RSIN 859368452<br>
 
