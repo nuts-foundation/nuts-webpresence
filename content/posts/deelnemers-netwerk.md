@@ -57,7 +57,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:daniel.schut@enovationgroup.com">daniel.schut@enovationgroup.com</a></td>
         </tr>
         <tr>
-            <td><a href="http://www.erasmusmc.nl/">Erasmus MC</a></td>
+            <td><a href="http://www.erasmusmc.nl/">Erasmus MC (Digizorg)</a></td>
             <td>Aart-Jan Boor</td>
             <td><a href="mailto:a.boor@erasmusmc.nl">a.boor@erasmusmc.nl</a></td>
         </tr>
@@ -80,6 +80,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="https://www.lable.nl">Lable</a></td>
             <td>Taco Jan Osinga</td>
             <td><a href="mailto:taco.jan.osinga@lable.nl">taco.jan.osinga@lable.nl</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.mst.nl/">Medisch Spectrum Twente (Versneld Verbinden)</a></td>
+            <td>Steven Bosems</td>
+            <td><a href="mailto:steven.bosems@mst.nl">steven.bosems@mst.nl</a></td>
         </tr>
         <tr>
             <td><a href="https://nedap.com/nl/healthcare/">Nedap Healthcare</a></td>
@@ -107,7 +112,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:mark.byrman@pinkroccade.nl">mark.byrman@pinkroccade.nl</a></td>
         </tr>
         <tr>
-            <td><a href="https://www.rivo-noord.nl/">Rivo Noord</a></td>
+            <td><a href="https://www.rivo-noord.nl/">Rivo Noord (Zorgviewer)</a></td>
             <td>Jan-Joost van Walsum</td>
             <td><a href="mailto:c.j.j.van.walsum@umcg.nl">c.j.j.van.walsum@umcg.nl</a></td>
         </tr>
