@@ -82,7 +82,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:taco.jan.osinga@lable.nl">taco.jan.osinga@lable.nl</a></td>
         </tr>
         <tr>
-            <td><a href="https://https://www.mst.nl/">Medisch Spectrum Twente (Versneld Verbinden)</a></td>
+            <td><a href="https://www.mst.nl/">Medisch Spectrum Twente (Versneld Verbinden)</a></td>
             <td>Steven Bosems</td>
             <td><a href="mailto:steven.bosems@mst.nl">steven.bosems@mst.nl</a></td>
         </tr>
