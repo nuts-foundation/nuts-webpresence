@@ -142,6 +142,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:d.gonning@tribeagency.nl">d.gonning@tribeagency.nl</a></td>
         </tr>
         <tr>
+            <td><a href="https://suresync.nl/en/">Visma Connect B.V. (SureSync)</a></td>
+            <td>Mathijs Koenen</td>
+            <td><a href="mailto:mathijs.koenen@visma.com">mathijs.koenen@visma.com</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.zwconnect.nl/">Zorg & Welzijn Connect</a></td>
             <td>Harrie Huisman</td>
             <td><a href="mailto:harrie@zwconnect.nl">harrie@zwconnect.nl</a></td>
