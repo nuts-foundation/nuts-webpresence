@@ -127,6 +127,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:ecd@sdbgroep.nl">ecd@sdbgroep.nl</a></td>
         </tr>
          <tr>
+            <td><a href="https://suresync.nl/">SureSync (Visma Connect B.V)</a></td>
+            <td>Mathijs Koenen</td>
+            <td><a href="mailto:mathijs.koenen@visma.com">mathijs.koenen@visma.com</a></td>
+        </tr>
+         <tr>
             <td><a href="https://syntilio.com/nl">Syntilio B.V.</a></td>
             <td>Raoul Zaal</td>
             <td><a href="mailto:raoul@syntilio.com">raoul@syntilio.com</a></td>
