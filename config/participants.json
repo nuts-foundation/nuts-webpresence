@@ -253,5 +253,15 @@
     "title": "Zorgly",
     "logoUrl": "/logos/Zorgly.png",
     "url": "https://www.zorgly.nl/"
+  },
+  {
+    "title": "Tetra",
+    "logoUrl": "/logos/tetra.svg",
+    "url": "https://www.tetra.nl/"
+  },
+  {
+    "title": "Bricks Huisarts",
+    "logoUrl": "/logos/bricks-huisarts.svg",
+    "url": "https://brickshuisarts.nl/"
   }
 ]
