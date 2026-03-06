@@ -81,10 +81,9 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
  * [Statuten](/nuts-statuten)
  
 ## Jaarplan
-  * [Beleidsplan 2020](/assets/downloads/Beleidsplan%202020.pdf)
-  * [Activiteitenoverzicht 2019](/assets/downloads/Activiteiten%202019.pdf)
+  * [Nuts plan 2024-2026 ]([/assets/downloads/Beleidsplan%202020.pdf](https://docs.google.com/presentation/d/1I9MwqcwJntxu2FYhihcNNtoT0vTgkfvPSU7DiUtlExA/edit?usp=sharing))
 
- ## Documenten
+## Documenten
   * [Brief Eerste Kamer Wegiz](/assets/downloads/Brief%20eerste%20kamer%20Wegiz-20230223.pdf)
   * [Brief Tweede Kamer Wegiz](/assets/downloads/Brief%20tweede%20kamer%20Wegiz-20230114.pdf)
   * [Brief CIBG - Verzoek tot cryptografisch ontsluiten van het LRZa](/assets/downloads/20210311%20Brief%20CIBG%20-%20Cryptografisch%20ontsluiten%20van%20LRZa.pdf)
