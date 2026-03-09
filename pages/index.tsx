@@ -5,9 +5,9 @@ import { InferGetStaticPropsType } from "next"
 import { config } from "../lib/config"
 import { getContent, getPosts } from "../lib/api"
 
-import VideoImage from "/public/video.png"
+import VideoImage from "../public/video.png"
 
-// import KikV from "/public/use-cases/kik-v.png"
+// import KikV from "../public/use-cases/kik-v.png"
 // import ZorgInzage from "/public/use-cases/zorginzage.png"
 // import eOverdracht from "/public/use-cases/eOverdracht.png"
 // import BabyConnect from "/public/use-cases/baby-connect.png"
