@@ -6,7 +6,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build --webpack && node generate.mjs && next export"
+    "export": "next build --webpack && node generate.mjs"
   },
   "dependencies": {
     "@svgr/webpack": "^6.3.1",
