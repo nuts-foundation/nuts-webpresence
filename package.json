@@ -2,17 +2,17 @@
   "name": "nuts-webpresence",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && node generate.mjs && next export"
+    "export": "next build --webpack && node generate.mjs"
   },
   "dependencies": {
     "@svgr/webpack": "^6.3.1",
     "gray-matter": "^4.0.3",
     "jsonfeed-to-rss": "^3.0.7",
-    "next": "^13.5.6",
+    "next": "^16.1.6",
     "next-seo": "^6.0.0",
     "nextjs-google-analytics": "^2.2.2",
     "react": "^18.2.0",
@@ -25,14 +25,15 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",
-    "@types/node": "17.0.45",
-    "@types/react": "17.0.59",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
     "@types/swiper": "^6.0.0",
     "autoprefixer": "^10.4.8",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.8",
     "postcss": "^8.4.31",
+    "postcss-nesting": "^14.0.0",
     "tailwindcss": "^3.2.4",
-    "typescript": "4.9.5"
+    "typescript": "^5.1.0"
   }
 }
