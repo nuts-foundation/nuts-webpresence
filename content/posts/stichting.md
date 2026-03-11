@@ -44,6 +44,11 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
 ## Documenten
 
+  * [Aansluitovereenkomst Nuts](/assets/downloads/aansluitovereenkomst-nuts.pdf)
+  * [Connection Agreement Nuts (English)](/assets/downloads/aansluitovereenkomst-nuts-english.pdf)
+  * [TxN 2026 - Gezamenlijk groeipad Twiin & Nuts](/assets/downloads/TxN%202026%20-%20Gezamenlijk%20groeipad%20Twiin%20%26%20Nuts-1.pdf)
+  * [Eindrapportage PoC Mitz x Nuts](/assets/downloads/Eindrapportage%20PoC%20Mitz%20x%20Nuts%20v1.0.pdf)
+  * [Juridische vragen Nuts (H+P, 2023)](/assets/downloads/08-08-2023-H%2BP-JuridischevragenNuts%20DEF.pdf)
   * [Brief Eerste Kamer Wegiz](/assets/downloads/Brief%20eerste%20kamer%20Wegiz-20230223.pdf)
   * [Brief Tweede Kamer Wegiz](/assets/downloads/Brief%20tweede%20kamer%20Wegiz-20230114.pdf)
   * [Brief CIBG - Verzoek tot cryptografisch ontsluiten van het LRZa](/assets/downloads/20210311%20Brief%20CIBG%20-%20Cryptografisch%20ontsluiten%20van%20LRZa.pdf)
