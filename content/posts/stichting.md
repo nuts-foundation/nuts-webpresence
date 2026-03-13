@@ -14,36 +14,23 @@ header_image: manifest
 
 # Over de stichting
 
-Het Nuts initiatief bestaat uit een stichting en een open source software community. Binnen het Nutsnetwerk werken we sociocratisch: besluiten worden genomen door de mensen die het werk doen en samenwerking vindt plaats op een transparante en gelijkwaardige manier.
+Het Nuts initiatief bestaat uit een stichting en een open source software community. In Nuts werken we sociocratisch: besluiten worden genomen op basis van consent en door de mensen die het werk doen. Samenwerking vindt plaats op een transparante en gelijkwaardige manier.
 
 <img class="inline-image" src="/images/stichting-open-source.png" alt="Stichting-open-source" title="Stichting-open-source-community" style="border:1px solid black"/>
 
-De software community verzamelt, bouwt en test de software die we allemaal nodig hebben. De stichting faciliteert deze community door onder andere:
-- tools beschikbaar te stellen voor ontwikkeling en afstemming
-- technische workshops te organiseren voor ontwikkelaars
-- audits en tests te regelen
-
-De officiële doelstelling van de stichting luidt:
+De doelstelling van de stichting luidt:
 > Het stimuleren en uitvoeren van onderzoek naar manieren van uitwisseling van medische data tussen patiënten en zorgverleners en het bevorderen van samenwerking tussen ICT leveranciers in de gezondheidszorg en het verrichten van al wat hiermee verband houdt of daartoe bevorderlijk kan zijn.
 
-Naast het faciliteren van de software community, heeft de stichting een belangrijke taak in het uitdragen van het Nuts gedachtegoed. Vanuit de stichting worden kennisbijeenkomsten georganiseerd en worden presentaties op locatie verzorgd om uit te leggen wat Nuts doet (en wat niet). Het beheer van de Nuts social media kanalen ligt ook bij de stichting, evenals eventuele publicaties via klassieke media. Het contact vanuit softwareleveranciers, zorgorganisaties, belangenverenigingen, overheid en andere partijen met Nuts verloopt doorgaans via de bestuurders van de stichting. 
-
-
 ## Onze visie
-De missie van de Nuts-community is een nutsvoorziening te bieden aan de zorgsector om de informatiedeling in de zorg te verbeteren en optimale samenwerking te ondersteunen. Een nutsvoorziening in het algemeen belang door inzet van internationale open standaarden, open specificaties en een open-source software referentie-implementatie in de vorm van  broncode en een nuts-node voor iedereen en daardoor ook ván iedereen. Voor het algemeen nut, en dat is ook wat de Nuts-community beoogt.
-
-Open-source betekent dat de broncode toegankelijk is voor iedereen, waardoor er geen monopolie kan worden gecreëerd op de Nuts-specificatie of de Nuts-node. De licentie van de software (Creative Commons) garandeert dat de referentie-implementatie zonder kosten beschikbaar is, zowel nu als in de toekomst. 
+Wij zien een zorgsector die de transitie maakt naar een integrale gezondheid — over de grenzen van disciplines, domeinen en systemen heen. Die transitie vraagt om samenwerking in netwerken, en netwerken vereist vertrouwen.
+Vertrouwen dat gegevens veilig zijn en alleen door de juiste partijen worden geraadpleegd. Vertrouwen dat geen enkele partij het netwerk kan beheersen of afsluiten. Vertrouwen dat zorgverleners en patiënten zelf en samen de regie houden over hun informatie.
+Nuts werkt aan dat vertrouwen in een open ecosysteem, van iedereen en vóór iedereen.
 
 ## Onze missie
-De missie van de Nuts-community is een nutsvoorziening te bieden aan de zorgsector om de informatiedeling in de zorg te verbeteren en optimale samenwerking te ondersteunen. Een nutsvoorziening in het algemeen belang door inzet van internationale open standaarden, open specificaties en een open-source software referentie-implementatie in de vorm van broncode en een Nuts-node voor iedereen en daardoor ook ván iedereen. Voor het algemeen nut, en dat is ook wat de Nuts-community beoogt.
-
-Open-source betekent dat de broncode toegankelijk is voor iedereen, waardoor er geen monopolie kan worden gecreëerd op de Nuts-specificatie of de Nuts-node. De licentie van de software (GPLv3) garandeert dat de referentie-implementatie zonder kosten beschikbaar is, zowel nu als in de toekomst.
-
-## Bestuur Nuts 
-Het bestuur van het Nuts netwerk wordt gevormd door de Nuts raad.
-De Nuts raad bestaat uit de coördinatoren en afgevaardigden van de drie hoofdkringen.
-De voorzitter van de Nuts raad vervult in de volgende fase ook de rol van voorzitter van Stichting Nuts.
-De gespreksleider bewaakt het proces en de gelijkwaardigheid.
+De Nuts community realiseert een openbare nutsvoorziening voor de zorgsector: een decentraal netwerk voor veilige en privacy-bewuste samenwerking rond gegevens.
+Anders dan traditionele oplossingen heeft het Nuts-netwerk geen centrale beheerder en geen single point of failure. Elke deelnemer beheert zijn eigen Nuts-node. Vertrouwen wordt opgebouwd via cryptografisch verankerde identificatie en authenticatie — niet door een centrale partij vastgelegd, maar gedistribueerd over de deelnemers zelf, op basis van internationale open standaarden. Een open-source referentie-implementatie staat vrij ter beschikking voor alle partijen.
+Dit maakt toegang tot de juiste informatie mogelijk op het moment dat het ertoe doet — voor de juiste zorgverlener, met de juiste grondslag. Zorgaanbieders en leveranciers werken op een gelijk speelveld, zonder monopolist en zonder vendor lock-in.
+De stichting bevordert onderzoek en sectorbrede samenwerking. Governance is ingericht volgens sociocratische principes: gelijkwaardig eigenaarschap en open voor alle marktdeelnemers.
 
 ### Nuts Kring Toepassingen 
 - Coördinator: Sergej van Middendorp 
@@ -60,11 +47,19 @@ De gespreksleider bewaakt het proces en de gelijkwaardigheid.
 - Afgevaardigde: Diana 
 - Gespreksleider: Karin Vosters
 
-### Nuts raad (bestuur) 
+De Nuts raad zorgt voor samenhang tussen de kringen in de context van de doelstelling, de visie en de missie.
+De Nuts raad bestaat uit de coördinatoren en afgevaardigden van de drie hoofdkringen.
+De voorzitter van de Nuts raad vervult in de volgende fase ook de rol van voorzitter van Stichting Nuts.
+De gespreksleider bewaakt de toepassing van de spelregels van sociocratisch samenwerken.
+
+### Nuts raad
 - Coördinator: Sergej van Middendorp
 in afstemming met voorzitter Stichting Nuts: Mark Weernink 
 - Gespreksleider: Karin Vosters
 - Coördinatoren en afgevaardigen kringen
+
+###Bestuur Stichting Nuts
+De coördinatoren van de kringen vormen het bestuur van Stichting Nuts.
 
 <a href="https://www.linkedin.com/in/mark-weernink-4b3a5214/">Mark Weernink</a> (voorzitter \| [mark.weernink@nuts.nl](mailto:mark.weernink@nuts.nl))<br/>
 <a href="https://www.linkedin.com/in/steven-van-der-vegt-15a28118/">Steven van der Vegt</a> (secretaris \| [steven.vandervegt@nuts.nl](mailto:steven.vandervegt@nuts.nl))<br/>
