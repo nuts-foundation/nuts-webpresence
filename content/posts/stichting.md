@@ -30,14 +30,15 @@ Naast het faciliteren van de software community, heeft de stichting een belangri
 
 
 ## Onze visie
-De missie van de Nuts-community is een nutsvoorziening te bieden aan de zorgsector om de informatiedeling in de zorg te verbeteren en optimale samenwerking te ondersteunen. Een nutsvoorziening in het algemeen belang door inzet van internationale open standaarden, open specificaties en een open-source software referentie-implementatie in de vorm van  broncode en een nuts-node voor iedereen en daardoor ook ván iedereen. Voor het algemeen nut, en dat is ook wat de Nuts-community beoogt.
-
-Open-source betekent dat de broncode toegankelijk is voor iedereen, waardoor er geen monopolie kan worden gecreëerd op de Nuts-specificatie of de Nuts-node. De licentie van de software (Creative Commons) garandeert dat de referentie-implementatie zonder kosten beschikbaar is, zowel nu als in de toekomst. 
+Wij zien een zorgsector die de transitie maakt naar een integrale gezondheid — over de grenzen van disciplines, domeinen en systemen heen. Die transitie vraagt om samenwerking in netwerken, en netwerken vereist vertrouwen.
+Vertrouwen dat gegevens veilig zijn en alleen door de juiste partijen worden geraadpleegd. Vertrouwen dat geen enkele partij het netwerk kan beheersen of afsluiten. Vertrouwen dat zorgverleners en patiënten zelf en samen de regie houden over hun informatie.
+Nuts werkt aan dat vertrouwen in een open ecosysteem, van iedereen en vóór iedereen.
 
 ## Onze missie
-De missie van de Nuts-community is een nutsvoorziening te bieden aan de zorgsector om de informatiedeling in de zorg te verbeteren en optimale samenwerking te ondersteunen. Een nutsvoorziening in het algemeen belang door inzet van internationale open standaarden, open specificaties en een open-source software referentie-implementatie in de vorm van broncode en een Nuts-node voor iedereen en daardoor ook ván iedereen. Voor het algemeen nut, en dat is ook wat de Nuts-community beoogt.
-
-Open-source betekent dat de broncode toegankelijk is voor iedereen, waardoor er geen monopolie kan worden gecreëerd op de Nuts-specificatie of de Nuts-node. De licentie van de software (GPLv3) garandeert dat de referentie-implementatie zonder kosten beschikbaar is, zowel nu als in de toekomst.
+De Nuts community realiseert een openbare nutsvoorziening voor de zorgsector: een decentraal netwerk voor veilige en privacy-bewuste samenwerking rond gegevens.
+Anders dan traditionele oplossingen heeft het Nuts-netwerk geen centrale beheerder en geen single point of failure. Elke deelnemer beheert zijn eigen Nuts-node. Vertrouwen wordt opgebouwd via cryptografisch verankerde identificatie en authenticatie — niet door een centrale partij vastgelegd, maar gedistribueerd over de deelnemers zelf, op basis van internationale open standaarden. Een open-source referentie-implementatie staat vrij ter beschikking voor alle partijen.
+Dit maakt toegang tot de juiste informatie mogelijk op het moment dat het ertoe doet — voor de juiste zorgverlener, met de juiste grondslag. Zorgaanbieders en leveranciers werken op een gelijk speelveld, zonder monopolist en zonder vendor lock-in.
+De stichting bevordert onderzoek en sectorbrede samenwerking. Governance is ingericht volgens sociocratische principes: gelijkwaardig eigenaarschap en open voor alle marktdeelnemers.
 
 ## Bestuur Nuts 
 Het bestuur van het Nuts netwerk wordt gevormd door de Nuts raad.
