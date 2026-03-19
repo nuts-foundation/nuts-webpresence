@@ -32,19 +32,9 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:p.van.zagten@adapcare.nl">p.van.zagten@adapcare.nl</a></td>
         </tr>
         <tr>
-            <td><a href="https://bovenmaasprenataal.com/">BovenMaas prenataal bv</a></td>
-            <td>Eric Smith</td>
-            <td><a href="mailto:eric.smith@bovenmaasprenataal.com">eric.smith@bovenmaasprenataal.com</a></td>
-        </tr>
-        <tr>
             <td><a href="https://www.careconnections.nl/">CareConnections B.V.</a></td>
             <td>Frans Plaisier</td>
             <td><a href="mailto:frans@careconnections.nl">frans@careconnections.nl</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://www2.deloitte.com/nl/nl/services/consulting-deloitte.html">Deloitte Consulting bv</a></td>
-            <td>Maurice Fransen</td>
-            <td><a href="mailto:mfransen@deloitte.nl">mfransen@deloitte.nl</a></td>
         </tr>
         <tr>
             <td><a href="https://ecare.nl">Ecare Software B.V.</a></td>
@@ -77,11 +67,6 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:bonnebeenen@itzos.com">bonnebeenen@itzos.com</a></td>
         </tr>
         <tr>
-            <td><a href="https://www.lable.nl">Lable</a></td>
-            <td>Taco Jan Osinga</td>
-            <td><a href="mailto:taco.jan.osinga@lable.nl">taco.jan.osinga@lable.nl</a></td>
-        </tr>
-        <tr>
             <td><a href="https://www.mst.nl/">Medisch Spectrum Twente (Versneld Verbinden)</a></td>
             <td>Steven Bosems</td>
             <td><a href="mailto:steven.bosems@mst.nl">steven.bosems@mst.nl</a></td>
@@ -100,11 +85,6 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="https://www.ozoverbindzorg.nl/">OZO Verbindzorg</a></td>
             <td>Christel Engbers</td>
             <td><a href="mailto:christel@ozoverbindzorg.nl">christel@ozoverbindzorg.nl</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://parsek.com/">Parsek</a></td>
-            <td>Gasper Andrejc</td>
-            <td><a href="mailto:healthcare@parsek.com">healthcare@parsek.com</a></td>
         </tr>
         <tr>
             <td><a href="https://www.pinkroccade-healthcare.nl/">PinkRoccade Care</a></td>
@@ -136,25 +116,10 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td>Raoul Zaal</td>
             <td><a href="mailto:raoul@syntilio.com">raoul@syntilio.com</a></td>
         </tr>
-        <tr>
-            <td><a href="https://tenzinger.com/">Tenzinger</a></td>
-            <td>Frans Plaisier</td>
-            <td><a href="mailto:frans.plaisier@tenzinger.com">frans.plaisier@tenzinger.com</a></td>
-        </tr>
          <tr>
             <td><a href="https://topicus.nl/sectoren/zorg">Topicus</a></td>
             <td>Hugo Brand</td>
             <td><a href="mailto:hugo.brand@topicus.nl">hugo.brand@topicus.nl</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://tribeagency.nl/">Tribe Agency B.V.</a></td>
-            <td>Daan Gönning</td>
-            <td><a href="mailto:d.gonning@tribeagency.nl">d.gonning@tribeagency.nl</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://www.zwconnect.nl/">Zorg & Welzijn Connect</a></td>
-            <td>Harrie Huisman</td>
-            <td><a href="mailto:harrie@zwconnect.nl">harrie@zwconnect.nl</a></td>
         </tr>
         <tr>
             <td><a href="https://zorgdomein.com/">Zorgdomein</a></td>
