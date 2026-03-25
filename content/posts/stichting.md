@@ -75,9 +75,10 @@ in afstemming met voorzitter Stichting Nuts: Mark Weernink
 De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
 ## Jaarverslagen
- * [Jaarrekening 2024](/assets/downloads/Jaarrekening%202019.pdf)
- * [Jaarrekening 2019](/assets/downloads/Jaarrekening%202019.pdf)
-
+ * [Jaarrekening 2024](/assets/downloads/Jaarrekening_Nuts_2024_gepubliceerd.pdf)
+ * [Jaarrekening 2023](/assets/downloads/Jaarrekening_Nuts_2023_gepubliceerd.pdf)
+ * [Jaarrekening 2022](/assets/downloads/Jaarrekening_Nuts_2022_gepubliceerd.pdf)
+   
 ## Statuten
  * [Statuten](/nuts-statuten)
  
