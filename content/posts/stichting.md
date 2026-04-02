@@ -5,13 +5,6 @@ permalink: /stichting/
 header_image: manifest
 ---
 
----
-layout: page
-title: Over de stichting
-permalink: /stichting/
-header_image: manifest
----
-
 # Over de stichting
 
 Het Nuts initiatief bestaat uit een stichting en een open source software community. Binnen het Nutsnetwerk werken we sociocratisch: besluiten worden genomen door de mensen die het werk doen en samenwerking vindt plaats op een transparante en gelijkwaardige manier.
