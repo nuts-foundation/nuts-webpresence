@@ -1,0 +1,68 @@
+{
+  "intro": {
+    "title": "Aan de slag met Nuts",
+    "text": ""
+  },
+  "steps": [
+    {
+      "number": 1,
+      "title": "Ontdek Nuts",
+      "text": "Begin met het lezen van ons manifest, waarin we onze uitgangspunten toelichten. Bekijk daarna de documentatie om een goed beeld te krijgen van de Nuts‑specificatie, de Nuts‑node en de bestaande toepassingen. Daarnaast vind je op ons YouTube‑kanaal opnames van recente community‑meetings.",
+      "links": [
+        { "label": "Manifest", "url": "https://nuts.nl/manifest/" },
+        { "label": "Documentatie", "url": "https://nuts.nl/documentatie/" },
+        { "label": "YouTube‑kanaal", "url": "https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ" }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Sluit aan",
+      "text": "Sluit je aan bij de Nuts Community door het formulier in te vullen. Je ontvangt daarna een e‑mail met Slack‑toegang, praktische info over community‑meetings en tips om snel aan de slag te gaan. Via Slack blijf je op de hoogte, stel je vragen en kom je in contact met andere organisaties.",
+      "bullets": [
+        "Link om Slack te joinen",
+        "Praktische info over community‑meetings",
+        "Tips om snel aan de slag te gaan",
+        "Kanaal #development voor technische ondersteuning"
+      ],
+      "links": [
+        { "label": "Sluit aan", "url": "https://docs.google.com/forms/d/e/1FAIpQLSeCV6OF0exka0cY39-JtLCW1Y1lHStg-xs-ehNKgugELWwPrg/viewform?usp=publish-editor" },
+        { "label": "Join Slack", "url": "https://join.slack.com/t/nuts-foundation/shared_invite/zt-235ww08nk-halwcet23WCHclmlFd0lLg" }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Neem deel",
+      "text": "Elke vier weken organiseren we de online Nuts Community Meeting. Aanmelden is niet nodig; je kunt deelnemen via de link in de kalender. We delen de laatste ontwikkelingen, bespreken vragen uit de praktijk en kijken samen naar nieuwe ideeën.",
+      "bullets": [
+        "Updates over de laatste ontwikkelingen",
+        "Vragen en ervaringen uit de praktijk",
+        "Nieuwe ideeën en features"
+      ],
+      "links": [
+        { "label": "Bekijk kalender", "url": "https://nuts.nl/kalender/" }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Ontwikkel mee",
+      "text": "De Nuts‑node is open‑source en vrij beschikbaar. In de documentatie vind je alles om snel te starten — van eerste stappen tot verdieping. Voor developers is er uitgebreide technische uitleg, inclusief voorbeelden en tooling.",
+      "links": [
+        { "label": "Nuts‑node documentatie", "url": "https://docs.nuts.nl" },
+        { "label": "Broncode op GitHub", "url": "https://github.com/nuts-foundation" }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Word deelnemer",
+      "text": "Nuts werkt volledig decentraal: elke organisatie beheert haar eigen Nuts‑node en maakt rechtstreeks verbinding met anderen. Als deelnemer teken je de aansluitovereenkomst met Stichting Nuts en word je onderdeel van een gezamenlijk vertrouwenskader.",
+      "bullets": [
+        "Zekerheid dat jouw implementatie voldoet aan de Nuts‑afspraken",
+        "Vertrouwen van andere deelnemers om met jouw organisatie te verbinden",
+        "Toegang tot een netwerk waarin veiligheid, bereikbaarheid en aansprakelijkheid goed geregeld zijn"
+      ],
+      "links": [
+        { "label": "Meer informatie", "url": "https://nuts.nl/aansluiten" }
+      ]
+    }
+  ]
+}
