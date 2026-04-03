@@ -1,6 +1,6 @@
 import config from "../config/steps.json";
 
-export default function NutsVerticalStepper() {
+export default function VerticalStepper() {
   const { steps } = config;
 
   return (
