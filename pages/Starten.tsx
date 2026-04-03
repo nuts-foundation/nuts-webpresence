@@ -18,7 +18,7 @@ export default function StartenPage({ starten }: any) {
 export async function getStaticProps() {
   return {
     props: {
-      starten: await getContent("posts/starten"),
+      starten: await getContent("starten"),
     },
   };
 }

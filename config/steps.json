@@ -47,7 +47,7 @@
       "title": "Ontwikkel mee",
       "text": "De Nuts‑node is open‑source en vrij beschikbaar. In de documentatie vind je alles om snel te starten — van eerste stappen tot verdieping. Voor developers is er uitgebreide technische uitleg, inclusief voorbeelden en tooling.",
       "links": [
-        { "label": "Nuts‑node documentatie", "url": "https://docs.nuts.nl" },
+        { "label": "Nuts‑node documentatie", "url": "https://nuts-node.readthedocs.io/en/stable/" },
         { "label": "Broncode op GitHub", "url": "https://github.com/nuts-foundation" }
       ]
     },

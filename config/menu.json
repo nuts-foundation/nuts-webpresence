@@ -33,6 +33,10 @@
       "name": "Meedoen",
       "children": [
         {
+          "name": "Starten met Nuts",
+          "href": "/starten"
+        },
+        {
           "name": "Community",
           "href": "/community"
         },
