@@ -2,7 +2,7 @@ import React from "react";
 import { getContent } from "../lib/api";
 import Markdown from "../components/Markdown";
 import Layout from "../components/Layout";
-import NutsVerticalStepper from "../components/VerticalStepper";
+import VerticalStepper from "../components/VerticalStepper";
 
 export default function StartenPage({ starten }: any) {
   return (
