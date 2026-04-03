@@ -9,7 +9,7 @@ export default function StartenPage({ starten }: any) {
     <Layout>
       <div className="container mx-auto py-16 max-w-[960px]">
         <Markdown html={starten.content} className="prose max-w-none" />
-        <NutsVerticalStepper />
+        <VerticalStepper />
       </div>
     </Layout>
   );
