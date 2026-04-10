@@ -7,11 +7,11 @@ header_image: manifest
 
 # Over de stichting
 
-Het Nuts initiatief bestaat uit een stichting en een open source software community. Binnen het Nutsnetwerk werken we sociocratisch: besluiten worden genomen door de mensen die het werk doen en samenwerking vindt plaats op een transparante en gelijkwaardige manier.
+Het Nuts initiatief bestaat uit een stichting en een open source software community. Binnen de Nuts-community werken we sociocratisch: besluiten worden genomen door de mensen die het werk doen en samenwerking vindt plaats op een transparante en gelijkwaardige manier.
 
 <img class="inline-image" src="/images/stichting-open-source.png" alt="Stichting-open-source" title="Stichting-open-source-community" style="border:1px solid black"/>
 
-De software community verzamelt, bouwt en test de software die we allemaal nodig hebben. De stichting faciliteert deze community door onder andere:
+De software community verzamelt, bouwt en test de software die we allemaal nodig hebben. Stichting Nuts faciliteert deze community door onder andere:
 - tools beschikbaar te stellen voor ontwikkeling en afstemming
 - technische workshops te organiseren voor ontwikkelaars
 - audits en tests te regelen
@@ -28,7 +28,7 @@ Vertrouwen dat gegevens veilig zijn en alleen door de juiste partijen worden ger
 Nuts werkt aan dat vertrouwen in een open ecosysteem, van iedereen en vóór iedereen.
 
 ## Onze missie
-De Nuts community realiseert een openbare nutsvoorziening voor de zorgsector: een decentraal netwerk voor veilige en privacy-bewuste samenwerking rond gegevens.
+De Nuts-community realiseert een openbare nutsvoorziening voor de zorgsector: een decentraal netwerk voor veilige en privacy-bewuste samenwerking rond gegevens.
 Anders dan traditionele oplossingen heeft het Nuts-netwerk geen centrale beheerder en geen single point of failure. Elke deelnemer beheert zijn eigen Nuts-node. Vertrouwen wordt opgebouwd via cryptografisch verankerde identificatie en authenticatie — niet door een centrale partij vastgelegd, maar gedistribueerd over de deelnemers zelf, op basis van internationale open standaarden. Een open-source referentie-implementatie staat vrij ter beschikking voor alle partijen.
 Dit maakt toegang tot de juiste informatie mogelijk op het moment dat het ertoe doet — voor de juiste zorgverlener, met de juiste grondslag. Zorgaanbieders en leveranciers werken op een gelijk speelveld, zonder monopolist en zonder vendor lock-in.
 De stichting bevordert onderzoek en sectorbrede samenwerking. Governance is ingericht volgens sociocratische principes: gelijkwaardig eigenaarschap en open voor alle marktdeelnemers.
@@ -45,13 +45,13 @@ De gespreksleider bewaakt het proces en de gelijkwaardigheid.
 - Gespreksleider: Karin Vosters
 
 ### Nuts Kring Techniek 
-- Coördinator: Steven van de Vegt
-- Afgevaardigde: Bram Wesselo
+- Coördinator: Steven van der Vegt
+- Afgevaardigde: Vacature
 - Gespreksleider: Karin Vosters
 
 ### Nuts Kring Gezamenlijk Belang 
 - Coördinator: Thomas Ferguson
-- Afgevaardigde: Diana 
+- Afgevaardigde: Diana Demmer
 - Gespreksleider: Karin Vosters
 
 ### Nuts raad (bestuur) 
@@ -68,9 +68,9 @@ in afstemming met voorzitter Stichting Nuts: Mark Weernink
 De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 
 ## Jaarverslagen
- * [Jaarrekening 2024](/assets/downloads/Jaarrekening_Nuts_2024_gepubliceerd.pdf)
- * [Jaarrekening 2023](/assets/downloads/Jaarrekening_Nuts_2023_gepubliceerd.pdf)
- * [Jaarrekening 2022](/assets/downloads/Jaarrekening_Nuts_2022_gepubliceerd.pdf)
+ * [Jaarrekening 2024](/assets/downloads/Jaarrekening_Nuts_2024_gepubliceerd.pdf) | [Jaarverslag 2024](/assets/downloads/Jaarverslag_Stichting_Nuts_2024_concept.pdf) | 
+ * [Jaarrekening 2023](/assets/downloads/Jaarrekening_Nuts_2023_gepubliceerd.pdf) | [Jaarverslag 2023](/assets/downloads/Jaarverslag_Stichting_Nuts_2023_concept.pdf) | 
+ * [Jaarrekening 2022](/assets/downloads/Jaarrekening_Nuts_2022_gepubliceerd.pdf) | [Jaarverslag 2022](/assets/downloads/Jaarverslag_Stichting_Nuts_2022_concept.pdf) | 
    
 ## Statuten
  * [Statuten](/nuts-statuten)
