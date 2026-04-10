@@ -32,11 +32,6 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:p.van.zagten@adapcare.nl">p.van.zagten@adapcare.nl</a></td>
         </tr>
         <tr>
-            <td><a href="https://www.careconnections.nl/">CareConnections B.V.</a></td>
-            <td>Frans Plaisier</td>
-            <td><a href="mailto:frans@careconnections.nl">frans@careconnections.nl</a></td>
-        </tr>
-        <tr>
             <td><a href="https://ecare.nl">Ecare Software B.V.</a></td>
             <td>Dennis Snippert</td>
             <td><a href="mailto:dennis.snippert@ecare.nl">dennis.snippert@ecare.nl</a></td>
