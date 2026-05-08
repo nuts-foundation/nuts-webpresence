@@ -21,7 +21,4 @@ Dit project krijgt cofinanciering van de provincie Noord-Brabant.
 De rol van stichting Nuts in het project is het inbrengen van de op open internationale standaarden gebaseerde open source software voor het regelen van vertrouwen tussen de bij het project betrokken applicaties en de inzet van de kennis en ervaring in de Nuts community om use case gedreven te helpen de toepassing te beschrijven en te publiceren zodat projectpartners deze kunnen inbouwen in hun applicaties. Daarnaast zorgen partijen in de Nuts community voorblijvende aansluiting op de eIDAS2 ontwikkelingen en het bijbehorende Architecture Reference Framework.
 Na een goede kick-off bijeenkomst in mei hebben we samen met de projectpartners de eerste hoofdlijnen van de usecases, de architectuur en het proces in kaart gebracht. Nu de zomer voorbij is gaan we een en ander in een versnelling brengen. We zijn blij om aan dit project mee te mogen doen en hebben veel vertrouwen in de kracht van dit samenwerkingsverband.
 
-### De partners
-Welldata, DataRuimtevoorPreventie is een Interreg Vlaanderen-Nederland project in samenwerking met deze Vlaamse en Nederlandse partners: Domus Medica vzw, Zorgzaam Leuven, Gaston Remmers - Stichting Mijn Data Onze Gezondheid, NSX - Normalized Systems, Selfcare BV, Sport Vlaanderen, Care Innovation Center West-Brabant, Nuts, Eindhoven University of Technology, LiCalab - Living & Care Lab, TNO, Vito, VAN | Vlaams Apothekers Netwerk, Lokaal bestuur Vorselaar.
-
 <img src="/images/welldatalogo.jpg" alt="Welldata logo" title="Welldata logo" />
