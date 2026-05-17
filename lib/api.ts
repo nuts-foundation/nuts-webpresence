@@ -1,9 +1,9 @@
-import { readdir, readFile } from "fs/promises";
+import { readdir, readFile, stat } from "fs/promises";
 import matter from "gray-matter";
-
 import { render } from "./markdown";
 
 const CONTENT_DIR = "./content";
+const HOME_DIR = `${CONTENT_DIR}/home`;
 const POSTS_DIR = `${CONTENT_DIR}/posts`;
 
 export interface Content {
@@ -11,15 +11,63 @@ export interface Content {
   content: string;
 }
 
-export async function getContent(base_path: string): Promise<Content> {
-  const source = await readFile(`${CONTENT_DIR}/${base_path}.md`, "utf8");
-  const { data, content } = matter(source);
-  const output = await render(content);
+async function tryRead(path: string) {
+  try {
+    return await readFile(path, "utf8");
+  } catch {
+    return null;
+  }
+}
 
-  return {
-    meta: data,
-    content: output,
-  };
+export async function getContent(name: string): Promise<Content> {
+  name = name.toLowerCase();
+
+  const postFile = `${POSTS_DIR}/${name}.md`;
+  const postSource = await tryRead(postFile);
+
+  if (postSource) {
+    const { data, content } = matter(postSource);
+    return {
+      meta: data,
+      content: await render(content),
+    };
+  }
+
+  const homeFile = `${HOME_DIR}/${name}.md`;
+  const homeSource = await tryRead(homeFile);
+
+  if (homeSource) {
+    const { data, content } = matter(homeSource);
+    return {
+      meta: data,
+      content: await render(content),
+    };
+  }
+
+  const homeFolder = `${HOME_DIR}/${name}`;
+
+  try {
+    const s = await stat(homeFolder);
+    if (s.isDirectory()) {
+      const files = await readdir(homeFolder);
+      let combined = "";
+
+      for (const file of files) {
+        if (file.endsWith(".md")) {
+          const source = await readFile(`${homeFolder}/${file}`, "utf8");
+          const { content } = matter(source);
+          combined += "\n\n" + content;
+        }
+      }
+
+      return {
+        meta: {},
+        content: await render(combined),
+      };
+    }
+  } catch {}
+
+  throw new Error(`Content not found for: ${name}`);
 }
 
 export class Post {
@@ -27,12 +75,11 @@ export class Post {
     public name: string,
     public meta: { [key: string]: any },
     public content: string,
-  ) {
-  }
+  ) {}
 }
 
 interface Opts {
-  dir: string;
+  dir?: string;
 }
 
 function getDirname(opts?: Opts): string {
@@ -40,15 +87,16 @@ function getDirname(opts?: Opts): string {
     if (!/^[a-zA-Z0-9-_]+$/.test(opts.dir)) {
       throw new Error("invalid posts subdirectory");
     }
-
-    return `${POSTS_DIR}/${opts.dir}`
+    return `${POSTS_DIR}/${opts.dir}`;
   }
 
-  return POSTS_DIR
+  return POSTS_DIR;
 }
 
 export async function getPost(name: string, opts?: Opts): Promise<Post> {
-  if (!/^[a-zA-Z0-9-_]+$/.test(name)) {
+  name = name.toLowerCase();
+
+  if (!/^[a-z0-9-_]+$/.test(name)) {
     throw new Error(`invalid post name: ${name}`);
   }
 
@@ -62,15 +110,9 @@ export async function getPost(name: string, opts?: Opts): Promise<Post> {
 export async function getPosts(opts?: Opts): Promise<Post[]> {
   const results = await readdir(getDirname(opts));
 
-  let promises: Promise<Post>[] = [];
-
-  results.forEach(name => {
-    if (!name.endsWith(".md")) {
-      return;
-    }
-
-    promises.push(getPost(name.substring(0, name.length - 3), opts));
-  })
+  const promises = results
+    .filter(name => name.endsWith(".md"))
+    .map(name => getPost(name.replace(".md", ""), opts));
 
   return await Promise.all(promises);
 }
