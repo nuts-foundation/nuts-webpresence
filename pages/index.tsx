@@ -7,15 +7,6 @@ import { getContent, getPosts } from "../lib/api"
 
 import VideoImage from "../public/video.png"
 
-// import KikV from "../public/use-cases/kik-v.png"
-// import ZorgInzage from "/public/use-cases/zorginzage.png"
-// import eOverdracht from "/public/use-cases/eOverdracht.png"
-// import BabyConnect from "/public/use-cases/baby-connect.png"
-// import KikVSm from "/public/use-cases/sm/kik-v.png"
-// import ZorgInzageSm from "/public/use-cases/sm/zorginzage.png"
-// import eOverdrachtSm from "/public/use-cases/sm/eOverdracht.png"
-// import BabyConnectSm from "/public/use-cases/sm/baby-connect.png"
-
 import Video from "../components/Video"
 import Layout from "../components/Layout"
 import Header from "../components/Header"
@@ -91,17 +82,19 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
       </Section>
 
       <div className="my-20 mx-5 h-[65px]">
-        <Carousel items={config.participants.map(participant => (<a
-          href={participant.url}
-          key={participant.title}
-          target="_blank"
-          rel="noreferrer">
-          <img
-            src={participant.logoUrl}
-            loading="lazy"
-            style={{ objectFit: "contain", height: "100%", display: "inline-block" }}
-          />
-        </a>))} />
+        <Carousel items={config.participants.map(participant => (
+          <a
+            href={participant.url}
+            key={participant.title}
+            target="_blank"
+            rel="noreferrer">
+            <img
+              src={participant.logoUrl}
+              loading="lazy"
+              style={{ objectFit: "contain", height: "100%", display: "inline-block" }}
+            />
+          </a>
+        ))} />
       </div>
 
       <Section>
@@ -127,12 +120,12 @@ export const getStaticProps = async () => {
   return {
     props: {
       sections: {
-        entrance: await getContent("home/1-entrance"),
-        whatIsNuts: await getContent("home/2-what-is-nuts"),
-        howDoesItWork: await getContent("home/3-how-does-it-work"),
-        community: await getContent("home/4-community"),
-        usecases: await getContent("home/5-usecases"),
-        callToAction: await getContent("home/6-bottom-call-to-action"),
+        entrance: await getContent("1-entrance"),
+        whatIsNuts: await getContent("2-what-is-nuts"),
+        howDoesItWork: await getContent("3-how-does-it-work"),
+        community: await getContent("4-community"),
+        usecases: await getContent("5-usecases"),
+        callToAction: await getContent("6-bottom-call-to-action"),
       },
     }
   }
