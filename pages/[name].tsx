@@ -40,11 +40,13 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   };
 }
 
+const STATIC_PAGE_NAMES = ['toepassingen', 'starten'];
+
 export const getStaticPaths: GetStaticPaths = async ({ }: GetStaticPathsContext) => {
   const posts = await getPosts();
 
   return {
     fallback: "blocking",
-    paths: posts.map(post => `/${post.name}`),
+    paths: posts.filter(post => !STATIC_PAGE_NAMES.includes(post.name)).map(post => `/${post.name}`),
   };
 }
