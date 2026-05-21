@@ -1,15 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  async redirects() {
-    return [
-      {
-        source: "/shop",
-        destination: "https://shop.spreadshirt.nl/nuts/",
-        permanent: true
-      }
-    ]
-  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
