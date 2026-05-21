@@ -1,0 +1,14 @@
+import { useEffect } from 'react'
+
+export default function Shop() {
+  useEffect(() => {
+    window.location.replace('https://shop.spreadshirt.nl/nuts/')
+  }, [])
+
+  return (
+    <p>
+      Doorsturen naar de shop...{' '}
+      <a href="https://shop.spreadshirt.nl/nuts/">Klik hier als je niet automatisch wordt doorgestuurd.</a>
+    </p>
+  )
+}
