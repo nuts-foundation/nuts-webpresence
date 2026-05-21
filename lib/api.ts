@@ -1,4 +1,4 @@
-import { readdir, readFile, stat } from "fs/promises";
+import { readdir, readFile } from "fs/promises";
 import matter from "gray-matter";
 import { render } from "./markdown";
 
@@ -43,29 +43,6 @@ export async function getContent(name: string): Promise<Content> {
       content: await render(content),
     };
   }
-
-  const homeFolder = `${HOME_DIR}/${name}`;
-
-  try {
-    const s = await stat(homeFolder);
-    if (s.isDirectory()) {
-      const files = await readdir(homeFolder);
-      let combined = "";
-
-      for (const file of files) {
-        if (file.endsWith(".md")) {
-          const source = await readFile(`${homeFolder}/${file}`, "utf8");
-          const { content } = matter(source);
-          combined += "\n\n" + content;
-        }
-      }
-
-      return {
-        meta: {},
-        content: await render(combined),
-      };
-    }
-  } catch {}
 
   throw new Error(`Content not found for: ${name}`);
 }
@@ -115,4 +92,60 @@ export async function getPosts(opts?: Opts): Promise<Post[]> {
     .map(name => getPost(name.replace(".md", ""), opts));
 
   return await Promise.all(promises);
+}
+
+export type NewsCategory = "algemeen" | "use-case" | "persbericht" | "samenwerking" | "overig";
+
+export interface NewsArticle {
+  slug: string;
+  title: string;
+  date: string;
+  category: NewsCategory;
+  excerpt: string;
+  image: string | null;
+}
+
+export interface NewsArticleFull extends NewsArticle {
+  content: string;
+}
+
+export async function getNewsArticles(): Promise<NewsArticle[]> {
+  const dir = `${POSTS_DIR}/nieuws`;
+  const files = await readdir(dir);
+
+  const articles = await Promise.all(
+    files
+      .filter(f => f.endsWith(".md"))
+      .map(async f => {
+        const slug = f.replace(".md", "");
+        const source = await readFile(`${dir}/${f}`, "utf8");
+        const { data } = matter(source);
+        return {
+          slug,
+          title: data.title as string,
+          date: data.date as string,
+          category: (data.category ?? "overig") as NewsCategory,
+          excerpt: data.excerpt as string,
+          image: (data.image as string) ?? null,
+        };
+      })
+  );
+
+  return articles.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export async function getNewsArticleFull(slug: string): Promise<NewsArticleFull> {
+  if (!/^[a-z0-9-]+$/.test(slug)) throw new Error(`invalid news slug: ${slug}`);
+  const source = await readFile(`${POSTS_DIR}/nieuws/${slug}.md`, "utf8");
+  const { data, content } = matter(source);
+  const rendered = await render(content);
+  return {
+    slug,
+    title: data.title as string,
+    date: data.date as string,
+    category: (data.category ?? "overig") as NewsCategory,
+    excerpt: data.excerpt as string,
+    image: (data.image as string) ?? null,
+    content: rendered,
+  };
 }
