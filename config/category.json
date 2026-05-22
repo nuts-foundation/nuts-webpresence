@@ -1,0 +1,177 @@
+{
+  "categories": [
+    {
+      "id": "databeschikbaarheid",
+      "label": "Databeschikbaarheid",
+      "abbr": "DB",
+      "description": "Gegevens blijven bij de bron en worden ontsloten op het moment dat een andere zorgverlener ze nodig heeft. Bijvoorbeeld huisartseninzage, beeldinzage en medicatie-inzage."
+    },
+    {
+      "id": "gegevensuitwisseling",
+      "label": "Gegevensuitwisseling",
+      "abbr": "GU",
+      "description": "Een afgebakend bericht wordt overgedragen aan een nieuwe verantwoordelijke partij. Bijvoorbeeld eOverdracht, geboortezorg en MSZ-overdracht."
+    },
+    {
+      "id": "netwerkzorg",
+      "label": "Netwerkzorg",
+      "abbr": "NW",
+      "description": "Meerdere zorgverleners werken gelijktijdig samen rond één patiënt en delen actuele afspraken in de keten."
+    },
+    {
+      "id": "secundair-gebruik",
+      "label": "Secundair gebruik",
+      "abbr": "SG",
+      "description": "Federatieve uitvragen voor beleid, kwaliteit en wetenschappelijk onderzoek — denk aan KIK-V en WellData."
+    }
+  ],
+  "phases": [
+    { "id": "idee", "label": "Idee" },
+    { "id": "poc", "label": "PoC" },
+    { "id": "ontwikkeling", "label": "In ontwikkeling" },
+    { "id": "productie", "label": "In productie" }
+  ],
+  "toepassingen": [
+    {
+      "name": "Huisartseninzage",
+      "category": "databeschikbaarheid",
+      "phase": "productie",
+      "text": "Zorgverleners met een actuele zorgrelatie raadplegen het huisartsdossier rechtstreeks — zonder kopie."
+    },
+    {
+      "name": "Viewer applicatie inzage",
+      "category": "databeschikbaarheid",
+      "phase": "ontwikkeling",
+      "text": "Algemene viewer waarmee toegelaten partijen meerdere bronnen via één interface ontsluiten."
+    },
+    {
+      "name": "Beeldinzage",
+      "category": "databeschikbaarheid",
+      "phase": "poc",
+      "text": "Radiologische en andere beeldvormende onderzoeken inzichtelijk maken bij de bron."
+    },
+    {
+      "name": "Medicatie inzage",
+      "category": "databeschikbaarheid",
+      "phase": "poc",
+      "text": "Actueel medicatieoverzicht beschikbaar voor de zorgverlener die op dat moment verantwoordelijkheid draagt."
+    },
+    {
+      "name": "CumuluZ",
+      "category": "databeschikbaarheid",
+      "phase": "idee",
+      "text": "Verkenning van een breed inzage-stelsel waarin meerdere bronnen gefedereerd worden ontsloten."
+    },
+
+    {
+      "name": "eOverdracht",
+      "category": "gegevensuitwisseling",
+      "phase": "productie",
+      "text": "Verpleegkundige overdracht tussen ziekenhuis en VVT — in productie in een groeiend aantal regio's."
+    },
+    {
+      "name": "Geboortezorg",
+      "category": ["gegevensuitwisseling", "netwerkzorg"],
+      "phase": "productie",
+      "text": "Overdracht in de geboortezorgketen — verloskundige, kraamzorg en jeugdgezondheidszorg."
+    },
+    {
+      "name": "Medicatieoverdracht",
+      "category": "gegevensuitwisseling",
+      "phase": "poc",
+      "text": "Gestructureerde overdracht van het actueel medicatieoverzicht bij wisseling van behandelaar."
+    },
+    {
+      "name": "PZP",
+      "category": "gegevensuitwisseling",
+      "phase": "poc",
+      "text": "Persoonlijk zorgplan — overdracht van afspraken en doelen rondom een individuele patiënt."
+    },
+    {
+      "name": "MSZ-overdracht",
+      "category": "gegevensuitwisseling",
+      "phase": "idee",
+      "text": "Overdracht binnen en vanuit de medisch-specialistische zorg — wens vanuit ziekenhuizen en VVT."
+    },
+    {
+      "name": "Beeldoverdracht",
+      "category": "gegevensuitwisseling",
+      "phase": "idee",
+      "text": "Beeldvormende onderzoeken meegeven bij overdracht — als aanvulling op beeldinzage."
+    },
+    {
+      "name": "Tandarts in VVT-dossier",
+      "category": "gegevensuitwisseling",
+      "phase": "poc",
+      "text": "Tandheelkundige bevindingen ontsluiten richting het VVT-dossier voor kwetsbare ouderen."
+    },
+
+    {
+      "name": "ANW-zorg",
+      "category": "netwerkzorg",
+      "phase": "productie",
+      "text": "Avond-, nacht- en weekendzorg — dienstapotheek, huisartsenpost en regio werken op één netwerk samen."
+    },
+    {
+      "name": "Integrale Netwerkcommunicatie",
+      "category": "netwerkzorg",
+      "phase": "productie",
+      "text": "Multidisciplinaire samenwerking rond één patiënt, waarbij betrokkenen actuele afspraken delen."
+    },
+    {
+      "name": "Casemanagement dementie",
+      "category": "netwerkzorg",
+      "phase": "idee",
+      "text": "Casemanager krijgt zicht op alle betrokken zorgverleners en regelt de keten van zorg."
+    },
+    {
+      "name": "MDO",
+      "category": "netwerkzorg",
+      "phase": "poc",
+      "text": "Multidisciplinair overleg ondersteunen met gestructureerde inzage en gedeelde besluitvorming."
+    },
+    {
+      "name": "Palliatieve zorg",
+      "category": "netwerkzorg",
+      "phase": "idee",
+      "text": "Coördinatie tussen huisarts, thuiszorg, hospice en specialist in de laatste levensfase."
+    },
+    {
+      "name": "Wondzorg",
+      "category": "netwerkzorg",
+      "phase": "idee",
+      "text": "Verpleegkundigen, huisarts en wondconsulent volgen samen het verloop van complexe wonden."
+    },
+
+    {
+      "name": "KIK-V",
+      "category": "secundair-gebruik",
+      "phase": "productie",
+      "text": "Kwaliteitsinformatie verpleeghuiszorg — uitvraag aan verpleeghuizen via één gestandaardiseerd kanaal."
+    },
+    {
+      "name": "WellData (Interreg)",
+      "category": "secundair-gebruik",
+      "phase": "productie",
+      "text": "Grensoverschrijdend onderzoek met federatieve data — Nederland, België en Duitsland.",
+      "links": [
+        {
+          "label": "Meer informatie",
+          "url": "https://nuts.nl/welldata/"
+        }
+      ]
+    },
+    {
+      "name": "Health-RI",
+      "category": "secundair-gebruik",
+      "phase": "idee",
+      "text": "Aansluiting op de nationale onderzoeksinfrastructuur voor gezondheidsdata."
+    },
+    {
+      "name": "Wetenschappelijk onderzoek",
+      "category": "secundair-gebruik",
+      "phase": "idee",
+      "text": "Algemene route voor onderzoekers om met toestemming federatief onderzoek uit te voeren."
+    }
+  ]
+}
