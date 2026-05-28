@@ -73,10 +73,10 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
  * [Jaarrekening 2022](/assets/downloads/Jaarrekening_Nuts_2022_gepubliceerd.pdf) | [Jaarverslag 2022](/assets/downloads/Jaarverslag_Stichting_Nuts_2022_concept.pdf) | 
    
 ## Statuten
- * [Statuten](/nuts-statuten)
+ * [Statuten](/statuten)
  
 ## Jaarplan
-  * [Nuts plan 2024-2026 ]([/assets/downloads/Beleidsplan%202020.pdf](https://docs.google.com/presentation/d/1I9MwqcwJntxu2FYhihcNNtoT0vTgkfvPSU7DiUtlExA/edit?usp=sharing))
+  * [Nuts plan 2024-2026](https://docs.google.com/presentation/d/1I9MwqcwJntxu2FYhihcNNtoT0vTgkfvPSU7DiUtlExA/edit?usp=sharing)
 
 ## Documenten
   * [Brief Eerste Kamer Wegiz](/assets/downloads/Brief%20eerste%20kamer%20Wegiz-20230223.pdf)
