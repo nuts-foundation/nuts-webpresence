@@ -94,7 +94,7 @@ export async function getPosts(opts?: Opts): Promise<Post[]> {
   return await Promise.all(promises);
 }
 
-export type NewsCategory = "algemeen" | "use-case" | "persbericht" | "samenwerking" | "overig";
+export type NewsCategory = "algemeen" | "toepassing" | "persbericht" | "overig";
 
 export interface NewsArticle {
   slug: string;
@@ -107,6 +107,7 @@ export interface NewsArticle {
 
 export interface NewsArticleFull extends NewsArticle {
   content: string;
+  video: string | null;
 }
 
 export async function getNewsArticles(): Promise<NewsArticle[]> {
@@ -146,6 +147,7 @@ export async function getNewsArticleFull(slug: string): Promise<NewsArticleFull>
     category: (data.category ?? "overig") as NewsCategory,
     excerpt: data.excerpt as string,
     image: (data.image as string) ?? null,
+    video: (data.video as string) ?? null,
     content: rendered,
   };
 }
