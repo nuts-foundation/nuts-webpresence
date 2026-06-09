@@ -46,7 +46,7 @@ De gespreksleider bewaakt het proces en de gelijkwaardigheid.
 
 ### Nuts Kring Techniek 
 - Coördinator: Steven van der Vegt
-- Afgevaardigde: Vacature
+- Afgevaardigde: Edwin de Wit
 - Gespreksleider: Karin Vosters
 
 ### Nuts Kring Gezamenlijk Belang 
@@ -75,9 +75,6 @@ De bestuurders van de stichting ontvangen voor hun werkzaamheden geen beloning.
 ## Statuten
  * [Statuten](/statuten)
  
-## Jaarplan
-  * [Nuts plan 2024-2026 ]([/assets/downloads/Beleidsplan%202020.pdf](https://docs.google.com/presentation/d/1I9MwqcwJntxu2FYhihcNNtoT0vTgkfvPSU7DiUtlExA/edit?usp=sharing))
-
 ## Documenten
   * [Brief Eerste Kamer Wegiz](/assets/downloads/Brief%20eerste%20kamer%20Wegiz-20230223.pdf)
   * [Brief Tweede Kamer Wegiz](/assets/downloads/Brief%20tweede%20kamer%20Wegiz-20230114.pdf)
