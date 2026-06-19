@@ -51,7 +51,7 @@ export const getStaticPaths: GetStaticPaths = async ({ }: GetStaticPathsContext)
   );
 
   return {
-    fallback: "blocking",
+    fallback: false,
     paths: posts.filter(post => !explicitPages.has(post.name)).map(post => `/${post.name}`),
   };
 }
