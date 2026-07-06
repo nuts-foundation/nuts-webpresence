@@ -43,15 +43,18 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 
 export const getStaticPaths: GetStaticPaths = async ({ }: GetStaticPathsContext) => {
   const posts = await getPosts();
-  const pageFiles = await readdir('./pages');
+  const pageEntries = await readdir('./pages', { withFileTypes: true });
   const explicitPages = new Set(
-    pageFiles
-      .filter(f => f.endsWith('.tsx') && !f.startsWith('[') && !f.startsWith('_') && f !== 'index.tsx')
-      .map(f => f.replace('.tsx', ''))
+    pageEntries
+      .filter(f =>
+        f.isDirectory() ||
+        (f.name.endsWith('.tsx') && !f.name.startsWith('[') && !f.name.startsWith('_') && f.name !== 'index.tsx')
+      )
+      .map(f => f.name.replace('.tsx', ''))
   );
 
   return {
-    fallback: "blocking",
+    fallback: false,
     paths: posts.filter(post => !explicitPages.has(post.name)).map(post => `/${post.name}`),
   };
 }

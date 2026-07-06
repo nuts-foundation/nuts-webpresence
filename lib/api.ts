@@ -151,3 +151,49 @@ export async function getNewsArticleFull(slug: string): Promise<NewsArticleFull>
     content: rendered,
   };
 }
+
+export interface ToepassingArticle {
+  slug: string;
+  title: string;
+  excerpt: string | null;
+}
+
+export interface ToepassingArticleFull extends ToepassingArticle {
+  content: string;
+}
+
+export async function getToepassingArticles(): Promise<ToepassingArticle[]> {
+  const dir = `${POSTS_DIR}/toepassingen`;
+  try {
+    const files = await readdir(dir);
+    return await Promise.all(
+      files
+        .filter(f => f.endsWith(".md"))
+        .map(async f => {
+          const slug = f.replace(".md", "");
+          const source = await readFile(`${dir}/${f}`, "utf8");
+          const { data } = matter(source);
+          return {
+            slug,
+            title: data.title as string,
+            excerpt: (data.excerpt as string) ?? null,
+          };
+        })
+    );
+  } catch {
+    return [];
+  }
+}
+
+export async function getToepassingFull(slug: string): Promise<ToepassingArticleFull> {
+  if (!/^[a-z0-9-]+$/.test(slug)) throw new Error(`invalid toepassing slug: ${slug}`);
+  const source = await readFile(`${POSTS_DIR}/toepassingen/${slug}.md`, "utf8");
+  const { data, content } = matter(source);
+  const rendered = await render(content);
+  return {
+    slug,
+    title: data.title as string,
+    excerpt: (data.excerpt as string) ?? null,
+    content: rendered,
+  };
+}

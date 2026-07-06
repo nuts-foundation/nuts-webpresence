@@ -1,6 +1,13 @@
 import { useState, useMemo } from "react";
 import config from "../config/category.json";
 
+function nameToSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 type Toepassing = {
   name: string;
   category: string | string[];
@@ -12,7 +19,8 @@ type Toepassing = {
 type Category = { id: string; label: string; abbr: string; description: string };
 type Phase = { id: string; label: string };
 
-export default function CategoryNuts() {
+export default function CategoryNuts({ availableSlugs = [] }: { availableSlugs?: string[] }) {
+  const slugSet = new Set(availableSlugs);
   const { categories, phases, toepassingen } = config as {
     categories: Category[];
     phases: Phase[];
@@ -167,6 +175,16 @@ export default function CategoryNuts() {
                   {t.text}
                 </p>
 
+                {slugSet.has(nameToSlug(t.name)) && (
+                  <div className="mb-4">
+                    <a
+                      href={`/toepassingen/${nameToSlug(t.name)}`}
+                      className="inline-block bg-[#D15949] hover:bg-[#B84A3C] text-white text-xs font-medium px-4 py-2 rounded transition-colors duration-150"
+                    >
+                      Lees meer
+                    </a>
+                  </div>
+                )}
                 {t.links && (
                   <div className="flex flex-wrap gap-2 mb-4">
                     {t.links.map((link, i) => (
