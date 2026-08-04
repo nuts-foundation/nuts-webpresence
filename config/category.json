@@ -36,7 +36,13 @@
       "name": "Huisartseninzage",
       "category": "databeschikbaarheid",
       "phase": "productie",
-      "text": "Zorgverleners met een actuele zorgrelatie raadplegen het huisartsdossier rechtstreeks — zonder kopie."
+      "text": "Zorgverleners met een actuele zorgrelatie raadplegen het huisartsdossier rechtstreeks — zonder kopie.",
+      "links": [
+        {
+          "label": "Meer informatie",
+          "url": "/toepassingen/huisartseninzage"
+        }
+      ]
     },
     {
       "name": "Viewer applicatie inzage",
