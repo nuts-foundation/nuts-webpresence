@@ -1,5 +1,5 @@
 ---
-title: "Huisartsinzage in het thuiszorgdossier"
+title: "Huisartseninzage in het thuiszorgdossier"
 excerpt: "Huisartsen kunnen het dossier inzien van hun patiënt die ook zorg ontvangt van een thuiszorgorganisatie."
 ---
 ## Probleem en oplossing
