@@ -36,13 +36,7 @@
       "name": "Huisartseninzage",
       "category": "databeschikbaarheid",
       "phase": "productie",
-      "text": "Zorgverleners met een actuele zorgrelatie raadplegen het huisartsdossier rechtstreeks — zonder kopie.",
-      "links": [
-        {
-          "label": "Meer informatie",
-          "url": "/toepassingen/huisartseninzage"
-        }
-      ]
+      "text": "Zorgverleners met een actuele zorgrelatie raadplegen het huisartsdossier rechtstreeks — zonder kopie."
     },
     {
       "name": "Viewer applicatie inzage",
@@ -155,14 +149,14 @@
       "phase": "productie",
       "text": "Kwaliteitsinformatie verpleeghuiszorg — uitvraag aan verpleeghuizen via één gestandaardiseerd kanaal."
     },
-    {
+   {
       "name": "WellData (Interreg)",
       "category": "secundair-gebruik",
       "phase": "productie",
       "text": "Grensoverschrijdend onderzoek met federatieve data — Nederland, België en Duitsland.",
       "links": [
         {
-          "label": "Meer informatie",
+          "label": "Lees meer",
           "url": "https://nuts.nl/welldata/"
         }
       ]
