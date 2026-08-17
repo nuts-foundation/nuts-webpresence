@@ -44,7 +44,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
         <tr>
             <td><a href="https://https://www.entrace.nl/">Entrace B.V.</a></td>
             <td>Jonathan Heesen</td>
-            <td><a href="mailto:jonathan@entrace.n">jonathan@entrace.n</a></td>
+            <td><a href="mailto:jonathan@entrace.nl">jonathan@entrace.nl</a></td>
         </tr>
         <tr>
             <td><a href="http://www.erasmusmc.nl/">Erasmus MC (Digizorg)</a></td>
