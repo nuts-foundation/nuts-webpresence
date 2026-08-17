@@ -52,6 +52,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:a.boor@erasmusmc.nl">a.boor@erasmusmc.nl</a></td>
         </tr>
         <tr>
+            <td><a href="https://www.geriforce.com/">Geriforce</a></td>
+            <td>Allard Soeters</td>
+            <td><a href="mailto:asoeters@gericall.nl">asoeters@gericall.nl</a></td>
+        </tr>
+        <tr>
             <td><a href="https://www.gerimedica.nl">Gerimedica</a></td>
             <td>Floris van Dijk</td>
             <td><a href="mailto:f.vandijk@gerimedica.nl">f.vandijk@gerimedica.nl</a></td>
