@@ -9,7 +9,7 @@
     "export": "next build --webpack && node generate.mjs"
   },
   "dependencies": {
-    "@svgr/webpack": "^6.3.1",
+    "@svgr/webpack": "^8.1.0",
     "gray-matter": "^4.0.3",
     "jsonfeed-to-rss": "^3.0.8",
     "next": "^16.3.4",
