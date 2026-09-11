@@ -77,14 +77,37 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build and export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} npm run export
-      - name: Smoke test rendered output
-        run: ${{ steps.detect-package-manager.outputs.runner }} npm run smoke-test
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: ./out
+          retention-days: 1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         # Skip artifact on pull requests, only on merge (lets save some bytes)
         if: ${{ github.event_name != 'pull_request' }}
         with:
           path: ./out
+
+  # Smoke test job — runs as its own check, separate from the build
+  smoke-test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Download build output
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: ./out
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+      - name: Smoke test rendered output
+        run: node scripts/smoke-test.mjs
 
   # Deployment job
   deploy:
@@ -94,7 +117,7 @@ jobs:
     runs-on: ubuntu-latest
     # Skip deployment on pull requests, only on merge
     if: ${{ github.event_name != 'pull_request' }}
-    needs: build
+    needs: [build, smoke-test]
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
