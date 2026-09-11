@@ -37,6 +37,20 @@ const PAGE_CHECKS = [
     // Raw HTML embedded in markdown (sanitize: false) must still pass through.
     mustContain: [/<iframe/i],
   },
+  {
+    path: "toepassingen/index.html",
+    label: "/toepassingen/",
+    mustContain: [/<h1/i],
+  },
+  {
+    path: "nieuws/poc-mitz-nuts/index.html",
+    label: "/nieuws/poc-mitz-nuts/",
+    // Content contains a standalone YouTube link, which embedYoutubeLinks()
+    // in lib/markdown.ts should turn into an iframe via a regex match
+    // against remark-html's exact output shape. That match is easy to
+    // silently break without this page being covered.
+    mustContain: [/<h1/i, /<iframe[^>]+youtube\.com\/embed\//i],
+  },
 ];
 
 async function readOut(relPath) {
