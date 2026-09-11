@@ -11,7 +11,7 @@ ENV NODE_ENV=production
 
 RUN npm run export
 
-FROM joseluisq/static-web-server:2.11-alpine
+FROM joseluisq/static-web-server:2.44-alpine
 
 COPY --from=build /build/out /public
 EXPOSE 8787
