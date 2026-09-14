@@ -1,3 +1,4 @@
+import { readdir } from "fs/promises"
 import { NextSeo } from "next-seo"
 import { GetStaticPaths, GetStaticPathsContext, GetStaticPropsContext, InferGetStaticPropsType } from "next"
 
@@ -42,9 +43,18 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 
 export const getStaticPaths: GetStaticPaths = async ({ }: GetStaticPathsContext) => {
   const posts = await getPosts();
+  const pageEntries = await readdir('./pages', { withFileTypes: true });
+  const explicitPages = new Set(
+    pageEntries
+      .filter(f =>
+        f.isDirectory() ||
+        (f.name.endsWith('.tsx') && !f.name.startsWith('[') && !f.name.startsWith('_') && f.name !== 'index.tsx')
+      )
+      .map(f => f.name.replace('.tsx', ''))
+  );
 
   return {
-    fallback: "blocking",
-    paths: posts.map(post => `/${post.name}`),
+    fallback: false,
+    paths: posts.filter(post => !explicitPages.has(post.name)).map(post => `/${post.name}`),
   };
 }

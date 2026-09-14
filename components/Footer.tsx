@@ -1,4 +1,4 @@
-import Logo from "/public/logo.svg"
+import Logo from "../public/logo.svg"
 
 import Button from "./Button"
 import { MenuItem } from "./Menu"

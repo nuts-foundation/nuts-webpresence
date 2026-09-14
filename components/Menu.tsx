@@ -2,10 +2,10 @@ import Link from "next/link"
 import React, { useEffect, useState } from "react"
 import Router, { useRouter } from "next/router"
 
-import Logo from "/public/logo.svg"
-import Close from "/icons/close.svg"
-import ChevronDown from "/icons/chevron-down.svg"
-import ChevronRight from "/icons/chevron-right.svg"
+import Logo from "../public/logo.svg"
+import Close from "../icons/close.svg"
+import ChevronDown from "../icons/chevron-down.svg"
+import ChevronRight from "../icons/chevron-right.svg"
 
 export interface MenuLink {
   name: string;

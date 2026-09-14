@@ -42,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async ({ }: GetStaticPathsContext)
   const posts = await getPosts({ dir: "use-case" });
 
   return {
-    fallback: "blocking",
+    fallback: false,
     paths: posts.map(post => ({
       params: { slug: post.name },
     })),
