@@ -6,7 +6,8 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build --webpack && node generate.mjs"
+    "export": "next build --webpack && node generate.mjs",
+    "smoke-test": "node scripts/smoke-test.mjs"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
