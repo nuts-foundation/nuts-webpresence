@@ -2,7 +2,7 @@ import { Autoplay } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 interface Props {
-  items: React.ReactChild[];
+  items: React.ReactElement[];
 }
 
 export default function Carousel({ items }: Props) {
