@@ -22,7 +22,8 @@
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
     "sass": "^1.104.1",
-    "swiper": "^12.1.2"
+    "swiper": "^12.1.2",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
