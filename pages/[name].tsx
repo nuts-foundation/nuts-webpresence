@@ -1,6 +1,7 @@
 import { readdir } from "fs/promises"
-import { NextSeo } from "next-seo"
+import { generateNextSeo } from "next-seo/pages"
 import { GetStaticPaths, GetStaticPathsContext, GetStaticPropsContext, InferGetStaticPropsType } from "next"
+import Head from "next/head"
 
 import Layout from "../components/Layout"
 import { getPost, getPosts } from "../lib/api"
@@ -11,7 +12,9 @@ interface PostProps extends InferGetStaticPropsType<typeof getStaticProps> {
 export default function Post({ post }: PostProps) {
   return (
     <Layout>
-      <NextSeo openGraph={{ title: `Nuts - ${post.meta["title"]}` }} />
+      <Head>
+        {generateNextSeo({ openGraph: { title: `Nuts - ${post.meta["title"]}` } })}
+      </Head>
 
       <div className="px-4">
         <article
