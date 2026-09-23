@@ -33,4 +33,4 @@ In de pioniersfase van de Nuts-community hebben we de metaforen Nuts and Bolts g
 
 Er zijn reeds vele voorbeelden beschikbaar in verschillende ontwikkelstadia. Bijvoorbeeld bij de overdracht van zorg (eOverdracht), bij inzage (Huisarts inzage wijkzorg), ten behoeve van secundair gebruik van data (KIK-V) en bij meer integrale vormen van zorgtoepassingen (geboortezorg en Avond, Nacht en Weekendzorg). 
 
-[&raquo; Lees de Toepassingen op Nuts](https://nuts-foundation.gitbook.io/bolts/)
+[&raquo; Lees de Toepassingen op Nuts](https://nuts.nl/toepassingen/)
