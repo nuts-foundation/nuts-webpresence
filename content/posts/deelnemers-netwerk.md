@@ -92,11 +92,6 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:christel@ozoverbindzorg.nl">christel@ozoverbindzorg.nl</a></td>
         </tr>
         <tr>
-            <td><a href="https://www.pinkroccade-healthcare.nl/">PinkRoccade Care</a></td>
-            <td>Mark Byrman</td>
-            <td><a href="mailto:mark.byrman@pinkroccade.nl">mark.byrman@pinkroccade.nl</a></td>
-        </tr>
-        <tr>
             <td><a href="https://www.rivo-noord.nl/">Rivo Noord (Zorgviewer)</a></td>
             <td>Jan-Joost van Walsum</td>
             <td><a href="mailto:c.j.j.van.walsum@umcg.nl">c.j.j.van.walsum@umcg.nl</a></td>
@@ -110,16 +105,6 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="https://www.sdbgroep.nl">SDBGroep</a></td>
             <td>Bart Rings</td>
             <td><a href="mailto:ecd@sdbgroep.nl">ecd@sdbgroep.nl</a></td>
-        </tr>
-         <tr>
-            <td><a href="https://suresync.nl/">SureSync (Visma Connect B.V)</a></td>
-            <td>Mathijs Koenen</td>
-            <td><a href="mailto:mathijs.koenen@visma.com">mathijs.koenen@visma.com</a></td>
-        </tr>
-         <tr>
-            <td><a href="https://syntilio.com/nl">Syntilio B.V.</a></td>
-            <td>Raoul Zaal</td>
-            <td><a href="mailto:raoul@syntilio.com">raoul@syntilio.com</a></td>
         </tr>
          <tr>
             <td><a href="https://topicus.nl/sectoren/zorg">Topicus</a></td>
