@@ -74,3 +74,14 @@ div.call-to-action img {
 div.call-to-action p {
     margin-top: 15px;
 }
+
+/* Styles for the "certs.md" page */
+article.prose div.callout {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid #D15949;
+    background-color: #FFE4CB;
+}
+article.prose div.callout p {
+    margin: 0;
+}

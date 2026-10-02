@@ -23,6 +23,8 @@ _site
 # misc
 .DS_Store
 *.pem
+# PKIoverheid truststore bundles published on /certs are tracked on purpose
+!/public/certs/**/truststore.pem
 .scratch/
 
 # debug
@@ -43,3 +45,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 /next
+
+# scratch files
+/.scratch/
