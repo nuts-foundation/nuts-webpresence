@@ -6,28 +6,25 @@ permalink: /certs/
 
 # PKIoverheid truststores
 
-Deze pagina bevat de truststore-bundels voor de Nuts-netwerken: de CA-certificaten van PKIoverheid Private Services voor het productie- en test-netwerk, en de Nuts development CA voor het stable-netwerk (non-production). Onder die hiërarchie geeft PKIoverheid UZI-servercertificaten en andere private servercertificaten uit. De Nuts-node gebruikt de bundel om de TLS-certificaten van andere nodes op het gRPC-netwerk te controleren. De reverse proxy gebruikt de bundel om de client-certificaten te controleren van partijen die de FHIR- of andere data-endpoints aanroepen.
+Deze pagina bevat de truststore-bundel met de CA-certificaten van PKIoverheid Private Services voor het productie- en test-netwerk van Nuts. Onder die hiërarchie geeft PKIoverheid UZI-servercertificaten en andere private servercertificaten uit. De Nuts-node gebruikt de bundel om de TLS-certificaten van andere nodes op het gRPC-netwerk te controleren. De reverse proxy gebruikt de bundel om de client-certificaten te controleren van partijen die de FHIR- of andere data-endpoints aanroepen.
 
 | Bundel | Bestand | Hiërarchieën | Gebruik |
 |---|---|---|---|
 | Productie | [/certs/production/truststore.pem](/certs/production/truststore.pem) | PKIoverheid Private Services G1 en G4 | Het productie-netwerk en het test-netwerk (acceptatie) van Nuts |
-| Stable (non-production) | [/certs/stable/truststore.pem](/certs/stable/truststore.pem) | Nuts Stable Development Network Root CA G2 | Het stable-netwerk (non-production) van Nuts |
 
-Op het test-netwerk (acceptatie) gelden dezelfde PKIoverheid Private Services-certificaten als op productie. Het stable-netwerk (non-production) gebruikt geen PKIoverheid-certificaten, maar certificaten van de Nuts development CA uit [nuts-foundation/nuts-development-network-ca](https://github.com/nuts-foundation/nuts-development-network-ca); de stable-bundel bevat de root daarvan. De testcertificaten van CIBG (TEST en ACCEPTATIE) zitten in geen van beide bundels: die worden op geen enkel Nuts-netwerk gebruikt.
+Op het test-netwerk (acceptatie) gelden dezelfde PKIoverheid Private Services-certificaten als op productie. Het stable-netwerk (non-production) gebruikt geen PKIoverheid-certificaten, maar certificaten van de Nuts development CA. De truststore daarvoor staat in [nuts-foundation/nuts-development-network-ca](https://github.com/nuts-foundation/nuts-development-network-ca). De testcertificaten van CIBG (TEST en ACCEPTATIE) zitten niet in de bundel: die worden op geen enkel Nuts-netwerk gebruikt.
 
-De bundels zijn PEM-bestanden. Boven elk certificaat staat als commentaar het subject, de bron-URL en de SHA-256 thumbprint. TLS-bibliotheken (OpenSSL, Go, nginx, HAProxy, Traefik) negeren die regels.
+De bundel is een PEM-bestand. Boven elk certificaat staat als commentaar het subject, de bron-URL en de SHA-256 thumbprint. TLS-bibliotheken (OpenSSL, Go, nginx, HAProxy, Traefik) negeren die regels.
 
 <div class="callout">
-<p><strong>Controleer de bundel vóór gebruik.</strong> Nuts biedt de bundel aan als hulpmiddel; leveranciers blijven zelf verantwoordelijk voor de inhoud van hun truststore. Volg daarvoor de <a href="#verifieren">verificatiestappen</a> en vergelijk ieder certificaat met de uitgever (Logius, CIBG of Nuts), ook na iedere update van de bundel.</p>
+<p><strong>Controleer de bundel vóór gebruik.</strong> Nuts biedt de bundel aan als hulpmiddel; leveranciers blijven zelf verantwoordelijk voor de inhoud van hun truststore. Volg daarvoor de <a href="#verifieren">verificatiestappen</a> en vergelijk ieder certificaat met de uitgever (Logius of CIBG), ook na iedere update van de bundel.</p>
 </div>
 
-## Inhoud van de bundels
+## Inhoud van de bundel
 
 Binnen Nuts wordt ieder servercertificaat dat onder PKIoverheid Private Services is uitgegeven vertrouwd voor TLS-verbindingen, of dat nu door het UZI-register, KPN, DigiCert of Digidentity is gedaan. PKIoverheid noemt die uitgevers Trust Service Providers (TSP's). Daarom bevat de productiebundel de root-CA's, intermediate-CA's en TSP-CA's van al die uitgevers, niet alleen die van CIBG. Uitzondering zijn de ZOVAR-CA's: die geven certificaten uit aan zorgverzekeraars, en die zijn nog niet actief in het Nuts-ecosysteem. De `did:x509`-pins in de toepassingsdefinities zijn wel UZI-specifiek, maar die staan los van deze bundel.
 
 De ingetrokken TSP-CA's uit 2024 (zoals `UZI Server - G4 PKIo Priv G-TLS SYS - 2024`, ingetrokken op 29-10-2025) zitten **niet** in de bundel. De G1-hiërarchie verloopt in november 2028; vanaf 12 november 2026 geeft CIBG alleen nog onder G4 uit.
-
-### Productie
 
 Bron: [cert.pkioverheid.nl](https://cert.pkioverheid.nl/) (Logius).
 
@@ -46,14 +43,6 @@ Bron: [cert.pkioverheid.nl](https://cert.pkioverheid.nl/) (Logius).
 | G4 | Digidentity - G4 PKIo Priv G-TLS SYS - 2025 | [DigidentityG4PKIoPrivGTLSSYS2025.cer](https://cert.pkioverheid.nl/DigidentityG4PKIoPrivGTLSSYS2025.cer) | fc6b0573c096991e59e886e28e314dfd74d96a8ea3976e197f23c2e5c49acd87 |
 | G4 | KPN - G4 PKIo Priv G-TLS SYS - 2025 | [KPNG4PKIoPrivGTLSSYS2025.cer](https://cert.pkioverheid.nl/KPNG4PKIoPrivGTLSSYS2025.cer) | 2b4ee93832a4b2ca349e86c21caf8f959b106c2d0aa6fd49a983fca00574d1a6 |
 | G4 | UZI Server - G4 PKIo Priv G-TLS SYS - 2025 | [UZIServerG4PKIoPrivGTLSSYS2025.cer](https://cert.pkioverheid.nl/UZIServerG4PKIoPrivGTLSSYS2025.cer) | b034cbfffcafe784edaef49fefad354edbc7823d8d6522d3da6f8e91ff28aa42 |
-
-### Stable (non-production)
-
-Bron: [nuts-foundation/nuts-development-network-ca](https://github.com/nuts-foundation/nuts-development-network-ca) (Nuts).
-
-| Hiërarchie | Certificaat (subject CN) | Bron (download bij de uitgever) | SHA-256 thumbprint (DER) |
-|---|---|---|---|
-| Nuts development CA | Nuts Stable Development Network Root CA G2 | [stable/ca.pem](https://raw.githubusercontent.com/nuts-foundation/nuts-development-network-ca/master/stable/ca.pem) | 25c478a52b6e362aa10022c78945e21d1d477d3bba7a689f62bb11230aed005f |
 
 ## Gebruik van de bundel
 
