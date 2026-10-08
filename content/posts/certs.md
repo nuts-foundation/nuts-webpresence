@@ -69,8 +69,6 @@ for f in bundle-*.pem; do
 done
 ```
 
-Dezelfde controle, aangevuld met een check op verloopdatum en intrekking (CRL) van ieder certificaat, draait wekelijks en bij iedere wijziging van de bundel: [scripts/verify-truststore.sh](https://github.com/nuts-foundation/nuts-webpresence/blob/master/scripts/verify-truststore.sh).
-
 ## Beheer
 
 Een fout of verlopen certificaat gezien? [Meld het via een issue](https://github.com/nuts-foundation/nuts-webpresence/issues). Een beveiligingsprobleem, bijvoorbeeld een certificaat in de bundel dat niet van de uitgever afkomstig is? Meld dat niet via een openbaar issue, maar volg de [responsible-disclosureprocedure van Nuts](https://github.com/nuts-foundation/nuts-node/blob/master/SECURITY.md).
