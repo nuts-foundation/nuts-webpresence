@@ -77,10 +77,12 @@ for pem in "$WORK"/cert-*.pem; do
   else
     echo "WARN  no CRL distribution point: $cn"
   fi
-  if out=$(openssl verify -CAfile "$WORK/roots.pem" -untrusted "$WORK/intermediates.pem" "${crl_args[@]}" "$pem" 2>&1); then
+  # "${arr[@]+...}" keeps an empty array working under set -u on bash 3.2 (macOS).
+  if out=$(openssl verify -CAfile "$WORK/roots.pem" -untrusted "$WORK/intermediates.pem" ${crl_args[@]+"${crl_args[@]}"} "$pem" 2>&1); then
     echo "OK    chain and CRL: $cn"
   else
-    echo "FAIL  $cn: $(printf '%s' "$out" | tail -1)"; fail=1
+    reason=$(printf '%s\n' "$out" | sed -n 's/^error [0-9]* at [0-9]* depth lookup: //p' | head -1)
+    echo "FAIL  chain or CRL: $cn (${reason:-$(printf '%s' "$out" | tail -1)})"; fail=1
   fi
 done
 
