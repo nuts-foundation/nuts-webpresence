@@ -22,7 +22,7 @@ De bundel is een PEM-bestand. Boven elk certificaat staat als commentaar het sub
 
 ## Inhoud van de bundel
 
-Binnen Nuts wordt ieder servercertificaat dat onder PKIoverheid Private Services is uitgegeven vertrouwd voor TLS-verbindingen, of dat nu door het UZI-register, KPN, DigiCert of Digidentity is gedaan. PKIoverheid noemt die uitgevers Trust Service Providers (TSP's). Daarom bevat de productiebundel de root-CA's, intermediate-CA's en TSP-CA's van al die uitgevers, niet alleen die van CIBG. Uitzondering zijn de ZOVAR-CA's: die geven certificaten uit aan zorgverzekeraars, en die zijn nog niet actief in het Nuts-ecosysteem. De `did:x509`-pins in de toepassingsdefinities zijn wel UZI-specifiek, maar die staan los van deze bundel.
+Binnen Nuts wordt ieder servercertificaat dat onder PKIoverheid Private Services is uitgegeven vertrouwd voor TLS-verbindingen, of dat nu door het UZI-register, KPN, DigiCert of Digidentity is gedaan. PKIoverheid noemt die uitgevers Trust Service Providers (TSP's). Daarom bevat de productiebundel de root-CA's, intermediate-CA's en TSP-CA's van al die uitgevers, niet alleen die van CIBG. De ZOVAR-CA's (certificaten voor zorgverzekeraars) zijn weggelaten om de bundel niet groter te maken dan nodig: zorgverzekeraars zijn nog niet actief in het Nuts-ecosysteem. Dat is geen beveiligingsmaatregel. ZOVAR-certificaten vallen onder hetzelfde PKIoverheid-regime en worden gewoon geaccepteerd als een partij zijn volledige keten meestuurt, want die valideert tegen dezelfde roots. De `did:x509`-pins in de toepassingsdefinities zijn wel UZI-specifiek, maar die staan los van deze bundel.
 
 De ingetrokken TSP-CA's uit 2024 (zoals `UZI Server - G4 PKIo Priv G-TLS SYS - 2024`, ingetrokken op 29-10-2025) zitten **niet** in de bundel. De G1-hiërarchie verloopt in november 2028; vanaf 12 november 2026 geeft CIBG alleen nog onder G4 uit.
 
@@ -50,20 +50,27 @@ De bundel hoort in de truststore van de Nuts-node en in de client-certificaatcon
 
 <h2 id="verifieren">Verifiëren</h2>
 
-Bereken van ieder certificaat in de bundel de SHA-256 thumbprint en vergelijk die met de uitgever: download het certificaat via de bron-URL uit de tabel en bereken daar dezelfde thumbprint van. Ieder certificaat in de bundel moet overeenkomen met een regel in de tabel, en er mag niets anders in zitten. Van de bundel als geheel publiceren we bewust geen checksum: de controle gaat certificaat voor certificaat.
+Twee stappen volstaan. Haal de twee roots op bij de uitgever en vergelijk hun thumbprints met de tabel hierboven (de G4-root ook met [uziregister.nl](https://www.uziregister.nl/softwareleveranciers/ca-certificaten-g4), waar CIBG de SHA-1- en SHA-256-thumbprints publiceert). Controleer daarna dat ieder certificaat in de bundel door een van die roots is ondertekend, direct of via een intermediate uit de bundel. Alleen wie de privésleutel van een root heeft, kan een certificaat maken dat eraan koppelt, dus hiermee is de hele bundel gecontroleerd. Van de bundel als geheel publiceren we bewust geen checksum.
 
 ```sh
-# 1. Splits de bundel in losse certificaten (bundle-01.pem, bundle-02.pem, ...) en toon per
-#    certificaat subject en thumbprint, in dezelfde volgorde als de tabel hierboven
-awk '/BEGIN CERT/{f=sprintf("bundle-%02d.pem",++n)} f{print > f} /END CERT/{f=""}' truststore.pem
-for f in bundle-*.pem; do openssl x509 -in "$f" -noout -subject -fingerprint -sha256; done
+# 1. Haal de twee roots bij de uitgever en toon hun thumbprints.
+#    Vergelijk die met de tabel; de G4-root ook met uziregister.nl.
+for r in PrivateRootCA-G1 StaatderNederlandenG4RootPrivGTLS2024; do
+  curl -sSf "https://cert.pkioverheid.nl/$r.cer" -o "$r.cer"
+  openssl x509 -inform DER -in "$r.cer" -noout -subject -fingerprint -sha256
+  openssl x509 -inform DER -in "$r.cer" >> roots.pem
+done
 
-# 2. Thumbprint van het exemplaar van de uitgever (DER-formaat, .cer)
-openssl x509 -inform DER -in StaatderNederlandenG4RootPrivGTLS2024.cer -noout -subject -fingerprint -sha256
+# 2. Controleer dat ieder certificaat in de bundel door een van die roots is ondertekend.
+#    Verwacht: 13 regels die eindigen op OK.
+awk '/BEGIN CERT/{f=sprintf("bundle-%02d.pem",++n)} f{print > f} /END CERT/{f=""}' truststore.pem
+for f in bundle-*.pem; do
+  openssl verify -CAfile roots.pem -untrusted truststore.pem "$f"
+done
 ```
 
-CIBG publiceert de SHA-1- en SHA-256-thumbprints van de G4-roots ook op [uziregister.nl](https://www.uziregister.nl/softwareleveranciers/ca-certificaten-g4). De thumbprint van `Staat der Nederlanden - G4 Root Priv G-TLS - 2024` in de tabel hierboven komt daarmee overeen.
+Dezelfde controle, aangevuld met een check op verloopdatum en intrekking (CRL) van ieder certificaat, draait wekelijks en bij iedere wijziging van de bundel: [scripts/verify-truststore.sh](https://github.com/nuts-foundation/nuts-webpresence/blob/master/scripts/verify-truststore.sh).
 
 ## Beheer
 
-Een fout of verlopen certificaat gezien? [Meld het via een issue](https://github.com/nuts-foundation/nuts-webpresence/issues).
+Een fout of verlopen certificaat gezien? [Meld het via een issue](https://github.com/nuts-foundation/nuts-webpresence/issues). Een beveiligingsprobleem, bijvoorbeeld een certificaat in de bundel dat niet van de uitgever afkomstig is? Meld dat niet via een openbaar issue, maar volg de [responsible-disclosureprocedure van Nuts](https://github.com/nuts-foundation/nuts-node/blob/master/SECURITY.md).

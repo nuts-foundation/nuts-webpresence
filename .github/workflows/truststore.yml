@@ -1,0 +1,30 @@
+name: Verify truststore
+
+on:
+  push:
+    branches: ["master"]
+    paths:
+      - "public/certs/**"
+      - "scripts/verify-truststore.sh"
+      - ".github/workflows/truststore.yml"
+  pull_request:
+    paths:
+      - "public/certs/**"
+      - "scripts/verify-truststore.sh"
+      - ".github/workflows/truststore.yml"
+  # Weekly: catches certificates that got revoked or are about to expire.
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Verify production bundle against the publisher, expiry and CRLs
+        run: ./scripts/verify-truststore.sh public/certs/production/truststore.pem
