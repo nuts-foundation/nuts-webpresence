@@ -7,11 +7,10 @@ on:
       - "public/certs/**"
       - "scripts/verify-truststore.sh"
       - ".github/workflows/truststore.yml"
+  # Runs on every PR (no paths filter): the check is required for merging, and a workflow skipped
+  # by a paths filter never reports, which would block the PR. The job itself skips the
+  # verification when the truststore files did not change.
   pull_request:
-    paths:
-      - "public/certs/**"
-      - "scripts/verify-truststore.sh"
-      - ".github/workflows/truststore.yml"
   # Weekly: catches certificates that got revoked or are about to expire.
   schedule:
     - cron: "0 6 * * 1"
@@ -21,10 +20,40 @@ permissions:
   contents: read
 
 jobs:
-  verify:
+  verify-truststore:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          # The PR merge commit and its first parent (the base branch), to list the changed files.
+          fetch-depth: 2
+      - name: Check for truststore changes
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            echo "verify=true" >> "$GITHUB_OUTPUT"
+          elif git diff --name-only HEAD^1 HEAD | grep -qE '^(public/certs/|scripts/verify-truststore\.sh$|\.github/workflows/truststore\.yml$)'; then
+            echo "verify=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No truststore changes, skipping verification."
+            echo "verify=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: Verify production bundle against the publisher, expiry and CRLs
+        if: steps.changes.outputs.verify == 'true'
         run: ./scripts/verify-truststore.sh public/certs/production/truststore.pem
+      # A failing scheduled run only notifies the person who last edited the cron line,
+      # so open an issue for the code owners instead (once, while it is still open).
+      - name: Open issue on failure
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "Truststore verification failed"
+        run: |
+          if [ -z "$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq '.[].number')" ]; then
+            gh issue create --title "$TITLE" --assignee stevenvegt,reinkrul \
+              --body "The weekly truststore check failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fi
