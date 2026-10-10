@@ -1,0 +1,4 @@
+# Changes to the PKIoverheid truststore bundles and the page that publishes them
+# require review by a code owner. See https://github.com/nuts-foundation/nuts-node/issues/4603
+/public/certs/** @stevenvegt @reinkrul
+/content/posts/certs.md @stevenvegt @reinkrul
