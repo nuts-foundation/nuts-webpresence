@@ -10,7 +10,7 @@ Deze pagina bevat de truststore-bundel met de CA-certificaten van PKIoverheid Pr
 
 | Bundel | Bestand | Hiërarchieën | Gebruik |
 |---|---|---|---|
-| Productie | [/certs/production/truststore.pem](/certs/production/truststore.pem) | PKIoverheid Private Services G1 en G4 | Het productie-netwerk en het test-netwerk (acceptatie) van Nuts |
+| Productie | <a href="/certs/production/truststore.pem" download>/certs/production/truststore.pem</a> | PKIoverheid Private Services G1 en G4 | Het productie-netwerk en het test-netwerk (acceptatie) van Nuts |
 
 Op het test-netwerk (acceptatie) gelden dezelfde PKIoverheid Private Services-certificaten als op productie. Het stable-netwerk (non-production) gebruikt geen PKIoverheid-certificaten, maar certificaten van de Nuts development CA. De truststore daarvoor staat in [nuts-foundation/nuts-development-network-ca](https://github.com/nuts-foundation/nuts-development-network-ca). De testcertificaten van CIBG (TEST en ACCEPTATIE) zitten niet in de bundel: die worden op geen enkel Nuts-netwerk gebruikt.
 
