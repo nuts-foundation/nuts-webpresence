@@ -1,0 +1,9 @@
+# Bilingual synonyms (NL <-> EN). Every term in a group is treated as equivalent to the others.
+# This list is the start of the Nuts glossary.
+groups:
+  - [toepassing, use case]
+  - [zorgaanbieder, healthcare provider, care organization]
+  - [bronhouder, data holder]
+  - [adressering, addressing]
+  - [autorisatie, authorization]
+  - [certificaat, certificate]

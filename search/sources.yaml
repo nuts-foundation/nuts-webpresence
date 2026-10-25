@@ -1,0 +1,220 @@
+# Sources of the nuts.nl search. This file is also the definition of "formal Nuts documentation":
+# a source is formal documentation when it is listed here.
+#
+# Per source:
+#   id, name, owner           identification; owner is TODO when unknown
+#   kind                      html (default) or openapi
+#   discovery                 links (follow links within urlPrefix, default) or sitemap (startUrls are sitemaps)
+#   startUrls, urlPrefix      where crawling starts and which URLs belong to the source
+#   index                     regexes of pages to index (default: all); other pages are only followed for links
+#   exclude                   regexes of pages to neither follow nor index
+#   selectors.content         element holding the main content (no navigation, header or footer)
+#   selectors.remove          elements inside the content to drop
+#   detectLanguage            derive nl/en from the page text instead of <html lang>
+#   labels                    default labels: type, audience, language, version, status
+#   overrides                 labels per URL regex; applied in order, later ones win
+#   versions                  crawl the source once per version, each with its own startUrls/urlPrefix and version label
+#
+# Label values:
+#   type:     concept | guide | reference | specification | use-case
+#   audience: developer | architect | devops | toepassingsontwerper | algemeen
+#   language: nl | en
+#   status:   actueel | draft | archief
+
+settings:
+  userAgent: "NutsSearchPoC/0.1 (+https://nuts.nl)"
+  rateLimitMs: 1000
+  maxPages: 500
+  timeoutMs: 30000
+
+x-fhir-ig: &fhir-ig
+  owner: TODO
+  discovery: links
+  selectors:
+    content: "#segment-content"
+  # Generated FHIR artifact pages (StructureDefinition-*.html, Bundle-*.json.html, ...) and IG Publisher overview pages.
+  exclude:
+    - "/[A-Z][A-Za-z]+-[^/]*\\.html$"
+    - "/(artifacts|toc|qa|changes|downloads|globals|searchparameters|profiles|terminologies|extensions|examples|history)\\.html$"
+    - "\\.(json|xml|ttl)\\.html$"
+  detectLanguage: true
+  labels: &fhir-ig-labels
+    type: specification
+    audience: [toepassingsontwerper, developer]
+    language: en
+    status: draft
+
+sources:
+  - id: nuts-nl
+    name: nuts.nl
+    owner: TODO
+    startUrls: ["https://nuts.nl/"]
+    urlPrefix: "https://nuts.nl/"
+    exclude:
+      - "^https://nuts\\.nl/(assets|certs|credentials|careers|bedankt|shop)/"
+    selectors:
+      content: "div.grow"
+    labels:
+      type: concept
+      audience: [algemeen]
+      language: nl
+      status: actueel
+    overrides:
+      - match: "^https://nuts\\.nl/en/"
+        labels: { language: en }
+      - match: "^https://nuts\\.nl/(toepassingen|use-case)/"
+        labels: { type: use-case, audience: [toepassingsontwerper, algemeen] }
+      - match: "^https://nuts\\.nl/(documentatie|aansluiten|starten|certs)/"
+        labels: { type: guide, audience: [algemeen, developer] }
+
+  - id: nuts-node
+    name: Nuts node documentatie
+    owner: TODO
+    exclude:
+      - "/_static/"
+      - "/_sources/"
+      - "/(genindex|search|py-modindex)\\.html$"
+    selectors:
+      content: "[itemprop=articleBody]"
+      remove: [".headerlink"]
+    labels:
+      type: guide
+      audience: [developer]
+      language: en
+      status: actueel
+    overrides:
+      - match: "/pages/deployment/"
+        labels: { audience: [devops] }
+      - match: "/pages/integrating/"
+        labels: { audience: [developer] }
+      - match: "/pages/(technology|development)/"
+        labels: { type: reference, audience: [developer, architect] }
+      - match: "/pages/release_notes"
+        labels: { type: reference, audience: [devops, developer] }
+    versions:
+      - version: v6.2
+        startUrls: ["https://nuts-node.readthedocs.io/en/v6.2/"]
+        urlPrefix: "https://nuts-node.readthedocs.io/en/v6.2/"
+      - version: v5.4
+        startUrls: ["https://nuts-node.readthedocs.io/en/v5.4/"]
+        urlPrefix: "https://nuts-node.readthedocs.io/en/v5.4/"
+      # ReadTheDocs publishes the master branch as "latest".
+      - version: master
+        startUrls: ["https://nuts-node.readthedocs.io/en/latest/"]
+        urlPrefix: "https://nuts-node.readthedocs.io/en/latest/"
+        labels: { status: draft }
+
+  - id: nuts-node-api
+    name: Nuts node API (OpenAPI)
+    owner: TODO
+    kind: openapi
+    labels:
+      type: reference
+      audience: [developer]
+      language: en
+      status: actueel
+    versions:
+      - version: v6.2
+        apiPage: "https://nuts-node.readthedocs.io/en/v6.2/pages/integrating/api.html"
+      - version: v5.4
+        apiPage: "https://nuts-node.readthedocs.io/en/v5.4/pages/integrating/api.html"
+      - version: master
+        apiPage: "https://nuts-node.readthedocs.io/en/latest/pages/integrating/api.html"
+        labels: { status: draft }
+
+  - id: nuts-specification
+    name: Nuts specificaties (RFC's)
+    owner: TODO
+    discovery: sitemap
+    exclude:
+      - "/templates/"
+    selectors:
+      content: "main"
+      remove:
+        - ".sr-only"
+        - "button"
+        - "time"
+        # "Previous / Next" links and "Last updated / Was this helpful?" below the page
+        - "a:has(> div > span:contains('Previous'))"
+        - "a:has(> div > span:contains('Next'))"
+        - "div:has(> p:contains('Last updated'))"
+    labels:
+      type: specification
+      audience: [developer, architect]
+      language: en
+      status: actueel
+    versions:
+      - version: v1
+        startUrls: ["https://nuts-foundation.gitbook.io/v1/sitemap.xml"]
+        urlPrefix: "https://nuts-foundation.gitbook.io/v1"
+      - version: drafts
+        startUrls: ["https://nuts-foundation.gitbook.io/drafts/sitemap.xml"]
+        urlPrefix: "https://nuts-foundation.gitbook.io/drafts"
+        labels: { status: draft }
+
+  - id: ig-anw
+    name: IG Avond-, Nacht- en Weekendzorg
+    startUrls: ["https://nuts-foundation.github.io/nl-anw-ig/"]
+    urlPrefix: "https://nuts-foundation.github.io/nl-anw-ig/"
+    <<: *fhir-ig
+
+  - id: ig-generic-functions
+    name: IG Generieke functies
+    startUrls: ["https://nuts-foundation.github.io/nl-generic-functions-ig/"]
+    urlPrefix: "https://nuts-foundation.github.io/nl-generic-functions-ig/"
+    <<: *fhir-ig
+
+  - id: ig-zorginzage
+    name: IG Zorginzage
+    startUrls: ["https://nuts-foundation.github.io/nl-zorginzage-ig/"]
+    urlPrefix: "https://nuts-foundation.github.io/nl-zorginzage-ig/"
+    <<: *fhir-ig
+    labels: { <<: *fhir-ig-labels, status: actueel }
+
+  - id: ig-360
+    name: IG Clientbeeld 360
+    startUrls: ["https://nuts-foundation.github.io/nl-360-ig/"]
+    urlPrefix: "https://nuts-foundation.github.io/nl-360-ig/"
+    <<: *fhir-ig
+    labels: { <<: *fhir-ig-labels, status: actueel }
+
+  - id: ig-eoverdracht-routering
+    name: IG eOverdracht routering
+    startUrls: ["https://nuts-foundation.github.io/nl-eoverdracht-routering-ig/"]
+    urlPrefix: "https://nuts-foundation.github.io/nl-eoverdracht-routering-ig/"
+    <<: *fhir-ig
+
+  - id: ig-pzp
+    name: IG Proactieve Zorgplanning
+    startUrls: ["https://nuts-foundation.github.io/nl-pzp-ig/"]
+    urlPrefix: "https://nuts-foundation.github.io/nl-pzp-ig/"
+    <<: *fhir-ig
+
+  - id: wiki
+    name: Nuts wiki
+    owner: TODO
+    startUrls: ["https://wiki.nuts.nl/books"]
+    urlPrefix: "https://wiki.nuts.nl/books"
+    index:
+      - "^https://wiki\\.nuts\\.nl/books/[^/]+/page/[^/]+$"
+    exclude:
+      - "/(export|revisions|edit|permissions|delete|copy|move|sort|create-[a-z-]+|references)(/|$)"
+    selectors:
+      content: ".page-content"
+    detectLanguage: true
+    labels:
+      type: guide
+      audience: [developer, architect]
+      language: nl
+      status: actueel
+    overrides:
+      - match: "/books/(hackathons-drafts|wg-omnichat|pocs-generieke-functies-netwerkzorg)/"
+        labels: { status: draft }
+      - match: "/books/[^/]*-old/"
+        labels: { status: archief }
+      - match: "/books/v5-v6-migration-guide/"
+        labels: { audience: [devops, developer] }
+      - match: "/books/(basics|kring-techniek)/"
+        labels: { type: concept, audience: [architect, toepassingsontwerper] }
+      - match: "/books/(pzp|generic-technical-agreements-generieke-bouwblokken)/"
+        labels: { type: specification, audience: [toepassingsontwerper, architect] }

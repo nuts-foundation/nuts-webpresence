@@ -1,0 +1,19 @@
+{
+  "name": "nuts-search-indexer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "index": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "robots-parser": "^3.0.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
