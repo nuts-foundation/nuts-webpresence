@@ -6,6 +6,7 @@ import Logo from "../public/logo.svg"
 import Close from "../icons/close.svg"
 import ChevronDown from "../icons/chevron-down.svg"
 import ChevronRight from "../icons/chevron-right.svg"
+import { searchEnabled } from "../lib/search"
 
 export interface MenuLink {
   name: string;
@@ -124,6 +125,7 @@ export default function Menu({ items, onOpen, onClose }: Props) {
                   {child.name}
               </Link>))}
             </Dropdown>))}
+            {searchEnabled && <SearchField />}
             <div className="text-white text-sm">
               <Link href="/" className={`font-semibold ${!isEnglish ? "underline" : ""}`}>NL</Link>
               &nbsp;|&nbsp;
@@ -134,6 +136,19 @@ export default function Menu({ items, onOpen, onClose }: Props) {
       </div>
     </div>
   </div>);
+}
+
+// Search field that opens the search page; a plain GET form, so it also works without JavaScript.
+function SearchField() {
+  return (<form action="/zoeken/" method="get" role="search">
+    <label htmlFor="menu-search" className="sr-only">Zoeken in de documentatie</label>
+    <input
+      id="menu-search"
+      name="q"
+      type="search"
+      placeholder="Zoeken…"
+      className="w-full md:w-40 rounded-full text-sm font-inter px-4 py-1.5 bg-white text-text border border-stroke focus:outline-none focus:ring-2 focus:ring-button" />
+  </form>)
 }
 
 interface DropdownProps {
