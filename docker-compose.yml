@@ -1,0 +1,16 @@
+# Local search backend for the nuts.nl search PoC (see search/ and the README).
+# Meilisearch Community Edition (MIT). The Enterprise Edition is a separate image (getmeili/meilisearch-enterprise).
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.55.0
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:?set MEILI_MASTER_KEY in .env}
+      MEILI_ENV: development
+      MEILI_NO_ANALYTICS: "true"
+    ports:
+      - "7700:7700"
+    volumes:
+      - meili-data:/meili_data
+
+volumes:
+  meili-data:
