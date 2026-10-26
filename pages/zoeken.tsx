@@ -236,7 +236,7 @@ function FacetGroup({ label, field, counts, selected, onToggle }: FacetGroupProp
 function ResultCard({ hit }: { hit: Hit }) {
   const crumbs = hit._formatted.hierarchy.slice(0, -1)
   return (
-    <li className="group relative rounded-xl border border-stroke hover:shadow-md transition-all p-5 md:p-6 bg-white focus-within:ring-2 focus-within:ring-dark">
+    <li className="group relative min-w-0 rounded-xl border border-stroke hover:shadow-md transition-all p-5 md:p-6 bg-white focus-within:ring-2 focus-within:ring-dark">
       {crumbs.length > 0 && (
         <p className="text-xs font-inter text-text/80 mb-1">
           {crumbs.map((crumb, i) => (
@@ -249,12 +249,13 @@ function ResultCard({ hit }: { hit: Hit }) {
       )}
       <h2 className="font-redhat font-bold text-dark-gray text-lg leading-snug group-hover:text-darker transition-colors">
         {/* The link covers the whole card; the title is its accessible name. */}
-        <a href={hit.url} className="after:absolute after:inset-0 focus:outline-none">
+        <a href={hit.url} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0 focus:outline-none">
           <Highlighted text={hit._formatted.title} />
+          <span className="sr-only"> (opent in nieuw venster)</span>
         </a>
       </h2>
       {hit._formatted.content && (
-        <p className="mt-2 text-text font-inter text-sm leading-relaxed">
+        <p className="mt-2 text-text font-inter text-sm leading-relaxed break-words">
           <Highlighted text={hit._formatted.content} />
         </p>
       )}
