@@ -4,10 +4,17 @@ export const FACETS = ["source", "sourceName", "category", "type", "audience", "
 const SEARCH_KEY_NAME = "nuts-search-frontend"
 
 export class Meili {
-  constructor(private host: string, private masterKey: string, private index: string) {}
+  // Holds the last indexed commit per GitHub source. Separate from the search index, so the search-only key
+  // cannot read it.
+  private stateIndex: string
+
+  constructor(private host: string, private masterKey: string, private index: string) {
+    this.stateIndex = `${index}-state`
+  }
 
   async configure(synonyms: Record<string, string[]>) {
     await this.call("POST", "/indexes", { uid: this.index, primaryKey: "id" }, [409])
+    await this.call("POST", "/indexes", { uid: this.stateIndex, primaryKey: "id" }, [409])
     await this.call("PATCH", `/indexes/${this.index}/settings`, {
       searchableAttributes: ["title", "hierarchy", "content"],
       filterableAttributes: FACETS,
@@ -26,6 +33,15 @@ export class Meili {
     for (let i = 0; i < records.length; i += 1000) {
       await this.call("POST", `/indexes/${this.index}/documents`, records.slice(i, i + 1000))
     }
+  }
+
+  async indexedCommit(job: string): Promise<string | undefined> {
+    const doc = await this.call("GET", `/indexes/${this.stateIndex}/documents/${stateId(job)}`, undefined, [404]) as { commit?: string }
+    return doc.commit
+  }
+
+  async setIndexedCommit(job: string, commit: string) {
+    await this.call("POST", `/indexes/${this.stateIndex}/documents`, [{ id: stateId(job), commit }])
   }
 
   // Returns the search-only key for the frontend, creating it on first run.
@@ -68,4 +84,9 @@ export class Meili {
       await new Promise(resolve => setTimeout(resolve, 200))
     }
   }
+}
+
+// Document ids may only contain letters, digits, - and _.
+function stateId(job: string): string {
+  return job.replace(/[^A-Za-z0-9_-]/g, "_")
 }

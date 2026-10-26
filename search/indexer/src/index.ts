@@ -6,7 +6,7 @@ import { expandVersions, loadSources, loadSynonyms } from "./config.ts"
 import { crawl, CrawlResult } from "./crawl.ts"
 import { Fetcher } from "./fetcher.ts"
 import { Meili } from "./meili.ts"
-import { indexGitHub } from "./github.ts"
+import { indexGitHub, latestCommit } from "./github.ts"
 import { indexOpenApi } from "./openapi.ts"
 
 const SEARCH_DIR = join(import.meta.dirname, "..", "..")
@@ -17,6 +17,8 @@ const { values: args } = parseArgs({
     source: { type: "string", multiple: true },
     "dry-run": { type: "boolean", default: false },
     verbose: { type: "boolean", default: false },
+    // Index only GitHub sources whose latest commit differs from the last indexed one; other sources are skipped.
+    "if-changed": { type: "boolean", default: false },
   },
 })
 
@@ -34,23 +36,35 @@ if (!args["dry-run"]) {
 }
 
 const fetcher = new Fetcher(config.settings)
-const jobs = selected.flatMap(expandVersions)
+let jobs = selected.flatMap(expandVersions)
+const jobName = (job: (typeof jobs)[number]) => job.labels.version ? `${job.id}@${job.labels.version}` : job.id
+
+if (args["if-changed"]) {
+  const changed = await Promise.all(jobs.filter(job => job.kind === "github").map(async job => {
+    const [latest, indexed] = await Promise.all([latestCommit(job), meili?.indexedCommit(jobName(job))])
+    if (latest !== indexed) return job
+    console.log(`[${jobName(job)}] unchanged (${latest.slice(0, 7)}), skipped`)
+  }))
+  jobs = changed.filter(job => job !== undefined)
+}
 
 // All jobs run at once; the fetcher spaces out requests per host, so sources on different hosts crawl in parallel.
 const results = await Promise.all(jobs.map(async job => {
-  const name = job.labels.version ? `${job.id}@${job.labels.version}` : job.id
+  const name = jobName(job)
   const log = (msg: string) => args.verbose && console.log(`[${name}]${msg}`)
   console.log(`[${name}] start`)
-  let result: CrawlResult
+  let result: CrawlResult & { commit?: string }
   try {
     result = job.kind === "openapi" ? await indexOpenApi(job, fetcher, log)
-      : job.kind === "github" ? await indexGitHub(job, fetcher, log)
+      : job.kind === "github" ? await indexGitHub(job, fetcher, join(OUT_DIR, "repos"), log)
       : await crawl(job, config.settings, fetcher, log)
   } catch (e) {
     result = { pages: 0, records: [], errors: [{ url: job.startUrls?.[0] ?? job.apiPage ?? job.github?.repo ?? "", reason: (e as Error).message }], skipped: [] }
   }
   // A crawl that found nothing must not wipe the records of an earlier, successful run.
   if (meili && result.records.length) await meili.replace(job.id, job.labels.version, result.records)
+  // Only a run without errors counts as indexed, so --if-changed retries a source that partly failed.
+  if (meili && result.commit && result.records.length && !result.errors.length) await meili.setIndexedCommit(name, result.commit)
   console.log(`[${name}] done: ${result.pages} pages, ${result.records.length} records, ${result.errors.length} errors, ${result.skipped.length} skipped`)
   return { name, job, result }
 }))

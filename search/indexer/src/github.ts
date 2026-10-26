@@ -1,3 +1,8 @@
+import { execFile } from "node:child_process"
+import { readdir, readFile, rm } from "node:fs/promises"
+import { join, sep } from "node:path"
+import { promisify } from "node:util"
+
 import { marked } from "marked"
 
 import { Source } from "./config.ts"
@@ -6,21 +11,38 @@ import { extractPage, KnownAnchors, readRenderedPage } from "./extract.ts"
 import { Fetcher } from "./fetcher.ts"
 import { labelsFor, languageFor } from "./labels.ts"
 
+const git = promisify(execFile)
+
+// Returns the latest commit of the configured branch. Uses git instead of the GitHub API, which allows only
+// 60 unauthenticated requests per hour.
+export async function latestCommit(source: Source): Promise<string> {
+  const gh = source.github!
+  const { stdout } = await git("git", ["ls-remote", `https://github.com/${gh.repo}.git`, `refs/heads/${gh.branch}`])
+  const commit = stdout.split("\t")[0]
+  if (!commit) throw new Error(`${gh.repo}: branch ${gh.branch} not found`)
+  return commit
+}
+
 // Indexes markdown files from a GitHub repository, while results link to the site that publishes them
 // (GitBook, GitHub Pages). The markdown has no navigation or other site noise and lists every page; the
 // published page is still fetched for its heading anchors, so deep links match what the site renders.
-export async function indexGitHub(source: Source, fetcher: Fetcher, log: (msg: string) => void): Promise<CrawlResult> {
-  const result: CrawlResult = { pages: 0, records: [], errors: [], skipped: [] }
+// The repository is cloned (shallow) into workDir; the result includes the indexed commit.
+export async function indexGitHub(source: Source, fetcher: Fetcher, workDir: string, log: (msg: string) => void): Promise<CrawlResult & { commit: string }> {
   const gh = source.github
   if (!gh) throw new Error(`source ${source.id}: github source needs github settings`)
 
-  const tree = await fetcher.get(`https://api.github.com/repos/${gh.repo}/git/trees/${gh.branch}?recursive=1`)
-  if (tree.status !== 200) throw new Error(`${gh.repo}@${gh.branch}: HTTP ${tree.status} listing files`)
+  const dir = join(workDir, gh.repo.replace("/", "_"))
+  await rm(dir, { recursive: true, force: true })
+  await git("git", ["clone", "--quiet", "--depth", "1", "--single-branch", "--branch", gh.branch, `https://github.com/${gh.repo}.git`, dir])
+  const commit = (await git("git", ["-C", dir, "rev-parse", "HEAD"])).stdout.trim()
+  const result = { pages: 0, records: [], errors: [], skipped: [], commit } as CrawlResult & { commit: string }
+
   const include = new RegExp(gh.include)
   const exclude = (source.exclude ?? []).map(p => new RegExp(p))
-  const files = (JSON.parse(tree.body) as { tree: { path: string, type: string }[] }).tree
-    .filter(f => f.type === "blob" && include.test(f.path))
-    .map(f => f.path)
+  const files = (await readdir(dir, { recursive: true }))
+    .map(f => f.split(sep).join("/"))
+    .filter(f => !f.startsWith(".git/") && include.test(f))
+    .sort()
 
   for (const path of files) {
     if (exclude.some(r => r.test(path))) {
@@ -33,9 +55,7 @@ export async function indexGitHub(source: Source, fetcher: Fetcher, log: (msg: s
 
     let markdown, rendered
     try {
-      const raw = await fetcher.get(`https://raw.githubusercontent.com/${gh.repo}/${gh.branch}/${path}`)
-      if (raw.status !== 200) throw new Error(`HTTP ${raw.status} for the markdown`)
-      markdown = raw.body
+      markdown = await readFile(join(dir, path), "utf8")
       const live = await fetcher.get(pageUrl)
       if (live.status === 404) {
         result.skipped.push({ url: pageUrl, reason: `in ${gh.repo}@${gh.branch} (${path}) but not published` })

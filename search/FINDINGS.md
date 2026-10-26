@@ -61,7 +61,7 @@ Elke run schrijft de details naar `search/indexer/out/report.json`.
 
     **Vraag voor de beheerder van de specificaties en IG's:** is het de bedoeling dat deze niet gepubliceerd zijn?
   - `<html lang>` van de IG's klopt niet altijd. De taal wordt daarom uit de tekst bepaald.
-  - Per run is er één GitHub API-aanroep per repo (7 in totaal). Zonder token mag dat 60 keer per uur. Zie "Productie".
+  - De repo's worden met `git clone --depth 1` opgehaald, niet via de GitHub API. Die API staat zonder token maar 60 aanroepen per uur toe, per IP-adres.
 
 ### Nuts wiki (BookStack)
 - Goed:
@@ -173,10 +173,12 @@ Alleen een notitie; de deployment hoort niet bij deze POC.
 
 **Indexer als CronJob**
 - Nachtelijke volledige run voor de HTML-bronnen: nuts.nl, ReadTheDocs, de API en de wiki.
-- GitHub-bronnen alleen opnieuw indexeren als er iets veranderd is:
-  - De CronJob vraagt elk uur per repo de laatste commit op met `git ls-remote`. Dat valt niet onder de API-limiet en vraagt geen token.
-  - Alleen bij een andere commit wordt die bron opnieuw geïndexeerd (`--source <id>`).
-- `git clone --depth 1` in plaats van de tree-API van GitHub. Dan geldt de limiet van 60 aanroepen per uur niet. Die limiet geldt per IP-adres, en in een cluster delen meerdere diensten vaak hetzelfde uitgaande IP-adres.
+- Elk uur `npm run index -- --if-changed` voor de GitHub-bronnen (gebouwd):
+  - De indexer vraagt per repo de laatste commit op met `git ls-remote`. Dat valt niet onder de API-limiet en vraagt geen token.
+  - Alleen een bron met een andere commit dan bij de vorige run wordt opnieuw geïndexeerd. Zonder wijzigingen duurt de run 1,5 s.
+  - De laatst geïndexeerde commit staat in Meilisearch, in de index `nuts-docs-state`. De zoeksleutel kan daar niet bij.
+  - Een run met fouten slaat de commit niet op, zodat de volgende run het opnieuw probeert.
+  - De container van de indexer heeft `git` nodig.
 - Waarom niet een GitHub Action per repo:
   - het kost 7 repo's met elk een secret;
   - Meilisearch moet dan de master key van buitenaf accepteren;

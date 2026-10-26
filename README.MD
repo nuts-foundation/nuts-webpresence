@@ -81,6 +81,8 @@ Indexer options:
 - `npm run index -- --source wiki --source nuts-node` indexes only these sources; the records of other sources stay.
 - `npm run index -- --dry-run` crawls without Meilisearch; output in `search/indexer/out/records.json`.
 - `--verbose` lists every crawled page.
+- `npm run index -- --if-changed` indexes only GitHub sources whose latest commit differs from the last indexed one,
+  and skips all other sources. Meant for an hourly run; needs `git`.
 
 Each run writes `search/indexer/out/report.json`: pages, records, errors and skipped pages with the reason.
 
