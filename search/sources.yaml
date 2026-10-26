@@ -94,6 +94,7 @@ sources:
         labels: { type: reference, audience: [developer, architect] }
       - match: "/pages/release_notes"
         labels: { type: reference, audience: [devops, developer] }
+    # Only the latest minor of the last two majors; unreleased master is left out.
     versions:
       - version: v6.2
         startUrls: ["https://nuts-node.readthedocs.io/en/v6.2/"]
@@ -101,11 +102,6 @@ sources:
       - version: v5.4
         startUrls: ["https://nuts-node.readthedocs.io/en/v5.4/"]
         urlPrefix: "https://nuts-node.readthedocs.io/en/v5.4/"
-      # ReadTheDocs publishes the master branch as "latest".
-      - version: master
-        startUrls: ["https://nuts-node.readthedocs.io/en/latest/"]
-        urlPrefix: "https://nuts-node.readthedocs.io/en/latest/"
-        labels: { status: draft }
 
   - id: nuts-node-api
     name: Nuts node API
@@ -121,9 +117,6 @@ sources:
         apiPage: "https://nuts-node.readthedocs.io/en/v6.2/pages/integrating/api.html"
       - version: v5.4
         apiPage: "https://nuts-node.readthedocs.io/en/v5.4/pages/integrating/api.html"
-      - version: master
-        apiPage: "https://nuts-node.readthedocs.io/en/latest/pages/integrating/api.html"
-        labels: { status: draft }
 
   - id: nuts-specification
     name: Nuts specificaties (RFC's)
