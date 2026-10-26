@@ -175,7 +175,7 @@ Meilisearch Community Edition houdt zelf geen zoekopdrachten of klikken bij; dat
 
 ## Keuze voor Meilisearch: overwogen alternatieven
 
-De opdracht voor de POC schreef Meilisearch voor. De afweging is vooraf buiten deze repository gemaakt; hieronder de samenvatting. De alternatieven zijn in de POC niet getest.
+De alternatieven zijn in de POC niet getest.
 
 **Kaders:** EU en open source, een los onderdeel, en weinig serverbeheer. Dat laatste weegt minder zwaar sinds er een Kubernetes-cluster bij OVHcloud beschikbaar is.
 
