@@ -31,14 +31,12 @@ settings:
 
 x-fhir-ig: &fhir-ig
   owner: TODO
-  discovery: links
-  selectors:
-    content: "#segment-content"
-  # Generated FHIR artifact pages (StructureDefinition-*.html, Bundle-*.json.html, ...) and IG Publisher overview pages.
+  kind: github
+  # Page text from input/pagecontent/*.md (IG Publisher source), so the generated FHIR artifact pages
+  # and the IG Publisher page header stay out. Version history and artifact intros/notes are skipped.
   exclude:
-    - "/[A-Z][A-Za-z]+-[^/]*\\.html$"
-    - "/(artifacts|toc|qa|changes|downloads|globals|searchparameters|profiles|terminologies|extensions|examples|history)\\.html$"
-    - "\\.(json|xml|ttl)\\.html$"
+    - "/history\\.md$"
+    - "-(intro|notes)\\.md$"
   detectLanguage: true
   labels: &fhir-ig-labels
     category: toepassing
@@ -46,6 +44,11 @@ x-fhir-ig: &fhir-ig
     audience: [toepassingsontwerper, developer]
     language: en
     status: draft
+
+x-fhir-ig-github: &fhir-ig-github
+  branch: main
+  include: "^input/pagecontent/[^/]+\\.md$"
+  titleSeparator: " - "
 
 sources:
   - id: nuts-nl
@@ -126,68 +129,51 @@ sources:
   - id: nuts-specification
     name: Nuts specificaties (RFC's)
     owner: TODO
-    discovery: sitemap
-    exclude:
-      - "/templates/"
-    selectors:
-      content: "main"
-      remove:
-        - ".sr-only"
-        - "nav[aria-label=Breadcrumb]"
-        - "button"
-        - "time"
-        # "Previous / Next" links and "Last updated / Was this helpful?" below the page
-        - "a:has(> div > span:contains('Previous'))"
-        - "a:has(> div > span:contains('Next'))"
-        - "div:has(> p:contains('Last updated'))"
+    kind: github
+    # Text from the markdown on GitHub; results link to GitBook, which publishes this branch as the v2 space.
+    github:
+      repo: nuts-foundation/nuts-specification
+      branch: v2
+      include: "^rfc/rfc[0-9]+[^/]*\\.md$"
+      url: "https://nuts-foundation.gitbook.io/v2/{path}"
     labels:
       category: specification
       type: specification
       audience: [developer, architect]
       language: en
+      version: v2
       status: actueel
-    # Only the current version (v2); v1 and drafts are left out.
-    versions:
-      - version: v2
-        startUrls: ["https://nuts-foundation.gitbook.io/v2/sitemap.xml"]
-        urlPrefix: "https://nuts-foundation.gitbook.io/v2"
 
   - id: ig-anw
     name: Toepassing Avond-, Nacht- en Weekendzorg
-    startUrls: ["https://nuts-foundation.github.io/nl-anw-ig/"]
-    urlPrefix: "https://nuts-foundation.github.io/nl-anw-ig/"
+    github: { <<: *fhir-ig-github, repo: nuts-foundation/nl-anw-ig, url: "https://nuts-foundation.github.io/nl-anw-ig/{name}.html" }
     <<: *fhir-ig
 
   - id: ig-generic-functions
     name: Toepassing Generieke functies
-    startUrls: ["https://nuts-foundation.github.io/nl-generic-functions-ig/"]
-    urlPrefix: "https://nuts-foundation.github.io/nl-generic-functions-ig/"
+    github: { <<: *fhir-ig-github, repo: nuts-foundation/nl-generic-functions-ig, url: "https://nuts-foundation.github.io/nl-generic-functions-ig/{name}.html" }
     <<: *fhir-ig
 
   - id: ig-zorginzage
     name: Toepassing Zorginzage
-    startUrls: ["https://nuts-foundation.github.io/nl-zorginzage-ig/"]
-    urlPrefix: "https://nuts-foundation.github.io/nl-zorginzage-ig/"
+    github: { <<: *fhir-ig-github, repo: nuts-foundation/nl-zorginzage-ig, url: "https://nuts-foundation.github.io/nl-zorginzage-ig/{name}.html" }
     <<: *fhir-ig
     labels: { <<: *fhir-ig-labels, status: actueel }
 
   - id: ig-360
     name: Toepassing Clientbeeld 360
-    startUrls: ["https://nuts-foundation.github.io/nl-360-ig/"]
-    urlPrefix: "https://nuts-foundation.github.io/nl-360-ig/"
+    github: { <<: *fhir-ig-github, repo: nuts-foundation/nl-360-ig, url: "https://nuts-foundation.github.io/nl-360-ig/{name}.html" }
     <<: *fhir-ig
     labels: { <<: *fhir-ig-labels, status: actueel }
 
   - id: ig-eoverdracht-routering
     name: Toepassing eOverdracht routering
-    startUrls: ["https://nuts-foundation.github.io/nl-eoverdracht-routering-ig/"]
-    urlPrefix: "https://nuts-foundation.github.io/nl-eoverdracht-routering-ig/"
+    github: { <<: *fhir-ig-github, repo: nuts-foundation/nl-eoverdracht-routering-ig, url: "https://nuts-foundation.github.io/nl-eoverdracht-routering-ig/{name}.html" }
     <<: *fhir-ig
 
   - id: ig-pzp
     name: Toepassing Proactieve Zorgplanning
-    startUrls: ["https://nuts-foundation.github.io/nl-pzp-ig/"]
-    urlPrefix: "https://nuts-foundation.github.io/nl-pzp-ig/"
+    github: { <<: *fhir-ig-github, repo: nuts-foundation/nl-pzp-ig, url: "https://nuts-foundation.github.io/nl-pzp-ig/{name}.html" }
     <<: *fhir-ig
 
   - id: wiki

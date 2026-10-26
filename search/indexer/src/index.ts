@@ -6,6 +6,7 @@ import { expandVersions, loadSources, loadSynonyms } from "./config.ts"
 import { crawl, CrawlResult } from "./crawl.ts"
 import { Fetcher } from "./fetcher.ts"
 import { Meili } from "./meili.ts"
+import { indexGitHub } from "./github.ts"
 import { indexOpenApi } from "./openapi.ts"
 
 const SEARCH_DIR = join(import.meta.dirname, "..", "..")
@@ -42,9 +43,11 @@ const results = await Promise.all(jobs.map(async job => {
   console.log(`[${name}] start`)
   let result: CrawlResult
   try {
-    result = job.kind === "openapi" ? await indexOpenApi(job, fetcher, log) : await crawl(job, config.settings, fetcher, log)
+    result = job.kind === "openapi" ? await indexOpenApi(job, fetcher, log)
+      : job.kind === "github" ? await indexGitHub(job, fetcher, log)
+      : await crawl(job, config.settings, fetcher, log)
   } catch (e) {
-    result = { pages: 0, records: [], errors: [{ url: job.startUrls?.[0] ?? job.apiPage ?? "", reason: (e as Error).message }], skipped: [] }
+    result = { pages: 0, records: [], errors: [{ url: job.startUrls?.[0] ?? job.apiPage ?? job.github?.repo ?? "", reason: (e as Error).message }], skipped: [] }
   }
   // A crawl that found nothing must not wipe the records of an earlier, successful run.
   if (meili && result.records.length) await meili.replace(job.id, job.labels.version, result.records)

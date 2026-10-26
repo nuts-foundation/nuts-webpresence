@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "cheerio": "^1.2.0",
+    "marked": "^18.1.1",
     "robots-parser": "^3.0.1",
     "yaml": "^2.9.1"
   },

@@ -40,11 +40,23 @@ export interface SourceVersion {
   apiPage?: string
 }
 
+export interface GitHubSettings {
+  // owner/name
+  repo: string
+  branch: string
+  // Regex of the markdown files to index, relative to the repository root.
+  include: string
+  // URL of the published page; {path} is the file path and {name} the file name, both without .md.
+  url: string
+  // Cut the published page's <title> at this separator to get the page title (e.g. " - " for IGs).
+  titleSeparator?: string
+}
+
 export interface Source {
   id: string
   name: string
   owner: string
-  kind?: "html" | "openapi"
+  kind?: "html" | "openapi" | "github"
   discovery?: "links" | "sitemap"
   startUrls?: string[]
   urlPrefix?: string
@@ -61,6 +73,8 @@ export interface Source {
   maxPages?: number
   // openapi only
   apiPage?: string
+  // github only
+  github?: GitHubSettings
 }
 
 export interface Settings {
@@ -109,8 +123,8 @@ export function expandVersions(source: Source): Source[] {
     labels: { ...source.labels, version: v.version, ...v.labels },
   }))
   for (const job of jobs) {
-    const missing = job.kind === "openapi"
-      ? (job.apiPage ? [] : ["apiPage"])
+    const missing = job.kind === "openapi" ? (job.apiPage ? [] : ["apiPage"])
+      : job.kind === "github" ? (job.github ? [] : ["github"])
       : (["startUrls", "urlPrefix", "selectors"] as const).filter(f => !job[f])
     if (missing.length) throw new Error(`source ${source.id}${job.labels.version ? "@" + job.labels.version : ""}: missing ${missing.join(", ")}`)
   }
