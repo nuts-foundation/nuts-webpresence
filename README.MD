@@ -43,8 +43,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Search (proof of concept)
 
 One search over all formal Nuts documentation: nuts.nl, the Nuts node docs (ReadTheDocs, per version), the
-Nuts node API (OpenAPI), the specifications (GitBook), the toepassingen (FHIR implementation guides on GitHub Pages) and the
-wiki. Off by default.
+Nuts node API (OpenAPI), the specifications and the toepassingen (FHIR implementation guides) and the wiki. The
+specifications and toepassingen are read as markdown from their GitHub repositories; results link to the published pages
+(GitBook, GitHub Pages). Off by default.
 
 | Part | Where |
 |---|---|
@@ -63,7 +64,7 @@ docker compose up -d                 # Meilisearch on http://localhost:7700
 
 cd search/indexer && npm install
 set -a && . ../../.env && set +a
-npm run index                        # crawls all sources, takes ~15 minutes; prints the search-only key at the end
+npm run index                        # crawls all sources, takes a few minutes; prints the search-only key at the end
 cd ../..
 
 # .env.local for Next.js
