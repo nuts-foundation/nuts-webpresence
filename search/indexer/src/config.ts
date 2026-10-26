@@ -25,6 +25,8 @@ export interface Selectors {
   content: string
   // Elements inside the content that must be dropped (buttons, edit links, ...).
   remove?: string[]
+  // Elements anywhere on the page (e.g. the book in a breadcrumb) whose text goes in front of the hierarchy.
+  context?: string[]
 }
 
 export interface SourceVersion {

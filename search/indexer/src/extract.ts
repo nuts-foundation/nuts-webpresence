@@ -11,6 +11,8 @@ export interface Section {
 }
 
 export interface Page {
+  // False when the content selector matched nothing (e.g. an overview page that is only crawled for its links).
+  hasContent: boolean
   title: string
   lang?: string
   sections: Section[]
@@ -20,11 +22,10 @@ export interface Page {
 const BLOCK = new Set([
   "p", "div", "li", "ul", "ol", "dl", "dt", "dd", "table", "tr", "td", "th", "pre", "blockquote",
   "section", "article", "h4", "h5", "h6", "br", "hr", "figure", "figcaption", "details", "summary",
+  "button", "label", "option",
 ])
 const HEADING_LEVEL: Record<string, number> = { h1: 1, h2: 2, h3: 3 }
 const MAX_CONTENT = 20_000
-
-export class SelectorNotFoundError extends Error {}
 
 export function extractPage(html: string, url: string, selectors: Selectors): Page {
   const $ = cheerio.load(html)
@@ -33,8 +34,9 @@ export function extractPage(html: string, url: string, selectors: Selectors): Pa
     .map(href => { try { return new URL(href, url).toString() } catch { return undefined } })
     .filter((href): href is string => !!href)
 
+  const context = (selectors.context ?? []).map(sel => clean($(sel).first().text())).filter(Boolean)
   const root = $(selectors.content).first()
-  if (!root.length) throw new SelectorNotFoundError(`content selector "${selectors.content}" not found`)
+  if (!root.length) return { hasContent: false, title: "", lang, links, sections: [] }
   root.find(["script", "style", "noscript", "svg", "template", ...(selectors.remove ?? [])].join(",")).remove()
 
   const documentTitle = $("title").first().text().trim()
@@ -74,8 +76,9 @@ export function extractPage(html: string, url: string, selectors: Selectors): Pa
   }
   root.contents().each((_, node) => walk(node))
   flush()
+  if (context.length) sections.forEach(section => section.hierarchy.unshift(...context))
 
-  return { title, lang, links, sections }
+  return { hasContent: true, title, lang, links, sections }
 }
 
 // Finds the fragment the source site itself uses for a heading. When it has none, falls back to a

@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "index": "tsx src/index.ts",
+    "queries": "tsx src/queries.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

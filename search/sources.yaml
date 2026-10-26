@@ -10,6 +10,7 @@
 #   exclude                   regexes of pages to neither follow nor index
 #   selectors.content         element holding the main content (no navigation, header or footer)
 #   selectors.remove          elements inside the content to drop
+#   selectors.context         elements anywhere on the page whose text goes in front of the hierarchy (e.g. a book name)
 #   detectLanguage            derive nl/en from the page text instead of <html lang>
 #   labels                    default labels: type, audience, language, version, status
 #   overrides                 labels per URL regex; applied in order, later ones win
@@ -54,6 +55,8 @@ sources:
       - "^https://nuts\\.nl/(assets|certs|credentials|careers|bedankt|shop)/"
     selectors:
       content: "div.grow"
+      # Filter buttons on overview pages (e.g. /toepassingen)
+      remove: ["button"]
     labels:
       type: concept
       audience: [algemeen]
@@ -105,7 +108,7 @@ sources:
         labels: { status: draft }
 
   - id: nuts-node-api
-    name: Nuts node API (OpenAPI)
+    name: Nuts node API
     owner: TODO
     kind: openapi
     labels:
@@ -132,6 +135,7 @@ sources:
       content: "main"
       remove:
         - ".sr-only"
+        - "nav[aria-label=Breadcrumb]"
         - "button"
         - "time"
         # "Previous / Next" links and "Last updated / Was this helpful?" below the page
@@ -199,8 +203,14 @@ sources:
       - "^https://wiki\\.nuts\\.nl/books/[^/]+/page/[^/]+$"
     exclude:
       - "/(export|revisions|edit|permissions|delete|copy|move|sort|create-[a-z-]+|references)(/|$)"
+      # Job openings, not documentation
+      - "/books/help-wanted(/|$)"
     selectors:
       content: ".page-content"
+      # Book and chapter from the breadcrumb, so results show where in the wiki a page sits.
+      context:
+        - "nav.breadcrumbs a.text-book[href^='https://wiki.nuts.nl/books/']"
+        - "nav.breadcrumbs a.text-chapter"
     detectLanguage: true
     labels:
       type: guide

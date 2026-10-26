@@ -91,24 +91,22 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
       continue
     }
 
-    let page
-    try {
-      page = extractPage(response.body, finalUrl, source.selectors!)
-    } catch (e) {
-      result.skipped.push({ url, reason: (e as Error).message })
-      continue
-    }
+    const page = extractPage(response.body, finalUrl, source.selectors!)
     if (source.discovery !== "sitemap") page.links.forEach(enqueue)
 
     if (index && !index.some(r => r.test(finalUrl))) continue
+    if (!page.hasContent) {
+      result.skipped.push({ url, reason: `content selector "${source.selectors!.content}" not found` })
+      continue
+    }
     indexed.add(finalUrl)
     result.pages++
 
     const labels = labelsFor(source, finalUrl)
     const language = languageFor(source, finalUrl, page.lang, page.sections.map(s => s.content).join(" "))
     for (const section of page.sections) {
-      // Sections without text below a heading only add noise, except for the top of the page.
-      if (!section.content && section.anchor) continue
+      // Sections without text only add noise; keep one record per page so its title stays findable.
+      if (!section.content && page.sections.length > 1) continue
       const recordUrl = section.anchor ? `${finalUrl}#${section.anchor}` : finalUrl
       result.records.push({
         id: hash(`${source.id}|${recordUrl}`),

@@ -31,7 +31,17 @@ export class Fetcher {
     return this.request(url, delay)
   }
 
-  private async request(url: string, delayMs: number): Promise<FetchResult> {
+  // Retries once after a timeout; some sources (the wiki) are slow now and then.
+  private async request(url: string, delayMs: number, retry = true): Promise<FetchResult> {
+    try {
+      return await this.requestOnce(url, delayMs)
+    } catch (e) {
+      if (retry && (e as Error).name === "TimeoutError") return this.request(url, delayMs, false)
+      throw e
+    }
+  }
+
+  private async requestOnce(url: string, delayMs: number): Promise<FetchResult> {
     await this.waitForSlot(new URL(url).host, delayMs)
     const response = await fetch(url, {
       headers: { "User-Agent": this.settings.userAgent, "Accept": "text/html,application/xml,application/yaml,*/*;q=0.5" },

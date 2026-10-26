@@ -51,8 +51,8 @@ export async function indexOpenApi(source: Source, fetcher: Fetcher, log: (msg: 
           // Swagger UI on this page has no deep links, so results link to the API page itself.
           url: page.url,
           title: op.summary ? `${op.summary} (${title})` : title,
-          pageTitle: spec.name,
-          hierarchy: [spec.name, ...(op.tags?.slice(0, 1) ?? []), title],
+          pageTitle: `${spec.name} API`,
+          hierarchy: [source.name, spec.name, title],
           content: [op.description, op.operationId, ...params].filter(Boolean).join("\n").slice(0, 20_000),
           source: source.id,
           sourceName: source.name,
