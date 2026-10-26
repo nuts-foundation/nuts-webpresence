@@ -85,12 +85,18 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
       result.skipped.push({ url, reason: `not HTML (${response.contentType})` })
       continue
     }
-    // Redirects may land outside the prefix (e.g. a versioned docs link that resolves to another version).
+    // Redirects may land outside the prefix (e.g. a versioned docs link that resolves to another version),
+    // or on a page that is also linked directly (e.g. /page redirecting to /page/).
     const finalUrl = normalize(response.url)
-    if (finalUrl !== url && (!allowed(finalUrl) || indexed.has(finalUrl))) {
-      result.skipped.push({ url, reason: `redirects to ${finalUrl}` })
+    if (finalUrl !== url && !allowed(finalUrl)) {
+      result.skipped.push({ url, reason: `redirects outside the source to ${finalUrl}` })
       continue
     }
+    if (indexed.has(finalUrl)) {
+      result.skipped.push({ url, reason: `duplicate of ${finalUrl}` })
+      continue
+    }
+    seen.add(finalUrl)
 
     const page = extractPage(response.body, finalUrl, source.selectors!)
     if (source.discovery !== "sitemap") page.links.forEach(enqueue)
