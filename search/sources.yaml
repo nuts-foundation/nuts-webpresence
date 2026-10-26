@@ -146,14 +146,11 @@ sources:
       audience: [developer, architect]
       language: en
       status: actueel
+    # Only the current version (v2); v1 and drafts are left out.
     versions:
-      - version: v1
-        startUrls: ["https://nuts-foundation.gitbook.io/v1/sitemap.xml"]
-        urlPrefix: "https://nuts-foundation.gitbook.io/v1"
-      - version: drafts
-        startUrls: ["https://nuts-foundation.gitbook.io/drafts/sitemap.xml"]
-        urlPrefix: "https://nuts-foundation.gitbook.io/drafts"
-        labels: { status: draft }
+      - version: v2
+        startUrls: ["https://nuts-foundation.gitbook.io/v2/sitemap.xml"]
+        urlPrefix: "https://nuts-foundation.gitbook.io/v2"
 
   - id: ig-anw
     name: Toepassing Avond-, Nacht- en Weekendzorg
