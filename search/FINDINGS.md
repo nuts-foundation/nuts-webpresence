@@ -86,6 +86,24 @@ Elke run schrijft de details naar `search/indexer/out/report.json`.
   - Op de wiki staat niet welke boeken concept of archief zijn. Dat wordt per boek met de hand bijgehouden, zie "Handmatige labels".
   - Twee dode links (zie hierboven) en sommige pagina's laden traag. Elke fetch wordt bij een time-out één keer opnieuw geprobeerd.
 
+### Nog toe te voegen: Knooppunt-documentatie
+
+Niet in de POC opgenomen. `docs/` in `nuts-foundation/nuts-knooppunt` heeft 10 markdown-bestanden:
+
+- `ARCHITECTURE.md`, `CONFIGURATION.md`, `DEPLOYMENT.md`, `INTEGRATION.md`, `LSP-INTEGRATION.md`, `NUTS-NODE-CUSTOM-BUILD.md`;
+- 3 ADR's in `docs/adr/`;
+- `prs-contract.md`.
+
+Daarnaast staat er een OpenAPI-pagina (Redoc) in `docs/api/`.
+
+- **Waar publiceren:** GitHub Pages van deze repo wordt gebouwd vanaf de feature-branch `feat/466-openapi-spec`, niet vanaf `main`. Resultaten kunnen daarom beter naar github.com linken: `https://github.com/nuts-foundation/nuts-knooppunt/blob/main/docs/<bestand>.md`.
+- **Ankers:** op github.com staan de ankers alleen in ingebedde JSON, zodat de indexer ze niet van de pagina kan lezen. Ze zijn wel voorspelbaar: koptekst in kleine letters, zonder leestekens, spaties als `-`, en `-1`, `-2` voor herhaalde koppen. Nodig is een kleine uitbreiding van de GitHub-bron (`anchors: github`, ongeveer 30 regels) die de ankers uit de markdown berekent in plaats van de gepubliceerde pagina op te halen.
+- **Voorstel voor labels:** `category: documentation`, taal `en`.
+  - `ARCHITECTURE` en de ADR's: `type: concept`, doelgroep architect.
+  - `CONFIGURATION`, `DEPLOYMENT` en `NUTS-NODE-CUSTOM-BUILD`: `type: guide`, doelgroep devops.
+  - `INTEGRATION` en `LSP-INTEGRATION`: `type: guide`, doelgroep developer.
+- **Vraag voor de eigenaar:** hoort `prs-contract.md` (een werkdocument over de pseudonimiseringsdienst) bij de formele documentatie?
+
 ## Testqueries (top 3)
 
 | Query | 1 | 2 | 3 | Talen in resultaten |
@@ -154,6 +172,59 @@ Meilisearch Community Edition houdt zelf geen zoekopdrachten of klikken bij; dat
   - Geen IP-adressen opslaan.
   - Zoektermen afkappen (bijvoorbeeld op 100 tekens). Mensen typen soms een naam of patiëntgegeven in een zoekveld.
   - Een bewaartermijn afspreken.
+
+## Keuze voor Meilisearch: overwogen alternatieven
+
+De opdracht voor de POC schreef Meilisearch voor. De afweging is vooraf buiten deze repository gemaakt; hieronder de samenvatting. De alternatieven zijn in de POC niet getest.
+
+**Kaders:** EU en open source, een los onderdeel, en weinig serverbeheer. Dat laatste weegt minder zwaar sinds er een Kubernetes-cluster bij OVHcloud beschikbaar is.
+
+**Belangrijkste onderscheid:** pagina's crawlen werkt voor elke bron. Een index bouwen tijdens de build van elke bron werkt alleen waar je die build zelf beheert, en bij ReadTheDocs en GitBook is dat niet zo.
+
+| | Licentie | Herkomst | Beheerlast | Docs-scraper | Labels en filters | Semantisch zoeken | Zoekanalytics |
+|---|---|---|---|---|---|---|---|
+| **Meilisearch CE** | MIT | Frankrijk | Laag | Ja | Ja | Ja | Zelf loggen |
+| Typesense | GPL-3.0 | VS (zelf gehost in EU) | Laag | Ja, actief onderhouden (fork van de DocSearch-scraper) | Ja, ook via meta-tags | Ja | Zelf loggen |
+| OpenSearch | Apache 2.0 (Linux Foundation) | Community | Hoog: JVM, veel geheugen | Nee | Ja | Ja | Ja, via dashboards |
+| Manticore Search | GPL-3.0 | | Laag (1 core, 1 GB RAM) | Nee | Ja | Ja | Zelf loggen |
+| Pagefind | MIT | | Minimaal: statische bestanden, geen zoekdienst | Niet nodig | Ja | Nee | Nee |
+| Orama | Apache 2.0 | | Laag tot middel | Nee | Ja | Ja | Zelf loggen |
+| Algolia DocSearch | Dienst | VS | Geen | Algolia beheert de crawler | Beperkt | | Ja |
+| Google Programmable Search | Dienst | VS | Geen | Google-index | Nee | | Beperkt |
+
+Afgevallen:
+
+- **Google Programmable Search:**
+  - geen eigen labels of filters;
+  - de gratis versie is niet zonder advertenties;
+  - de zoekresultaten hangen af van hoe goed Google de pagina's indexeert;
+  - Google heeft eerdere producten voor zoeken op websites opgeheven;
+  - niet open source en niet uit de EU.
+- **Algolia DocSearch:**
+  - data bij een Amerikaans bedrijf, met kopieën wereldwijd;
+  - er geldt een logo-eis;
+  - aanvragen worden vaak afgewezen als een site niet-technische content heeft, zoals nuts.nl.
+- **OpenSearch en Elasticsearch:** zwaar (JVM) en gemaakt voor veel grotere datasets. Elasticsearch heeft daarbij een ingewikkelde licentiegeschiedenis.
+- **Manticore en Orama:** licht, maar met een kleinere community en geen scraper.
+
+Shortlist:
+
+- **Meilisearch:** als Europese herkomst zwaar weegt. Gekozen, omdat het cluster beschikbaar is en Meilisearch extra mogelijkheden geeft: tolerantie voor typfouten, ranking, opnieuw indexeren zonder de website te bouwen, en een groeipad naar semantisch zoeken en een AI-vraagfunctie op dezelfde index.
+- **Typesense:** als het snel werkend resultaat moet geven, dankzij de onderhouden scraper. Het functionele verschil met Meilisearch is klein.
+- **Pagefind:** als het beheer zo klein mogelijk moet blijven. Een nachtelijke job crawlt alle bronnen, bouwt één statische index en publiceert die. Er draait dan geen zoekdienst die kan uitvallen of worden aangevallen, maar er is geen analytics en geen groeipad naar AI, en de index loopt tot een dag achter.
+
+Wat de POC eraan toevoegt:
+
+- **Scraper:** de POC gebruikt niet de docs-scraper van Meilisearch, maar een eigen crawler in TypeScript. Die was nodig voor:
+  - labels per URL-patroon;
+  - de GitHub-bronnen, met ankers van de gepubliceerde pagina;
+  - de kruimelpaden van de wiki;
+  - de OpenAPI-operaties;
+  - het koppelen van versies.
+
+  Of de DocSearch-scraper dat ook kan, is niet onderzocht. Wisselen tussen Meilisearch en Typesense blijft goed te doen: de bronnenlijst (`sources.yaml`) en de crawler staan los van de zoekmachine, alleen `meili.ts` en `lib/search.ts` zijn specifiek voor Meilisearch.
+- **Beheerlast:** gemeten is een geheugengebruik van 68 MiB na het indexeren, en een volledige herindexering duurt ruim 2 minuten. Een backup is niet nodig, omdat de index altijd opnieuw op te bouwen is.
+- **Zoekanalytics:** Meilisearch CE logt niets. Zie "Zoekgedrag meten".
 
 ## Productie (Kubernetes op OVHcloud)
 
