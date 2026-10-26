@@ -17,12 +17,12 @@ const VALUE_LABELS: Record<string, Record<string, string>> = {
 
 // Kind of source, shown as a colored bar and label on each result. Colors are existing Tailwind tokens;
 // the label carries the meaning, so the color is never the only cue.
-const CATEGORIES: Record<string, { label: string, border: string, swatch: string }> = {
+const CATEGORIES: Record<string, { label: string, border: string, swatch: string, tag?: string }> = {
   website: { label: "Website", border: "border-l-brand", swatch: "bg-brand" },
   documentation: { label: "Nuts-documentatie", border: "border-l-link", swatch: "bg-link" },
   specification: { label: "Nuts-specificatie", border: "border-l-dark-gray", swatch: "bg-dark-gray" },
   toepassing: { label: "Zorgtoepassing", border: "border-l-button", swatch: "bg-button" },
-  wiki: { label: "Wiki", border: "border-l-darker", swatch: "bg-darker" },
+  wiki: { label: "Wiki", border: "border-l-darker", swatch: "bg-darker", tag: "Community Resource" },
 }
 
 function valueLabel(field: string, value: string): string {
@@ -252,6 +252,11 @@ function ResultCard({ hit }: { hit: Hit }) {
         <p className="flex items-center gap-1.5 mb-2 text-xs font-inter font-semibold uppercase tracking-wide text-dark-gray">
           <span aria-hidden="true" className={`inline-block w-2.5 h-2.5 rounded-sm ${category.swatch}`} />
           {category.label}
+          {category.tag && (
+            <span className="ml-1 px-2 py-0.5 rounded-full border border-stroke normal-case tracking-normal font-medium">
+              {category.tag}
+            </span>
+          )}
         </p>
       )}
       {crumbs.length > 0 && (
