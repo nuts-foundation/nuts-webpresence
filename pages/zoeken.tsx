@@ -17,12 +17,15 @@ const VALUE_LABELS: Record<string, Record<string, string>> = {
 
 // Kind of source, shown as a colored bar and label on each result. Colors are existing Tailwind tokens;
 // the label carries the meaning, so the color is never the only cue.
-const CATEGORIES: Record<string, { label: string, border: string, swatch: string, tag?: string }> = {
+const CATEGORIES: Record<string, { label: string, border: string, swatch: string, tag?: { label: string, info: string } }> = {
   website: { label: "Website", border: "border-l-brand", swatch: "bg-brand" },
   documentation: { label: "Nuts-documentatie", border: "border-l-link", swatch: "bg-link" },
   specification: { label: "Nuts-specificatie", border: "border-l-dark-gray", swatch: "bg-dark-gray" },
   toepassing: { label: "Zorgtoepassing", border: "border-l-button", swatch: "bg-button" },
-  wiki: { label: "Wiki", border: "border-l-darker", swatch: "bg-darker", tag: "Community Resource" },
+  wiki: { label: "Wiki", border: "border-l-darker", swatch: "bg-darker", tag: {
+    label: "Community Resource",
+    info: "Bijdrage van de community. Hierop heeft beperkte kwaliteitscontrole plaatsgevonden.",
+  } },
 }
 
 function valueLabel(field: string, value: string): string {
@@ -253,8 +256,12 @@ function ResultCard({ hit }: { hit: Hit }) {
           <span aria-hidden="true" className={`inline-block w-2.5 h-2.5 rounded-sm ${category.swatch}`} />
           {category.label}
           {category.tag && (
-            <span className="ml-1 px-2 py-0.5 rounded-full border border-stroke normal-case tracking-normal font-medium">
-              {category.tag}
+            // Above the card link, so it can be hovered; focusable, so the explanation is also reachable by keyboard.
+            <span tabIndex={0} aria-describedby={`tag-${hit.id}`} className="group/tag relative z-10 ml-1 px-2 py-0.5 rounded-full border border-stroke normal-case tracking-normal font-medium cursor-help focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
+              {category.tag.label}
+              <span id={`tag-${hit.id}`} role="tooltip" className="invisible opacity-0 group-hover/tag:visible group-hover/tag:opacity-100 group-focus/tag:visible group-focus/tag:opacity-100 transition-opacity absolute left-0 top-full mt-1 w-64 rounded-lg bg-dark-gray text-white text-xs font-normal leading-snug p-2 shadow-md">
+                {category.tag.info}
+              </span>
             </span>
           )}
         </p>

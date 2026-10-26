@@ -67,7 +67,7 @@ Elke run schrijft de details naar `search/indexer/out/report.json`.
 - Goed:
   - Elk resultaat toont boek › hoofdstuk › pagina, waarbij de namen uit de zijbalk komen (het kruimelpad van BookStack kort ze af).
   - BookStack geeft elke alinea een anker.
-  - Resultaten hebben het label "Community Resource".
+  - Resultaten hebben het label "Community Resource". Bij muis-hover of toetsenbordfocus verschijnt de uitleg dat hierop beperkte kwaliteitscontrole heeft plaatsgevonden.
 - Slecht:
   - De wiki is de grootste bron, en concepten en hackathon-notities scoren vaak hoger dan de officiële documentatie. Bij "access token" komen de eerste 3 resultaten allemaal uit de wiki.
   - Op de wiki staat niet welke boeken concept of archief zijn. Dat wordt per boek met de hand bijgehouden, zie "Handmatige labels".
