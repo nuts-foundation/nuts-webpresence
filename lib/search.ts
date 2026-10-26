@@ -36,6 +36,8 @@ export interface Hit {
   language?: string
   version?: string
   status?: string
+  // All versions of this section, when it occurs in more than one (newest first).
+  versions?: { version: string, url: string }[]
   _formatted: { title: string, content: string, hierarchy: string[] }
 }
 
@@ -66,7 +68,9 @@ export async function search(q: string, selection: Selection, limit: number, sig
       filter: filterFor(selection),
       facets: fields,
       limit,
-      attributesToRetrieve: ["id", "url", "title", "hierarchy", "sourceName", "category", "type", "language", "version", "status"],
+      // One result per section; the same section in another version is listed in versions.
+      distinct: "group",
+      attributesToRetrieve: ["id", "url", "title", "hierarchy", "sourceName", "category", "type", "language", "version", "status", "versions"],
       attributesToHighlight: ["title", "hierarchy"],
       attributesToCrop: ["content"],
       cropLength: 40,

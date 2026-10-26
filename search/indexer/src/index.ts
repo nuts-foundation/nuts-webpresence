@@ -8,6 +8,7 @@ import { Fetcher } from "./fetcher.ts"
 import { Meili } from "./meili.ts"
 import { indexGitHub, latestCommit } from "./github.ts"
 import { indexOpenApi } from "./openapi.ts"
+import { linkVersions } from "./versions.ts"
 
 const SEARCH_DIR = join(import.meta.dirname, "..", "..")
 const OUT_DIR = join(import.meta.dirname, "..", "out")
@@ -61,13 +62,20 @@ const results = await Promise.all(jobs.map(async job => {
   } catch (e) {
     result = { pages: 0, records: [], errors: [{ url: job.startUrls?.[0] ?? job.apiPage ?? job.github?.repo ?? "", reason: (e as Error).message }], skipped: [] }
   }
+  console.log(`[${name}] done: ${result.pages} pages, ${result.records.length} records, ${result.errors.length} errors, ${result.skipped.length} skipped`)
+  return { name, job, result }
+}))
+
+for (const source of selected) {
+  linkVersions(results.filter(r => r.job.id === source.id).map(r => ({ version: r.job.labels.version, records: r.result.records })))
+}
+
+for (const { name, job, result } of results) {
   // A crawl that found nothing must not wipe the records of an earlier, successful run.
   if (meili && result.records.length) await meili.replace(job.id, job.labels.version, result.records)
   // Only a run without errors counts as indexed, so --if-changed retries a source that partly failed.
   if (meili && result.commit && result.records.length && !result.errors.length) await meili.setIndexedCommit(name, result.commit)
-  console.log(`[${name}] done: ${result.pages} pages, ${result.records.length} records, ${result.errors.length} errors, ${result.skipped.length} skipped`)
-  return { name, job, result }
-}))
+}
 
 await mkdir(OUT_DIR, { recursive: true })
 await writeFile(join(OUT_DIR, "records.json"), JSON.stringify(results.flatMap(r => r.result.records), null, 2))

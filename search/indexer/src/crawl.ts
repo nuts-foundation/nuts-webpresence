@@ -22,6 +22,10 @@ export interface SearchRecord {
   language?: string
   version?: string
   status?: string
+  // Set by linkVersions: records of the same section in other versions share the group.
+  group?: string
+  versionOrder?: number
+  versions?: { version: string, url: string }[]
 }
 
 export interface Skipped {

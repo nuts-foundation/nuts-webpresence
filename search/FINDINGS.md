@@ -54,7 +54,8 @@ Elke run schrijft de details naar `search/indexer/out/report.json`.
 ### Nuts node-documentatie (ReadTheDocs)
 - Goed: Sphinx levert vaste ankers per kop. De versies staan apart in de URL en krijgen elk een versielabel.
 - Slecht:
-  - Dezelfde pagina in v6.2 en v5.4 staat vaak op plek 1 en 2 (bijvoorbeeld "deployment").
+  - Dezelfde pagina in v6.2 en v5.4 stond vaak op plek 1 en 2 (bijvoorbeeld "deployment"). Opgelost: een sectie die in beide versies voorkomt, is nu één resultaat met een link per versie. Bij gelijke score wint de nieuwste versie.
+  - Koppelen gaat op URL zonder versie plus kopstructuur. Van de ±300 secties per versie zijn er 134 gekoppeld. De rest verschilt tussen de versies: een andere kop, of een pagina die alleen in één versie bestaat.
   - De versies staan nu met de hand in `sources.yaml` (v6.2, v5.4). Bij een nieuwe minor of major moet iemand ze bijwerken.
 
 ### Nuts node API (OpenAPI)
@@ -98,7 +99,7 @@ Elke run schrijft de details naar `search/indexer/out/report.json`.
 | discovery service | wiki | RFC022 | wiki | en 116, nl 22 |
 | hoe werkt Nuts | nuts.nl | nuts.nl | nuts.nl | nl 70 |
 | configuratie | ANW | wiki | wiki | en 119, nl 4 |
-| deployment | node v6.2 | node v5.4 | RFC006 | en 49, nl 9 |
+| deployment | node (v6.2 + v5.4) | RFC006 | RFC006 | en 42, nl 9 |
 
 - Zoeken over de taalgrens werkt via de synoniemen: "toepassing" vindt Engelse "use cases" en "use case" vindt Nederlandse pagina's.
 - "configuratie" vindt Engelse "configuration" alleen via typotolerantie, en de top 3 is zwak. Voeg `configuratie ↔ configuration` toe aan `synonyms.yaml`, en waarschijnlijk meer paren zoals `installatie ↔ installation` en `beveiliging ↔ security`.
@@ -129,7 +130,6 @@ Automatisch: `language` (uit `<html lang>` of de tekst), `source`, `category` en
 
 - **Rangschikking:**
   - Records met status `actueel` en officiële bronnen hoger zetten dan wiki-concepten. Kan met een extra veld voor de sortering en een aangepaste `rankingRules`.
-  - Per pagina alleen de nieuwste versie tonen, tenzij er op versie is gefilterd. Kan met `distinct` of door v5.4 standaard lager te zetten.
 - **Instellingen:** de indexer stuurt bij elke run alle Meilisearch-instellingen opnieuw. Dat is onschuldig, maar start bij een wijziging een herindexering van alles.
 - **Toegankelijkheid van de bestaande site** (buiten de scope van deze POC, niet aangepast):
   - de uitklapmenu's in de navigatie zijn niet met het toetsenbord te bereiken;

@@ -17,7 +17,9 @@ export class Meili {
     await this.call("POST", "/indexes", { uid: this.stateIndex, primaryKey: "id" }, [409])
     await this.call("PATCH", `/indexes/${this.index}/settings`, {
       searchableAttributes: ["title", "hierarchy", "content"],
-      filterableAttributes: FACETS,
+      filterableAttributes: [...FACETS, "group"],
+      // Default rules, plus: of otherwise equal results (the same section in several versions), the newest first.
+      rankingRules: ["words", "typo", "proximity", "attributeRank", "sort", "wordPosition", "exactness", "versionOrder:desc"],
       synonyms,
       // Restricts language detection to Dutch and English; the default would also consider unrelated languages.
       localizedAttributes: [{ attributePatterns: ["title", "hierarchy", "content"], locales: ["nld", "eng"] }],

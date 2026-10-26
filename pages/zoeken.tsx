@@ -292,7 +292,14 @@ function ResultCard({ hit }: { hit: Hit }) {
         <Badge>{hit.sourceName}</Badge>
         {hit.language && <Badge>{valueLabel("language", hit.language)}</Badge>}
         {hit.type && <Badge>{valueLabel("type", hit.type)}</Badge>}
-        {hit.version && <Badge>Versie {hit.version}</Badge>}
+        {hit.versions ? hit.versions.map(v => (
+          // Above the card link, so each version opens its own page.
+          <li key={v.version} className="relative z-10">
+            <a href={v.url} target="_blank" rel="noopener noreferrer" className="block text-xs font-inter font-medium text-dark-gray bg-light px-2.5 py-1 rounded-full underline underline-offset-2 hover:text-darker focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
+              Versie {v.version}<span className="sr-only"> (opent in nieuw venster)</span>
+            </a>
+          </li>
+        )) : hit.version && <Badge>Versie {hit.version}</Badge>}
         {hit.status && hit.status !== "actueel" && <Badge>{valueLabel("status", hit.status)}</Badge>}
       </ul>
     </li>
