@@ -43,7 +43,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Search (proof of concept)
 
 One search over all formal Nuts documentation: nuts.nl, the Nuts node docs (ReadTheDocs, per version), the
-Nuts node API (OpenAPI), the specifications (GitBook), the FHIR implementation guides (GitHub Pages) and the
+Nuts node API (OpenAPI), the specifications (GitBook), the toepassingen (FHIR implementation guides on GitHub Pages) and the
 wiki. Off by default.
 
 | Part | Where |

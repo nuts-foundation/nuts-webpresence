@@ -115,7 +115,7 @@ export default function Zoeken() {
 
       <div className="container mx-auto max-w-5xl px-4 py-10 md:py-16">
         <p id={`${inputId}-description`} className="font-inter text-text mb-8">
-          Zoek in nuts.nl, de Nuts node-documentatie, de specificaties, de toepassingen (IG&apos;s) en de wiki.
+          Zoek in nuts.nl, de Nuts node-documentatie, de specificaties, de toepassingen en de wiki.
         </p>
         {!searchEnabled ? (
           <p className="font-inter text-text">Zoeken is (nog) niet beschikbaar.</p>
