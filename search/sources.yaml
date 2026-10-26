@@ -17,6 +17,7 @@
 #   versions                  crawl the source once per version, each with its own startUrls/urlPrefix and version label
 #
 # Label values:
+#   category: website | documentation | specification | toepassing | wiki   (kind of source, shown per result)
 #   type:     concept | guide | reference | specification | use-case
 #   audience: developer | architect | devops | toepassingsontwerper | algemeen
 #   language: nl | en
@@ -40,6 +41,7 @@ x-fhir-ig: &fhir-ig
     - "\\.(json|xml|ttl)\\.html$"
   detectLanguage: true
   labels: &fhir-ig-labels
+    category: toepassing
     type: specification
     audience: [toepassingsontwerper, developer]
     language: en
@@ -58,6 +60,7 @@ sources:
       # Filter buttons on overview pages (e.g. /toepassingen)
       remove: ["button"]
     labels:
+      category: website
       type: concept
       audience: [algemeen]
       language: nl
@@ -81,6 +84,7 @@ sources:
       content: "[itemprop=articleBody]"
       remove: [".headerlink"]
     labels:
+      category: documentation
       type: guide
       audience: [developer]
       language: en
@@ -108,6 +112,7 @@ sources:
     owner: TODO
     kind: openapi
     labels:
+      category: documentation
       type: reference
       audience: [developer]
       language: en
@@ -136,6 +141,7 @@ sources:
         - "a:has(> div > span:contains('Next'))"
         - "div:has(> p:contains('Last updated'))"
     labels:
+      category: specification
       type: specification
       audience: [developer, architect]
       language: en
@@ -207,6 +213,7 @@ sources:
         - "#book-tree li.list-item-chapter:has(a.page.selected) > a.chapter .entity-list-item-name"
     detectLanguage: true
     labels:
+      category: wiki
       type: guide
       audience: [developer, architect]
       language: nl

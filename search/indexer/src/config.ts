@@ -1,12 +1,14 @@
 import { readFile } from "node:fs/promises"
 import { parse } from "yaml"
 
+export type Category = "website" | "documentation" | "specification" | "toepassing" | "wiki"
 export type DocType = "concept" | "guide" | "reference" | "specification" | "use-case"
 export type Audience = "developer" | "architect" | "devops" | "toepassingsontwerper" | "algemeen"
 export type Language = "nl" | "en"
 export type Status = "actueel" | "draft" | "archief"
 
 export interface Labels {
+  category?: Category
   type?: DocType
   audience?: Audience[]
   language?: Language

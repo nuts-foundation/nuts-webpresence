@@ -16,6 +16,7 @@ export interface SearchRecord {
   content: string
   source: string
   sourceName: string
+  category?: string
   type?: string
   audience?: string[]
   language?: string
@@ -104,12 +105,13 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
 
     const labels = labelsFor(source, finalUrl)
     const language = languageFor(source, finalUrl, page.lang, page.sections.map(s => s.content).join(" "))
-    for (const section of page.sections) {
+    for (const [i, section] of page.sections.entries()) {
       // Sections without text only add noise; keep one record per page so its title stays findable.
       if (!section.content && page.sections.length > 1) continue
       const recordUrl = section.anchor ? `${finalUrl}#${section.anchor}` : finalUrl
       result.records.push({
-        id: hash(`${source.id}|${recordUrl}`),
+        // The section number keeps headings with the same text on one page (same text-fragment URL) apart.
+        id: hash(`${source.id}|${finalUrl}|${i}`),
         url: recordUrl,
         title: section.hierarchy[section.hierarchy.length - 1],
         pageTitle: page.title,

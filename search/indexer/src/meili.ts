@@ -1,6 +1,6 @@
 import { SearchRecord } from "./crawl.ts"
 
-export const FACETS = ["source", "sourceName", "type", "audience", "language", "version", "status"]
+export const FACETS = ["source", "sourceName", "category", "type", "audience", "language", "version", "status"]
 const SEARCH_KEY_NAME = "nuts-search-frontend"
 
 export class Meili {

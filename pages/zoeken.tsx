@@ -15,6 +15,16 @@ const VALUE_LABELS: Record<string, Record<string, string>> = {
   status: { actueel: "Actueel", draft: "Concept", archief: "Archief" },
 }
 
+// Kind of source, shown as a colored bar and label on each result. Colors are existing Tailwind tokens;
+// the label carries the meaning, so the color is never the only cue.
+const CATEGORIES: Record<string, { label: string, border: string, swatch: string }> = {
+  website: { label: "Website", border: "border-l-brand", swatch: "bg-brand" },
+  documentation: { label: "Nuts-documentatie", border: "border-l-link", swatch: "bg-link" },
+  specification: { label: "Nuts-specificatie", border: "border-l-dark-gray", swatch: "bg-dark-gray" },
+  toepassing: { label: "Zorgtoepassing", border: "border-l-button", swatch: "bg-button" },
+  wiki: { label: "Wiki", border: "border-l-darker", swatch: "bg-darker" },
+}
+
 function valueLabel(field: string, value: string): string {
   return VALUE_LABELS[field]?.[value] ?? value
 }
@@ -235,8 +245,15 @@ function FacetGroup({ label, field, counts, selected, onToggle }: FacetGroupProp
 
 function ResultCard({ hit }: { hit: Hit }) {
   const crumbs = hit._formatted.hierarchy.slice(0, -1)
+  const category = hit.category ? CATEGORIES[hit.category] : undefined
   return (
-    <li className="group relative min-w-0 rounded-xl border border-stroke hover:shadow-md transition-all p-5 md:p-6 bg-white focus-within:ring-2 focus-within:ring-dark">
+    <li className={`group relative min-w-0 rounded-xl border border-stroke ${category ? `border-l-4 ${category.border}` : ""} hover:shadow-md transition-all p-5 md:p-6 bg-white focus-within:ring-2 focus-within:ring-dark`}>
+      {category && (
+        <p className="flex items-center gap-1.5 mb-2 text-xs font-inter font-semibold uppercase tracking-wide text-dark-gray">
+          <span aria-hidden="true" className={`inline-block w-2.5 h-2.5 rounded-sm ${category.swatch}`} />
+          {category.label}
+        </p>
+      )}
       {crumbs.length > 0 && (
         <p className="text-xs font-inter text-text/80 mb-1">
           {crumbs.map((crumb, i) => (

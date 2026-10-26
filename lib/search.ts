@@ -31,6 +31,7 @@ export interface Hit {
   title: string
   hierarchy: string[]
   sourceName: string
+  category?: string
   type?: string
   language?: string
   version?: string
@@ -65,7 +66,7 @@ export async function search(q: string, selection: Selection, limit: number, sig
       filter: filterFor(selection),
       facets: fields,
       limit,
-      attributesToRetrieve: ["id", "url", "title", "hierarchy", "sourceName", "type", "language", "version", "status"],
+      attributesToRetrieve: ["id", "url", "title", "hierarchy", "sourceName", "category", "type", "language", "version", "status"],
       attributesToHighlight: ["title", "hierarchy"],
       attributesToCrop: ["content"],
       cropLength: 40,
