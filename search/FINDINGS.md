@@ -33,11 +33,23 @@ Elke run schrijft de details naar `search/indexer/out/report.json`.
 ## Per bron
 
 ### nuts.nl
-- Goed: alle pagina's zijn via links vanaf de homepage te vinden, en de hoofdtekst zit netjes in één element.
+- Goed: de hoofdtekst zit netjes in één element.
 - Slecht:
+  - Niet alle pagina's worden gevonden. nuts.nl heeft geen `sitemap.xml`, dus de indexer volgt links vanaf de homepage. Vijf pagina's zijn nergens gelinkt en ontbreken daardoor: `/actiz/`, `/toepassingen/welldata/`, `/use-case/zorginzage/` en twee nieuwsberichten. Zie de opties hieronder.
+  - `/certs/` ontbreekt ook. De uitsluitregel in `sources.yaml` was bedoeld voor de `.pem`-bestanden eronder, maar raakt ook de pagina zelf. Oplossing: de regel beperken tot `/certs/.+`.
   - Koppen hebben geen `id`, dus deeplinks gebruiken een tekstfragment (`#:~:text=…`). Dat werkt in Chrome, Edge, Safari 16.1+ en Firefox 131+. In oudere browsers opent de pagina bovenaan.
   - Filterknoppen en formulierteksten moesten expliciet worden weggefilterd.
   - Interne links gebruiken URL's met én zonder slash aan het eind. Die worden nu als één pagina geteld.
+
+#### Ontbrekende pagina's vinden: overwogen opties
+
+| Optie | Oordeel |
+|---|---|
+| Sitemap genereren uit de export (`out/`) na `next build`, plus `robots.txt` die ernaar verwijst | Gekozen: [issue #439](https://github.com/nuts-foundation/nuts-webpresence/issues/439). Elke geëxporteerde pagina komt er vanzelf in, en zoekmachines hebben er ook baat bij. Daarna gebruikt de bron `nuts-nl` `discovery: sitemap`. |
+| Sitemap genereren uit de markdown in `content/` | Afgewezen: mist pagina's die niet uit markdown komen, zoals `pages/starten.tsx`. |
+| Ontbrekende pagina's als extra `startUrls` in `sources.yaml` zetten | Afgewezen: een lijst die met de hand moet worden bijgehouden. Een nieuwe ongelinkte pagina valt weer weg. |
+| De indexer leest `content/` uit de repo, zoals bij de GitHub-bronnen | Afgewezen: de URL's en de opmaak komen uit de Next.js-pagina's. Die logica zou de indexer dan moeten nabouwen. |
+| Links naar de vijf pagina's toevoegen op overzichtspagina's | Los van de sitemap. Vraag in #439: zijn ze bewust ongelinkt? |
 
 ### Nuts node-documentatie (ReadTheDocs)
 - Goed: Sphinx levert vaste ankers per kop. De versies staan apart in de URL en krijgen elk een versielabel.
