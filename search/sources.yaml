@@ -157,39 +157,39 @@ sources:
         labels: { status: draft }
 
   - id: ig-anw
-    name: IG Avond-, Nacht- en Weekendzorg
+    name: Toepassing Avond-, Nacht- en Weekendzorg
     startUrls: ["https://nuts-foundation.github.io/nl-anw-ig/"]
     urlPrefix: "https://nuts-foundation.github.io/nl-anw-ig/"
     <<: *fhir-ig
 
   - id: ig-generic-functions
-    name: IG Generieke functies
+    name: Toepassing Generieke functies
     startUrls: ["https://nuts-foundation.github.io/nl-generic-functions-ig/"]
     urlPrefix: "https://nuts-foundation.github.io/nl-generic-functions-ig/"
     <<: *fhir-ig
 
   - id: ig-zorginzage
-    name: IG Zorginzage
+    name: Toepassing Zorginzage
     startUrls: ["https://nuts-foundation.github.io/nl-zorginzage-ig/"]
     urlPrefix: "https://nuts-foundation.github.io/nl-zorginzage-ig/"
     <<: *fhir-ig
     labels: { <<: *fhir-ig-labels, status: actueel }
 
   - id: ig-360
-    name: IG Clientbeeld 360
+    name: Toepassing Clientbeeld 360
     startUrls: ["https://nuts-foundation.github.io/nl-360-ig/"]
     urlPrefix: "https://nuts-foundation.github.io/nl-360-ig/"
     <<: *fhir-ig
     labels: { <<: *fhir-ig-labels, status: actueel }
 
   - id: ig-eoverdracht-routering
-    name: IG eOverdracht routering
+    name: Toepassing eOverdracht routering
     startUrls: ["https://nuts-foundation.github.io/nl-eoverdracht-routering-ig/"]
     urlPrefix: "https://nuts-foundation.github.io/nl-eoverdracht-routering-ig/"
     <<: *fhir-ig
 
   - id: ig-pzp
-    name: IG Proactieve Zorgplanning
+    name: Toepassing Proactieve Zorgplanning
     startUrls: ["https://nuts-foundation.github.io/nl-pzp-ig/"]
     urlPrefix: "https://nuts-foundation.github.io/nl-pzp-ig/"
     <<: *fhir-ig
@@ -207,10 +207,11 @@ sources:
       - "/books/help-wanted(/|$)"
     selectors:
       content: ".page-content"
-      # Book and chapter from the breadcrumb, so results show where in the wiki a page sits.
+      # Book and chapter, so results show where in the wiki a page sits. Taken from the book navigation,
+      # because the breadcrumb shortens long names.
       context:
-        - "nav.breadcrumbs a.text-book[href^='https://wiki.nuts.nl/books/']"
-        - "nav.breadcrumbs a.text-chapter"
+        - "#book-tree a.book .entity-list-item-name"
+        - "#book-tree li.list-item-chapter:has(a.page.selected) > a.chapter .entity-list-item-name"
     detectLanguage: true
     labels:
       type: guide
