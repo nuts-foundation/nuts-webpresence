@@ -172,6 +172,7 @@ Meilisearch Community Edition houdt zelf geen zoekopdrachten of klikken bij; dat
   - Geen IP-adressen opslaan.
   - Zoektermen afkappen (bijvoorbeeld op 100 tekens). Mensen typen soms een naam of patiëntgegeven in een zoekveld.
   - Een bewaartermijn afspreken.
+- **Zoeken via Google:** Google Search Console laat zien met welke Google-zoekopdrachten mensen op nuts.nl terechtkomen. Dat vraagt eenmalig een verificatie van het domein (DNS TXT-record) en iemand die het account beheert. Niet nodig voor de sitemap uit [#439](https://github.com/nuts-foundation/nuts-webpresence/issues/439).
 
 ## Keuze voor Meilisearch: overwogen alternatieven
 
