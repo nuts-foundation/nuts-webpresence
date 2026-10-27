@@ -5,10 +5,11 @@ const OUT_DIR = "./out";
 const SITE_URL = "https://nuts.nl";
 
 // Folders in the export that hold no pages.
-const SKIP_DIRS = ["_next", "assets", "certs"];
+const SKIP_DIRS = ["_next", "assets", "certs/production"];
 
 // The 404 page is exported as a normal page and doesn't carry a noindex tag.
-const SKIP_PAGES = ["404/"];
+// The thank-you page is only meant to be reached after submitting a form.
+const SKIP_PAGES = ["404/", "bedankt/"];
 
 const NOINDEX = /<meta(?=[^>]*\bname=["']robots["'])(?=[^>]*\bcontent=["'][^"']*noindex)[^>]*>/i;
 
