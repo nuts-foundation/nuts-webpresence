@@ -6,7 +6,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build --webpack && node generate.mjs",
+    "export": "next build --webpack && node generate.mjs && node scripts/sitemap.mjs",
     "smoke-test": "node scripts/smoke-test.mjs"
   },
   "dependencies": {
