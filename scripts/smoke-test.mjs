@@ -95,6 +95,26 @@ async function main() {
     }
   }
 
+  let sitemap;
+  try {
+    sitemap = await readOut("sitemap.xml");
+  } catch {
+    failures.push(`sitemap: expected output file "${OUT_DIR}/sitemap.xml" does not exist`);
+  }
+  if (sitemap !== undefined && !sitemap.includes("<loc>https://nuts.nl/</loc>")) {
+    failures.push("sitemap: expected to find https://nuts.nl/ in sitemap.xml, but it's missing");
+  }
+
+  let robots;
+  try {
+    robots = await readOut("robots.txt");
+  } catch {
+    failures.push(`robots.txt: expected output file "${OUT_DIR}/robots.txt" does not exist`);
+  }
+  if (robots !== undefined && !/^Sitemap: https:\/\/nuts\.nl\/sitemap\.xml$/m.test(robots)) {
+    failures.push("robots.txt: expected a Sitemap: line pointing to https://nuts.nl/sitemap.xml");
+  }
+
   if (failures.length > 0) {
     console.error("Smoke test failed:\n");
     for (const failure of failures) {
