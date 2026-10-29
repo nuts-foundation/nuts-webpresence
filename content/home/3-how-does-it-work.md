@@ -2,7 +2,7 @@
 title: Hoe werkt Nuts?
 ---
 
-Het Nuts-netwerk maakt gebruik van [internationale standaarden](./documentatie)
+Het Nuts-netwerk maakt gebruik van [internationale standaarden](/kennisbank#specificatie)
 om een vertrouwenslaag op het Internet te realiseren. Die standaarden zijn
 geïmplementeerd in de Nuts-node: [Open Source software](./software) die zonder
 licentiekosten door elke IT leverancier gebruikt kan worden. Leveranciers mogen

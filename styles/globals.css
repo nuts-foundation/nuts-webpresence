@@ -85,3 +85,109 @@ article.prose div.callout {
 article.prose div.callout p {
     margin: 0;
 }
+
+/* Styles for the "kennisbank" page */
+html:has(.kennisbank) {
+    scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+    html:has(.kennisbank) {
+        scroll-behavior: auto;
+    }
+}
+
+.kennisbank-intro h1 {
+    font-family: "Red Hat Display";
+    font-weight: 800;
+    font-size: 2.75rem;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+}
+.kennisbank-intro p {
+    font-family: Inter;
+    font-size: 1.125rem;
+    line-height: 1.65;
+}
+
+.kennisbank-sectie {
+    color: #1C2A39;
+    font-family: Inter;
+    line-height: 1.75;
+}
+.kennisbank-sectie > * + * {
+    margin-top: 1rem;
+}
+.kennisbank-sectie h2 {
+    font-family: "Red Hat Display";
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+.kennisbank-sectie p {
+    max-width: 66ch;
+}
+.kennisbank-sectie p a {
+    color: #027FDD;
+}
+.kennisbank-sectie p a:hover {
+    color: #166fb2;
+    text-decoration: underline;
+}
+
+/* Lijstjes (standaarden, kernfuncties) als labels */
+.kennisbank-sectie ul,
+.kennisbank-sectie ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    counter-reset: kernfunctie;
+}
+.kennisbank-sectie li {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.375rem 0.875rem;
+    border: 1px solid #F0E7E5;
+    border-radius: 9999px;
+    background: white;
+}
+.kennisbank-sectie ol li::before {
+    counter-increment: kernfunctie;
+    content: counter(kernfunctie);
+    color: #5b6470;
+    font-weight: 600;
+    margin-right: 0.375rem;
+}
+
+/* De laatste alinea met alleen links wordt een rij knoppen: de eerste rood, de rest wit */
+.kennisbank-sectie p:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+.kennisbank-sectie p:last-child a {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: #1C2A39;
+    background: white;
+    box-shadow: inset 0 0 0 1px #F0E7E5;
+    transition: background-color 150ms, color 150ms, box-shadow 150ms;
+}
+.kennisbank-sectie p:last-child a:hover {
+    color: #D15949;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 1px #D15949;
+}
+.kennisbank-sectie p:last-child a:first-child {
+    color: white;
+    background: #D15949;
+    box-shadow: none;
+}
+.kennisbank-sectie p:last-child a:first-child:hover {
+    background: #B84A3C;
+    color: white;
+}
