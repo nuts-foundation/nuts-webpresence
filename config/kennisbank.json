@@ -1,0 +1,62 @@
+{
+  "ingangen": [
+    {
+      "id": "zorgverlener",
+      "icon": "zorgverlener",
+      "title": "Zorgverlener",
+      "text": "Toepassingen en leveranciers die Nuts aanbieden",
+      "href": "#toepassingen"
+    },
+    {
+      "id": "ontwikkelaar",
+      "icon": "ontwikkelaar",
+      "title": "Softwareontwikkelaar",
+      "text": "Specificaties, Nuts-node, GitHub en de wiki",
+      "href": "#specificatie"
+    },
+    {
+      "id": "organisatie",
+      "icon": "organisatie",
+      "title": "Organisatie en deelname",
+      "text": "Hoe Nuts werkt: stichting, besluitvorming en meedoen",
+      "href": "#organisatie"
+    }
+  ],
+  "onderwerpen": [
+    {
+      "id": "organisatie",
+      "icon": "organisatie",
+      "title": "Organisatie en deelname",
+      "text": "Hoe Nuts is georganiseerd: de stichting, de kringen, besluitvorming en deelname.",
+      "secties": ["organisatie"]
+    },
+    {
+      "id": "toepassingen",
+      "icon": "toepassingen",
+      "title": "Toepassingen",
+      "text": "Praktische use cases in de zorg, van huisartseninzage tot eOverdracht.",
+      "secties": ["toepassingen"]
+    },
+    {
+      "id": "techniek",
+      "icon": "techniek",
+      "title": "Techniek en specificaties",
+      "text": "De RFC's, de Nuts-node en de broncode op GitHub.",
+      "secties": ["specificatie", "node"]
+    },
+    {
+      "id": "wiki",
+      "icon": "wiki",
+      "title": "Community en wiki",
+      "text": "Gedeelde kennis, handleidingen en werkgroepen.",
+      "secties": ["wiki"]
+    }
+  ],
+  "secties": [
+    { "titel": "Organisatie en deelname", "id": "organisatie", "label": "Organisatie", "icon": "organisatie" },
+    { "titel": "Toepassingen op Nuts", "id": "toepassingen", "label": "Toepassingen", "icon": "toepassingen" },
+    { "titel": "Nuts-specificatie", "id": "specificatie", "label": "Specificatie", "icon": "techniek" },
+    { "titel": "Nuts-node", "id": "node", "label": "Nuts-node", "icon": "techniek" },
+    { "titel": "Nuts wiki", "id": "wiki", "label": "Wiki", "icon": "wiki" }
+  ]
+}
