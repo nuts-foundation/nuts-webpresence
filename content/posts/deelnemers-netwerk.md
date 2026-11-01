@@ -87,6 +87,11 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:diederen@nlcom.nl">diederen@nlcom.nl</a></td>
         </tr>
         <tr>
+            <td><a href="(https://phoqus.nl/phoqus-health/)/">Phoqus Health</a></td>
+            <td>Danny van Neer</td>
+            <td><a href="mailto:danny.van.neer@phoqus.nl">danny.van.neer@phoqus.nl</a></td>
+        </tr>
+         <tr>
             <td><a href="https://www.ozoverbindzorg.nl/">OZO Verbindzorg</a></td>
             <td>Christel Engbers</td>
             <td><a href="mailto:christel@ozoverbindzorg.nl">christel@ozoverbindzorg.nl</a></td>
