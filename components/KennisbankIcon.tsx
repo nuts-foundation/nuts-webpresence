@@ -1,6 +1,4 @@
-import React from "react";
-
-const paths: { [name: string]: React.ReactElement } = {
+const paths: { [name: string]: JSX.Element } = {
   zorgverlener: <path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21Z" />,
   ontwikkelaar: <path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" />,
   organisatie: <path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6" />,
