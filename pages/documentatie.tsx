@@ -16,4 +16,4 @@ export default function DocumentatieRedirect() {
 			</main>
 		</>
 	);
-}export { default, getStaticProps } from "./kennisbank";
+}
