@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NextSeo } from "next-seo";
+import Head from "next/head";
 import { getContent } from "../lib/api";
 import Markdown from "../components/Markdown";
 import Layout from "../components/Layout";
@@ -44,7 +44,11 @@ export default function KennisbankPage({ kennisbank }: any) {
 
   return (
     <Layout>
-      <NextSeo title="Nuts - Kennisbank" description={kennisbank.meta.description} openGraph={{ title: "Nuts - Kennisbank" }} />
+      <Head>
+        <title>Nuts - Kennisbank</title>
+        <meta name="description" content={kennisbank.meta.description} />
+        <meta property="og:title" content="Nuts - Kennisbank" />
+      </Head>
 
       <div className="kennisbank bg-brand text-white border-t border-black/10">
         <div className="container mx-auto py-14 space-y-6">
