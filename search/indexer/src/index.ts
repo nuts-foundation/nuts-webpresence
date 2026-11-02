@@ -5,9 +5,9 @@ import { parseArgs } from "node:util"
 import { expandVersions, loadSources, loadSynonyms } from "./config.ts"
 import { crawl, CrawlResult } from "./crawl.ts"
 import { Fetcher } from "./fetcher.ts"
-import { Meili } from "./meili.ts"
 import { indexGitHub, latestCommit } from "./github.ts"
 import { indexOpenApi } from "./openapi.ts"
+import { Typesense } from "./typesense.ts"
 import { linkVersions } from "./versions.ts"
 
 const SEARCH_DIR = join(import.meta.dirname, "..", "..")
@@ -28,12 +28,12 @@ const synonyms = await loadSynonyms(join(SEARCH_DIR, "synonyms.yaml"))
 const selected = config.sources.filter(s => !args.source || args.source.includes(s.id))
 if (!selected.length) throw new Error(`no sources match ${args.source}`)
 
-let meili: Meili | undefined
+let typesense: Typesense | undefined
 if (!args["dry-run"]) {
-  const masterKey = process.env.MEILI_MASTER_KEY
-  if (!masterKey) throw new Error("MEILI_MASTER_KEY is not set (use --dry-run to crawl without indexing)")
-  meili = new Meili(process.env.MEILI_HOST ?? "http://localhost:7700", masterKey, process.env.MEILI_INDEX ?? "nuts-docs")
-  await meili.configure(synonyms)
+  const apiKey = process.env.TYPESENSE_API_KEY
+  if (!apiKey) throw new Error("TYPESENSE_API_KEY is not set (use --dry-run to crawl without indexing)")
+  typesense = new Typesense(process.env.TYPESENSE_HOST ?? "http://localhost:8108", apiKey, process.env.TYPESENSE_COLLECTION ?? "nuts-docs")
+  await typesense.configure(synonyms)
 }
 
 const fetcher = new Fetcher(config.settings)
@@ -42,7 +42,7 @@ const jobName = (job: (typeof jobs)[number]) => job.labels.version ? `${job.id}@
 
 if (args["if-changed"]) {
   const changed = await Promise.all(jobs.filter(job => job.kind === "github").map(async job => {
-    const [latest, indexed] = await Promise.all([latestCommit(job), meili?.indexedCommit(jobName(job))])
+    const [latest, indexed] = await Promise.all([latestCommit(job), typesense?.indexedCommit(jobName(job))])
     if (latest !== indexed) return job
     console.log(`[${jobName(job)}] unchanged (${latest.slice(0, 7)}), skipped`)
   }))
@@ -67,14 +67,15 @@ const results = await Promise.all(jobs.map(async job => {
 }))
 
 for (const source of selected) {
-  linkVersions(results.filter(r => r.job.id === source.id).map(r => ({ version: r.job.labels.version, records: r.result.records })))
+  linkVersions(results.filter(r => r.job.id === source.id)
+    .map(r => ({ version: r.job.labels.version, records: r.result.records, complete: !r.result.errors.length })))
 }
 
 for (const { name, job, result } of results) {
   // A crawl that found nothing must not wipe the records of an earlier, successful run.
-  if (meili && result.records.length) await meili.replace(job.id, job.labels.version, result.records)
+  if (typesense && result.records.length) await typesense.replace(job.id, job.labels.version, result.records)
   // Only a run without errors counts as indexed, so --if-changed retries a source that partly failed.
-  if (meili && result.commit && result.records.length && !result.errors.length) await meili.setIndexedCommit(name, result.commit)
+  if (typesense && result.commit && result.records.length && !result.errors.length) await typesense.setIndexedCommit(name, result.commit)
 }
 
 await mkdir(OUT_DIR, { recursive: true })
@@ -89,6 +90,8 @@ for (const { name, result } of results) {
 }
 console.log(`\nDetails (errors and skipped pages with reasons): ${join(OUT_DIR, "report.json")}`)
 
-if (meili) {
-  console.log(`\nSearch-only key for the frontend (NEXT_PUBLIC_MEILI_SEARCH_KEY): ${await meili.searchKey()}`)
+const searchKey = process.env.TYPESENSE_SEARCH_KEY
+if (typesense && searchKey) {
+  await typesense.ensureSearchKey(searchKey)
+  console.log("\nSearch-only key TYPESENSE_SEARCH_KEY is ready for the frontend (NEXT_PUBLIC_TYPESENSE_SEARCH_KEY).")
 }

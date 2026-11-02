@@ -1,0 +1,44 @@
+# Ranking of the search page. Typesense finds the best text matches (at most `candidates` results); the search page
+# then re-orders them, without leaving any out:
+#
+#   score = 2^(-(rank - 1) / halfLife) × weight of the source type × (archivedFactor if outdated, else 1)
+#
+# rank is the position by text match (1 = best). The half-life sets how much the source type counts: with 20, a result
+# 20 places lower by text match counts half. Current results (not draft or outdated) whose title is exactly the search
+# term keep their position when they are in the top `titleGuard` by text match, so "Wat is Nuts?" stays first for
+# "wat is nuts".
+#
+# Weights and influence can be changed by visitors under "Geavanceerd"; these are the defaults. Changing this file only
+# requires rebuilding the site, not re-indexing.
+
+candidates: 250
+
+# Source types (category in sources.yaml). The API operations count as documentation.
+presets:
+  technisch:
+    label: Technisch
+    weights: { documentation: 1.0, specification: 0.85, toepassing: 0.7, wiki: 0.6, website: 0.5 }
+  functioneel:
+    label: Functioneel
+    weights: { documentation: 0.5, specification: 0.6, toepassing: 0.85, wiki: 0.7, website: 1.0 }
+defaultPreset: technisch
+
+# "Invloed van brontype": the half-life above.
+influence:
+  laag: 8
+  normaal: 20
+  sterk: 50
+defaultInfluence: normaal
+
+# Outdated: deprecated or removed API operations, and archived wiki books. Draft is not penalized: most implementation
+# guides are drafts and still the best source on their subject.
+archivedFactor: 0.6
+
+titleGuard: 3
+
+# "Zoekt u meer functionele resultaten?" is shown with the technisch preset when the functioneel order would bring at
+# least `min` results for a functional audience into its top `top` that the technisch order doesn't show there.
+hint:
+  top: 5
+  min: 2
+  audiences: [algemeen, toepassingsontwerper]

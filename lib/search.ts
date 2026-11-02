@@ -1,95 +1,134 @@
-// Client for the documentation search (Meilisearch), used by pages/zoeken.tsx.
+// Client for the documentation search (Typesense), used by pages/zoeken.tsx. The browser queries Typesense directly
+// with a key that can only search the documentation collection.
 
 export const searchEnabled = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
 
-const host = process.env.NEXT_PUBLIC_MEILI_HOST ?? "http://localhost:7700"
-const searchKey = process.env.NEXT_PUBLIC_MEILI_SEARCH_KEY ?? ""
-const index = "nuts-docs"
+const host = process.env.NEXT_PUBLIC_TYPESENSE_URL ?? "http://localhost:8108"
+const searchKey = process.env.NEXT_PUBLIC_TYPESENSE_SEARCH_KEY ?? ""
+const collection = "nuts-docs"
 
 // Highlight markers that cannot occur in indexed text, so results can be rendered without innerHTML.
 export const HIGHLIGHT_START = "\u0001"
 export const HIGHLIGHT_END = "\u0002"
 
-export interface Facet {
-  // Field in the index
-  field: string
-  // Parameter in the page URL
-  param: string
-  label: string
+export const TABS = [
+  { id: "api", label: "API" },
+  { id: "documentatie", label: "Documentatie" },
+  { id: "specificatie", label: "Specificaties" },
+  { id: "toepassing", label: "Toepassingen" },
+  { id: "website", label: "Website" },
+  { id: "wiki", label: "Wiki" },
+]
+
+export interface Filters {
+  // One of TABS, or undefined for all.
+  tab?: string
+  language?: string
+  hideOutdated: boolean
 }
 
-export const FACETS: Facet[] = [
-  { field: "sourceName", param: "bron", label: "Bron" },
-  { field: "type", param: "soort", label: "Soort" },
-  { field: "language", param: "taal", label: "Taal" },
-  { field: "version", param: "versie", label: "Versie" },
-]
+export interface Version {
+  version: string
+  url: string
+}
 
 export interface Hit {
   id: string
   url: string
   title: string
   hierarchy: string[]
+  source: string
   sourceName: string
   category?: string
-  type?: string
+  audience?: string[]
   language?: string
   version?: string
   status?: string
-  // All versions of this section, when it occurs in more than one (newest first).
-  versions?: { version: string, url: string }[]
-  _formatted: { title: string, content: string, hierarchy: string[] }
+  versionOrder: number
+  versions?: Version[]
+  method?: string
+  path?: string
+  apiName?: string
+  // With highlight markers; content is a snippet around the match, empty when the match is elsewhere.
+  highlighted: { title: string, content: string }
 }
+
+// One result: the same section or API operation in one or more versions, best text match first.
+export type Group = Hit[]
 
 export interface SearchResult {
-  hits: Hit[]
+  // In text-match order, best first.
+  groups: Group[]
   total: number
-  facets: Record<string, Record<string, number>>
+  // Number of results per tab, ignoring the selected tab.
+  tabCounts: Record<string, number>
 }
 
-// Selected values per facet field; values within a facet are OR-ed, facets are AND-ed.
-export type Selection = Record<string, string[]>
-
-function filterFor(selection: Selection, except?: string): string[][] {
-  return Object.entries(selection)
-    .filter(([field, values]) => field !== except && values.length)
-    .map(([field, values]) => values.map(v => `${field} = ${JSON.stringify(v)}`))
+interface TypesenseHit {
+  document: Omit<Hit, "highlighted">
+  highlight?: Record<string, { snippet?: string }>
 }
 
-// Runs the search plus one extra query per active facet without its own filter, so the counts of a facet
-// still show the other values you can add (instead of only the selected one).
-export async function search(q: string, selection: Selection, limit: number, signal?: AbortSignal): Promise<SearchResult> {
-  const fields = FACETS.map(f => f.field)
-  const active = fields.filter(f => selection[f]?.length)
-  const queries = [
+function quote(value: string): string {
+  return "`" + value.replaceAll("`", "") + "`"
+}
+
+function filterFor(filters: Filters, withTab: boolean): string {
+  const parts: string[] = []
+  if (withTab && filters.tab) parts.push(`tab:=${quote(filters.tab)}`)
+  if (filters.language) parts.push(`language:=${quote(filters.language)}`)
+  if (filters.hideOutdated) parts.push("status:!=archief")
+  return parts.join(" && ")
+}
+
+// Fetches up to `limit` results in text-match order (the page re-orders them), plus the counts per tab.
+export async function search(q: string, filters: Filters, limit: number, signal?: AbortSignal): Promise<SearchResult> {
+  const base = {
+    collection,
+    q,
+    query_by: "title,path,terms,hierarchy,content",
+    query_by_weights: "8,6,6,3,1",
+    // A section or operation in several versions is one result; all its versions are returned.
+    group_by: "group",
+    group_limit: 5,
+  }
+  const searches = [
     {
-      indexUid: index,
-      q,
-      filter: filterFor(selection),
-      facets: fields,
-      limit,
-      // One result per section; the same section in another version is listed in versions.
-      distinct: "group",
-      attributesToRetrieve: ["id", "url", "title", "hierarchy", "sourceName", "category", "type", "language", "version", "status", "versions"],
-      attributesToHighlight: ["title", "hierarchy"],
-      attributesToCrop: ["content"],
-      cropLength: 40,
-      highlightPreTag: HIGHLIGHT_START,
-      highlightPostTag: HIGHLIGHT_END,
+      ...base,
+      filter_by: filterFor(filters, true),
+      per_page: limit,
+      exclude_fields: "content,terms",
+      highlight_fields: "title,content",
+      highlight_start_tag: HIGHLIGHT_START,
+      highlight_end_tag: HIGHLIGHT_END,
+      highlight_affix_num_tokens: 12,
+      // Only the current highlight format; the old one doubles the response.
+      enable_highlight_v1: false,
     },
-    ...active.map(field => ({ indexUid: index, q, filter: filterFor(selection, field), facets: [field], limit: 0 })),
+    { ...base, filter_by: filterFor(filters, false), facet_by: "tab", per_page: 0 },
   ]
-  const response = await fetch(`${host}/multi-search`, {
+  const response = await fetch(`${host}/multi_search`, {
     method: "POST",
-    headers: { "Authorization": `Bearer ${searchKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ queries }),
+    headers: { "X-TYPESENSE-API-KEY": searchKey, "Content-Type": "application/json" },
+    body: JSON.stringify({ searches }),
     signal,
   })
   if (!response.ok) throw new Error(`zoeken mislukt (HTTP ${response.status})`)
   const { results } = await response.json() as {
-    results: { hits: Hit[], estimatedTotalHits: number, facetDistribution?: Record<string, Record<string, number>> }[]
+    results: {
+      error?: string
+      found: number
+      grouped_hits?: { hits: TypesenseHit[] }[]
+      facet_counts?: { field_name: string, counts: { value: string, count: number }[] }[]
+    }[]
   }
-  const facets = { ...results[0].facetDistribution }
-  active.forEach((field, i) => facets[field] = results[i + 1].facetDistribution?.[field] ?? {})
-  return { hits: results[0].hits, total: results[0].estimatedTotalHits, facets }
+  const failed = results.find(r => r.error)
+  if (failed) throw new Error(`zoeken mislukt (${failed.error})`)
+  const [main, counts] = results
+  const groups = (main.grouped_hits ?? []).map(group => group.hits.map(({ document, highlight }) => ({
+    ...document,
+    highlighted: { title: highlight?.title?.snippet ?? document.title, content: highlight?.content?.snippet ?? "" },
+  })))
+  const tabCounts = Object.fromEntries(counts.facet_counts?.find(f => f.field_name === "tab")?.counts.map(c => [c.value, c.count]) ?? [])
+  return { groups, total: main.found, tabCounts }
 }

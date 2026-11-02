@@ -26,6 +26,11 @@ export interface SearchRecord {
   group?: string
   versionOrder?: number
   versions?: { version: string, url: string }[]
+  // API operations only (see openapi.ts).
+  method?: string
+  path?: string
+  apiName?: string
+  terms?: string
 }
 
 export interface Skipped {

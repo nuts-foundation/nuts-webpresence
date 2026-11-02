@@ -1,78 +1,128 @@
-import React, { useEffect, useId, useState } from "react"
+import React, { useEffect, useId, useMemo, useState } from "react"
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import { parse } from "yaml"
 
 import Layout from "../components/Layout"
 import Header from "../components/Header"
-import { FACETS, HIGHLIGHT_END, HIGHLIGHT_START, Hit, search, searchEnabled, SearchResult, Selection } from "../lib/search"
+import { CATEGORIES, Category, RankingConfig, rerank, suggestsFunctional, Weights } from "../lib/ranking"
+import { Filters, Group, HIGHLIGHT_END, HIGHLIGHT_START, Hit, search, searchEnabled, SearchResult, TABS } from "../lib/search"
 
 const PAGE_SIZE = 20
 const DEBOUNCE_MS = 250
 
-const VALUE_LABELS: Record<string, Record<string, string>> = {
-  type: { concept: "Concept", guide: "Handleiding", reference: "Naslag", specification: "Specificatie", "use-case": "Toepassing" },
-  language: { nl: "Nederlands", en: "Engels" },
-  status: { actueel: "Actueel", draft: "Concept", archief: "Archief" },
+const TAB_NAMES: Record<string, string> = {
+  api: "API", documentatie: "Documentatie", specificatie: "Specificatie", toepassing: "Toepassing", website: "Website", wiki: "Wiki",
+}
+const CATEGORY_LABELS: Record<Category, string> = {
+  documentation: "Documentatie & API", specification: "Specificaties", toepassing: "Toepassingen", wiki: "Wiki", website: "Website",
+}
+const INFLUENCE_LABELS: Record<string, string> = { laag: "Laag", normaal: "Normaal", sterk: "Sterk" }
+const VERSIONS = [{ id: "", label: "Nieuwste" }, { id: "v6.2", label: "v6.2" }, { id: "v5.4", label: "v5.4" }]
+const LANGUAGES = [{ id: "", label: "Alle talen" }, { id: "nl", label: "Nederlands" }, { id: "en", label: "Engels" }]
+
+// The search state that is kept in the URL, so a search (including its ranking) can be shared.
+interface State {
+  q: string
+  filters: Filters
+  preset: string
+  // Weights that differ from the preset ("Aangepast").
+  weights: Partial<Weights>
+  influence: string
+  // Version whose link a result shows first; empty for the newest.
+  version: string
 }
 
-// Kind of source, shown as a colored bar and label on each result. Colors are existing Tailwind tokens;
-// the label carries the meaning, so the color is never the only cue.
-const CATEGORIES: Record<string, { label: string, border: string, swatch: string, tag?: { label: string, info: string } }> = {
-  website: { label: "Website", border: "border-l-brand", swatch: "bg-brand" },
-  documentation: { label: "Nuts-documentatie", border: "border-l-link", swatch: "bg-link" },
-  specification: { label: "Nuts-specificatie", border: "border-l-dark-gray", swatch: "bg-dark-gray" },
-  toepassing: { label: "Zorgtoepassing", border: "border-l-button", swatch: "bg-button" },
-  wiki: { label: "Wiki", border: "border-l-darker", swatch: "bg-darker", tag: {
-    label: "Community Resource",
-    info: "Bijdrage van de community. Hierop heeft beperkte kwaliteitscontrole plaatsgevonden.",
-  } },
+export async function getStaticProps() {
+  const ranking = parse(await readFile(join(process.cwd(), "search", "ranking.yaml"), "utf8")) as RankingConfig
+  return { props: { ranking } }
 }
 
-function valueLabel(field: string, value: string): string {
-  return VALUE_LABELS[field]?.[value] ?? value
+function readState(query: Record<string, string | string[] | undefined>, config: RankingConfig): State {
+  const one = (key: string) => {
+    const value = query[key]
+    return (Array.isArray(value) ? value[0] : value) ?? ""
+  }
+  const weights: Partial<Weights> = {}
+  for (const category of CATEGORIES) {
+    const value = Number(one(`gewicht-${category}`))
+    if (one(`gewicht-${category}`) && Number.isFinite(value) && value >= 0 && value <= 2) weights[category] = value
+  }
+  return {
+    q: one("q"),
+    filters: {
+      tab: TABS.some(t => t.id === one("bron")) ? one("bron") : undefined,
+      language: LANGUAGES.some(l => l.id && l.id === one("taal")) ? one("taal") : undefined,
+      hideOutdated: one("verouderd") === "verbergen",
+    },
+    // Own properties only: `in` would also accept names like __proto__.
+    preset: Object.hasOwn(config.presets, one("voorrang")) ? one("voorrang") : config.defaultPreset,
+    weights,
+    influence: Object.hasOwn(config.influence, one("invloed")) ? one("invloed") : config.defaultInfluence,
+    version: VERSIONS.some(v => v.id === one("versie")) ? one("versie") : "",
+  }
 }
 
-function readQuery(query: Record<string, string | string[] | undefined>): { q: string, selection: Selection } {
-  const list = (v: string | string[] | undefined) => (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean)
-  const selection: Selection = {}
-  for (const facet of FACETS) selection[facet.field] = list(query[facet.param])
-  return { q: list(query.q)[0] ?? "", selection }
+function writeState(state: State, config: RankingConfig): Record<string, string> {
+  const query: Record<string, string> = {}
+  if (state.q) query.q = state.q
+  if (state.filters.tab) query.bron = state.filters.tab
+  if (state.filters.language) query.taal = state.filters.language
+  if (state.filters.hideOutdated) query.verouderd = "verbergen"
+  if (state.preset !== config.defaultPreset) query.voorrang = state.preset
+  for (const [category, value] of Object.entries(state.weights)) query[`gewicht-${category}`] = String(value)
+  if (state.influence !== config.defaultInfluence) query.invloed = state.influence
+  if (state.version) query.versie = state.version
+  return query
 }
 
-export default function Zoeken() {
+// The version of a result that is shown: the chosen version when the result has it, otherwise the newest. The text
+// comes from a version that matched the search; the link and version label also cover versions that didn't match,
+// because `versions` lists all of them, newest first.
+function representative(group: Group, version: string): Hit {
+  const hit = group.find(h => version && h.version === version)
+    ?? group.reduce((newest, h) => h.versionOrder > newest.versionOrder ? h : newest)
+  const target = hit.versions?.find(v => version && v.version === version) ?? hit.versions?.[0]
+  return target ? { ...hit, version: target.version, url: target.url } : hit
+}
+
+export default function Zoeken({ ranking: config }: { ranking: RankingConfig }) {
   const router = useRouter()
-  const [q, setQ] = useState("")
-  const [selection, setSelection] = useState<Selection>({})
-  const [limit, setLimit] = useState(PAGE_SIZE)
+  const [state, setState] = useState<State>(() => readState({}, config))
+  const [shown, setShown] = useState(PAGE_SIZE)
   const [result, setResult] = useState<SearchResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
-  const [filtersOpen, setFiltersOpen] = useState(false)
+  const [advancedOpen, setAdvancedOpen] = useState(false)
   const [initialized, setInitialized] = useState(false)
   const inputId = useId()
+  const { q, filters } = state
 
-  // Start from the search term and filters in the URL, so searches can be shared.
+  const update = (change: Partial<State>) => {
+    setState(current => ({ ...current, ...change }))
+    setShown(PAGE_SIZE)
+  }
+
+  // Start from the URL, so searches can be shared; open Geavanceerd when the URL changes something in it.
   useEffect(() => {
     if (!router.isReady || initialized) return
-    const state = readQuery(router.query)
-    setQ(state.q)
-    setSelection(state.selection)
+    const initial = readState(router.query, config)
+    setState(initial)
+    setAdvancedOpen(Object.keys(initial.weights).length > 0 || initial.influence !== config.defaultInfluence
+      || initial.filters.hideOutdated || !!initial.filters.language || !!initial.version)
     setInitialized(true)
-  }, [router.isReady, router.query, initialized])
+  }, [router.isReady, router.query, initialized, config])
 
-  // Keep the URL in sync with the search term and filters.
   useEffect(() => {
     if (!initialized) return
-    const query: Record<string, string | string[]> = {}
-    if (q) query.q = q
-    for (const facet of FACETS) {
-      if (selection[facet.field]?.length) query[facet.param] = selection[facet.field]
-    }
-    router.replace({ pathname: router.pathname, query }, undefined, { shallow: true, scroll: false })
+    router.replace({ pathname: router.pathname, query: writeState(state, config) }, undefined, { shallow: true, scroll: false })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, selection, initialized])
+  }, [state, initialized])
 
-  // Search while typing, debounced; a newer search cancels the previous one.
+  // Search while typing, debounced; a newer search cancels the previous one. The ranking is applied afterwards, so
+  // changing it needs no new search.
   useEffect(() => {
     if (!initialized || !searchEnabled) return
     if (!q.trim()) {
@@ -83,21 +133,30 @@ export default function Zoeken() {
     const controller = new AbortController()
     const timer = setTimeout(() => {
       setLoading(true)
-      search(q, selection, limit, controller.signal)
+      search(q, filters, config.candidates, controller.signal)
         .then(r => { setResult(r); setError(null) })
         .catch(e => { if (e.name !== "AbortError") setError(e.message) })
         .finally(() => setLoading(false))
     }, DEBOUNCE_MS)
     return () => { clearTimeout(timer); controller.abort() }
-  }, [q, selection, limit, initialized])
+  }, [q, filters, initialized, config.candidates])
 
-  function toggle(field: string, value: string) {
-    const current = selection[field] ?? []
-    setSelection({ ...selection, [field]: current.includes(value) ? current.filter(v => v !== value) : [...current, value] })
-    setLimit(PAGE_SIZE)
-  }
+  const weights: Weights = { ...config.presets[state.preset].weights, ...state.weights }
+  const customized = Object.keys(state.weights).length > 0 || state.influence !== config.defaultInfluence
+  const halfLife = config.influence[state.influence]
 
-  const activeCount = Object.values(selection).reduce((n, values) => n + values.length, 0)
+  const { ranked, hint } = useMemo(() => {
+    if (!result) return { ranked: [], hint: false }
+    const candidates = result.groups.map(group => ({ ...representative(group, state.version), group }))
+    const ranked = rerank(candidates, q, { weights, halfLife }, config)
+    const functional = config.presets.functioneel
+    const hint = state.preset !== "functioneel" && !!functional
+      && suggestsFunctional(ranked, rerank(candidates, q, { weights: functional.weights, halfLife }, config), config)
+    return { ranked, hint }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [result, state.version, state.preset, JSON.stringify(weights), halfLife, config])
+
+  const allCount = Object.values(result?.tabCounts ?? {}).reduce((a, b) => a + b, 0)
 
   return (
     <Layout>
@@ -107,7 +166,7 @@ export default function Zoeken() {
       </Head>
 
       <Header>
-        <div className="container mx-auto max-w-5xl px-4">
+        <div className="container mx-auto max-w-4xl px-4">
           <h1 className="font-redhat font-bold text-white text-3xl md:text-4xl mb-6">Zoeken in de documentatie</h1>
           <form role="search" onSubmit={e => e.preventDefault()}>
             <label htmlFor={inputId} className="sr-only">Zoekterm</label>
@@ -117,200 +176,374 @@ export default function Zoeken() {
               autoComplete="off"
               autoFocus
               value={q}
-              onChange={e => { setQ(e.target.value); setLimit(PAGE_SIZE) }}
-              placeholder="Bijvoorbeeld: access token, toepassing, configuratie"
+              onChange={e => update({ q: e.target.value })}
+              placeholder="Bijvoorbeeld: access token, DID document, /internal/vdr/v2"
               aria-describedby={`${inputId}-description`}
-              className="w-full rounded-full text-base font-inter px-6 py-3 bg-white text-text border border-button focus:outline-none focus:ring-4 focus:ring-button"
+              className="w-full rounded-full text-base font-inter px-6 py-3 bg-white text-text border-2 border-button focus:outline-none focus:ring-4 focus:ring-button"
             />
           </form>
+          <p id={`${inputId}-description`} className="sr-only">
+            Zoekt in nuts.nl, de Nuts node-documentatie en API, de specificaties, de toepassingen en de wiki.
+          </p>
         </div>
       </Header>
 
-      <div className="container mx-auto max-w-5xl px-4 py-10 md:py-16">
-        <p id={`${inputId}-description`} className="font-inter text-text mb-8">
-          Zoek in nuts.nl, de Nuts node-documentatie, de specificaties, de toepassingen en de wiki.
-        </p>
-        {!searchEnabled ? (
-          <p className="font-inter text-text">Zoeken is (nog) niet beschikbaar.</p>
-        ) : (
-          <div className="md:grid md:grid-cols-[14rem_1fr] md:gap-10">
-            <aside aria-label="Filters" className="mb-8 md:mb-0">
-              <button
-                type="button"
-                className="md:hidden w-full flex justify-between items-center px-4 py-2 rounded-lg border border-stroke font-inter text-sm text-text"
-                aria-expanded={filtersOpen}
-                aria-controls="search-filters"
-                onClick={() => setFiltersOpen(!filtersOpen)}
-              >
-                <span>Filters{activeCount > 0 && ` (${activeCount} actief)`}</span>
-                <span aria-hidden="true">{filtersOpen ? "−" : "+"}</span>
-              </button>
-              <div id="search-filters" className={`${filtersOpen ? "block" : "hidden"} md:block mt-4 md:mt-0 space-y-6`}>
-                {FACETS.map(facet => (
-                  <FacetGroup
-                    key={facet.field}
-                    label={facet.label}
-                    field={facet.field}
-                    counts={result?.facets[facet.field] ?? {}}
-                    selected={selection[facet.field] ?? []}
-                    onToggle={value => toggle(facet.field, value)}
-                  />
-                ))}
-                {activeCount > 0 && (
-                  <button type="button" onClick={() => setSelection({})} className="font-inter text-sm text-darker underline hover:no-underline">
-                    Wis alle filters
-                  </button>
-                )}
-              </div>
-            </aside>
-
-            <section aria-label="Zoekresultaten">
-              <p aria-live="polite" className="font-inter text-sm text-text mb-6 min-h-5">
-                {error ? `Er ging iets mis: ${error}`
-                  : !q.trim() ? "Typ een zoekterm om te beginnen."
-                  : loading && !result ? "Zoeken…"
-                  : result && result.total === 0 ? ""
-                  : result ? `${result.total} ${result.total === 1 ? "resultaat" : "resultaten"} voor “${q}”` : ""}
-              </p>
-
-              {result && q.trim() && result.total === 0 && (
-                <div className="rounded-xl border border-stroke p-6 bg-light font-inter text-text">
-                  <p className="font-redhat font-bold text-dark-gray text-lg mb-2">Geen resultaten voor “{q}”</p>
-                  <ul className="list-disc pl-5 space-y-1 text-sm">
-                    <li>Controleer de spelling of probeer een ander woord, ook in het Engels.</li>
-                    {activeCount > 0 && <li>Zet een of meer filters uit.</li>}
-                    <li>Staat het er echt niet bij? Laat het ons weten via <a className="text-darker underline" href="/contact">contact</a>.</li>
-                  </ul>
-                </div>
-              )}
-
-              {result && result.hits.length > 0 && (
-                <ol className="space-y-4">
-                  {result.hits.map(hit => <ResultCard key={hit.id} hit={hit} />)}
-                </ol>
-              )}
-
-              {result && result.hits.length < result.total && (
-                <div className="mt-8 text-center">
+      {!searchEnabled ? (
+        <p className="container mx-auto max-w-4xl px-4 py-10 font-inter text-text">Zoeken is (nog) niet beschikbaar.</p>
+      ) : (<>
+        <nav aria-label="Bron" className="border-b border-stroke">
+          <ul className="container mx-auto max-w-4xl px-4 flex gap-1 overflow-x-auto">
+            {[{ id: undefined, label: "Alles", count: allCount }, ...TABS.map(t => ({ ...t, count: result?.tabCounts[t.id] ?? 0 }))].map(tab => {
+              const active = filters.tab === tab.id
+              return (
+                <li key={tab.label}>
                   <button
                     type="button"
-                    onClick={() => setLimit(limit + PAGE_SIZE)}
-                    className="inline-block px-6 py-3 rounded-full text-sm font-inter transition-colors bg-button hover:bg-button-hover text-dark-gray"
+                    aria-pressed={active}
+                    onClick={() => update({ filters: { ...filters, tab: tab.id } })}
+                    className={`px-3 pt-3 pb-2.5 border-b-[3px] whitespace-nowrap font-inter text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
+                      active ? "border-dark text-dark-gray font-semibold" : "border-transparent text-text/80 hover:text-dark-gray"
+                    }`}
                   >
-                    Meer resultaten
+                    {tab.label}{result && q.trim() && <span className="ml-1 text-xs text-text/60">{tab.count}</span>}
                   </button>
-                </div>
-              )}
-            </section>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+
+        <div className="container mx-auto max-w-4xl px-4 py-6 md:py-8">
+          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 mb-4">
+            <p aria-live="polite" className="font-inter text-sm text-text min-h-5">
+              {error ? `Er ging iets mis: ${error}`
+                : !q.trim() ? "Typ een zoekterm om te beginnen."
+                : loading && !result ? "Zoeken…"
+                : result ? `${result.total} ${result.total === 1 ? "resultaat" : "resultaten"}` : ""}
+            </p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <RadioPills
+                legend="Voorrang voor"
+                options={Object.entries(config.presets).map(([id, p]) => ({ id, label: p.label }))}
+                value={state.preset}
+                onChange={preset => update({ preset, weights: {} })}
+              />
+              <button
+                type="button"
+                aria-expanded={advancedOpen}
+                aria-controls="search-advanced"
+                onClick={() => setAdvancedOpen(!advancedOpen)}
+                className="font-inter text-sm text-darker underline underline-offset-2 hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded"
+              >
+                Geavanceerd{customized && " (aangepast)"} <span aria-hidden="true">{advancedOpen ? "▴" : "▾"}</span>
+              </button>
+            </div>
           </div>
-        )}
-      </div>
+
+          {advancedOpen && (
+            <Advanced
+              config={config}
+              state={state}
+              weights={weights}
+              customized={customized}
+              onChange={update}
+            />
+          )}
+
+          {hint && (
+            <p className="font-inter text-sm bg-light rounded-lg px-4 py-3 mb-4">
+              Zoekt u meer functionele resultaten?{" "}
+              <button type="button" onClick={() => update({ preset: "functioneel", weights: {} })} className="font-semibold text-link underline underline-offset-2 hover:no-underline">
+                Toon functioneel eerst
+              </button>
+            </p>
+          )}
+
+          {result && q.trim() && result.total === 0 && (
+            <div className="rounded-xl border border-stroke p-6 bg-light font-inter text-text">
+              <p className="font-redhat font-bold text-dark-gray text-lg mb-2">Geen resultaten voor “{q}”</p>
+              <ul className="list-disc pl-5 space-y-1 text-sm">
+                <li>Controleer de spelling of probeer een ander woord, ook in het Engels.</li>
+                {(filters.tab || filters.language || filters.hideOutdated) && <li>Zoek in alle bronnen, of zet de filters onder Geavanceerd uit.</li>}
+                <li>Staat het er echt niet bij? Laat het ons weten via <a className="text-darker underline" href="/contact">contact</a>.</li>
+              </ul>
+            </div>
+          )}
+
+          {ranked.length > 0 && (
+            <ol aria-label="Zoekresultaten">
+              {ranked.slice(0, shown).map(hit => hit.method
+                ? <ApiResult key={hit.group[0].id} hit={hit} group={hit.group} />
+                : <Result key={hit.group[0].id} hit={hit} group={hit.group} />)}
+            </ol>
+          )}
+
+          {ranked.length > shown && (
+            <div className="mt-8 text-center">
+              <button
+                type="button"
+                onClick={() => setShown(shown + PAGE_SIZE)}
+                className="inline-block px-6 py-3 rounded-full text-sm font-inter transition-colors bg-button hover:bg-button-hover text-dark-gray"
+              >
+                Meer resultaten
+              </button>
+            </div>
+          )}
+          {result && shown >= ranked.length && result.total > ranked.length && (
+            <p className="mt-8 font-inter text-sm text-text text-center">
+              Meer dan {ranked.length} resultaten; maak je zoekopdracht specifieker.
+            </p>
+          )}
+        </div>
+      </>)}
     </Layout>
   )
 }
 
-interface FacetGroupProps {
-  label: string
-  field: string
-  counts: Record<string, number>
-  selected: string[]
-  onToggle: (value: string) => void
+interface AdvancedProps {
+  config: RankingConfig
+  state: State
+  weights: Weights
+  customized: boolean
+  onChange: (change: Partial<State>) => void
 }
 
-function FacetGroup({ label, field, counts, selected, onToggle }: FacetGroupProps) {
-  // Selected values stay visible even when the current search has no hits for them.
-  const values = [...new Set([...Object.keys(counts), ...selected])].sort((a, b) => (counts[b] ?? 0) - (counts[a] ?? 0))
-  if (!values.length) return null
+function Advanced({ config, state, weights, customized, onChange }: AdvancedProps) {
+  const id = useId()
+  const preset = config.presets[state.preset].weights
   return (
-    <fieldset>
-      <legend className="font-redhat font-bold text-dark-gray mb-2">{label}</legend>
-      <div className="flex flex-wrap gap-2">
-        {values.map(value => {
-          const active = selected.includes(value)
-          return (
-            <button
-              key={value}
-              type="button"
-              aria-pressed={active}
-              onClick={() => onToggle(value)}
-              className={`px-3 py-1 rounded-full text-sm font-inter border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
-                active ? "bg-dark text-white border-dark" : "bg-white text-text border-stroke hover:border-dark hover:text-darker"
-              }`}
-            >
-              {valueLabel(field, value)} <span className={active ? "" : "text-text/70"}>({counts[value] ?? 0})</span>
-            </button>
-          )
-        })}
+    <section id="search-advanced" aria-labelledby={`${id}-title`} className="rounded-xl border border-stroke bg-white p-5 md:p-6 mb-6 font-inter text-sm text-text">
+      <h2 id={`${id}-title`} className="font-redhat font-bold text-dark-gray text-lg">Geavanceerd</h2>
+      <p className="mb-5 text-text/80">Bepaal welke bronnen voorrang krijgen. Niets wordt verborgen, alleen anders gesorteerd.</p>
+      <div className="grid gap-8 md:grid-cols-2">
+        <fieldset>
+          <legend className="text-xs font-semibold uppercase tracking-wide text-dark-gray mb-3">Gewicht per brontype</legend>
+          {CATEGORIES.map(category => (
+            <div key={category} className="grid grid-cols-[9.5rem_1fr_2.5rem] items-center gap-3 mb-2">
+              <label htmlFor={`${id}-${category}`}>{CATEGORY_LABELS[category]}</label>
+              <input
+                id={`${id}-${category}`}
+                type="range"
+                min={0}
+                max={1.5}
+                step={0.05}
+                value={weights[category]}
+                onChange={e => {
+                  const value = Number(e.target.value)
+                  const changed = { ...state.weights, [category]: value }
+                  if (value === preset[category]) delete changed[category]
+                  onChange({ weights: changed })
+                }}
+                className="accent-dark"
+              />
+              <output htmlFor={`${id}-${category}`} className="text-right tabular-nums text-text/80">{weights[category].toFixed(2)}</output>
+            </div>
+          ))}
+          <div className="mt-4">
+            <RadioPills
+              legend="Invloed van brontype"
+              options={Object.keys(config.influence).map(key => ({ id: key, label: INFLUENCE_LABELS[key] ?? key }))}
+              value={state.influence}
+              onChange={influence => onChange({ influence })}
+              stacked
+            />
+            <p className="mt-1 text-xs text-text/70">Laag: de tekstovereenkomst telt het zwaarst. Sterk: het brontype weegt zwaar.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend className="text-xs font-semibold uppercase tracking-wide text-dark-gray mb-3">Filters</legend>
+          <label className="flex items-center gap-2 mb-3">
+            <input
+              type="checkbox"
+              checked={state.filters.hideOutdated}
+              onChange={e => onChange({ filters: { ...state.filters, hideOutdated: e.target.checked } })}
+              className="accent-dark w-4 h-4"
+            />
+            Verberg verouderde resultaten
+          </label>
+          <label htmlFor={`${id}-language`} className="block mb-1">Taal</label>
+          <select
+            id={`${id}-language`}
+            value={state.filters.language ?? ""}
+            onChange={e => onChange({ filters: { ...state.filters, language: e.target.value || undefined } })}
+            className="w-full mb-3 rounded-lg border border-stroke px-3 py-2 bg-white"
+          >
+            {LANGUAGES.map(l => <option key={l.id} value={l.id}>{l.label}</option>)}
+          </select>
+          <label htmlFor={`${id}-version`} className="block mb-1">Versie Nuts node</label>
+          <select
+            id={`${id}-version`}
+            value={state.version}
+            onChange={e => onChange({ version: e.target.value })}
+            aria-describedby={`${id}-version-help`}
+            className="w-full rounded-lg border border-stroke px-3 py-2 bg-white"
+          >
+            {VERSIONS.map(v => <option key={v.id} value={v.id}>{v.label}</option>)}
+          </select>
+          <p id={`${id}-version-help`} className="mt-1 text-xs text-text/70">Welke versie een resultaat als eerste toont.</p>
+        </fieldset>
+      </div>
+      {customized && (
+        <button
+          type="button"
+          onClick={() => onChange({ weights: {}, influence: config.defaultInfluence })}
+          className="mt-5 text-darker underline underline-offset-2 hover:no-underline"
+        >
+          Herstel standaard rangschikking
+        </button>
+      )}
+    </section>
+  )
+}
+
+interface RadioPillsProps {
+  legend: string
+  options: { id: string, label: string }[]
+  value: string
+  onChange: (value: string) => void
+  // Legend above the options instead of next to them.
+  stacked?: boolean
+}
+
+// A choice of a few options, shown as a segmented control; native radio buttons, so it works with the keyboard.
+function RadioPills({ legend, options, value, onChange, stacked }: RadioPillsProps) {
+  const name = useId()
+  return (
+    <fieldset className={stacked ? "" : "flex items-center gap-2"}>
+      <legend className={stacked ? "text-xs font-semibold uppercase tracking-wide text-dark-gray mb-2" : "float-left mr-2 font-inter text-sm text-text/80"}>{legend}</legend>
+      <div className="inline-flex rounded-full border border-stroke bg-white p-0.5">
+        {options.map(option => (
+          <label key={option.id} className={`cursor-pointer rounded-full px-3.5 py-1.5 font-inter text-sm transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-dark ${
+            value === option.id ? "bg-dark-gray text-white font-semibold" : "text-text hover:text-dark-gray"
+          }`}>
+            <input type="radio" name={name} value={option.id} checked={value === option.id} onChange={() => onChange(option.id)} className="sr-only" />
+            {option.label}
+          </label>
+        ))}
       </div>
     </fieldset>
   )
 }
 
-function ResultCard({ hit }: { hit: Hit }) {
-  const crumbs = hit._formatted.hierarchy.slice(0, -1)
-  const category = hit.category ? CATEGORIES[hit.category] : undefined
+interface ResultProps {
+  hit: Hit
+  group: Group
+}
+
+function Meta({ hit, children }: { hit: Hit, children?: React.ReactNode }) {
   return (
-    <li className={`group relative min-w-0 rounded-xl border border-stroke ${category ? `border-l-4 ${category.border}` : ""} hover:shadow-md transition-all p-5 md:p-6 bg-white focus-within:ring-2 focus-within:ring-dark`}>
-      {category && (
-        <p className="flex items-center gap-1.5 mb-2 text-xs font-inter font-semibold uppercase tracking-wide text-dark-gray">
-          <span aria-hidden="true" className={`inline-block w-2.5 h-2.5 rounded-sm ${category.swatch}`} />
-          {category.label}
-          {category.tag && (
-            // Above the card link, so it can be hovered; focusable, so the explanation is also reachable by keyboard.
-            <span tabIndex={0} aria-describedby={`tag-${hit.id}`} className="group/tag relative z-10 ml-1 px-2 py-0.5 rounded-full border border-stroke normal-case tracking-normal font-medium cursor-help focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
-              {category.tag.label}
-              <span id={`tag-${hit.id}`} role="tooltip" className="invisible opacity-0 group-hover/tag:visible group-hover/tag:opacity-100 group-focus/tag:visible group-focus/tag:opacity-100 transition-opacity absolute left-0 top-full mt-1 w-64 rounded-lg bg-dark-gray text-white text-xs font-normal leading-snug p-2 shadow-md">
-                {category.tag.info}
-              </span>
-            </span>
-          )}
-        </p>
-      )}
-      {crumbs.length > 0 && (
-        <p className="text-xs font-inter text-text/80 mb-1">
-          {crumbs.map((crumb, i) => (
-            <React.Fragment key={i}>
-              {i > 0 && <span aria-hidden="true"> › </span>}
-              <Highlighted text={crumb} />
-            </React.Fragment>
-          ))}
-        </p>
-      )}
-      <h2 className="font-redhat font-bold text-dark-gray text-lg leading-snug group-hover:text-darker transition-colors">
-        {/* The link covers the whole card; the title is its accessible name. */}
-        <a href={hit.url} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0 focus:outline-none">
-          <Highlighted text={hit._formatted.title} />
-          <span className="sr-only"> (opent in nieuw venster)</span>
+    <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 mb-1 text-xs font-inter text-text/80">
+      <span className="font-semibold text-text">{hit.method ? "API" : TAB_NAMES[tabOf(hit)]}</span>
+      {children}
+      {hit.status === "archief" && <Pill className="border-[#e7b46a] bg-[#fff6e6] text-[#8a4b00]">Verouderd</Pill>}
+      {hit.status === "draft" && <Pill className="border-stroke bg-light text-text">Concept</Pill>}
+      {hit.category === "wiki" && <CommunityNote id={hit.id} />}
+    </p>
+  )
+}
+
+function tabOf(hit: Hit): string {
+  return ({ documentation: "documentatie", specification: "specificatie" } as Record<string, string>)[hit.category ?? ""] ?? hit.category ?? ""
+}
+
+function Dot() {
+  return <span aria-hidden="true" className="text-text/40">·</span>
+}
+
+function Result({ hit, group }: ResultProps) {
+  const crumbs = hit.hierarchy.slice(0, -1)
+  return (
+    <li className="py-4 border-b border-stroke/70">
+      <Meta hit={hit}>
+        <Dot /><span>{hit.sourceName}</span>
+        {hit.version && <><Dot /><span>{hit.version}</span></>}
+      </Meta>
+      <h2 className="font-redhat font-bold text-lg leading-snug">
+        <a href={hit.url} className="text-link hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded">
+          <Highlighted text={hit.highlighted.title} />
         </a>
       </h2>
-      {hit._formatted.content && (
-        <p className="mt-2 text-text font-inter text-sm leading-relaxed break-words">
-          <Highlighted text={hit._formatted.content} />
+      {crumbs.length > 0 && (
+        <p className="text-xs font-inter text-text/70 mt-0.5">{crumbs.join(" › ")}</p>
+      )}
+      {hit.highlighted.content && (
+        <p className="mt-1.5 text-text font-inter text-sm leading-relaxed break-words line-clamp-2">
+          <Highlighted text={hit.highlighted.content} />
         </p>
       )}
-      <ul className="mt-3 flex flex-wrap gap-2" aria-label="Kenmerken">
-        <Badge>{hit.sourceName}</Badge>
-        {hit.language && <Badge>{valueLabel("language", hit.language)}</Badge>}
-        {hit.type && <Badge>{valueLabel("type", hit.type)}</Badge>}
-        {hit.versions ? hit.versions.map(v => (
-          // Above the card link, so each version opens its own page.
-          <li key={v.version} className="relative z-10">
-            <a href={v.url} target="_blank" rel="noopener noreferrer" className="block text-xs font-inter font-medium text-dark-gray bg-light px-2.5 py-1 rounded-full underline underline-offset-2 hover:text-darker focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
-              Versie {v.version}<span className="sr-only"> (opent in nieuw venster)</span>
-            </a>
-          </li>
-        )) : hit.version && <Badge>Versie {hit.version}</Badge>}
-        {hit.status && hit.status !== "actueel" && <Badge>{valueLabel("status", hit.status)}</Badge>}
-      </ul>
+      <OtherVersions hit={hit} group={group} />
     </li>
   )
 }
 
-function Badge({ children }: { children: React.ReactNode }) {
-  return <li className="text-xs font-inter font-medium text-text bg-light px-2.5 py-1 rounded-full">{children}</li>
+function ApiResult({ hit, group }: ResultProps) {
+  return (
+    <li className="py-4 border-b border-stroke/70">
+      <Meta hit={hit}>
+        <Dot /><span>{hit.apiName?.replace(/ - DEPRECATED$/, "")}</span>
+        <Dot /><span>{hit.version}</span>
+      </Meta>
+      <h2 className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+        <MethodBadge method={hit.method!} />
+        <a href={hit.url} className="font-mono font-semibold text-[15px] text-link break-all hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded">
+          {hit.path}
+          <span className="sr-only">: {hit.title}</span>
+        </a>
+      </h2>
+      <p className="mt-1.5 text-dark-gray font-inter text-sm"><Highlighted text={hit.highlighted.title} /></p>
+      <OtherVersions hit={hit} group={group} />
+    </li>
+  )
 }
 
-// Renders text with highlight markers from Meilisearch as <mark>, without using innerHTML.
+// Links to the result in other versions; the API reference of released versions has no links to operations.
+function OtherVersions({ hit, group }: ResultProps) {
+  const versions = (hit.versions ?? group.map(h => ({ version: h.version!, url: h.url })))
+    .filter(v => v.version && v.version !== hit.version)
+  if (!versions.length) return null
+  return (
+    <p className="mt-2 text-xs font-inter text-text/80">
+      Ook in:{" "}
+      {versions.map((v, i) => (
+        <React.Fragment key={v.version}>
+          {i > 0 && " · "}
+          <a href={v.url} className="text-link hover:underline">{v.version}</a>
+        </React.Fragment>
+      ))}
+    </p>
+  )
+}
+
+const METHOD_COLORS: Record<string, string> = {
+  GET: "bg-[#0F7B3F]", POST: "bg-[#1D5FC2]", PUT: "bg-[#9A5B00]", PATCH: "bg-[#9A5B00]", DELETE: "bg-[#B42318]",
+}
+
+function MethodBadge({ method }: { method: string }) {
+  return (
+    <span className={`self-center font-mono font-bold text-[11px] leading-none text-white px-1.5 py-1 rounded ${METHOD_COLORS[method] ?? "bg-dark-gray"}`}>
+      {method}
+    </span>
+  )
+}
+
+function Pill({ className, children }: { className: string, children: React.ReactNode }) {
+  return <span className={`ml-1 px-2 py-0.5 rounded-full border text-[11px] font-semibold ${className}`}>{children}</span>
+}
+
+// Focusable, so the explanation is also reachable by keyboard.
+function CommunityNote({ id }: { id: string }) {
+  return (
+    <span tabIndex={0} aria-describedby={`community-${id}`} className="group/tag relative ml-1 px-2 py-0.5 rounded-full border border-stroke bg-light text-[11px] font-semibold text-text cursor-help focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
+      Communitybijdrage
+      <span id={`community-${id}`} role="tooltip" className="invisible opacity-0 group-hover/tag:visible group-hover/tag:opacity-100 group-focus/tag:visible group-focus/tag:opacity-100 transition-opacity absolute left-0 top-full mt-1 z-10 w-64 rounded-lg bg-dark-gray text-white text-xs font-normal leading-snug p-2 shadow-md">
+        Bijdrage van de community. Hierop heeft beperkte kwaliteitscontrole plaatsgevonden.
+      </span>
+    </span>
+  )
+}
+
+// Renders text with highlight markers as <mark>, without using innerHTML.
 function Highlighted({ text }: { text: string }) {
   const parts = text.split(new RegExp(`(${HIGHLIGHT_START}[^${HIGHLIGHT_END}]*${HIGHLIGHT_END})`))
   return <>{parts.map((part, i) => part.startsWith(HIGHLIGHT_START)

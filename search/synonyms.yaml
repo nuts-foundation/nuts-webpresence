@@ -7,3 +7,8 @@ groups:
   - [adressering, addressing]
   - [autorisatie, authorization]
   - [certificaat, certificate]
+  - [configuratie, configuration]
+  - [sleutelbeheer, key management]
+  - [intrekking, revocation]
+  - [ondertekening, signing]
+  - [toestemming, consent]

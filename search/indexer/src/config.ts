@@ -36,8 +36,10 @@ export interface SourceVersion {
   startUrls?: string[]
   urlPrefix?: string
   labels?: Labels
-  // openapi only: page that lists the OpenAPI specs of this version.
+  // openapi only: page that shows the OpenAPI specs of this version.
   apiPage?: string
+  // openapi only: script that lists the specs, for API pages that use Scalar (nuts-node-api.js).
+  apiManifest?: string
 }
 
 export interface GitHubSettings {
@@ -73,6 +75,7 @@ export interface Source {
   maxPages?: number
   // openapi only
   apiPage?: string
+  apiManifest?: string
   // github only
   github?: GitHubSettings
 }
@@ -99,18 +102,10 @@ export async function loadSources(path: string): Promise<SourcesFile> {
   return file
 }
 
-// Synonyms are written as groups of equivalent terms; Meilisearch wants a map term -> synonyms.
-export async function loadSynonyms(path: string): Promise<Record<string, string[]>> {
+// Synonyms are written as groups of equivalent terms (Typesense multi-way synonyms).
+export async function loadSynonyms(path: string): Promise<string[][]> {
   const file = parse(await readFile(path, "utf8")) as { groups: string[][] }
-  const result: Record<string, string[]> = {}
-  for (const group of file.groups) {
-    for (const term of group) {
-      const key = term.toLowerCase()
-      const others = group.filter(t => t !== term).map(t => t.toLowerCase())
-      result[key] = [...new Set([...(result[key] ?? []), ...others])]
-    }
-  }
-  return result
+  return file.groups.map(group => group.map(term => term.toLowerCase()))
 }
 
 // A source with versions is crawled once per version, each with its own start URLs, prefix and version label.
@@ -120,6 +115,7 @@ export function expandVersions(source: Source): Source[] {
     startUrls: v.startUrls,
     urlPrefix: v.urlPrefix,
     apiPage: v.apiPage ?? source.apiPage,
+    apiManifest: v.apiManifest ?? source.apiManifest,
     labels: { ...source.labels, version: v.version, ...v.labels },
   }))
   for (const job of jobs) {
