@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Head from "next/head";
-import { generateNextSeo } from "next-seo/pages";
+import { NextSeo } from "next-seo";
 import { getContent } from "../lib/api";
 import Markdown from "../components/Markdown";
 import Layout from "../components/Layout";
@@ -45,9 +44,7 @@ export default function KennisbankPage({ kennisbank }: any) {
 
   return (
     <Layout>
-      <Head>
-        {generateNextSeo({ title: "Nuts - Kennisbank", description: kennisbank.meta.description, openGraph: { title: "Nuts - Kennisbank" } })}
-      </Head>
+      <NextSeo title="Nuts - Kennisbank" description={kennisbank.meta.description} openGraph={{ title: "Nuts - Kennisbank" }} />
 
       <div className="kennisbank bg-brand text-white border-t border-black/10">
         <div className="container mx-auto py-14 space-y-6">
@@ -82,18 +79,18 @@ export default function KennisbankPage({ kennisbank }: any) {
       </div>
 
       <div className="bg-[#FBF6F4] border-b border-[#F0E7E5]">
-        <div className="container mx-auto py-12 grid gap-4 md:grid-cols-2">
+        <div className="container mx-auto py-12 grid grid-cols-2 gap-3 md:grid-cols-3">
           {config.onderwerpen.map((onderwerp) => (
             <a
               key={onderwerp.id}
               href={`#${onderwerp.secties[0]}`}
-              className="group flex flex-col bg-white rounded-xl border border-[#F0E7E5] p-6 transition-colors hover:border-brand"
+              className="group flex flex-col bg-white rounded-xl border border-[#F0E7E5] p-4 md:p-6 transition-colors hover:border-brand"
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-brand text-white mb-4">
                 <KennisbankIcon name={onderwerp.icon} />
               </span>
               <span className="font-redhat font-bold text-lg text-[#1C2A39] mb-2">{onderwerp.title}</span>
-              <span className="text-sm text-[#1C2A39] leading-relaxed mb-4">{onderwerp.text}</span>
+              <span className="hidden sm:block text-sm text-[#1C2A39] leading-relaxed mb-4">{onderwerp.text}</span>
               <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
                 Lees meer
                 <KennisbankIcon name="omlaag" size={14} className="transition-transform group-hover:translate-y-0.5 motion-reduce:transition-none" />
