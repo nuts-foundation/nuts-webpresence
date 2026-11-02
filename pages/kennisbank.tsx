@@ -46,8 +46,9 @@ export default function KennisbankPage({ kennisbank }: any) {
     <Layout>
       <Head>
         <title>Nuts - Kennisbank</title>
-        <meta name="description" content={kennisbank.meta.description} />
+        {kennisbank.meta.description && <meta name="description" content={kennisbank.meta.description} />}
         <meta property="og:title" content="Nuts - Kennisbank" />
+        <link rel="canonical" href="https://nuts.nl/kennisbank/" />
       </Head>
 
       <div className="kennisbank bg-brand text-white border-t border-black/10">
@@ -82,42 +83,20 @@ export default function KennisbankPage({ kennisbank }: any) {
         </div>
       </div>
 
-      <div className="bg-[#FBF6F4] border-b border-[#F0E7E5]">
-        <div className="container mx-auto py-12 grid grid-cols-2 gap-3 md:grid-cols-3">
-          {config.onderwerpen.map((onderwerp) => (
-            <a
-              key={onderwerp.id}
-              href={`#${onderwerp.secties[0]}`}
-              className="group flex flex-col bg-white rounded-xl border border-[#F0E7E5] p-4 md:p-6 transition-colors hover:border-brand"
-            >
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-brand text-white mb-4">
-                <KennisbankIcon name={onderwerp.icon} />
-              </span>
-              <span className="font-redhat font-bold text-lg text-[#1C2A39] mb-2">{onderwerp.title}</span>
-              <span className="hidden sm:block text-sm text-[#1C2A39] leading-relaxed mb-4">{onderwerp.text}</span>
-              <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
-                Lees meer
-                <KennisbankIcon name="omlaag" size={14} className="transition-transform group-hover:translate-y-0.5 motion-reduce:transition-none" />
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
-
       <nav aria-label="Onderwerpen op deze pagina" className="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-[#F0E7E5]">
         <div className="container mx-auto flex gap-2 overflow-x-auto py-2.5">
-          {config.onderwerpen.map((onderwerp) => {
-            const isActief = actief !== null && onderwerp.secties.includes(actief);
+          {secties.map((sectie) => {
+            const isActief = actief === sectie.id;
             return (
               <a
-                key={onderwerp.id}
-                href={`#${onderwerp.secties[0]}`}
+                key={sectie.id}
+                href={`#${sectie.id}`}
                 aria-current={isActief ? "true" : undefined}
                 className={`shrink-0 first:-ml-3.5 text-sm px-3.5 py-1.5 rounded-full transition-colors ${
                   isActief ? "bg-menu-hover text-brand font-semibold" : "text-[#1C2A39] font-medium hover:bg-[#FBF6F4]"
                 }`}
               >
-                {onderwerp.title}
+                {sectie.label}
               </a>
             );
           })}
