@@ -34,7 +34,7 @@
       "id": "toepassingen",
       "icon": "toepassingen",
       "title": "Toepassingen",
-      "text": "Praktische use cases in de zorg, van huisartseninzage tot eOverdracht.",
+      "text": "Praktische toepassingen in de zorg, van huisartseninzage tot eOverdracht.",
       "secties": ["toepassingen"]
     },
     {
@@ -47,7 +47,7 @@
     {
       "id": "wiki",
       "icon": "wiki",
-      "title": "Community en wiki",
+      "title": Wiki",
       "text": "Gedeelde kennis, handleidingen en werkgroepen.",
       "secties": ["wiki"]
     }
