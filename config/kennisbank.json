@@ -24,16 +24,16 @@
   ],
   "onderwerpen": [
     {
-      "id": "organisatie",
-      "icon": "organisatie",
-      "title": "Organisatie en deelname",
-      "text": "Hoe Nuts is georganiseerd: de stichting, de kringen, besluitvorming en deelname.",
-      "secties": ["organisatie"]
+      "id": "wat-is-nuts",
+      "icon": "techniek",
+      "title": "Wat is Nuts",
+      "text": "Een vertrouwenslaag voor veilige informatiedeling in de zorg.",
+      "secties": ["wat-is-nuts"]
     },
     {
       "id": "toepassingen",
       "icon": "toepassingen",
-      "title": "Toepassingen",
+      "title": "Toepassing",
       "text": "Praktische toepassingen in de zorg, van huisartseninzage tot eOverdracht.",
       "secties": ["toepassingen"]
     },
@@ -45,16 +45,24 @@
       "secties": ["specificatie", "node"]
     },
     {
+      "id": "organisatie",
+      "icon": "organisatie",
+      "title": "Organisatie en deelname",
+      "text": "Hoe Nuts is georganiseerd: de stichting, de kringen, besluitvorming en deelname.",
+      "secties": ["organisatie"]
+    },
+    {
       "id": "wiki",
       "icon": "wiki",
-      "title": Wiki",
+      "title": "Wiki",
       "text": "Gedeelde kennis, handleidingen en werkgroepen.",
       "secties": ["wiki"]
     }
   ],
   "secties": [
+    { "titel": "Wat is Nuts", "id": "wat-is-nuts", "label": "Wat is Nuts", "icon": "techniek" },
     { "titel": "Organisatie en deelname", "id": "organisatie", "label": "Organisatie", "icon": "organisatie" },
-    { "titel": "Toepassingen op Nuts", "id": "toepassingen", "label": "Toepassingen", "icon": "toepassingen" },
+    { "titel": "Toepassingen op Nuts", "id": "toepassingen", "label": "Toepassing", "icon": "toepassingen" },
     { "titel": "Nuts-specificatie", "id": "specificatie", "label": "Specificatie", "icon": "techniek" },
     { "titel": "Nuts-node", "id": "node", "label": "Nuts-node", "icon": "techniek" },
     { "titel": "Nuts wiki", "id": "wiki", "label": "Wiki", "icon": "wiki" }
