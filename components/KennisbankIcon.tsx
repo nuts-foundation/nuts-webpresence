@@ -53,4 +53,4 @@ export default function KennisbankIcon({ name, size = 20, className }: Props) {
       {paths[name]}
     </svg>
   );
-}
+} 
