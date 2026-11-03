@@ -1,15 +1,16 @@
 import React, { useEffect, useId, useMemo, useState } from "react"
-import { readFile } from "node:fs/promises"
-import { join } from "node:path"
 import Head from "next/head"
 import { useRouter } from "next/router"
-import { parse } from "yaml"
 
 import Layout from "../components/Layout"
 import Header from "../components/Header"
+import Highlighted from "../components/Highlighted"
+import MethodBadge from "../components/MethodBadge"
 import { CATEGORIES, Category, RankingConfig, rerank, suggestsFunctional, Weights } from "../lib/ranking"
-import { Filters, Group, HIGHLIGHT_END, HIGHLIGHT_START, Hit, search, searchEnabled, SearchResult, TABS } from "../lib/search"
+import { Filters, Group, Hit, representative, search, searchEnabled, SearchResult, TABS } from "../lib/search"
+import ranking from "../search/ranking.yaml"
 
+const config = ranking as RankingConfig
 const PAGE_SIZE = 20
 const DEBOUNCE_MS = 250
 
@@ -33,11 +34,6 @@ interface State {
   influence: string
   // Version whose link a result shows first; empty for the newest.
   version: string
-}
-
-export async function getStaticProps() {
-  const ranking = parse(await readFile(join(process.cwd(), "search", "ranking.yaml"), "utf8")) as RankingConfig
-  return { props: { ranking } }
 }
 
 function readState(query: Record<string, string | string[] | undefined>, config: RankingConfig): State {
@@ -78,17 +74,7 @@ function writeState(state: State, config: RankingConfig): Record<string, string>
   return query
 }
 
-// The version of a result that is shown: the chosen version when the result has it, otherwise the newest. The text
-// comes from a version that matched the search; the link and version label also cover versions that didn't match,
-// because `versions` lists all of them, newest first.
-function representative(group: Group, version: string): Hit {
-  const hit = group.find(h => version && h.version === version)
-    ?? group.reduce((newest, h) => h.versionOrder > newest.versionOrder ? h : newest)
-  const target = hit.versions?.find(v => version && v.version === version) ?? hit.versions?.[0]
-  return target ? { ...hit, version: target.version, url: target.url } : hit
-}
-
-export default function Zoeken({ ranking: config }: { ranking: RankingConfig }) {
+export default function Zoeken() {
   const router = useRouter()
   const [state, setState] = useState<State>(() => readState({}, config))
   const [shown, setShown] = useState(PAGE_SIZE)
@@ -113,7 +99,7 @@ export default function Zoeken({ ranking: config }: { ranking: RankingConfig }) 
     setAdvancedOpen(Object.keys(initial.weights).length > 0 || initial.influence !== config.defaultInfluence
       || initial.filters.hideOutdated || !!initial.filters.language || !!initial.version)
     setInitialized(true)
-  }, [router.isReady, router.query, initialized, config])
+  }, [router.isReady, router.query, initialized])
 
   useEffect(() => {
     if (!initialized) return
@@ -139,7 +125,7 @@ export default function Zoeken({ ranking: config }: { ranking: RankingConfig }) 
         .finally(() => setLoading(false))
     }, DEBOUNCE_MS)
     return () => { clearTimeout(timer); controller.abort() }
-  }, [q, filters, initialized, config.candidates])
+  }, [q, filters, initialized])
 
   const weights: Weights = { ...config.presets[state.preset].weights, ...state.weights }
   const customized = Object.keys(state.weights).length > 0 || state.influence !== config.defaultInfluence
@@ -154,7 +140,7 @@ export default function Zoeken({ ranking: config }: { ranking: RankingConfig }) 
       && suggestsFunctional(ranked, rerank(candidates, q, { weights: functional.weights, halfLife }, config), config)
     return { ranked, hint }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result, state.version, state.preset, JSON.stringify(weights), halfLife, config])
+  }, [result, state.version, state.preset, JSON.stringify(weights), halfLife])
 
   const allCount = Object.values(result?.tabCounts ?? {}).reduce((a, b) => a + b, 0)
 
@@ -515,18 +501,6 @@ function OtherVersions({ hit, group }: ResultProps) {
   )
 }
 
-const METHOD_COLORS: Record<string, string> = {
-  GET: "bg-[#0F7B3F]", POST: "bg-[#1D5FC2]", PUT: "bg-[#9A5B00]", PATCH: "bg-[#9A5B00]", DELETE: "bg-[#B42318]",
-}
-
-function MethodBadge({ method }: { method: string }) {
-  return (
-    <span className={`self-center font-mono font-bold text-[11px] leading-none text-white px-1.5 py-1 rounded ${METHOD_COLORS[method] ?? "bg-dark-gray"}`}>
-      {method}
-    </span>
-  )
-}
-
 function Pill({ className, children }: { className: string, children: React.ReactNode }) {
   return <span className={`ml-1 px-2 py-0.5 rounded-full border text-[11px] font-semibold ${className}`}>{children}</span>
 }
@@ -541,12 +515,4 @@ function CommunityNote({ id }: { id: string }) {
       </span>
     </span>
   )
-}
-
-// Renders text with highlight markers as <mark>, without using innerHTML.
-function Highlighted({ text }: { text: string }) {
-  const parts = text.split(new RegExp(`(${HIGHLIGHT_START}[^${HIGHLIGHT_END}]*${HIGHLIGHT_END})`))
-  return <>{parts.map((part, i) => part.startsWith(HIGHLIGHT_START)
-    ? <mark key={i} className="bg-menu-hover text-dark-gray rounded-sm px-0.5">{part.slice(1, -1)}</mark>
-    : <React.Fragment key={i}>{part}</React.Fragment>)}</>
 }

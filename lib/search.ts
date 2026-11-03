@@ -1,5 +1,5 @@
-// Client for the documentation search (Typesense), used by pages/zoeken.tsx. The browser queries Typesense directly
-// with a key that can only search the documentation collection.
+// Client for the documentation search (Typesense), used by pages/zoeken.tsx and the search field in the menu. The
+// browser queries Typesense directly with a key that can only search the documentation collection.
 
 export const searchEnabled = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
 
@@ -67,6 +67,16 @@ export interface SearchResult {
 interface TypesenseHit {
   document: Omit<Hit, "highlighted">
   highlight?: Record<string, { snippet?: string }>
+}
+
+// The version of a result that is shown: the chosen version when the result has it, otherwise the newest. The text
+// comes from a version that matched the search; the link and version label also cover versions that didn't match,
+// because `versions` lists all of them, newest first.
+export function representative(group: Group, version: string): Hit {
+  const hit = group.find(h => version && h.version === version)
+    ?? group.reduce((newest, h) => h.versionOrder > newest.versionOrder ? h : newest)
+  const target = hit.versions?.find(v => version && v.version === version) ?? hit.versions?.[0]
+  return target ? { ...hit, version: target.version, url: target.url } : hit
 }
 
 function quote(value: string): string {

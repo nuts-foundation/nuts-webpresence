@@ -5,7 +5,7 @@ import { test } from "node:test"
 
 import { parse } from "yaml"
 
-import { type Candidate, type RankingConfig, rerank, suggestsFunctional } from "../lib/ranking.ts"
+import { type Candidate, candidatesFor, type RankingConfig, rerank, suggestsFunctional } from "../lib/ranking.ts"
 
 const config = parse(readFileSync(new URL("ranking.yaml", import.meta.url), "utf8")) as RankingConfig
 const technisch = { weights: config.presets.technisch.weights, halfLife: config.influence.normaal }
@@ -46,6 +46,28 @@ test("outdated results rank lower", () => {
 test("drafts are not penalized", () => {
   const candidates = [doc("draft guide", "toepassing", { status: "draft" }), doc("current guide", "toepassing")]
   assert.deepEqual(titles(rerank(candidates, "x", technisch, config)), ["draft guide", "current guide"])
+})
+
+test("the top results only need the best text matches", () => {
+  for (const preset of Object.values(config.presets)) {
+    for (const halfLife of Object.values(config.influence)) {
+      const ranking = { weights: preset.weights, halfLife }
+      const needed = candidatesFor(8, ranking, config)
+      // The worst case: outdated results of the lowest weight first, then results of the highest weight.
+      const byWeight = Object.entries(preset.weights).sort((a, b) => a[1] - b[1]).map(([category]) => category)
+      const candidates = Array.from({ length: config.candidates }, (_, i) => i < needed - 1
+        ? doc(`low ${i}`, byWeight[0], { status: "archief" })
+        : doc(`high ${i}`, byWeight[byWeight.length - 1]))
+      const top = (list: Candidate[]) => titles(rerank(list, "x", ranking, config).slice(0, 8))
+      assert.deepEqual(top(candidates.slice(0, needed)), top(candidates))
+    }
+  }
+  assert.ok(candidatesFor(8, technisch, config) < config.candidates)
+})
+
+test("the top results need at least as many candidates as are shown", () => {
+  const equal = Object.fromEntries(Object.keys(technisch.weights).map(category => [category, 1])) as typeof technisch.weights
+  assert.equal(candidatesFor(8, { weights: equal, halfLife: 20 }, { ...config, archivedFactor: 1 }), 8)
 })
 
 test("suggests the functional order when it brings functional results to the top", () => {

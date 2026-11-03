@@ -46,6 +46,15 @@ export function rerank<T extends Candidate>(candidates: T[], query: string, rank
   return scored.map((_, i) => (pinned.get(i + 1) ?? rest.shift()!).candidate)
 }
 
+// The number of best text matches that give the same top `shown` as all of them: a result can only pass results that
+// are fewer than halfLife × log2(highest / lowest weight) places above it. Never fewer than `shown`.
+export function candidatesFor(shown: number, ranking: Ranking, config: RankingConfig): number {
+  // A category without a weight counts as 1; an outdated result also gets the archived factor.
+  const weights = [...Object.values(ranking.weights), 1]
+  const spread = Math.max(...weights) / (Math.min(...weights) * Math.min(1, config.archivedFactor))
+  return Math.min(config.candidates, Math.max(shown, Math.ceil(shown - 1 + ranking.halfLife * Math.log2(spread))))
+}
+
 // True when the functional order would show results for a functional audience at the top that the given order
 // doesn't, so it is worth suggesting.
 export function suggestsFunctional<T extends Candidate>(shown: T[], functional: T[], config: RankingConfig): boolean {

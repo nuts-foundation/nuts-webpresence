@@ -1,3 +1,5 @@
+const { parse } = require("yaml")
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -5,6 +7,12 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"]
+    });
+    // Imports a YAML file as its parsed content, like search/ranking.yaml.
+    config.module.rules.push({
+      test: /\.yaml$/,
+      type: "json",
+      parser: { parse }
     });
 
     return config;

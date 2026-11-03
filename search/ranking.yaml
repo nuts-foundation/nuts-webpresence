@@ -8,8 +8,9 @@
 # term keep their position when they are in the top `titleGuard` by text match, so "Wat is Nuts?" stays first for
 # "wat is nuts".
 #
-# Weights and influence can be changed by visitors under "Geavanceerd"; these are the defaults. Changing this file only
-# requires rebuilding the site, not re-indexing.
+# Weights and influence can be changed by visitors under "Geavanceerd"; these are the defaults. The suggestions of the
+# search field in the menu use the defaults too, with only as many candidates as their top 8 needs (candidatesFor in
+# lib/ranking.ts). Changing this file only requires rebuilding the site, not re-indexing.
 
 candidates: 250
 
