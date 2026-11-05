@@ -44,7 +44,8 @@ export interface Hit {
   language?: string
   version?: string
   status?: string
-  versionOrder: number
+  // 0 for the newest version of a source, and for sources without versions.
+  versionAge: number
   versions?: Version[]
   method?: string
   path?: string
@@ -74,7 +75,7 @@ interface TypesenseHit {
 // because `versions` lists all of them, newest first.
 export function representative(group: Group, version: string): Hit {
   const hit = group.find(h => version && h.version === version)
-    ?? group.reduce((newest, h) => h.versionOrder > newest.versionOrder ? h : newest)
+    ?? group.reduce((newest, h) => h.versionAge < newest.versionAge ? h : newest)
   const target = hit.versions?.find(v => version && v.version === version) ?? hit.versions?.[0]
   return target ? { ...hit, version: target.version, url: target.url } : hit
 }
@@ -91,13 +92,16 @@ function filterFor(filters: Filters, withTab: boolean): string {
   return parts.join(" && ")
 }
 
-// Fetches up to `limit` results in text-match order (the page re-orders them), plus the counts per tab.
-export async function search(q: string, filters: Filters, limit: number, signal?: AbortSignal): Promise<SearchResult> {
+// Fetches up to `limit` results in text-match order (the page re-orders them), plus the counts per tab. Among results
+// that match equally well, `version` goes first, otherwise the newest version.
+export async function search(q: string, filters: Filters, limit: number, signal?: AbortSignal, version = ""): Promise<SearchResult> {
   const base = {
     collection,
     q,
     query_by: "title,path,terms,hierarchy,content",
     query_by_weights: "8,6,6,3,1",
+    // Without these, results that match equally well are in the order of the index.
+    sort_by: `_text_match:desc,${version ? `_eval(version:=${quote(version)}):desc,` : ""}versionAge:asc`,
     // A section or operation in several versions is one result; all its versions are returned.
     group_by: "group",
     group_limit: 5,

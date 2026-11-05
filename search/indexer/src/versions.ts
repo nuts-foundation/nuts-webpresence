@@ -12,8 +12,9 @@ export function linkVersions(jobs: { version?: string, records: SearchRecord[], 
         record.group ??= record.id
         continue
       }
-      // Newer versions rank higher, so the search shows the newest version of a group by default.
-      record.versionOrder = jobs.length - i
+      // 0 for the newest version: the search shows the newest version of a group, and puts it first among results
+      // that match equally well.
+      record.versionAge = i
       record.group ??= hash(`${record.source}|${record.url.split(`/${job.version}/`).join("/")}|${record.hierarchy.join(">")}`)
       groups.set(record.group, [...groups.get(record.group) ?? [], record])
     }

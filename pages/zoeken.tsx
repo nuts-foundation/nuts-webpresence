@@ -118,13 +118,13 @@ export default function Zoeken() {
     const controller = new AbortController()
     const timer = setTimeout(() => {
       setLoading(true)
-      search(q, filters, config.candidates, controller.signal)
+      search(q, filters, config.candidates, controller.signal, state.version)
         .then(r => { setResult(r); setError(null) })
         .catch(e => { if (e.name !== "AbortError") setError(e.message) })
         .finally(() => setLoading(false))
     }, DEBOUNCE_MS)
     return () => { clearTimeout(timer); controller.abort() }
-  }, [q, filters, initialized])
+  }, [q, filters, state.version, initialized])
 
   const weights: Weights = { ...config.presets[state.preset].weights, ...state.weights }
   const customized = Object.keys(state.weights).length > 0 || state.influence !== config.defaultInfluence
@@ -350,7 +350,7 @@ function Advanced({ config, state, weights, customized, onChange }: AdvancedProp
           >
             {VERSIONS.map(v => <option key={v.id} value={v.id}>{v.label}</option>)}
           </select>
-          <p id={`${id}-version-help`} className="mt-1 text-xs text-text/70">Welke versie een resultaat als eerste toont.</p>
+          <p id={`${id}-version-help`} className="mt-1 text-xs text-text/70">Gaat voor bij resultaten die even goed overeenkomen. Staat een resultaat in meerdere versies, dan toont het deze versie.</p>
         </fieldset>
       </div>
       {customized && (

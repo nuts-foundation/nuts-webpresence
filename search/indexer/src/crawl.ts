@@ -24,7 +24,7 @@ export interface SearchRecord {
   status?: string
   // Set by linkVersions: records of the same section in other versions share the group.
   group?: string
-  versionOrder?: number
+  versionAge?: number
   versions?: { version: string, url: string }[]
   // API operations only (see openapi.ts).
   method?: string

@@ -21,7 +21,7 @@ const FIELDS = [
   { name: "version", type: "string", facet: true, optional: true },
   { name: "status", type: "string", facet: true, optional: true },
   { name: "group", type: "string", facet: true },
-  { name: "versionOrder", type: "int32" },
+  { name: "versionAge", type: "int32" },
   { name: "method", type: "string", optional: true },
   { name: "path", type: "string", optional: true },
   { name: "apiName", type: "string", optional: true },
@@ -78,7 +78,7 @@ export class Typesense {
     if (version) filter.push(`version:=${quote(version)}`)
     await this.call("DELETE", `/collections/${this.collection}/documents?filter_by=${encodeURIComponent(filter.join(" && "))}`)
     for (let i = 0; i < records.length; i += 1000) {
-      const lines = records.slice(i, i + 1000).map(r => JSON.stringify({ ...r, tab: tabFor(r), versionOrder: r.versionOrder ?? 0, group: r.group ?? r.id }))
+      const lines = records.slice(i, i + 1000).map(r => JSON.stringify({ ...r, tab: tabFor(r), versionAge: r.versionAge ?? 0, group: r.group ?? r.id }))
       const response = await this.request("POST", `/collections/${this.collection}/documents/import?action=upsert`, lines.join("\n"), "text/plain")
       const failed = (await response.text()).split("\n").map(line => JSON.parse(line)).filter(r => !r.success)
       if (failed.length) throw new Error(`Typesense import of ${source}: ${failed.length} failed, first: ${failed[0].error}`)
