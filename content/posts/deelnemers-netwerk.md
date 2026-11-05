@@ -52,7 +52,7 @@ Zelf ook deelnemer worden? Lees [hier meer over de procedure](/aansluiten).
             <td><a href="mailto:a.boor@erasmusmc.nl">a.boor@erasmusmc.nl</a></td>
         </tr>
         <tr>
-            <td><a href="https://www.geriforce.com/">Geriforce</a></td>
+            <td><a href="https://gericall.nl/">Gericall</a></td>
             <td>Allard Soeters</td>
             <td><a href="mailto:asoeters@gericall.nl">asoeters@gericall.nl</a></td>
         </tr>
