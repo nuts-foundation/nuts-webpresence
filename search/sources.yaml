@@ -120,16 +120,17 @@ sources:
       audience: [developer]
       language: en
       status: actueel
-    # latest uses Scalar, whose results link to the operation itself. Until nuts-node PR #4660 is merged, latest on
-    # Read the Docs still uses Swagger UI, so this points at the preview of that PR.
+    # Every version uses Scalar, so results link to the operation itself; apiManifest lists the specs.
     versions:
       - version: latest
-        apiPage: "https://jorisheadease.github.io/nuts-node-docs-preview/pages/integrating/api.html"
-        apiManifest: "https://jorisheadease.github.io/nuts-node-docs-preview/_static/api-reference/nuts-node-api.js"
+        apiPage: "https://nuts-node.readthedocs.io/en/latest/pages/integrating/api.html"
+        apiManifest: "https://nuts-node.readthedocs.io/en/latest/_static/api-reference/nuts-node-api.js"
       - version: v6.2
         apiPage: "https://nuts-node.readthedocs.io/en/v6.2/pages/integrating/api.html"
+        apiManifest: "https://nuts-node.readthedocs.io/en/v6.2/_static/api-reference/nuts-node-api.js"
       - version: v5.4
         apiPage: "https://nuts-node.readthedocs.io/en/v5.4/pages/integrating/api.html"
+        apiManifest: "https://nuts-node.readthedocs.io/en/v5.4/_static/api-reference/nuts-node-api.js"
 
   - id: nuts-specification
     name: Nuts specificaties (RFC's)
