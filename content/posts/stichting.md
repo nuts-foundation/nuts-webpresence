@@ -34,31 +34,28 @@ Dit maakt toegang tot de juiste informatie mogelijk op het moment dat het ertoe 
 De stichting bevordert onderzoek en sectorbrede samenwerking. Governance is ingericht volgens sociocratische principes: gelijkwaardig eigenaarschap en open voor alle marktdeelnemers.
 
 ## Bestuur Nuts 
-Het bestuur van het Nuts netwerk wordt gevormd door de Nuts raad.
-De Nuts raad bestaat uit de coördinatoren en afgevaardigden van de drie hoofdkringen.
-De voorzitter van de Nuts raad vervult in de volgende fase ook de rol van voorzitter van Stichting Nuts.
-De gespreksleider bewaakt het proces en de gelijkwaardigheid.
+Het Nuts initiatief wordt bestuurd door de De Nuts. Deze wordt gevormd door de coördinatoren en afgevaardigden van de drie hoofdkringen.
+De coördinatoren vormen samen tevens het bestuur van stichting Nuts.
 
 ### Nuts Kring Toepassingen 
-- Coördinator: Sergej van Middendorp 
+- Coördinator: Sergej van Middendorp (tevens Penningmeester Stichting Nuts)
 - Afgevaardigde: Jorrit Spee
-- Gespreksleider: Karin Vosters
+- Gespreksleider: Karin Vosters (a.i)
 
 ### Nuts Kring Techniek 
-- Coördinator: Steven van der Vegt
+- Coördinator: Steven van der Vegt (tevens Secretaris Stichting Nuts)
 - Afgevaardigde: Edwin de Wit
-- Gespreksleider: Karin Vosters
+- Gespreksleider: Karin Vosters (a.i.)
 
 ### Nuts Kring Gezamenlijk Belang 
-- Coördinator: Thomas Ferguson
+- Coördinator: Mark Weernink (tevens voorzitter Stichting Nuts)
 - Afgevaardigde: Diana Demmer
-- Gespreksleider: Karin Vosters
+- Gespreksleider: Silvana Seav
 
-### Nuts raad (bestuur) 
+### Nuts raad
 - Coördinator: Sergej van Middendorp
-in afstemming met voorzitter Stichting Nuts: Mark Weernink 
 - Gespreksleider: Karin Vosters
-- Coördinatoren en afgevaardigen kringen
+- Coördinatoren en afgevaardigen kringen.
 
 <a href="https://www.linkedin.com/in/mark-weernink-4b3a5214/">Mark Weernink</a> (voorzitter \| [mark.weernink@nuts.nl](mailto:mark.weernink@nuts.nl))<br/>
 <a href="https://www.linkedin.com/in/steven-van-der-vegt-15a28118/">Steven van der Vegt</a> (secretaris \| [steven.vandervegt@nuts.nl](mailto:steven.vandervegt@nuts.nl))<br/>
