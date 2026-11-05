@@ -12,7 +12,7 @@ const config = ranking as RankingConfig
 const order = { weights: config.presets[config.defaultPreset].weights, halfLife: config.influence[config.defaultInfluence] }
 const SHOWN = 8
 const DEBOUNCE_MS = 250
-const { InputKeyDownEnter: Enter, ItemClick, InputBlur: Blur } = useCombobox.stateChangeTypes
+const { ItemClick, InputBlur: Blur } = useCombobox.stateChangeTypes
 // The last row of the suggestions, which opens the search page.
 const MORE = "more"
 type Item = Hit | typeof MORE
@@ -25,8 +25,8 @@ const FIELD = "w-full rounded-full text-sm font-inter px-4 py-1.5 bg-white text-
 const searchPage = (q: string) => `/zoeken/?${new URLSearchParams({ q })}`
 
 // Search field in the menu: a plain GET form that opens the search page, so it also works without JavaScript. While
-// typing, it suggests the top results of the search page; the arrow keys and Enter, or a click, open a result itself.
-// The last row, and Cmd or Ctrl+Enter, open the search page.
+// typing, it suggests the top results of the search page; the arrow keys and Enter, or a click, open a result in a
+// new tab. The last row, and Cmd or Ctrl+Enter, open the search page.
 export default function SearchField() {
   const [hits, setHits] = useState<Hit[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
@@ -35,13 +35,9 @@ export default function SearchField() {
     items,
     itemToString: item => item && item !== MORE ? item.title : "",
     selectedItem: null,
-    // The field keeps what was typed when a suggestion is opened or the field loses focus.
+    // The field keeps what was typed when a suggestion is clicked or the field loses focus. A click follows the link.
     stateReducer: (state, { type, changes }) =>
-      type === Enter || type === ItemClick || type === Blur ? { ...changes, inputValue: state.inputValue } : changes,
-    // A click follows the link itself.
-    onSelectedItemChange: ({ selectedItem, type, inputValue }) => {
-      if (selectedItem && type === Enter) window.location.assign(selectedItem === MORE ? searchPage(inputValue ?? "") : selectedItem.url)
-    },
+      type === ItemClick || type === Blur ? { ...changes, inputValue: state.inputValue } : changes,
   })
 
   // Text typed before the page became interactive is in the field but not in the state, which would clear it.
@@ -77,12 +73,15 @@ export default function SearchField() {
         name: "q",
         type: "search",
         placeholder: "Zoeken…",
+        // Enter on a highlighted result opens it in a new tab, here rather than after Downshift's update, which some
+        // browsers would block as a popup. Enter on anything else, and Cmd or Ctrl+Enter, open the search page.
         onKeyDown: event => {
-          // Enter without a highlighted row opens the search page, and so does Cmd or Ctrl+Enter.
-          if (event.key !== "Enter" || event.nativeEvent.isComposing || (highlightedIndex >= 0 && !event.metaKey && !event.ctrlKey)) return
+          if (event.key !== "Enter" || event.nativeEvent.isComposing) return
           (event.nativeEvent as { preventDownshiftDefault?: boolean }).preventDownshiftDefault = true
           event.preventDefault()
-          event.currentTarget.form?.requestSubmit()
+          const item = event.metaKey || event.ctrlKey ? undefined : items[highlightedIndex]
+          if (item && item !== MORE) window.open(item.url, "_blank", "noopener")
+          else event.currentTarget.form?.requestSubmit()
         },
       })}
       className={`${FIELD} md:w-40`} />
@@ -100,7 +99,7 @@ export default function SearchField() {
         </li>
       ) : (
         <li key={item.id} {...getItemProps({ item, index })} className={row(index)}>
-          <a href={item.url} tabIndex={-1} className="block px-4 py-2">
+          <a href={item.url} target="_blank" rel="noopener" tabIndex={-1} className="block px-4 py-2">
             {item.method ? (<>
               <span className="flex items-center gap-2">
                 <MethodBadge method={item.method} />

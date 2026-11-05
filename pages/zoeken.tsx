@@ -429,7 +429,7 @@ function Result({ hit, group }: ResultProps) {
         {hit.version && <><Dot /><span>{hit.version}</span></>}
       </Meta>
       <h2 className="font-redhat font-bold text-lg leading-snug">
-        <a href={hit.url} className="text-link hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded">
+        <a href={hit.url} target="_blank" rel="noopener" className="text-link hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded">
           <Highlighted text={hit.highlighted.title} />
         </a>
       </h2>
@@ -455,7 +455,7 @@ function ApiResult({ hit, group }: ResultProps) {
       </Meta>
       <h2 className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
         <MethodBadge method={hit.method!} />
-        <a href={hit.url} className="font-mono font-semibold text-[15px] text-link break-all hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded">
+        <a href={hit.url} target="_blank" rel="noopener" className="font-mono font-semibold text-[15px] text-link break-all hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded">
           {hit.path}
           <span className="sr-only">: {hit.title}</span>
         </a>
@@ -477,7 +477,7 @@ function OtherVersions({ hit, group }: ResultProps) {
       {versions.map((v, i) => (
         <React.Fragment key={v.version}>
           {i > 0 && " · "}
-          <a href={v.url} className="text-link hover:underline">{v.version}</a>
+          <a href={v.url} target="_blank" rel="noopener" className="text-link hover:underline">{v.version}</a>
         </React.Fragment>
       ))}
     </p>
