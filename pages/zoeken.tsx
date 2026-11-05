@@ -3,9 +3,9 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 
 import Layout from "../components/Layout"
-import Header from "../components/Header"
 import Highlighted from "../components/Highlighted"
 import MethodBadge from "../components/MethodBadge"
+import { SearchPageField } from "../components/SearchField"
 import { CATEGORIES, Category, RankingConfig, rerank, suggestsFunctional, Weights } from "../lib/ranking"
 import { Filters, Group, Hit, representative, search, searchEnabled, SearchResult, TABS } from "../lib/search"
 import ranking from "../search/ranking.yaml"
@@ -83,7 +83,6 @@ export default function Zoeken() {
   const [loading, setLoading] = useState(false)
   const [advancedOpen, setAdvancedOpen] = useState(false)
   const [initialized, setInitialized] = useState(false)
-  const inputId = useId()
   const { q, filters } = state
 
   const update = (change: Partial<State>) => {
@@ -143,40 +142,24 @@ export default function Zoeken() {
   }, [result, state.version, state.preset, JSON.stringify(weights), halfLife])
 
   const allCount = Object.values(result?.tabCounts ?? {}).reduce((a, b) => a + b, 0)
+  const query = { value: q, onChange: (value: string) => update({ q: value }) }
 
   return (
-    <Layout>
+    // The search field in the menu is this page's search field.
+    <Layout search={query}>
       <Head>
-        <title>Zoeken in de documentatie — Nuts</title>
+        <title>Zoeken — Nuts</title>
         <meta name="robots" content="noindex" />
       </Head>
-
-      <Header>
-        <div className="container mx-auto max-w-4xl px-4">
-          <h1 className="font-redhat font-bold text-white text-3xl md:text-4xl mb-6">Zoeken in de documentatie</h1>
-          <form role="search" onSubmit={e => e.preventDefault()}>
-            <label htmlFor={inputId} className="sr-only">Zoekterm</label>
-            <input
-              id={inputId}
-              type="search"
-              autoComplete="off"
-              autoFocus
-              value={q}
-              onChange={e => update({ q: e.target.value })}
-              placeholder="Bijvoorbeeld: access token, DID document, /internal/vdr/v2"
-              aria-describedby={`${inputId}-description`}
-              className="w-full rounded-full text-base font-inter px-6 py-3 bg-white text-text border-2 border-button focus:outline-none focus:ring-4 focus:ring-button"
-            />
-          </form>
-          <p id={`${inputId}-description`} className="sr-only">
-            Zoekt in nuts.nl, de Nuts node-documentatie en API, de specificaties, de toepassingen en de wiki.
-          </p>
-        </div>
-      </Header>
+      <h1 className="sr-only">Zoeken</h1>
 
       {!searchEnabled ? (
         <p className="container mx-auto max-w-4xl px-4 py-10 font-inter text-text">Zoeken is (nog) niet beschikbaar.</p>
       ) : (<>
+        {/* On phones the menu is folded away, so the field is on the page too. */}
+        <div className="container mx-auto max-w-4xl px-4 pt-4 md:hidden">
+          <SearchPageField {...query} />
+        </div>
         <nav aria-label="Bron" className="border-b border-stroke">
           <ul className="container mx-auto max-w-4xl px-4 flex gap-1 overflow-x-auto">
             {[{ id: undefined, label: "Alles", count: allCount }, ...TABS.map(t => ({ ...t, count: result?.tabCounts[t.id] ?? 0 }))].map(tab => {

@@ -6,7 +6,7 @@ import Logo from "../public/logo.svg"
 import Close from "../icons/close.svg"
 import ChevronDown from "../icons/chevron-down.svg"
 import ChevronRight from "../icons/chevron-right.svg"
-import SearchField from "./SearchField"
+import SearchField, { SearchPageField, SearchQuery } from "./SearchField"
 import { searchEnabled } from "../lib/search"
 
 export interface MenuLink {
@@ -21,6 +21,7 @@ export interface MenuItem {
 
 interface Props {
   items: MenuItem[],
+  search?: SearchQuery,
   onOpen?: () => void;
   onClose?: () => void;
 }
@@ -48,7 +49,7 @@ function Hamburger() {
   </svg>);
 }
 
-export default function Menu({ items, onOpen, onClose }: Props) {
+export default function Menu({ items, search, onOpen, onClose }: Props) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
@@ -126,8 +127,7 @@ export default function Menu({ items, onOpen, onClose }: Props) {
                   {child.name}
               </Link>))}
             </Dropdown>))}
-            {/* The search page shows results while typing, so it needs no suggestions. */}
-            {searchEnabled && <SearchField suggest={router.pathname !== "/zoeken"} />}
+            {searchEnabled && (search ? <SearchPageField {...search} /> : <SearchField />)}
             <div className="text-white text-sm">
               <Link href="/" className={`font-semibold ${!isEnglish ? "underline" : ""}`}>NL</Link>
               &nbsp;|&nbsp;

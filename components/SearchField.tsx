@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useId, useRef, useState } from "react"
 import { useCombobox } from "downshift"
 
 import Highlighted from "./Highlighted"
@@ -20,13 +20,14 @@ type Item = Hit | typeof MORE
 // which the server never renders, so the server's Ctrl doesn't conflict with the browser's ⌘.
 const MODIFIER = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.userAgent) ? "⌘" : "Ctrl"
 const KBD = "min-w-6 rounded border border-stroke bg-light px-1.5 text-center text-xs font-normal text-dark-gray"
+const FIELD = "w-full rounded-full text-sm font-inter px-4 py-1.5 bg-white text-text border border-stroke focus:outline-none focus:ring-2 focus:ring-button"
 
 const searchPage = (q: string) => `/zoeken/?${new URLSearchParams({ q })}`
 
 // Search field in the menu: a plain GET form that opens the search page, so it also works without JavaScript. While
 // typing, it suggests the top results of the search page; the arrow keys and Enter, or a click, open a result itself.
 // The last row, and Cmd or Ctrl+Enter, open the search page.
-export default function SearchField({ suggest }: { suggest: boolean }) {
+export default function SearchField() {
   const [hits, setHits] = useState<Hit[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
   const items: Item[] = hits.length ? [...hits, MORE] : []
@@ -52,7 +53,7 @@ export default function SearchField({ suggest }: { suggest: boolean }) {
   }, [setInputValue, openMenu])
 
   useEffect(() => {
-    if (!suggest || !inputValue.trim()) {
+    if (!inputValue.trim()) {
       setHits([])
       return
     }
@@ -64,12 +65,12 @@ export default function SearchField({ suggest }: { suggest: boolean }) {
         .catch(e => { if (e.name !== "AbortError") setHits([]) })
     }, DEBOUNCE_MS)
     return () => { clearTimeout(timer); controller.abort() }
-  }, [inputValue, suggest])
+  }, [inputValue])
 
   const open = isOpen && items.length > 0
   const row = (index: number) => `border-l-[3px] ${index === highlightedIndex ? "border-l-dark bg-light" : "border-l-transparent bg-white"}`
   return (<form action="/zoeken/" method="get" role="search" className="relative min-w-0">
-    <label {...getLabelProps()} className="sr-only">Zoeken in de documentatie</label>
+    <label {...getLabelProps()} className="sr-only">Zoeken</label>
     <input
       {...getInputProps({
         ref: inputRef,
@@ -84,7 +85,7 @@ export default function SearchField({ suggest }: { suggest: boolean }) {
           event.currentTarget.form?.requestSubmit()
         },
       })}
-      className="w-full md:w-40 rounded-full text-sm font-inter px-4 py-1.5 bg-white text-text border border-stroke focus:outline-none focus:ring-2 focus:ring-button" />
+      className={`${FIELD} md:w-40`} />
     <ul
       {...getMenuProps()}
       className={`${open ? "" : "hidden"} z-30 mt-2 md:absolute md:right-0 md:top-full md:w-[30rem] max-h-[70vh] overflow-y-auto rounded-lg border border-stroke bg-white pt-1 shadow-lg font-inter`}>
@@ -117,5 +118,28 @@ export default function SearchField({ suggest }: { suggest: boolean }) {
         </li>
       ))}
     </ul>
+  </form>)
+}
+
+export interface SearchQuery {
+  value: string
+  onChange: (q: string) => void
+}
+
+// The search page's own search field, in the menu and, on phones, on the page: results update while typing, so it
+// needs no suggestions.
+export function SearchPageField({ value, onChange }: SearchQuery) {
+  const id = useId()
+  return (<form role="search" onSubmit={e => e.preventDefault()} className="min-w-0">
+    <label htmlFor={id} className="sr-only">Zoeken</label>
+    <input
+      id={id}
+      type="search"
+      autoComplete="off"
+      autoFocus
+      value={value}
+      onChange={e => onChange(e.target.value)}
+      placeholder="Zoeken…"
+      className={`${FIELD} md:w-40 lg:w-64`} />
   </form>)
 }
