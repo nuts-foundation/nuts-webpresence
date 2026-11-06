@@ -13,17 +13,26 @@ Wil jij aan de slag met Nuts om informatiedeling in de zorg te verbeteren? Deze 
 
 Nuts is een initiatief om informatiedeling in de zorg te verbeteren. Partijen maken via de Nuts-node verbinding met elkaar en vormen zo samen het Nuts-netwerk. Dat netwerk dient als vertrouwenslaag waarop verschillende toepassingen kunnen draaien, zonder dat partijen op een derde, centrale partij hoeven te vertrouwen.
 
+[Lees meer over het initiatief](/stichting)
+
+## Eenheid van taal
+
+Wat is precies de Nuts-community, wat is het verschil tussen de Nuts-specificatie, de Nuts-node en het Nuts-netwerk, en wat is een Toepassing op Nuts? In het document Eenheid van Nuts-taal leggen we de essentiële termen eenduidig vast. Het dient als basis voor andere documenten, de website en de Nuts wiki.
+
+[Lees Eenheid van Nuts-taal](/eenheid-van-taal)
+
 ## Toepassingen op Nuts
 
 Een Toepassing op Nuts is een specifieke toepassing die gebruikmaakt van de Nuts-specificatie, en waarover partijen aanvullende openbare eisen en specificaties hebben afgesproken. Omdat het Nuts-netwerk als vertrouwenslaag dient, is het geschikt voor vele toepassingen. Iedereen kan een toepassing op het Nuts-netwerk maken.
 
 Een Toepassing op Nuts is dan ook een praktische toepassing van het [Nuts-gedachtegoed](/manifest) en open technologie om een tastbare toepassing in de zorg mogelijk te maken. Er zijn al veel voorbeelden beschikbaar, in verschillende ontwikkelstadia.
 
-[Lees de Toepassingen op Nuts](/toepassingen)
+[Lees de Toepassingen op Nuts](/toepassingen) [Bekijk de aangesloten partijen](/deelnemers-netwerk)
 
 ## Nuts-specificatie
 
 De Nuts-specificatie is openbaar en wordt gepubliceerd als Request for Comments (RFC): een werkwijze waarbij iedereen kan reageren en meedenken. Zo kunnen alle belanghebbenden en specialisten feedback, ideeën en input geven om de specificatie te verbeteren en aan te scherpen.
+
 De specificatie is een open standaard. Nuts bouwt daarbij voort op bestaande internationale standaarden, zoals Verifiable Credentials, Decentralized Identifiers, OAuth en mTLS. Zo sluit Nuts aan op wat elders in de wereld al werkt en hoeft niet alles opnieuw te worden uitgevonden. Samen maken deze standaarden het mogelijk dat organisaties digitaal aantonen wie ze zijn, afspreken wie toegang krijgt tot welke gegevens en veilig met elkaar verbinding maken. De specificatie is niet gemaakt voor één toepassing: dezelfde afspraken zijn bruikbaar voor uiteenlopende vormen van gegevensuitwisseling in de zorg.
 
 [Lees de Nuts-specificaties](https://nuts-foundation.gitbook.io/)

@@ -3,14 +3,14 @@
     {
       "id": "zorgverlener",
       "icon": "zorgverlener",
-      "title": "Zorgverlener",
+      "title": "Zorgaanbieders en zorgverleners",
       "text": "Toepassingen en leveranciers die Nuts aanbieden",
       "href": "#toepassingen"
     },
     {
       "id": "ontwikkelaar",
       "icon": "ontwikkelaar",
-      "title": "Softwareontwikkelaar",
+      "title": "Softwareleveranciers",
       "text": "Specificaties, Nuts-node, GitHub en de wiki",
       "href": "#specificatie"
     },
@@ -60,11 +60,12 @@
     }
   ],
   "secties": [
-    { "titel": "Wat is Nuts", "id": "wat-is-nuts", "label": "Wat is Nuts", "icon": "techniek" },
-    { "titel": "Organisatie en deelname", "id": "organisatie", "label": "Organisatie", "icon": "organisatie" },
-    { "titel": "Toepassingen op Nuts", "id": "toepassingen", "label": "Toepassing", "icon": "toepassingen" },
-    { "titel": "Nuts-specificatie", "id": "specificatie", "label": "Specificatie", "icon": "techniek" },
-    { "titel": "Nuts-node", "id": "node", "label": "Nuts-node", "icon": "techniek" },
-    { "titel": "Nuts wiki", "id": "wiki", "label": "Wiki", "icon": "wiki" }
+    { "titel": "Wat is Nuts", "id": "wat-is-nuts", "label": "Wat is Nuts", "icon": "ecosysteem", "kort": "Een vertrouwenslaag voor veilige informatiedeling in de zorg." },
+    { "titel": "Eenheid van taal", "id": "eenheid-van-taal", "label": "Eenheid van taal", "icon": "taal", "kort": "De essentiële termen voor een eenduidig begrip van \"Nuts\"." },
+    { "titel": "Organisatie en deelname", "id": "organisatie", "label": "Organisatie en deelname", "icon": "organisatie", "kort": "Hoe Nuts is georganiseerd: de stichting, de kringen, besluitvorming en deelname." },
+    { "titel": "Toepassingen op Nuts", "id": "toepassingen", "label": "Toepassingen op Nuts", "icon": "toepassingen", "kort": "Praktische toepassingen in de zorg, van huisartseninzage tot eOverdracht." },
+    { "titel": "Nuts-specificatie", "id": "specificatie", "label": "Nuts-specificatie", "icon": "specificatie", "kort": "De open specificatie, als Request for Comments (RFC)." },
+    { "titel": "Nuts-node", "id": "node", "label": "Nuts-node", "icon": "node", "kort": "De open-source referentie-implementatie en de documentatie ervan." },
+    { "titel": "Nuts wiki", "id": "wiki", "label": "Nuts wiki", "icon": "wiki", "kort": "Gedeelde kennis, handleidingen en werkgroepen." }
   ]
 }

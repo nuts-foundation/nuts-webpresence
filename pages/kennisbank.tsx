@@ -1,16 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Head from "next/head";
 import { getContent } from "../lib/api";
 import Markdown from "../components/Markdown";
 import Layout from "../components/Layout";
 import KennisbankIcon from "../components/KennisbankIcon";
 import config from "../config/kennisbank.json";
+import PaginaKop, { PaginaInhoud } from "../components/PaginaKop";
 
 interface Sectie {
   id: string;
   label: string;
   icon?: string;
+  kort?: string;
+  titel: string;
   html: string;
+  links: { href: string; label: string }[];
+}
+
+// Een laatste alinea die alleen uit links bestaat, wordt het kaartje "Verder lezen".
+function splitLinks(html: string): { html: string; links: Sectie["links"] } {
+  const m = html.match(/<p>((?:\s*<a [^>]*>[^<]*<\/a>\s*)+)<\/p>\s*$/);
+  if (!m) return { html, links: [] };
+  const links = Array.from(m[1].matchAll(/<a [^>]*href="([^"]*)"[^>]*>([^<]*)<\/a>/g)).map((a) => ({ href: a[1], label: a[2] }));
+  return { html: html.slice(0, m.index), links };
 }
 
 // Splitst de gerenderde markdown op elke <h2> in een intro en losse secties.
@@ -21,27 +33,16 @@ function splitSecties(html: string): { intro: string; secties: Sectie[] } {
     const titel = (part.match(/<h2>(.*?)<\/h2>/)?.[1] ?? "").trim();
     const meta = config.secties.find((s) => s.titel === titel);
     const id = meta?.id ?? titel.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-    return { id, label: meta?.label ?? titel, icon: meta?.icon, html: part };
+    const { html, links } = splitLinks(part.replace(/<h2>.*?<\/h2>/, ""));
+    return { id, titel, label: meta?.label ?? titel, icon: meta?.icon, kort: (meta as any)?.kort, html, links };
   });
   return { intro, secties };
 }
 
 export default function KennisbankPage({ kennisbank }: any) {
   const { intro, secties } = splitSecties(kennisbank.content);
-  const [actief, setActief] = useState<string | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActief(e.target.id)),
-      { rootMargin: "-80px 0px -60% 0px" }
-    );
-    secties.forEach((s) => {
-      const el = document.getElementById(s.id);
-      el && observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, [kennisbank.content]);
-
+  const titel = intro.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, "") ?? "Kennisbank";
+  const introTekst = intro.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, "");
   return (
     <Layout>
       <Head>
@@ -51,76 +52,97 @@ export default function KennisbankPage({ kennisbank }: any) {
         <link rel="canonical" href="https://nuts.nl/kennisbank/" />
       </Head>
 
-      <div className="kennisbank bg-brand text-white border-t border-black/10">
-        <div className="container mx-auto py-14 space-y-6">
-          <Markdown html={intro} className="kennisbank-intro max-w-3xl" />
+      <div className="kennisbank bg-white font-inter">
+        <PaginaKop
+          variant="warm"
+          terug={{ href: "/", label: "Terug naar home" }}
+          eyebrow={{ icon: "wiki", label: "Meedoen" }}
+          titel={titel}
+          introHtml={introTekst}
+          aside={
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-[#B84A3C]">Kies een ingang</p>
+              <div className="flex flex-col gap-3">
+                {config.ingangen.map((ingang) => (
+                  <a
+                    key={ingang.id}
+                    href={ingang.href}
+                    className="group flex items-start gap-3.5 rounded-2xl border border-[#F0E7E5] bg-white p-5 text-[#1C2A39] shadow-sm transition-shadow hover:shadow-md"
+                  >
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FCE5D3] text-[#B84A3C]">
+                      <KennisbankIcon name={ingang.icon} size={18} />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block font-redhat text-lg font-bold leading-snug group-hover:text-[#B84A3C]">{ingang.title}</span>
+                      <span className="mt-1 block text-sm leading-snug text-[#4C5968]">{ingang.text}</span>
+                    </span>
+                    <span aria-hidden="true" className="ml-auto self-center text-[#B84A3C] transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                  </a>
+                ))}
+              </div>
+              <p className="mt-5 text-sm text-[#4C5968]">
+                Nieuw met Nuts? Begin bij{" "}
+                <a href="/starten" className="font-semibold text-[#B84A3C] underline underline-offset-4 hover:text-[#7D352C]">Starten met Nuts &rarr;</a>
+              </p>
+            </div>
+          }
+        />
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-white/85 mb-3">Kies een ingang</p>
-            <div className="grid gap-3 md:grid-cols-3">
-              {config.ingangen.map((ingang) => (
+        <nav aria-label="Onderwerpen op deze pagina" className="mt-8 border-b border-[#F0E7E5] bg-white">
+          <PaginaInhoud>
+            <div className="-mx-3.5 flex gap-2 overflow-x-auto py-2.5">
+              {secties.map((sectie) => (
                 <a
-                  key={ingang.id}
-                  href={ingang.href}
-                  className="flex items-start gap-3 bg-white text-[#1C2A39] rounded-xl border border-[#F0E7E5] p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                  key={sectie.id}
+                  href={`#${sectie.id}`}
+                  className="shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium text-[#1C2A39] transition-colors hover:bg-[#FBF6F4] hover:text-[#B84A3C]"
                 >
-                  <span className="flex items-center justify-center w-9 h-9 rounded-full bg-menu-hover text-brand shrink-0">
-                    <KennisbankIcon name={ingang.icon} size={18} />
-                  </span>
-                  <span>
-                    <span className="block font-redhat font-bold leading-snug">{ingang.title}</span>
-                    <span className="block text-sm text-[#5b6470] leading-snug mt-1">{ingang.text}</span>
-                  </span>
+                  {sectie.label}
                 </a>
               ))}
             </div>
-          </div>
+          </PaginaInhoud>
+        </nav>
 
-          <p className="font-medium">
-            Nieuw met Nuts? Begin bij{" "}
-            <a href="/starten" className="font-semibold underline underline-offset-4">Starten met Nuts &rarr;</a>
-          </p>
-        </div>
-      </div>
-
-      <nav aria-label="Onderwerpen op deze pagina" className="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-[#F0E7E5]">
-        <div className="container mx-auto flex gap-2 overflow-x-auto py-2.5">
-          {secties.map((sectie) => {
-            const isActief = actief === sectie.id;
-            return (
-              <a
-                key={sectie.id}
-                href={`#${sectie.id}`}
-                aria-current={isActief ? "true" : undefined}
-                className={`shrink-0 first:-ml-3.5 text-sm px-3.5 py-1.5 rounded-full transition-colors ${
-                  isActief ? "bg-menu-hover text-brand font-semibold" : "text-[#1C2A39] font-medium hover:bg-[#FBF6F4]"
-                }`}
-              >
-                {sectie.label}
-              </a>
-            );
-          })}
-        </div>
-      </nav>
-
-      <div className="container mx-auto py-12 md:py-16">
-        {secties.map((sectie, i) => (
-          <section
-            key={sectie.id}
-            id={sectie.id}
-            className={`scroll-mt-20 grid gap-3 md:grid-cols-[240px_minmax(0,1fr)] md:gap-7 ${i > 0 ? "border-t border-[#F0E7E5] pt-10 mt-10" : ""}`}
-          >
-            <div className="flex items-center gap-2.5 self-start text-xs font-semibold uppercase tracking-wider text-[#5b6470]">
-              {sectie.icon && (
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white shrink-0">
-                  <KennisbankIcon name={sectie.icon} size={16} />
-                </span>
+        <PaginaInhoud className="py-12 md:py-16">
+          {secties.map((sectie, i) => (
+            <section
+              key={sectie.id}
+              id={sectie.id}
+              className={`scroll-mt-20 ${i > 0 ? "mt-10 border-t border-[#F0E7E5] pt-10" : ""}`}
+            >
+              <h2 className="mb-4 flex items-center gap-3 font-redhat text-2xl font-bold leading-tight text-[#1C2A39]">
+                {sectie.icon && (
+                  <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FCE5D3] text-[#B84A3C]">
+                    <KennisbankIcon name={sectie.icon} size={18} />
+                  </span>
+                )}
+                {sectie.titel}
+              </h2>
+              <Markdown html={sectie.html} className="kennisbank-sectie max-w-[66ch]" />
+              {sectie.links.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-2.5">
+                  {sectie.links.map((link, j) => {
+                    const ext = link.href.startsWith("http");
+                    return (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        {...(ext ? { target: "_blank", rel: "noreferrer" } : {})}
+                        className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${
+                          j === 0 ? "bg-[#B84A3C] text-white hover:bg-[#7D352C]" : "border border-[#D6C9C4] text-[#1C2A39] hover:border-[#B84A3C] hover:text-[#B84A3C]"
+                        }`}
+                      >
+                        {link.label}
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    );
+                  })}
+                </div>
               )}
-              {sectie.label}
-            </div>
-            <Markdown html={sectie.html} className="kennisbank-sectie min-w-0" />
-          </section>
-        ))}
+            </section>
+          ))}
+        </PaginaInhoud>
       </div>
     </Layout>
   );

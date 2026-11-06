@@ -97,16 +97,39 @@ html:has(.kennisbank) {
 }
 
 .kennisbank-intro h1 {
+    margin: 0 0 1.25rem;
+    color: white;
     font-family: "Red Hat Display";
     font-weight: 800;
-    font-size: 2.75rem;
-    line-height: 1.1;
-    margin-bottom: 1.25rem;
+    font-size: clamp(2.25rem, 3.8vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
 }
 .kennisbank-intro p {
+    max-width: 64ch;
+    margin: 0;
+    color: rgb(255 255 255 / 90%);
     font-family: Inter;
-    font-size: 1.125rem;
-    line-height: 1.65;
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    line-height: 1.6;
+}
+
+.toepassingen-intro h1 {
+    margin: 0 0 1.25rem;
+    color: #1C2A39;
+    font-family: "Red Hat Display";
+    font-size: clamp(2.25rem, 3.8vw, 3rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+}
+.toepassingen-intro p {
+    max-width: 58ch;
+    margin: 0;
+    color: #4C5968;
+    font-family: Inter;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.6;
 }
 
 .kennisbank-sectie {
@@ -127,67 +150,80 @@ html:has(.kennisbank) {
     max-width: 66ch;
 }
 .kennisbank-sectie p a {
-    color: #027FDD;
+    color: #B84A3C;
 }
 .kennisbank-sectie p a:hover {
-    color: #166fb2;
+    color: #7D352C;
     text-decoration: underline;
 }
 
-/* Lijstjes (standaarden, kernfuncties) als labels */
-.kennisbank-sectie ul,
-.kennisbank-sectie ol {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    counter-reset: kernfunctie;
+/* Styles for the "eenheid van taal" page */
+html:has(.eenheid-van-taal) {
+    scroll-behavior: smooth;
 }
-.kennisbank-sectie li {
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding: 0.375rem 0.875rem;
-    border: 1px solid #F0E7E5;
-    border-radius: 9999px;
-    background: white;
+@media (prefers-reduced-motion: reduce) {
+    html:has(.eenheid-van-taal) {
+        scroll-behavior: auto;
+    }
 }
-.kennisbank-sectie ol li::before {
-    counter-increment: kernfunctie;
-    content: counter(kernfunctie);
-    color: #5b6470;
+.taal-intro p {
+    color: #4C5968;
+    font-family: Inter;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+.taal-intro p + p {
+    margin-top: 0.875rem;
+}
+.taal-sectie {
+    color: #1C2A39;
+    font-family: Inter;
+    line-height: 1.75;
+}
+.taal-sectie > * + * {
+    margin-top: 1rem;
+}
+.taal-sectie p {
+    max-width: 70ch;
+}
+.taal-sectie a {
+    color: #B84A3C;
+}
+.taal-sectie a:hover {
+    color: #7D352C;
+    text-decoration: underline;
+}
+/* Opsommingen (zoals de rollen in de community) als rustige genummerde lijst */
+.taal-sectie ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+}
+.taal-sectie ol li {
+    padding-left: 0.25rem;
+}
+.taal-sectie ol li + li {
+    margin-top: 0.75rem;
+}
+.taal-sectie ol li::marker {
+    color: #B84A3C;
     font-weight: 600;
-    margin-right: 0.375rem;
+}
+.taal-sectie ol li strong {
+    font-weight: 600;
 }
 
-/* De laatste alinea met alleen links wordt een rij knoppen: de eerste rood, de rest wit */
-.kennisbank-sectie p:last-child {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.25rem;
+/* Paginakop (huisstijl): introtekst */
+.paginakop-intro p {
+    margin: 0;
+    color: #4C5968;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
 }
-.kennisbank-sectie p:last-child a {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 500;
-    line-height: 1.5;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    color: #1C2A39;
-    background: white;
-    box-shadow: inset 0 0 0 1px #F0E7E5;
-    transition: background-color 150ms, color 150ms, box-shadow 150ms;
+.paginakop-intro p + p {
+    margin-top: 14px;
 }
-.kennisbank-sectie p:last-child a:hover {
-    color: #D15949;
-    text-decoration: none;
-    box-shadow: inset 0 0 0 1px #D15949;
-}
-.kennisbank-sectie p:last-child a:first-child {
-    color: white;
-    background: #D15949;
-    box-shadow: none;
-}
-.kennisbank-sectie p:last-child a:first-child:hover {
-    background: #B84A3C;
-    color: white;
+.paginakop-intro a {
+    color: #B84A3C;
+    text-decoration: underline;
 }
