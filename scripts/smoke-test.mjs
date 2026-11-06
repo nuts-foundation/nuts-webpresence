@@ -27,9 +27,20 @@ const PAGE_CHECKS = [
     mustContain: [/<h1/i, /<h2/i, /<a\s+href=/i],
   },
   {
+    path: "kennisbank/index.html",
+    label: "/kennisbank/",
+    mustContain: [/<h1/i, /<h2/i, /<a\s+href=/i],
+  },
+  {
+    path: "stichting/index.html",
+    label: "/stichting/",
+    mustContain: [/<h1/i, /<h2/i, /<blockquote/i],
+  },
+  {
     path: "documentatie/index.html",
     label: "/documentatie/",
-    mustContain: [/<h1/i, /<h2/i, /<blockquote/i, /<a\s+href=/i],
+    // Moved to /kennisbank/; the old URL must keep redirecting there.
+    mustContain: [/http-equiv="refresh"[^>]+url=\/kennisbank\//i],
   },
   {
     path: "kalender/index.html",
