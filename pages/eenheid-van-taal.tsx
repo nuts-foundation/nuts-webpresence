@@ -20,10 +20,10 @@ const TERMEN = [
   { id: "ecosysteem", kort: "Ecosysteem", icon: "ecosysteem" },
 ];
 
-// Schema: hoe de termen samenhangen, in drie lagen.
+// Schema: hoe de termen samenhangen, in drie lagen (Waarom – Hoe – Wat, zoals in het jaarplan).
 const LAGEN = [
   { label: "Waarom", termen: ["missie", "manifest", "merk"], keten: false },
-  { label: "Wie", termen: ["community", "stichting", "ecosysteem"], keten: false },
+  { label: "Hoe", termen: ["community", "stichting", "ecosysteem"], keten: false },
   { label: "Wat", termen: ["specificatie", "node", "netwerk", "toepassingen"], keten: true },
 ];
 
