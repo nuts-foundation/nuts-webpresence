@@ -7,6 +7,7 @@ import { crawl, CrawlResult } from "./crawl.ts"
 import { Fetcher } from "./fetcher.ts"
 import { indexGitHub, latestCommit } from "./github.ts"
 import { indexOpenApi } from "./openapi.ts"
+import { diagnostics, failure, isComplete, isIndexed, locations, planRemoval } from "./rules.ts"
 import { Typesense } from "./typesense.ts"
 import { linkVersions } from "./versions.ts"
 
@@ -20,6 +21,8 @@ const { values: args } = parseArgs({
     verbose: { type: "boolean", default: false },
     // Index only GitHub sources whose latest commit differs from the last indexed one; other sources are skipped.
     "if-changed": { type: "boolean", default: false },
+    // Also remove the records of pages that are gone when that's many at once (see mayPrune), after a restructured site.
+    "force-prune": { type: "boolean", default: false },
   },
 })
 
@@ -63,19 +66,55 @@ const results = await Promise.all(jobs.map(async job => {
     result = { pages: 0, records: [], errors: [{ url: job.startUrls?.[0] ?? job.apiPage ?? job.github?.repo ?? "", reason: (e as Error).message }], skipped: [] }
   }
   console.log(`[${name}] done: ${result.pages} pages, ${result.records.length} records, ${result.errors.length} errors, ${result.skipped.length} skipped`)
+  // Right away: report.json is gone with the nightly job's pod, and a later step may fail.
+  for (const line of diagnostics(result)) console.error(`[${name}] ${line}`)
   return { name, job, result }
 }))
 
+// Only after a complete crawl are the records of pages that disappeared removed, so search results don't go missing
+// because of a failed page. Planned against the index as it was, before linkVersions: a newest version whose missing
+// records may not be removed mustn't mark older versions' operations as removed either.
+const removals = await Promise.all(results.map(async ({ job, result }) => typesense && isComplete(result)
+  ? planRemoval(await typesense.records(job.id, job.labels.version), result.records,
+    result.skipped.filter(s => s.retry).map(s => s.url), args["force-prune"])
+  : undefined))
+
 for (const source of selected) {
-  linkVersions(results.filter(r => r.job.id === source.id)
-    .map(r => ({ version: r.job.labels.version, records: r.result.records, complete: !r.result.errors.length })))
+  linkVersions(results.flatMap(({ job, result }, i) => job.id !== source.id ? [] : [{
+    version: job.labels.version,
+    records: result.records,
+    complete: isComplete(result) && removals[i]?.allowed !== false,
+  }]))
 }
 
-for (const { name, job, result } of results) {
+const failures = results.flatMap(({ name, result }) => {
+  const reason = failure(result)
+  return reason ? [`${name}: ${reason}`] : []
+})
+for (const [i, { name, job, result }] of results.entries()) {
+  if (!typesense) continue
+  const removal = removals[i]
+  if (!removal && args["force-prune"]) console.error(`[${name}] --force-prune removed nothing: the crawl was incomplete`)
+  // Too much went missing to trust this crawl, so it changes nothing: the next run compares with the same records, and
+  // keeps refusing until the pages are back or --force-prune.
+  if (removal && !removal.allowed) {
+    console.error(`[${name}] ${removal.stale.length} of ${removal.existing} records weren't found: too many to remove without --force-prune, so the source is left as it was. Such as:`)
+    for (const url of locations(removal.stale).slice(0, 5)) console.error(`[${name}]   ${url}`)
+    failures.push(`${name}: left as it was, as ${removal.stale.length} of its ${removal.existing} records weren't found`)
+    continue
+  }
   // A crawl that found nothing must not wipe the records of an earlier, successful run.
-  if (typesense && result.records.length) await typesense.replace(job.id, job.labels.version, result.records)
-  // Only a run without errors counts as indexed, so --if-changed retries a source that partly failed.
-  if (typesense && result.commit && result.records.length && !result.errors.length) await typesense.setIndexedCommit(name, result.commit)
+  if (!result.records.length) continue
+  // --if-changed skips a source only while the index holds all of its saved commit. So the commit is forgotten before the
+  // index changes, in case the run fails halfway, and saved again once all of it is indexed.
+  if (result.commit) await typesense.forgetIndexedCommit(name)
+  await typesense.upsert(job.id, result.records)
+  if (removal) await typesense.remove(removal.stale)
+  if (removal?.waiting.length) {
+    console.error(`[${name}] kept ${removal.waiting.length} records of pages that aren't published (--force-prune removes them):`)
+    for (const url of locations(removal.waiting).slice(0, 5)) console.error(`[${name}]   ${url}`)
+  }
+  if (result.commit && isIndexed(result)) await typesense.setIndexedCommit(name, result.commit)
 }
 
 await mkdir(OUT_DIR, { recursive: true })
@@ -94,4 +133,12 @@ const searchKey = process.env.TYPESENSE_SEARCH_KEY
 if (typesense && searchKey) {
   await typesense.ensureSearchKey(searchKey)
   console.log("\nSearch-only key TYPESENSE_SEARCH_KEY is ready for the frontend (NEXT_PUBLIC_TYPESENSE_SEARCH_KEY).")
+}
+
+// Single pages that fail don't fail the run, but a source that yielded nothing (unreachable, or its content selector
+// no longer matches) or of which many pages failed does, and so does keeping records that may be stale, so the nightly
+// job reports them. The earlier records stay in the index.
+if (failures.length) {
+  console.error(`\nFailed:\n${failures.map(f => `- ${f}`).join("\n")}`)
+  process.exitCode = 1
 }

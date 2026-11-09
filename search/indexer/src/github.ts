@@ -57,8 +57,13 @@ export async function indexGitHub(source: Source, fetcher: Fetcher, workDir: str
     try {
       markdown = await readFile(join(dir, path), "utf8")
       const live = await fetcher.get(pageUrl)
+      // A redirect to a missing page more likely means a broken redirect than a page that isn't published yet.
+      if (live.status === 404 && live.redirected) {
+        result.skipped.push({ url: pageUrl, reason: `redirects to ${live.url}, which returns HTTP 404`, incomplete: true })
+        continue
+      }
       if (live.status === 404) {
-        result.skipped.push({ url: pageUrl, reason: `in ${gh.repo}@${gh.branch} (${path}) but not published` })
+        result.skipped.push({ url: pageUrl, reason: `in ${gh.repo}@${gh.branch} (${path}) but not published`, retry: true })
         continue
       }
       if (live.status !== 200) throw new Error(`HTTP ${live.status} for the published page ${pageUrl}`)
@@ -77,7 +82,7 @@ export async function indexGitHub(source: Source, fetcher: Fetcher, workDir: str
     const labels = labelsFor(source, pageUrl)
     const language = languageFor(source, pageUrl, rendered.lang, page.sections.map(s => s.content).join(" "))
     for (const [i, section] of page.sections.entries()) {
-      if (!section.content && page.sections.length > 1) continue
+      if (!section.content && (i > 0 || page.sections.some(s => s.content))) continue
       const recordUrl = section.anchor ? `${pageUrl}#${section.anchor}` : pageUrl
       result.records.push({
         id: hash(`${source.id}|${pageUrl}|${i}`),

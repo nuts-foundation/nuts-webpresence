@@ -1,4 +1,4 @@
-import { hash, SearchRecord } from "./crawl.ts"
+import { hash, type SearchRecord } from "./crawl.ts"
 
 // Links the records of a section that occurs in several versions of a source (e.g. the same Nuts node page in
 // v6.2 and v5.4). They get the same group, so the search shows them as one result, and each record lists all

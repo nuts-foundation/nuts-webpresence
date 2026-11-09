@@ -7,7 +7,9 @@ const robotsParser = robotsParserModule as unknown as typeof robotsParserModule.
 type Robots = ReturnType<typeof robotsParser>
 
 export interface FetchResult {
+  // After redirects.
   url: string
+  redirected: boolean
   status: number
   contentType: string
   body: string
@@ -50,6 +52,7 @@ export class Fetcher {
     })
     return {
       url: response.url,
+      redirected: response.redirected,
       status: response.status,
       contentType: response.headers.get("content-type") ?? "",
       body: await response.text(),

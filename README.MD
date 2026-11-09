@@ -82,8 +82,8 @@ Indexer options:
 - `npm run index -- --source wiki --source nuts-node` indexes only these sources; the records of other sources stay.
 - `npm run index -- --dry-run` crawls without Typesense; output in `search/indexer/out/records.json`.
 - `--verbose` lists every crawled page.
-- `npm run index -- --if-changed` indexes only GitHub sources whose latest commit differs from the last indexed one,
-  and skips all other sources. Meant for an hourly run; needs `git`.
+- `npm run index -- --if-changed` indexes only GitHub sources whose latest commit differs from the last indexed one, and skips all other sources. A run with failed pages, or with pages that aren't published yet, doesn't count as indexed. Meant for an hourly run; needs `git`.
+- `--force-prune` also removes the records the indexer otherwise keeps: of pages that disappeared, when that's more than 5 records and more than a quarter of a source at once (without it the indexer leaves that source as it was and fails, as that more likely means an outage), and of pages in a repository that aren't published. Use it once the pages are really gone, for example after a site restructure.
 
 Each run writes `search/indexer/out/report.json`: pages, records, errors and skipped pages with the reason.
 
@@ -109,5 +109,4 @@ default puts technical sources first ("Technisch"); visitors can switch to "Func
 the weight per source type and how much it counts. The formula and the defaults are in `search/ranking.yaml`; changing
 them only needs a new build of the site.
 
-API operations link to the operation in the Scalar API reference (`latest`). Released versions of the Nuts node docs
-use Swagger UI, which has no links to operations, so their results link to the API page.
+API operations link to the operation in the Scalar API reference, in every version of the Nuts node docs.

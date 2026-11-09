@@ -1,4 +1,5 @@
 import { SearchRecord } from "./crawl.ts"
+import { IndexedRecord } from "./rules.ts"
 
 const SYNONYM_SET = "nuts-docs-synonyms"
 const STATE_COLLECTION_SUFFIX = "-state"
@@ -72,17 +73,26 @@ export class Typesense {
     }, [409])
   }
 
-  // Replaces all records of one source (and version), so pages that disappeared are removed too.
-  async replace(source: string, version: string | undefined, records: SearchRecord[]) {
+  // The records of one source (and version) in the index.
+  async records(source: string, version: string | undefined): Promise<IndexedRecord[]> {
     const filter = [`source:=${quote(source)}`]
     if (version) filter.push(`version:=${quote(version)}`)
-    await this.call("DELETE", `/collections/${this.collection}/documents?filter_by=${encodeURIComponent(filter.join(" && "))}`)
+    const response = await this.request("GET", `/collections/${this.collection}/documents/export?filter_by=${encodeURIComponent(filter.join(" && "))}&include_fields=id,url,method`, undefined, "application/json")
+    return (await response.text()).split("\n").filter(Boolean).map(line => JSON.parse(line) as IndexedRecord)
+  }
+
+  // Adds records, or replaces those with the same id. Throws when any record fails, before anything is removed.
+  async upsert(source: string, records: SearchRecord[]) {
     for (let i = 0; i < records.length; i += 1000) {
       const lines = records.slice(i, i + 1000).map(r => JSON.stringify({ ...r, tab: tabFor(r), versionAge: r.versionAge ?? 0, group: r.group ?? r.id }))
       const response = await this.request("POST", `/collections/${this.collection}/documents/import?action=upsert`, lines.join("\n"), "text/plain")
       const failed = (await response.text()).split("\n").map(line => JSON.parse(line)).filter(r => !r.success)
       if (failed.length) throw new Error(`Typesense import of ${source}: ${failed.length} failed, first: ${failed[0].error}`)
     }
+  }
+
+  async remove(records: IndexedRecord[]) {
+    for (const { id } of records) await this.call("DELETE", `/collections/${this.collection}/documents/${encodeURIComponent(id)}`, undefined, [404])
   }
 
   async indexedCommit(job: string): Promise<string | undefined> {
@@ -92,6 +102,10 @@ export class Typesense {
 
   async setIndexedCommit(job: string, commit: string) {
     await this.call("POST", `/collections/${this.stateCollection}/documents?action=upsert`, { id: stateId(job), commit })
+  }
+
+  async forgetIndexedCommit(job: string) {
+    await this.call("DELETE", `/collections/${this.stateCollection}/documents/${encodeURIComponent(stateId(job))}`, undefined, [404])
   }
 
   // Makes sure the search-only key for the frontend exists. Typesense only reveals a key's value when it is created,

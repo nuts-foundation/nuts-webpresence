@@ -1,4 +1,4 @@
-import { Labels, Language, Source } from "./config.ts"
+import type { Labels, Language, Source } from "./config.ts"
 
 // Labels come from the source config; overrides whose pattern matches the URL are applied in order, so later ones win.
 export function labelsFor(source: Source, url: string): Labels {

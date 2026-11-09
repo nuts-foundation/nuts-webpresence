@@ -1,11 +1,10 @@
 import { createHash } from "node:crypto"
 
-import * as cheerio from "cheerio"
-
-import { Settings, Source } from "./config.ts"
+import type { Settings, Source } from "./config.ts"
 import { extractPage } from "./extract.ts"
-import { Fetcher } from "./fetcher.ts"
+import type { Fetcher } from "./fetcher.ts"
 import { labelsFor, languageFor } from "./labels.ts"
+import { parseSitemap, type Sitemap } from "./sitemap.ts"
 
 export interface SearchRecord {
   id: string
@@ -36,6 +35,10 @@ export interface SearchRecord {
 export interface Skipped {
   url: string
   reason: string
+  // The page may exist but wasn't indexed: its earlier records must stay.
+  incomplete?: boolean
+  // In a repository but not published (yet, or it failed to): may be indexed on a later run, and its earlier records stay.
+  retry?: boolean
 }
 
 export interface CrawlResult {
@@ -76,7 +79,7 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
   while (queue.length) {
     const url = queue.shift()!
     if (result.pages >= maxPages) {
-      result.skipped.push({ url, reason: `maxPages (${maxPages}) reached` })
+      result.skipped.push({ url, reason: `maxPages (${maxPages}) reached`, incomplete: true })
       continue
     }
     let response
@@ -86,12 +89,21 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
       result.errors.push({ url, reason: (e as Error).message })
       continue
     }
+    // A dead link: the page is gone, so its earlier records may go too. A redirect to a missing page more likely means a
+    // broken redirect than a removed page.
+    if (response.status === 404 || response.status === 410) {
+      if (response.redirected) result.skipped.push({ url, reason: `redirects to ${response.url}, which returns HTTP ${response.status}`, incomplete: true })
+      else result.skipped.push({ url, reason: `HTTP ${response.status}` })
+      continue
+    }
     if (response.status !== 200) {
       result.errors.push({ url, reason: `HTTP ${response.status}` })
       continue
     }
+    // Within the source, anything but a page is unexpected: an error message as plain text, say, or a download that
+    // belongs in exclude.
     if (!response.contentType.includes("html")) {
-      result.skipped.push({ url, reason: `not HTML (${response.contentType})` })
+      result.skipped.push({ url, reason: `not HTML (${response.contentType})`, incomplete: true })
       continue
     }
     // Redirects may land outside the prefix (e.g. a versioned docs link that resolves to another version),
@@ -111,8 +123,10 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
     if (source.discovery !== "sitemap") page.links.forEach(enqueue)
 
     if (index && !index.some(r => r.test(finalUrl))) continue
-    if (!page.hasContent) {
-      result.skipped.push({ url, reason: `content selector "${source.selectors!.content}" not found` })
+    // Also when the content has no text at all: more likely a page that failed to render than one that was emptied.
+    if (!page.hasContent || page.empty) {
+      const problem = page.hasContent ? "has no text" : "not found"
+      result.skipped.push({ url, reason: `content selector "${source.selectors!.content}" ${problem}`, incomplete: true })
       continue
     }
     indexed.add(finalUrl)
@@ -121,8 +135,9 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
     const labels = labelsFor(source, finalUrl)
     const language = languageFor(source, finalUrl, page.lang, page.sections.map(s => s.content).join(" "))
     for (const [i, section] of page.sections.entries()) {
-      // Sections without text only add noise; keep one record per page so its title stays findable.
-      if (!section.content && page.sections.length > 1) continue
+      // Sections without text only add noise; keep one record per page so its title stays findable, also when only
+      // headings have text (an empty roadmap page).
+      if (!section.content && (i > 0 || page.sections.some(s => s.content))) continue
       const recordUrl = section.anchor ? `${finalUrl}#${section.anchor}` : finalUrl
       result.records.push({
         // The section number keeps headings with the same text on one page (same text-fragment URL) apart.
@@ -146,10 +161,14 @@ export async function crawl(source: Source, settings: Settings, fetcher: Fetcher
 async function readSitemap(url: string, fetcher: Fetcher): Promise<string[]> {
   const response = await fetcher.get(url)
   if (response.status !== 200) throw new Error(`sitemap ${url}: HTTP ${response.status}`)
-  const $ = cheerio.load(response.body, { xml: true })
-  const nested = $("sitemapindex > sitemap > loc").map((_, el) => $(el).text().trim()).get()
-  const urls = $("urlset > url > loc").map((_, el) => $(el).text().trim()).get()
-  for (const child of nested) urls.push(...await readSitemap(child, fetcher))
+  let sitemap: Sitemap
+  try {
+    sitemap = parseSitemap(response.body)
+  } catch (e) {
+    throw new Error(`sitemap ${url}: ${(e as Error).message}`)
+  }
+  const urls = [...sitemap.urls]
+  for (const child of sitemap.sitemaps) urls.push(...await readSitemap(child, fetcher))
   return urls
 }
 

@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio"
 import type { AnyNode, Element } from "domhandler"
 
-import { Selectors } from "./config.ts"
+import type { Selectors } from "./config.ts"
 
 export interface Section {
   // Fragment (without '#') that jumps to the section, or undefined for the top of the page.
@@ -13,6 +13,8 @@ export interface Section {
 export interface Page {
   // False when the content selector matched nothing (e.g. an overview page that is only crawled for its links).
   hasContent: boolean
+  // True when the content has no text at all.
+  empty: boolean
   title: string
   lang?: string
   sections: Section[]
@@ -39,7 +41,7 @@ export function extractPage(html: string, url: string, selectors: Selectors, kno
 
   const context = (selectors.context ?? []).map(sel => clean($(sel).first().text())).filter(Boolean)
   const root = $(selectors.content).first()
-  if (!root.length) return { hasContent: false, title: "", lang, links, sections: [] }
+  if (!root.length) return { hasContent: false, empty: true, title: "", lang, links, sections: [] }
   root.find(["script", "style", "noscript", "svg", "template", ...(selectors.remove ?? [])].join(",")).remove()
 
   const documentTitle = $("title").first().text().trim()
@@ -83,7 +85,7 @@ export function extractPage(html: string, url: string, selectors: Selectors, kno
   flush()
   if (context.length) sections.forEach(section => section.hierarchy.unshift(...context))
 
-  return { hasContent: true, title, lang, links, sections }
+  return { hasContent: true, empty: !clean(root.text()), title, lang, links, sections }
 }
 
 // Finds the fragment the source site itself uses for a heading. When it has none, falls back to a

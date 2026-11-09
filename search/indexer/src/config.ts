@@ -36,9 +36,9 @@ export interface SourceVersion {
   startUrls?: string[]
   urlPrefix?: string
   labels?: Labels
-  // openapi only: page that shows the OpenAPI specs of this version.
+  // openapi only: the Scalar page that shows the OpenAPI specs of this version.
   apiPage?: string
-  // openapi only: script that lists the specs, for API pages that use Scalar (nuts-node-api.js).
+  // openapi only: the script that lists the specs (nuts-node-api.js).
   apiManifest?: string
 }
 
@@ -119,7 +119,7 @@ export function expandVersions(source: Source): Source[] {
     labels: { ...source.labels, version: v.version, ...v.labels },
   }))
   for (const job of jobs) {
-    const missing = job.kind === "openapi" ? (job.apiPage ? [] : ["apiPage"])
+    const missing = job.kind === "openapi" ? (["apiPage", "apiManifest"] as const).filter(f => !job[f])
       : job.kind === "github" ? (job.github ? [] : ["github"])
       : (["startUrls", "urlPrefix", "selectors"] as const).filter(f => !job[f])
     if (missing.length) throw new Error(`source ${source.id}${job.labels.version ? "@" + job.labels.version : ""}: missing ${missing.join(", ")}`)
