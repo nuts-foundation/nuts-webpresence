@@ -7,6 +7,8 @@ const enabledForEveryone = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
 const OPT_IN = "enable-search"
 // Whether this browser opted in, once read on this page load.
 let optedIn: boolean | undefined
+// Opted in with storage blocked: only the address holds the choice.
+let onlyInUrl = false
 
 // Whether to show the search: for everyone when the site is built with NEXT_PUBLIC_SEARCH_ENABLED=true, and before
 // that only for testers, who turn it on in their own browser with ?enable-search=1 on any page (off with
@@ -27,8 +29,14 @@ function readOptIn(): boolean {
     return localStorage.getItem(OPT_IN) === "1"
   } catch {
     // Storage blocked: only this address counts.
-    return choice === "1"
+    onlyInUrl = choice === "1"
+    return onlyInUrl
   }
+}
+
+// What links to the search page must carry, so the choice survives without storage.
+export function optInParams(): Record<string, string> {
+  return onlyInUrl ? { [OPT_IN]: "1" } : {}
 }
 
 // The production search. The key is public by design: it can only search this collection, and it ends up in the

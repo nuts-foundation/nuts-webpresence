@@ -7,7 +7,7 @@ import Highlighted from "../components/Highlighted"
 import MethodBadge from "../components/MethodBadge"
 import { SearchPageField } from "../components/SearchField"
 import { CATEGORIES, Category, RankingConfig, rerank, suggestsFunctional, Weights } from "../lib/ranking"
-import { Filters, Group, Hit, representative, search, SearchResult, TABS, useSearchEnabled } from "../lib/search"
+import { Filters, Group, Hit, optInParams, representative, search, SearchResult, TABS, useSearchEnabled } from "../lib/search"
 import ranking from "../search/ranking.yaml"
 
 const config = ranking as RankingConfig
@@ -103,7 +103,7 @@ export default function Zoeken() {
 
   useEffect(() => {
     if (!initialized) return
-    router.replace({ pathname: router.pathname, query: writeState(state, config) }, undefined, { shallow: true, scroll: false })
+    router.replace({ pathname: router.pathname, query: { ...writeState(state, config), ...optInParams() } }, undefined, { shallow: true, scroll: false })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state, initialized])
 
@@ -121,7 +121,8 @@ export default function Zoeken() {
       setLoading(true)
       search(q, filters, config.candidates, controller.signal, state.version)
         .then(r => { setResult(r); setError(null) })
-        .catch(e => { if (e.name !== "AbortError") setError(e.message) })
+        // The results of an earlier search would look like the answer to this one.
+        .catch(e => { if (e.name !== "AbortError") { setError(e.message); setResult(null) } })
         .finally(() => setLoading(false))
     }, DEBOUNCE_MS)
     return () => { clearTimeout(timer); controller.abort() }
@@ -286,10 +287,11 @@ function Advanced({ config, state, weights, customized, onChange }: AdvancedProp
       <h2 id={`${id}-title`} className="font-redhat font-bold text-dark-gray text-lg">Geavanceerd</h2>
       <p className="mb-5 text-text/80">Bepaal welke bronnen voorrang krijgen. Niets wordt verborgen, alleen anders gesorteerd.</p>
       <div className="grid gap-8 md:grid-cols-2">
-        <fieldset>
+        {/* min-w-0: a fieldset is at least as wide as its content by default, too wide for a phone. */}
+        <fieldset className="min-w-0">
           <legend className="text-xs font-semibold uppercase tracking-wide text-dark-gray mb-3">Gewicht per brontype</legend>
           {CATEGORIES.map(category => (
-            <div key={category} className="grid grid-cols-[9.5rem_1fr_2.5rem] items-center gap-3 mb-2">
+            <div key={category} className="grid grid-cols-[7rem_minmax(0,1fr)_2.5rem] md:grid-cols-[9.5rem_minmax(0,1fr)_2.5rem] items-center gap-3 mb-2">
               <label htmlFor={`${id}-${category}`}>{CATEGORY_LABELS[category]}</label>
               <input
                 id={`${id}-${category}`}
@@ -304,7 +306,7 @@ function Advanced({ config, state, weights, customized, onChange }: AdvancedProp
                   if (value === preset[category]) delete changed[category]
                   onChange({ weights: changed })
                 }}
-                className="accent-dark"
+                className="min-w-0 w-full accent-dark"
               />
               <output htmlFor={`${id}-${category}`} className="text-right tabular-nums text-text/80">{weights[category].toFixed(2)}</output>
             </div>
@@ -321,7 +323,7 @@ function Advanced({ config, state, weights, customized, onChange }: AdvancedProp
           </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset className="min-w-0">
           <legend className="text-xs font-semibold uppercase tracking-wide text-dark-gray mb-3">Filters</legend>
           <label className="flex items-center gap-2 mb-3">
             <input
@@ -495,12 +497,13 @@ function Pill({ className, children }: { className: string, children: React.Reac
   return <span className={`ml-1 px-2 py-0.5 rounded-full border text-[11px] font-semibold ${className}`}>{children}</span>
 }
 
-// Focusable, so the explanation is also reachable by keyboard.
+// Focusable, so the explanation is also reachable by keyboard. Hidden rather than invisible, so the explanations take
+// no room. On phones the explanation shows at the bottom of the screen, so it never makes the page wider.
 function CommunityNote({ id }: { id: string }) {
   return (
     <span tabIndex={0} aria-describedby={`community-${id}`} className="group/tag relative ml-1 px-2 py-0.5 rounded-full border border-stroke bg-light text-[11px] font-semibold text-text cursor-help focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
       Communitybijdrage
-      <span id={`community-${id}`} role="tooltip" className="invisible opacity-0 group-hover/tag:visible group-hover/tag:opacity-100 group-focus/tag:visible group-focus/tag:opacity-100 transition-opacity absolute left-0 top-full mt-1 z-10 w-64 rounded-lg bg-dark-gray text-white text-xs font-normal leading-snug p-2 shadow-md">
+      <span id={`community-${id}`} role="tooltip" className="hidden group-hover/tag:block group-focus/tag:block fixed inset-x-4 bottom-4 z-20 md:absolute md:inset-x-auto md:bottom-auto md:left-0 md:top-full md:mt-1 md:w-64 rounded-lg bg-dark-gray text-white text-xs font-normal leading-snug p-2 shadow-md">
         Bijdrage van de community. Hierop heeft beperkte kwaliteitscontrole plaatsgevonden.
       </span>
     </span>

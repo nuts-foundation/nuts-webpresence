@@ -4,7 +4,7 @@ import { useCombobox } from "downshift"
 import Highlighted from "./Highlighted"
 import MethodBadge from "./MethodBadge"
 import { candidatesFor, RankingConfig, rerank } from "../lib/ranking"
-import { Hit, representative, search } from "../lib/search"
+import { Hit, optInParams, representative, search } from "../lib/search"
 import ranking from "../search/ranking.yaml"
 
 const config = ranking as RankingConfig
@@ -22,7 +22,7 @@ const MODIFIER = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navi
 const KBD = "min-w-6 rounded border border-stroke bg-light px-1.5 text-center text-xs font-normal text-dark-gray"
 const FIELD = "w-full rounded-full text-sm font-inter px-4 py-1.5 bg-white text-text border border-stroke focus:outline-none focus:ring-2 focus:ring-button"
 
-const searchPage = (q: string) => `/zoeken/?${new URLSearchParams({ q })}`
+const searchPage = (q: string) => `/zoeken/?${new URLSearchParams({ q, ...optInParams() })}`
 
 // Search field in the menu: a plain GET form that opens the search page, so it also works without JavaScript. While
 // typing, it suggests the top results of the search page; the arrow keys and Enter, or a click, open a result in a
@@ -66,6 +66,7 @@ export default function SearchField() {
   const open = isOpen && items.length > 0
   const row = (index: number) => `border-l-[3px] ${index === highlightedIndex ? "border-l-dark bg-light" : "border-l-transparent bg-white"}`
   return (<form action="/zoeken/" method="get" role="search" className="relative min-w-0">
+    {Object.entries(optInParams()).map(([name, value]) => <input key={name} type="hidden" name={name} value={value} />)}
     <label {...getLabelProps()} className="sr-only">Zoeken</label>
     <input
       {...getInputProps({
@@ -88,7 +89,7 @@ export default function SearchField() {
       className={`${FIELD} md:w-40`} />
     <ul
       {...getMenuProps()}
-      className={`${open ? "" : "hidden"} z-30 mt-2 md:absolute md:right-0 md:top-full md:w-[30rem] max-h-[70vh] overflow-y-auto rounded-lg border border-stroke bg-white pt-1 shadow-lg font-inter`}>
+      className={`${open ? "" : "hidden"} z-30 mt-2 md:absolute md:right-0 md:top-full md:w-[30rem] max-h-[50vh] md:max-h-[70vh] overflow-y-auto rounded-lg border border-stroke bg-white pt-1 shadow-lg font-inter`}>
       {/* The links are not in the tab order: the arrow keys move through the rows. */}
       {open && items.map((item, index) => item === MORE ? (
         // Stays in view when the suggestions scroll.

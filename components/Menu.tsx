@@ -110,7 +110,8 @@ export default function Menu({ items, search, onOpen, onClose }: Props) {
 
       <div
         className={`bg-[rgba(45,45,45,0.7)] hidden z-[30] fixed h-[100vh] w-full top-0 left-0 md:h-auto md:w-auto md:bg-brand md:static md:block ${open && "!block"}`}>
-        <div className={`ml-auto max-w-[70vw] bg-white px-8 h-full shadow-lg rounded-l-xl md:max-w-none md:pl-0 md:bg-transparent md:shadow-none`}>
+        {/* Scrolls on phones, so open search suggestions stay reachable below the menu items. */}
+        <div className={`ml-auto max-w-[70vw] bg-white px-8 h-full overflow-y-auto shadow-lg rounded-l-xl md:max-w-none md:pl-0 md:bg-transparent md:shadow-none md:overflow-visible`}>
           <div className="flex flex-col pt-6 mb-12 md:hidden">
             <a href="#" className="place-self-end" onClick={close}>
               <Close />
