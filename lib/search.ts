@@ -1,7 +1,35 @@
 // Client for the documentation search (Typesense), used by pages/zoeken.tsx and the search field in the menu. The
 // browser queries Typesense directly with a key that can only search the documentation collection.
 
-export const searchEnabled = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
+import { useEffect, useState } from "react"
+
+const enabledForEveryone = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
+const OPT_IN = "enable-search"
+// Whether this browser opted in, once read on this page load.
+let optedIn: boolean | undefined
+
+// Whether to show the search: for everyone when the site is built with NEXT_PUBLIC_SEARCH_ENABLED=true, and before
+// that only for testers, who turn it on in their own browser with ?enable-search=1 on any page (off with
+// ?enable-search=0). Undefined until the browser has been asked, so the static page matches when it hydrates.
+export function useSearchEnabled(): boolean | undefined {
+  const [enabled, setEnabled] = useState(enabledForEveryone || optedIn)
+  useEffect(() => {
+    if (enabled === undefined) setEnabled(optedIn = readOptIn())
+  }, [enabled])
+  return enabled
+}
+
+function readOptIn(): boolean {
+  const choice = new URLSearchParams(window.location.search).get(OPT_IN)
+  try {
+    if (choice === "1") localStorage.setItem(OPT_IN, "1")
+    if (choice === "0") localStorage.removeItem(OPT_IN)
+    return localStorage.getItem(OPT_IN) === "1"
+  } catch {
+    // Storage blocked: only this address counts.
+    return choice === "1"
+  }
+}
 
 // The production search. The key is public by design: it can only search this collection, and it ends up in the
 // browser anyway. The indexer job in the cluster creates it with the same value. For local development, .env.local

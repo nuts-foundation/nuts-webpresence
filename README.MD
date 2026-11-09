@@ -45,7 +45,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 One search over all formal Nuts documentation: nuts.nl, the Nuts node docs (ReadTheDocs, per version), the
 Nuts node API (OpenAPI), the specifications and the toepassingen (FHIR implementation guides) and the wiki. The
 specifications and toepassingen are read as markdown from their GitHub repositories; results link to the published pages
-(GitBook, GitHub Pages). Off by default.
+(GitBook, GitHub Pages).
+
+Off by default: it's on for everyone once the site is built with `NEXT_PUBLIC_SEARCH_ENABLED=true` (the repository variable `SEARCH_ENABLED` in the deploy workflow). Before that, testers turn it on in their own browser with `?enable-search=1` on any page, and off again with `?enable-search=0`.
 
 | Part | Where |
 |---|---|

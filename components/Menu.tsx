@@ -7,7 +7,7 @@ import Close from "../icons/close.svg"
 import ChevronDown from "../icons/chevron-down.svg"
 import ChevronRight from "../icons/chevron-right.svg"
 import SearchField, { SearchPageField, SearchQuery } from "./SearchField"
-import { searchEnabled } from "../lib/search"
+import { useSearchEnabled } from "../lib/search"
 
 export interface MenuLink {
   name: string;
@@ -54,6 +54,7 @@ export default function Menu({ items, search, onOpen, onClose }: Props) {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
   const isEnglish = router.asPath.startsWith("/en/")
+  const searchEnabled = useSearchEnabled()
 
   useEffect(() => {
     if (open) {
