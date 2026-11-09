@@ -1,4 +1,4 @@
-# Local search backend for the nuts.nl search PoC (see search/ and the README).
+# Local search backend for the nuts.nl search (see search/ and the README).
 # Typesense (GPL-3.0), run as a separate service; the site only talks to it over HTTP.
 services:
   typesense:

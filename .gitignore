@@ -53,5 +53,5 @@ yarn-error.log*
 /search/indexer/out/
 /search/indexer/node_modules/
 
-# local search PoC secrets
+# local search secrets
 /.env

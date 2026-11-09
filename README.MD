@@ -40,7 +40,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Search (proof of concept)
+## Search
 
 One search over all formal Nuts documentation: nuts.nl, the Nuts node docs (ReadTheDocs, per version), the
 Nuts node API (OpenAPI), the specifications and the toepassingen (FHIR implementation guides) and the wiki. The
@@ -57,7 +57,6 @@ Off by default: it's on for everyone once the site is built with `NEXT_PUBLIC_SE
 | Ranking (re-orders results by source type) | `search/ranking.yaml`, `lib/ranking.ts`; tests: `npm run test:search` |
 | Indexer | `search/indexer/` |
 | Search page | `pages/zoeken.tsx`, `lib/search.ts`; search field in `components/Menu.tsx` |
-| Findings | `search/FINDINGS.md` |
 
 ### Run locally
 

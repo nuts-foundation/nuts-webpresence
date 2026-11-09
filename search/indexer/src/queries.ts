@@ -1,5 +1,5 @@
 // Prints the top results per query by text match only (before the search page's ranking), to check search quality
-// after indexing. Usage: npm run queries [-- "query" ...]   (default: the PoC test queries)
+// after indexing. Usage: npm run queries [-- "query" ...]   (default: a set of test queries)
 
 const DEFAULT_QUERIES = [
   "access token", "X509 credential", "toepassing", "use case", "Azure Key Vault",
