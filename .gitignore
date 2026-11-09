@@ -49,9 +49,5 @@ yarn-error.log*
 # scratch files
 /.scratch/
 
-# search indexer output
-/search/indexer/out/
-/search/indexer/node_modules/
-
-# local search secrets
+# local secrets
 /.env

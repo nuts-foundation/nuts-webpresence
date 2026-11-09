@@ -32,8 +32,7 @@ function readOptIn(): boolean {
 }
 
 // The production search. The key is public by design: it can only search this collection, and it ends up in the
-// browser anyway. The indexer job in the cluster creates it with the same value. For local development, .env.local
-// points both at a local Typesense.
+// browser anyway. To use another Typesense for development, set both in .env.local.
 const host = process.env.NEXT_PUBLIC_TYPESENSE_URL || "https://search.nuts.nl"
 const searchKey = process.env.NEXT_PUBLIC_TYPESENSE_SEARCH_KEY || "227267f512711afa988319ce8e379024"
 const collection = "nuts-docs"
@@ -170,10 +169,20 @@ export async function search(q: string, filters: Filters, limit: number, signal?
   const failed = results.find(r => r.error)
   if (failed) throw new Error(`zoeken mislukt (${failed.error})`)
   const [main, counts] = results
-  const groups = (main.grouped_hits ?? []).map(group => group.hits.map(({ document, highlight }) => ({
+  // Only links to https pages, so even a tampered index can't put a javascript: link on this site.
+  const groups = (main.grouped_hits ?? []).map(group => group.hits.filter(({ document }) => isHttps(document.url)).map(({ document, highlight }) => ({
     ...document,
+    versions: document.versions?.filter(v => isHttps(v.url)),
     highlighted: { title: highlight?.title?.snippet ?? document.title, content: highlight?.content?.snippet ?? "" },
-  })))
+  }))).filter(group => group.length)
   const tabCounts = Object.fromEntries(counts.facet_counts?.find(f => f.field_name === "tab")?.counts.map(c => [c.value, c.count]) ?? [])
   return { groups, total: main.found, tabCounts }
+}
+
+function isHttps(url: string): boolean {
+  try {
+    return new URL(url).protocol === "https:"
+  } catch {
+    return false
+  }
 }

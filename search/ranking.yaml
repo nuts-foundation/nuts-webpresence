@@ -14,7 +14,8 @@
 
 candidates: 250
 
-# Source types (category in sources.yaml). The API operations count as documentation.
+# Source types (category in the indexer's sources.yaml, in nuts-foundation/infra-admin). The API operations count as
+# documentation.
 presets:
   technisch:
     label: Technisch

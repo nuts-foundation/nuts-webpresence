@@ -2,7 +2,3 @@
 # require review by a code owner. See https://github.com/nuts-foundation/nuts-node/issues/4603
 /public/certs/** @stevenvegt @reinkrul
 /content/posts/certs.md @stevenvegt @reinkrul
-
-# The search indexer runs in production with the Typesense admin key (nightly job in nuts-foundation/infra-admin),
-# so changes to it require review by a code owner too.
-/search/ @JorisHeadease @reinkrul
