@@ -3,8 +3,11 @@
 
 export const searchEnabled = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
 
-const host = process.env.NEXT_PUBLIC_TYPESENSE_URL ?? "http://localhost:8108"
-const searchKey = process.env.NEXT_PUBLIC_TYPESENSE_SEARCH_KEY ?? ""
+// The production search. The key is public by design: it can only search this collection, and it ends up in the
+// browser anyway. The indexer job in the cluster creates it with the same value. For local development, .env.local
+// points both at a local Typesense.
+const host = process.env.NEXT_PUBLIC_TYPESENSE_URL || "https://search.nuts.nl"
+const searchKey = process.env.NEXT_PUBLIC_TYPESENSE_SEARCH_KEY || "227267f512711afa988319ce8e379024"
 const collection = "nuts-docs"
 
 // Highlight markers that cannot occur in indexed text, so results can be rendered without innerHTML.
