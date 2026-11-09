@@ -76,7 +76,8 @@ export default function SearchField() {
         // Enter on a highlighted result opens it in a new tab, here rather than after Downshift's update, which some
         // browsers would block as a popup. Enter on anything else, and Cmd or Ctrl+Enter, open the search page.
         onKeyDown: event => {
-          if (event.key !== "Enter" || event.nativeEvent.isComposing) return
+          // keyCode 229: Enter that confirms IME input can arrive after compositionend, so isComposing is false then.
+          if (event.key !== "Enter" || event.nativeEvent.isComposing || event.nativeEvent.keyCode === 229) return
           (event.nativeEvent as { preventDownshiftDefault?: boolean }).preventDownshiftDefault = true
           event.preventDefault()
           const item = event.metaKey || event.ctrlKey ? undefined : items[highlightedIndex]

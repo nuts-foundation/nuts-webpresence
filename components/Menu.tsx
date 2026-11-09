@@ -73,7 +73,9 @@ export default function Menu({ items, search, onOpen, onClose }: Props) {
   }, [])
 
   useEffect(() => {
-    function handleChange() {
+    // The search page updates its URL while you type in the menu's field, which must not close the menu.
+    function handleChange(_url: string, { shallow }: { shallow: boolean }) {
+      if (shallow) return
       setOpen(false)
       setActive(null)
 
@@ -107,13 +109,13 @@ export default function Menu({ items, search, onOpen, onClose }: Props) {
 
       <div
         className={`bg-[rgba(45,45,45,0.7)] hidden z-[30] fixed h-[100vh] w-full top-0 left-0 md:h-auto md:w-auto md:bg-brand md:static md:block ${open && "!block"}`}>
-        <div className={`ml-auto max-w-[70vw] bg-white px-8 h-full shadow-lg rounded-l-xl md:bg-transparent md:shadow-none`}>
+        <div className={`ml-auto max-w-[70vw] bg-white px-8 h-full shadow-lg rounded-l-xl md:max-w-none md:pl-0 md:bg-transparent md:shadow-none`}>
           <div className="flex flex-col pt-6 mb-12 md:hidden">
             <a href="#" className="place-self-end" onClick={close}>
               <Close />
             </a>
           </div>
-          <div className={`grid grid-flow-row items-center gap-6 md:!grid md:!grid-flow-col md:gap-12`}>
+          <div className={`grid grid-flow-row items-center gap-6 md:!grid md:!grid-flow-col md:gap-6 lg:gap-12`}>
             {items.map(item => (<Dropdown
               active={active === item.name}
               key={item.name}
@@ -154,7 +156,7 @@ function Dropdown({ name, children, active, onClick }: DropdownProps) {
   }
 
   return (<div className="root relative text-dark-gray md:text-white">
-    <div className="label flex justify-between cursor-pointer border-b border-stroke md:border-none" onClick={toggle}>
+    <div className="label flex justify-between cursor-pointer border-b border-stroke md:border-none md:whitespace-nowrap" onClick={toggle}>
       {name}
       <span className={`inline-block md:hidden ${active ? "w-3" : "w-2"}`}>
         {active ? <ChevronDown /> : <ChevronRight />}

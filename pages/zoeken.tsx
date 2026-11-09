@@ -461,6 +461,12 @@ function ApiResult({ hit, group }: ResultProps) {
         </a>
       </h2>
       <p className="mt-1.5 text-dark-gray font-inter text-sm"><Highlighted text={hit.highlighted.title} /></p>
+      {/* Why it matched when that's not the title: the description, a parameter or an error response. */}
+      {hit.highlighted.content && (
+        <p className="mt-1 text-text font-inter text-sm leading-relaxed break-words line-clamp-2">
+          <Highlighted text={hit.highlighted.content} />
+        </p>
+      )}
       <OtherVersions hit={hit} group={group} />
     </li>
   )
