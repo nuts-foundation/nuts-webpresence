@@ -20,7 +20,7 @@ type Item = Hit | typeof MORE
 // which the server never renders, so the server's Ctrl doesn't conflict with the browser's ⌘.
 const MODIFIER = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.userAgent) ? "⌘" : "Ctrl"
 const KBD = "min-w-6 rounded border border-stroke bg-light px-1.5 text-center text-xs font-normal text-dark-gray"
-const FIELD = "w-full rounded-full text-sm font-inter px-4 py-1.5 bg-white text-text border border-stroke focus:outline-none focus:ring-2 focus:ring-button"
+const FIELD = "w-full rounded-full font-inter bg-white text-text border border-stroke focus:outline-none focus:ring-2 focus:ring-button"
 
 const searchPage = (q: string) => `/zoeken/?${new URLSearchParams({ q, ...optInParams() })}`
 
@@ -86,7 +86,7 @@ export default function SearchField() {
           else event.currentTarget.form?.requestSubmit()
         },
       })}
-      className={`${FIELD} md:w-40`} />
+      className={`${FIELD} text-sm px-4 py-1.5 md:w-40`} />
     <ul
       {...getMenuProps()}
       className={`${open ? "" : "hidden"} z-30 mt-2 md:absolute md:right-0 md:top-full md:w-[30rem] max-h-[50vh] md:max-h-[70vh] overflow-y-auto rounded-lg border border-stroke bg-white pt-1 shadow-lg font-inter`}>
@@ -127,8 +127,7 @@ export interface SearchQuery {
   onChange: (q: string) => void
 }
 
-// The search page's own search field, in the menu and, on phones, on the page: results update while typing, so it
-// needs no suggestions.
+// The search page's own search field: results update while typing, so it needs no suggestions.
 export function SearchPageField({ value, onChange }: SearchQuery) {
   const id = useId()
   return (<form role="search" onSubmit={e => e.preventDefault()} className="min-w-0">
@@ -141,6 +140,6 @@ export function SearchPageField({ value, onChange }: SearchQuery) {
       value={value}
       onChange={e => onChange(e.target.value)}
       placeholder="Zoeken…"
-      className={`${FIELD} md:w-40 lg:w-64`} />
+      className={`${FIELD} text-base px-5 py-2.5`} />
   </form>)
 }
