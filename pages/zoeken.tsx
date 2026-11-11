@@ -144,11 +144,9 @@ export default function Zoeken() {
   }, [result, state.version, state.preset, JSON.stringify(weights), halfLife])
 
   const allCount = Object.values(result?.tabCounts ?? {}).reduce((a, b) => a + b, 0)
-  const query = { value: q, onChange: (value: string) => update({ q: value }) }
 
   return (
-    // The search field in the menu is this page's search field.
-    <Layout search={query}>
+    <Layout>
       <Head>
         <title>Zoeken — Nuts</title>
         <meta name="robots" content="noindex" />
@@ -158,9 +156,8 @@ export default function Zoeken() {
       {enabled === undefined ? null : !enabled ? (
         <p className="container mx-auto max-w-4xl px-4 py-10 font-inter text-text">Zoeken is (nog) niet beschikbaar.</p>
       ) : (<>
-        {/* On phones the menu is folded away, so the field is on the page too. */}
-        <div className="container mx-auto max-w-4xl px-4 pt-4 md:hidden">
-          <SearchPageField {...query} />
+        <div className="container mx-auto max-w-4xl px-4 pt-4 md:pt-6">
+          <SearchPageField value={q} onChange={value => update({ q: value })} />
         </div>
         <nav aria-label="Bron" className="border-b border-stroke">
           <ul className="container mx-auto max-w-4xl px-4 flex gap-1 overflow-x-auto">
