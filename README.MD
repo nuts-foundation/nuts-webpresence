@@ -44,7 +44,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 One search over all formal Nuts documentation: nuts.nl, the Nuts node docs (ReadTheDocs, per version), the Nuts node API (OpenAPI), the specifications and the toepassingen (FHIR implementation guides) and the wiki. This repository has the search page and the search field. The index is Typesense at https://search.nuts.nl, filled every night by the indexer in nuts-foundation/infra-admin, which also lists the sources.
 
-Off by default: it's on for everyone once the site is built with `NEXT_PUBLIC_SEARCH_ENABLED=true` (the repository variable `SEARCH_ENABLED` in the deploy workflow). Before that, testers turn it on in their own browser with `?enable-search=1` on any page, and off again with `?enable-search=0`.
+Off by default: it's on when the site is built with `NEXT_PUBLIC_SEARCH_ENABLED=true`. The deploy workflow takes it from the repository variable `SEARCH_ENABLED`; after changing that variable, run the workflow again.
 
 | Part | Where |
 |---|---|
@@ -52,7 +52,7 @@ Off by default: it's on for everyone once the site is built with `NEXT_PUBLIC_SE
 | Typesense client | `lib/search.ts`: https://search.nuts.nl with its public search-only key, unless `.env.local` sets another (see `.env.example`) |
 | Ranking (re-orders results by source type) | `search/ranking.yaml`, `lib/ranking.ts`; tests: `npm run test:search` |
 
-To work on the search locally, run `npm run dev` and open http://localhost:3000/zoeken/?enable-search=1: it searches the production index. To use another Typesense, such as a local one filled by the indexer, set its address and search-only key in `.env.local`.
+To work on the search locally, set `NEXT_PUBLIC_SEARCH_ENABLED=true` in `.env.local` (see `.env.example`), run `npm run dev` and open http://localhost:3000/zoeken/: it searches the production index. To use another Typesense, such as a local one filled by the indexer, set its address and search-only key there too.
 
 ### Ranking
 

@@ -79,8 +79,8 @@ jobs:
       - name: Build and export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} npm run export
         env:
-          # The search on nuts.nl: on once its index is filled, by setting the repository variable SEARCH_ENABLED to
-          # true and running this workflow again. Before that, testers turn it on with ?enable-search=1.
+          # The search on nuts.nl: on while the repository variable SEARCH_ENABLED is true. After changing it, run this
+          # workflow again.
           NEXT_PUBLIC_SEARCH_ENABLED: ${{ vars.SEARCH_ENABLED }}
       - name: Upload build output
         uses: actions/upload-artifact@v7

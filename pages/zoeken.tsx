@@ -7,7 +7,7 @@ import Highlighted from "../components/Highlighted"
 import MethodBadge from "../components/MethodBadge"
 import { SearchPageField } from "../components/SearchField"
 import { CATEGORIES, Category, RankingConfig, rerank, suggestsFunctional, Weights } from "../lib/ranking"
-import { Filters, Group, Hit, optInParams, representative, search, SearchResult, TABS, useSearchEnabled } from "../lib/search"
+import { Filters, Group, Hit, representative, search, searchEnabled, SearchResult, TABS } from "../lib/search"
 import ranking from "../search/ranking.yaml"
 
 const config = ranking as RankingConfig
@@ -83,7 +83,6 @@ export default function Zoeken() {
   const [loading, setLoading] = useState(false)
   const [advancedOpen, setAdvancedOpen] = useState(false)
   const [initialized, setInitialized] = useState(false)
-  const enabled = useSearchEnabled()
   const { q, filters } = state
 
   const update = (change: Partial<State>) => {
@@ -103,14 +102,14 @@ export default function Zoeken() {
 
   useEffect(() => {
     if (!initialized) return
-    router.replace({ pathname: router.pathname, query: { ...writeState(state, config), ...optInParams() } }, undefined, { shallow: true, scroll: false })
+    router.replace({ pathname: router.pathname, query: writeState(state, config) }, undefined, { shallow: true, scroll: false })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state, initialized])
 
   // Search while typing, debounced; a newer search cancels the previous one. The ranking is applied afterwards, so
   // changing it needs no new search.
   useEffect(() => {
-    if (!initialized || !enabled) return
+    if (!initialized || !searchEnabled) return
     if (!q.trim()) {
       setResult(null)
       setError(null)
@@ -126,7 +125,7 @@ export default function Zoeken() {
         .finally(() => setLoading(false))
     }, DEBOUNCE_MS)
     return () => { clearTimeout(timer); controller.abort() }
-  }, [q, filters, state.version, initialized, enabled])
+  }, [q, filters, state.version, initialized])
 
   const weights: Weights = { ...config.presets[state.preset].weights, ...state.weights }
   const customized = Object.keys(state.weights).length > 0 || state.influence !== config.defaultInfluence
@@ -153,7 +152,7 @@ export default function Zoeken() {
       </Head>
       <h1 className="sr-only">Zoeken</h1>
 
-      {enabled === undefined ? null : !enabled ? (
+      {!searchEnabled ? (
         <p className="container mx-auto max-w-4xl px-4 py-10 font-inter text-text">Zoeken is (nog) niet beschikbaar.</p>
       ) : (<>
         <div className="container mx-auto max-w-4xl px-4 pt-4 md:pt-6">
