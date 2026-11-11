@@ -1,10 +1,6 @@
 // Client for the documentation search (Typesense), used by pages/zoeken.tsx and the search field in the menu. The
 // browser queries Typesense directly with a key that can only search the documentation collection.
 
-// Whether to show the search: when the site is built with NEXT_PUBLIC_SEARCH_ENABLED=true (on nuts.nl: the repository
-// variable SEARCH_ENABLED).
-export const searchEnabled = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
-
 // The production search. The key is public by design: it can only search this collection, and it ends up in the
 // browser anyway. To use another Typesense for development, set both in .env.local.
 const host = process.env.NEXT_PUBLIC_TYPESENSE_URL || "https://search.nuts.nl"
