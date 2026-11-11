@@ -7,7 +7,6 @@ import Close from "../icons/close.svg"
 import ChevronDown from "../icons/chevron-down.svg"
 import ChevronRight from "../icons/chevron-right.svg"
 import SearchField from "./SearchField"
-import { useSearchEnabled } from "../lib/search"
 
 export interface MenuLink {
   name: string;
@@ -53,7 +52,6 @@ export default function Menu({ items, onOpen, onClose }: Props) {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
   const isEnglish = router.asPath.startsWith("/en/")
-  const searchEnabled = useSearchEnabled()
 
   useEffect(() => {
     if (open) {
@@ -129,7 +127,7 @@ export default function Menu({ items, onOpen, onClose }: Props) {
               </Link>))}
             </Dropdown>))}
             {/* The search page has its own field, right above the tabs that filter its results. */}
-            {searchEnabled && router.pathname !== "/zoeken" && <SearchField />}
+            {router.pathname !== "/zoeken" && <SearchField />}
             <div className="text-white text-sm">
               <Link href="/" className={`font-semibold ${!isEnglish ? "underline" : ""}`}>NL</Link>
               &nbsp;|&nbsp;

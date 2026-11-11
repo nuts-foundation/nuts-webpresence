@@ -7,7 +7,7 @@ import Highlighted from "../components/Highlighted"
 import MethodBadge from "../components/MethodBadge"
 import { SearchPageField } from "../components/SearchField"
 import { CATEGORIES, Category, RankingConfig, rerank, suggestsFunctional, Weights } from "../lib/ranking"
-import { Filters, Group, Hit, optInParams, representative, search, SearchResult, TABS, useSearchEnabled } from "../lib/search"
+import { Filters, Group, Hit, representative, search, SearchResult, TABS } from "../lib/search"
 import ranking from "../search/ranking.yaml"
 
 const config = ranking as RankingConfig
@@ -83,7 +83,6 @@ export default function Zoeken() {
   const [loading, setLoading] = useState(false)
   const [advancedOpen, setAdvancedOpen] = useState(false)
   const [initialized, setInitialized] = useState(false)
-  const enabled = useSearchEnabled()
   const { q, filters } = state
 
   const update = (change: Partial<State>) => {
@@ -103,14 +102,14 @@ export default function Zoeken() {
 
   useEffect(() => {
     if (!initialized) return
-    router.replace({ pathname: router.pathname, query: { ...writeState(state, config), ...optInParams() } }, undefined, { shallow: true, scroll: false })
+    router.replace({ pathname: router.pathname, query: writeState(state, config) }, undefined, { shallow: true, scroll: false })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state, initialized])
 
   // Search while typing, debounced; a newer search cancels the previous one. The ranking is applied afterwards, so
   // changing it needs no new search.
   useEffect(() => {
-    if (!initialized || !enabled) return
+    if (!initialized) return
     if (!q.trim()) {
       setResult(null)
       setError(null)
@@ -126,7 +125,7 @@ export default function Zoeken() {
         .finally(() => setLoading(false))
     }, DEBOUNCE_MS)
     return () => { clearTimeout(timer); controller.abort() }
-  }, [q, filters, state.version, initialized, enabled])
+  }, [q, filters, state.version, initialized])
 
   const weights: Weights = { ...config.presets[state.preset].weights, ...state.weights }
   const customized = Object.keys(state.weights).length > 0 || state.influence !== config.defaultInfluence
@@ -153,117 +152,113 @@ export default function Zoeken() {
       </Head>
       <h1 className="sr-only">Zoeken</h1>
 
-      {enabled === undefined ? null : !enabled ? (
-        <p className="container mx-auto max-w-4xl px-4 py-10 font-inter text-text">Zoeken is (nog) niet beschikbaar.</p>
-      ) : (<>
-        <div className="container mx-auto max-w-4xl px-4 pt-4 md:pt-6">
-          <SearchPageField value={q} onChange={value => update({ q: value })} />
-        </div>
-        <nav aria-label="Bron" className="border-b border-stroke">
-          <ul className="container mx-auto max-w-4xl px-4 flex gap-1 overflow-x-auto">
-            {[{ id: undefined, label: "Alles", count: allCount }, ...TABS.map(t => ({ ...t, count: result?.tabCounts[t.id] ?? 0 }))].map(tab => {
-              const active = filters.tab === tab.id
-              return (
-                <li key={tab.label}>
-                  <button
-                    type="button"
-                    aria-pressed={active}
-                    onClick={() => update({ filters: { ...filters, tab: tab.id } })}
-                    className={`px-3 pt-3 pb-2.5 border-b-[3px] whitespace-nowrap font-inter text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
-                      active ? "border-dark text-dark-gray font-semibold" : "border-transparent text-text/80 hover:text-dark-gray"
-                    }`}
-                  >
-                    {tab.label}{result && q.trim() && <span className="ml-1 text-xs text-text/60">{tab.count}</span>}
-                  </button>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+      <div className="container mx-auto max-w-4xl px-4 pt-4 md:pt-6">
+        <SearchPageField value={q} onChange={value => update({ q: value })} />
+      </div>
+      <nav aria-label="Bron" className="border-b border-stroke">
+        <ul className="container mx-auto max-w-4xl px-4 flex gap-1 overflow-x-auto">
+          {[{ id: undefined, label: "Alles", count: allCount }, ...TABS.map(t => ({ ...t, count: result?.tabCounts[t.id] ?? 0 }))].map(tab => {
+            const active = filters.tab === tab.id
+            return (
+              <li key={tab.label}>
+                <button
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => update({ filters: { ...filters, tab: tab.id } })}
+                  className={`px-3 pt-3 pb-2.5 border-b-[3px] whitespace-nowrap font-inter text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-dark ${
+                    active ? "border-dark text-dark-gray font-semibold" : "border-transparent text-text/80 hover:text-dark-gray"
+                  }`}
+                >
+                  {tab.label}{result && q.trim() && <span className="ml-1 text-xs text-text/60">{tab.count}</span>}
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
 
-        <div className="container mx-auto max-w-4xl px-4 py-6 md:py-8">
-          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 mb-4">
-            <p aria-live="polite" className="font-inter text-sm text-text min-h-5">
-              {error ? `Er ging iets mis: ${error}`
-                : !q.trim() ? "Typ een zoekterm om te beginnen."
-                : loading && !result ? "Zoeken…"
-                : result ? `${result.total} ${result.total === 1 ? "resultaat" : "resultaten"}` : ""}
-            </p>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-              <RadioPills
-                legend="Voorrang voor"
-                options={Object.entries(config.presets).map(([id, p]) => ({ id, label: p.label }))}
-                value={state.preset}
-                onChange={preset => update({ preset, weights: {} })}
-              />
-              <button
-                type="button"
-                aria-expanded={advancedOpen}
-                aria-controls="search-advanced"
-                onClick={() => setAdvancedOpen(!advancedOpen)}
-                className="font-inter text-sm text-darker underline underline-offset-2 hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded"
-              >
-                Geavanceerd{customized && " (aangepast)"} <span aria-hidden="true">{advancedOpen ? "▴" : "▾"}</span>
-              </button>
-            </div>
-          </div>
-
-          {advancedOpen && (
-            <Advanced
-              config={config}
-              state={state}
-              weights={weights}
-              customized={customized}
-              onChange={update}
+      <div className="container mx-auto max-w-4xl px-4 py-6 md:py-8">
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 mb-4">
+          <p aria-live="polite" className="font-inter text-sm text-text min-h-5">
+            {error ? `Er ging iets mis: ${error}`
+              : !q.trim() ? "Typ een zoekterm om te beginnen."
+              : loading && !result ? "Zoeken…"
+              : result ? `${result.total} ${result.total === 1 ? "resultaat" : "resultaten"}` : ""}
+          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <RadioPills
+              legend="Voorrang voor"
+              options={Object.entries(config.presets).map(([id, p]) => ({ id, label: p.label }))}
+              value={state.preset}
+              onChange={preset => update({ preset, weights: {} })}
             />
-          )}
-
-          {hint && (
-            <p className="font-inter text-sm bg-light rounded-lg px-4 py-3 mb-4">
-              Zoekt u meer functionele resultaten?{" "}
-              <button type="button" onClick={() => update({ preset: "functioneel", weights: {} })} className="font-semibold text-link underline underline-offset-2 hover:no-underline">
-                Toon functioneel eerst
-              </button>
-            </p>
-          )}
-
-          {result && q.trim() && result.total === 0 && (
-            <div className="rounded-xl border border-stroke p-6 bg-light font-inter text-text">
-              <p className="font-redhat font-bold text-dark-gray text-lg mb-2">Geen resultaten voor “{q}”</p>
-              <ul className="list-disc pl-5 space-y-1 text-sm">
-                <li>Controleer de spelling of probeer een ander woord, ook in het Engels.</li>
-                {(filters.tab || filters.language || filters.hideOutdated) && <li>Zoek in alle bronnen, of zet de filters onder Geavanceerd uit.</li>}
-                <li>Staat het er echt niet bij? Laat het ons weten via <a className="text-darker underline" href="/contact">contact</a>.</li>
-              </ul>
-            </div>
-          )}
-
-          {ranked.length > 0 && (
-            <ol aria-label="Zoekresultaten">
-              {ranked.slice(0, shown).map(hit => hit.method
-                ? <ApiResult key={hit.group[0].id} hit={hit} group={hit.group} />
-                : <Result key={hit.group[0].id} hit={hit} group={hit.group} />)}
-            </ol>
-          )}
-
-          {ranked.length > shown && (
-            <div className="mt-8 text-center">
-              <button
-                type="button"
-                onClick={() => setShown(shown + PAGE_SIZE)}
-                className="inline-block px-6 py-3 rounded-full text-sm font-inter transition-colors bg-button hover:bg-button-hover text-dark-gray"
-              >
-                Meer resultaten
-              </button>
-            </div>
-          )}
-          {result && shown >= ranked.length && result.total > ranked.length && (
-            <p className="mt-8 font-inter text-sm text-text text-center">
-              Meer dan {ranked.length} resultaten; maak je zoekopdracht specifieker.
-            </p>
-          )}
+            <button
+              type="button"
+              aria-expanded={advancedOpen}
+              aria-controls="search-advanced"
+              onClick={() => setAdvancedOpen(!advancedOpen)}
+              className="font-inter text-sm text-darker underline underline-offset-2 hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-dark rounded"
+            >
+              Geavanceerd{customized && " (aangepast)"} <span aria-hidden="true">{advancedOpen ? "▴" : "▾"}</span>
+            </button>
+          </div>
         </div>
-      </>)}
+
+        {advancedOpen && (
+          <Advanced
+            config={config}
+            state={state}
+            weights={weights}
+            customized={customized}
+            onChange={update}
+          />
+        )}
+
+        {hint && (
+          <p className="font-inter text-sm bg-light rounded-lg px-4 py-3 mb-4">
+            Zoekt u meer functionele resultaten?{" "}
+            <button type="button" onClick={() => update({ preset: "functioneel", weights: {} })} className="font-semibold text-link underline underline-offset-2 hover:no-underline">
+              Toon functioneel eerst
+            </button>
+          </p>
+        )}
+
+        {result && q.trim() && result.total === 0 && (
+          <div className="rounded-xl border border-stroke p-6 bg-light font-inter text-text">
+            <p className="font-redhat font-bold text-dark-gray text-lg mb-2">Geen resultaten voor “{q}”</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm">
+              <li>Controleer de spelling of probeer een ander woord, ook in het Engels.</li>
+              {(filters.tab || filters.language || filters.hideOutdated) && <li>Zoek in alle bronnen, of zet de filters onder Geavanceerd uit.</li>}
+              <li>Staat het er echt niet bij? Laat het ons weten via <a className="text-darker underline" href="/contact">contact</a>.</li>
+            </ul>
+          </div>
+        )}
+
+        {ranked.length > 0 && (
+          <ol aria-label="Zoekresultaten">
+            {ranked.slice(0, shown).map(hit => hit.method
+              ? <ApiResult key={hit.group[0].id} hit={hit} group={hit.group} />
+              : <Result key={hit.group[0].id} hit={hit} group={hit.group} />)}
+          </ol>
+        )}
+
+        {ranked.length > shown && (
+          <div className="mt-8 text-center">
+            <button
+              type="button"
+              onClick={() => setShown(shown + PAGE_SIZE)}
+              className="inline-block px-6 py-3 rounded-full text-sm font-inter transition-colors bg-button hover:bg-button-hover text-dark-gray"
+            >
+              Meer resultaten
+            </button>
+          </div>
+        )}
+        {result && shown >= ranked.length && result.total > ranked.length && (
+          <p className="mt-8 font-inter text-sm text-text text-center">
+            Meer dan {ranked.length} resultaten; maak je zoekopdracht specifieker.
+          </p>
+        )}
+      </div>
     </Layout>
   )
 }

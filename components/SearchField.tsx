@@ -4,7 +4,7 @@ import { useCombobox } from "downshift"
 import Highlighted from "./Highlighted"
 import MethodBadge from "./MethodBadge"
 import { candidatesFor, RankingConfig, rerank } from "../lib/ranking"
-import { Hit, optInParams, representative, search } from "../lib/search"
+import { Hit, representative, search } from "../lib/search"
 import ranking from "../search/ranking.yaml"
 
 const config = ranking as RankingConfig
@@ -22,7 +22,7 @@ const MODIFIER = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navi
 const KBD = "min-w-6 rounded border border-stroke bg-light px-1.5 text-center text-xs font-normal text-dark-gray"
 const FIELD = "w-full rounded-full font-inter bg-white text-text border border-stroke focus:outline-none focus:ring-2 focus:ring-button"
 
-const searchPage = (q: string) => `/zoeken/?${new URLSearchParams({ q, ...optInParams() })}`
+const searchPage = (q: string) => `/zoeken/?${new URLSearchParams({ q })}`
 
 // Search field in the menu: a plain GET form that opens the search page, so it also works without JavaScript. While
 // typing, it suggests the top results of the search page; the arrow keys and Enter, or a click, open a result in a
@@ -66,7 +66,6 @@ export default function SearchField() {
   const open = isOpen && items.length > 0
   const row = (index: number) => `border-l-[3px] ${index === highlightedIndex ? "border-l-dark bg-light" : "border-l-transparent bg-white"}`
   return (<form action="/zoeken/" method="get" role="search" className="relative min-w-0">
-    {Object.entries(optInParams()).map(([name, value]) => <input key={name} type="hidden" name={name} value={value} />)}
     <label {...getLabelProps()} className="sr-only">Zoeken</label>
     <input
       {...getInputProps({

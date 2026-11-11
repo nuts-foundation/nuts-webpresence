@@ -1,44 +1,6 @@
 // Client for the documentation search (Typesense), used by pages/zoeken.tsx and the search field in the menu. The
 // browser queries Typesense directly with a key that can only search the documentation collection.
 
-import { useEffect, useState } from "react"
-
-const enabledForEveryone = process.env.NEXT_PUBLIC_SEARCH_ENABLED === "true"
-const OPT_IN = "enable-search"
-// Whether this browser opted in, once read on this page load.
-let optedIn: boolean | undefined
-// Opted in with storage blocked: only the address holds the choice.
-let onlyInUrl = false
-
-// Whether to show the search: for everyone when the site is built with NEXT_PUBLIC_SEARCH_ENABLED=true, and before
-// that only for testers, who turn it on in their own browser with ?enable-search=1 on any page (off with
-// ?enable-search=0). Undefined until the browser has been asked, so the static page matches when it hydrates.
-export function useSearchEnabled(): boolean | undefined {
-  const [enabled, setEnabled] = useState(enabledForEveryone || optedIn)
-  useEffect(() => {
-    if (enabled === undefined) setEnabled(optedIn = readOptIn())
-  }, [enabled])
-  return enabled
-}
-
-function readOptIn(): boolean {
-  const choice = new URLSearchParams(window.location.search).get(OPT_IN)
-  try {
-    if (choice === "1") localStorage.setItem(OPT_IN, "1")
-    if (choice === "0") localStorage.removeItem(OPT_IN)
-    return localStorage.getItem(OPT_IN) === "1"
-  } catch {
-    // Storage blocked: only this address counts.
-    onlyInUrl = choice === "1"
-    return onlyInUrl
-  }
-}
-
-// What links to the search page must carry, so the choice survives without storage.
-export function optInParams(): Record<string, string> {
-  return onlyInUrl ? { [OPT_IN]: "1" } : {}
-}
-
 // The production search. The key is public by design: it can only search this collection, and it ends up in the
 // browser anyway. To use another Typesense for development, set both in .env.local.
 const host = process.env.NEXT_PUBLIC_TYPESENSE_URL || "https://search.nuts.nl"
