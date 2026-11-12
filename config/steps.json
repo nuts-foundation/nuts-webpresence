@@ -7,10 +7,10 @@
     {
       "number": 1,
       "title": "Ontdek Nuts",
-      "text": "Begin met het lezen van ons manifest, waarin we onze uitgangspunten toelichten. Bekijk daarna de documentatie om een goed beeld te krijgen van de Nuts‑specificatie, de Nuts‑node en de bestaande toepassingen. Daarnaast vind je op ons YouTube‑kanaal opnames van recente community‑meetings.",
+      "text": "Begin met het lezen van ons manifest, waarin we onze uitgangspunten toelichten. Bekijk daarna de kennisbank om een goed beeld te krijgen van de Nuts‑specificatie, de Nuts‑node en de bestaande toepassingen. Daarnaast vind je op ons YouTube‑kanaal opnames van recente community‑meetings.",
       "links": [
         { "label": "Manifest", "url": "https://nuts.nl/manifest/" },
-        { "label": "Documentatie", "url": "https://nuts.nl/documentatie/" },
+        { "label": "Kennisbank", "url": "https://nuts.nl/kennisbank/" },
         { "label": "YouTube‑kanaal", "url": "https://www.youtube.com/channel/UCJtbrUe2TphkzDi2lPY5yYQ" }
       ]
     },

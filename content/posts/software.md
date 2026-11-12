@@ -19,4 +19,4 @@ Wat wij de "Nuts node" noemen is een referentie-implementatie van onze <em>Nuts 
 
 Wil je aan de slag met de software van Nuts? Merk op dat Nuts geen software ontwikkelt voor eindgebruikers: als zorgprofessional zul je dus in gesprek moeten met de leverancier(s) van je dossiersysteem. Zij kunnen dan gegevensuitwisselingen op basis van Nuts inbouwen voor jouw processen.
 
-Voor developers en anderen bij leveranciers hebben we uitgebreide [technische documentatie](/documentatie) om mee aan de slag te gaan. De broncode van onze referentie-implementatie (de Nuts node) en de demo-applicaties die wij hebben ontwikkeld is zoals gezegd voor iedereen beschikbaar en staat online op [het samenwerkingsplatform Github](https://www.github.com/nuts-foundation).
+Voor developers en anderen bij leveranciers hebben we uitgebreide [technische documentatie](/kennisbank#specificatie) om mee aan de slag te gaan. De broncode van onze referentie-implementatie (de Nuts node) en de demo-applicaties die wij hebben ontwikkeld is zoals gezegd voor iedereen beschikbaar en staat online op [het samenwerkingsplatform Github](https://www.github.com/nuts-foundation).

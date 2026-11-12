@@ -1,0 +1,71 @@
+{
+  "ingangen": [
+    {
+      "id": "zorgverlener",
+      "icon": "zorgverlener",
+      "title": "Zorgaanbieders en zorgverleners",
+      "text": "Toepassingen en leveranciers die Nuts aanbieden",
+      "href": "#toepassingen"
+    },
+    {
+      "id": "ontwikkelaar",
+      "icon": "ontwikkelaar",
+      "title": "Softwareleveranciers",
+      "text": "Specificaties, Nuts-node, GitHub en de wiki",
+      "href": "#specificatie"
+    },
+    {
+      "id": "organisatie",
+      "icon": "organisatie",
+      "title": "Organisatie en deelname",
+      "text": "Hoe Nuts werkt: stichting, besluitvorming en meedoen",
+      "href": "#organisatie"
+    }
+  ],
+  "onderwerpen": [
+    {
+      "id": "wat-is-nuts",
+      "icon": "techniek",
+      "title": "Wat is Nuts",
+      "text": "Een vertrouwenslaag voor veilige informatiedeling in de zorg.",
+      "secties": ["wat-is-nuts"]
+    },
+    {
+      "id": "toepassingen",
+      "icon": "toepassingen",
+      "title": "Toepassing",
+      "text": "Praktische toepassingen in de zorg, van huisartseninzage tot eOverdracht.",
+      "secties": ["toepassingen"]
+    },
+    {
+      "id": "techniek",
+      "icon": "techniek",
+      "title": "Techniek en specificaties",
+      "text": "De RFC's, de Nuts-node en de broncode op GitHub.",
+      "secties": ["specificatie", "node"]
+    },
+    {
+      "id": "organisatie",
+      "icon": "organisatie",
+      "title": "Organisatie en deelname",
+      "text": "Hoe Nuts is georganiseerd: de stichting, de kringen, besluitvorming en deelname.",
+      "secties": ["organisatie"]
+    },
+    {
+      "id": "wiki",
+      "icon": "wiki",
+      "title": "Wiki",
+      "text": "Gedeelde kennis, handleidingen en werkgroepen.",
+      "secties": ["wiki"]
+    }
+  ],
+  "secties": [
+    { "titel": "Wat is Nuts", "id": "wat-is-nuts", "label": "Wat is Nuts", "icon": "ecosysteem", "kort": "Een vertrouwenslaag voor veilige informatiedeling in de zorg." },
+    { "titel": "Eenheid van taal", "id": "eenheid-van-taal", "label": "Eenheid van taal", "icon": "taal", "kort": "De essentiële termen voor een eenduidig begrip van \"Nuts\"." },
+    { "titel": "Organisatie en deelname", "id": "organisatie", "label": "Organisatie en deelname", "icon": "organisatie", "kort": "Hoe Nuts is georganiseerd: de stichting, de kringen, besluitvorming en deelname." },
+    { "titel": "Toepassingen op Nuts", "id": "toepassingen", "label": "Toepassingen op Nuts", "icon": "toepassingen", "kort": "Praktische toepassingen in de zorg, van huisartseninzage tot eOverdracht." },
+    { "titel": "Nuts-specificatie", "id": "specificatie", "label": "Nuts-specificatie", "icon": "specificatie", "kort": "De open specificatie, als Request for Comments (RFC)." },
+    { "titel": "Nuts-node", "id": "node", "label": "Nuts-node", "icon": "node", "kort": "De open-source referentie-implementatie en de documentatie ervan." },
+    { "titel": "Nuts wiki", "id": "wiki", "label": "Nuts wiki", "icon": "wiki", "kort": "Gedeelde kennis, handleidingen en werkgroepen." }
+  ]
+}
