@@ -34,7 +34,7 @@ Dit maakt toegang tot de juiste informatie mogelijk op het moment dat het ertoe 
 De stichting bevordert onderzoek en sectorbrede samenwerking. Governance is ingericht volgens sociocratische principes: gelijkwaardig eigenaarschap en open voor alle marktdeelnemers.
 
 ## Bestuur Nuts 
-Het Nuts initiatief wordt bestuurd door de De Nuts. Deze wordt gevormd door de coördinatoren en afgevaardigden van de drie hoofdkringen.
+Het Nuts initiatief wordt bestuurd door de Nuts Raad. Deze wordt gevormd door de coördinatoren en afgevaardigden van de drie hoofdkringen.
 De coördinatoren vormen samen tevens het bestuur van stichting Nuts.
 
 ### Nuts Kring Toepassingen 
