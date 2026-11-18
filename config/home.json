@@ -1,0 +1,149 @@
+{
+  "watDoet": {
+    "kop": "Zo is Nuts georganiseerd",
+    "pijlers": [
+      {
+        "icon": "community",
+        "titel": "Community",
+        "tekst": "Samen bouwen aan een decentrale infrastructuur voor de zorg. Iedereen is welkom.",
+        "href": "/community/"
+      },
+      {
+        "icon": "organisatie",
+        "titel": "Stichting",
+        "tekst": "Faciliteert de community en draagt het Nuts-gedachtegoed uit.",
+        "href": "/stichting/"
+      },
+      {
+        "icon": "manifest",
+        "titel": "Manifest",
+        "tekst": "De gezamenlijke uitgangspunten waar Nuts zich door laat leiden.",
+        "href": "/manifest/"
+      }
+    ]
+  },
+  "voorWie": {
+    "titel": "Voor wie is Nuts?",
+    "intro": "Bij Nuts bouwen organisaties en professionals samen aan een open, decentraal netwerk van iedereen en voor iedereen met de patiënt centraal.",
+    "doelgroepen": [
+      {
+        "icon": "ontwikkelaar",
+        "titel": "Softwareleveranciers",
+        "kern": "Bouw mee aan open gegevensuitwisseling in de zorg.",
+        "tekst": "Gebruik de open-source Nuts-node en de Nuts-specificaties om toepassingen te ontwikkelen die veilig en betrouwbaar gegevens kunnen uitwisselen. Wil je als organisatie officieel deelnemen aan het Nuts-netwerk? Dan kun je een aansluitovereenkomst met Stichting Nuts aangaan."
+      },
+      {
+        "icon": "zorgverlener",
+        "titel": "Zorgaanbieders en zorgverleners",
+        "kern": "Ontdek welke toepassingen er zijn en vraag je leverancier ernaar.",
+        "tekst": "Nuts maakt het mogelijk om gegevensuitwisseling tussen zorgorganisaties en zorgverleners op een veilige en betrouwbare manier te ondersteunen. Bespreek met je softwareleverancier hoe toepassingen op basis van Nuts jouw werkprocessen kunnen ondersteunen."
+      },
+      {
+        "icon": "samenwerking",
+        "titel": "Brancheorganisaties en samenwerkingsverbanden",
+        "kern": "Werk samen aan oplossingen voor jouw sector, regio of zorgketen.",
+        "tekst": "Breng zorgorganisaties, leveranciers en andere partners samen om toepassingen en afspraken voor gegevensuitwisseling te ontwikkelen. Zo help je samenwerking over organisatie- en domeingrenzen heen mogelijk te maken."
+      },
+      {
+        "icon": "overheid",
+        "titel": "Overheid, beleidsmakers en belangenorganisaties",
+        "kern": "Draag bij aan landelijke afspraken en een open zorginfrastructuur.",
+        "tekst": "Nuts werkt samen met partijen in het zorgveld aan de ontwikkeling van een decentraal netwerk voor gegevensuitwisseling. Daarbij zijn open standaarden, samenwerking en aansluiting op bredere ontwikkelingen in de zorginfrastructuur belangrijke uitgangspunten."
+      },
+      {
+        "icon": "dienstverlener",
+        "titel": "Dienstverleners en implementatiepartners",
+        "kern": "Help organisaties Nuts in de praktijk toe te passen.",
+        "tekst": "Ondersteun zorgorganisaties en softwareleveranciers bij de ontwikkeling, implementatie en toepassing van oplossingen op basis van Nuts."
+      }
+    ],
+    "knop": {
+      "href": "/starten",
+      "label": "Starten met Nuts →"
+    },
+    "knopToelichting": ""
+  },
+  "hoeWerktNutsLink": {
+    "href": "/kennisbank",
+    "label": "Lees hoe Nuts werkt →"
+  },
+  "aanDeSlag": {
+    "titel": "Aan de slag met Nuts",
+    "toepassingen": {
+      "titel": "Toepassingen op Nuts",
+      "tekst": "Toepassingen op het Nuts‑netwerk laten zien hoe organisaties in de zorg veilig en open kunnen samenwerken zonder centrale opslag of afhankelijkheid van één leverancier.",
+      "rijen": [
+        {
+          "abbr": "DB",
+          "icon": "databeschikbaarheid",
+          "titel": "Databeschikbaarheid",
+          "tekst": "Gegevens blijven bij de bron en worden ontsloten wanneer een zorgverlener ze nodig heeft."
+        },
+        {
+          "abbr": "GU",
+          "icon": "gegevensuitwisseling",
+          "titel": "Gegevensuitwisseling",
+          "tekst": "Een afgebakend bericht wordt overgedragen aan een nieuwe verantwoordelijke partij."
+        },
+        {
+          "abbr": "NW",
+          "icon": "netwerkzorg",
+          "titel": "Netwerkzorg",
+          "tekst": "Meerdere zorgverleners werken gelijktijdig samen rond één patiënt."
+        },
+        {
+          "abbr": "SG",
+          "icon": "secundair-gebruik",
+          "titel": "Secundair gebruik",
+          "tekst": "Federatieve uitvragen voor beleid, kwaliteit en wetenschappelijk onderzoek."
+        }
+      ]
+    },
+    "kennisbank": {
+      "titel": "Kennisbank",
+      "tekst": "Alle kennis over Nuts op één plek: hoe Nuts werkt en is georganiseerd, de techniek erachter en de toepassingen die erop draaien.",
+      "rijen": [
+        {
+          "icon": "manifest",
+          "href": "/kennisbank#specificatie",
+          "titel": "Nuts-specificatie",
+          "tekst": "De open specificatie, als Request for Comments (RFC)."
+        },
+        {
+          "icon": "ontwikkelaar",
+          "href": "/kennisbank#node",
+          "titel": "Nuts-node",
+          "tekst": "De open-source referentie-implementatie en de documentatie ervan."
+        },
+        {
+          "icon": "wiki",
+          "href": "/kennisbank#wiki",
+          "titel": "Nuts wiki",
+          "tekst": "De gezamenlijke kennis en documentatie van de Nuts-community."
+        },
+        {
+          "icon": "vraag",
+          "href": "/q-and-a",
+          "titel": "Veelgestelde vragen",
+          "tekst": "Antwoorden op de vragen die we het vaakst krijgen."
+        }
+      ],
+      "knop": {
+        "href": "/kennisbank",
+        "label": "Naar de kennisbank →"
+      }
+    }
+  },
+  "callToAction": {
+    "links": [
+      {
+        "href": "/kalender",
+        "label": "Bekijk de kalender →"
+      }
+    ],
+    "foto": {
+      "src": "/collaboration.png",
+      "alt": "Illustratie van samenwerking: zorgverleners in blauw en groen, verbonden via Nuts in het midden."
+    }
+  }
+}
