@@ -157,6 +157,158 @@ html:has(.kennisbank) {
     text-decoration: underline;
 }
 
+/* Detailpagina van een toepassing (pages/toepassingen/[slug].tsx), zelfde basis als de Kennisbank */
+.toepassing-sectie {
+    color: #1C2A39;
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+}
+.toepassing-sectie > * + * {
+    margin-top: 1rem;
+}
+.toepassing-sectie a {
+    color: #B84A3C;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.toepassing-sectie a:hover {
+    color: #7D352C;
+}
+.toepassing-sectie strong {
+    font-weight: 600;
+}
+.toepassing-sectie ul {
+    list-style: none;
+    padding: 0;
+}
+.toepassing-sectie ul > li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+.toepassing-sectie ul > li + li {
+    margin-top: 0.6rem;
+}
+.toepassing-sectie ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.7em;
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: #D15949;
+}
+/* Lopende tekst op een prettige regellengte; kaarten en lijsten gebruiken de hele kolom. */
+.toepassing-sectie p,
+.toepassing-sectie > h3,
+.toepassing-sectie > ul:not(.toepassing-functies ul):not(.toepassing-lagen ul) {
+    max-width: 72ch;
+}
+.toepassing-sectie h3 {
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 1.75rem;
+}
+/* Wat het doet: elke functie als kaart met een vinkje, in twee kolommen */
+.toepassing-functies ul {
+    display: grid;
+    gap: 12px;
+}
+@media (min-width: 768px) {
+    .toepassing-functies ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.toepassing-functies ul > li {
+    margin: 0 !important;
+    padding: 18px 20px 18px 56px;
+    border: 1px solid #F0E7E5;
+    border-radius: 16px;
+    background: #FBF6F4;
+    line-height: 1.6;
+}
+.toepassing-functies ul > li::before {
+    left: 18px;
+    top: 18px;
+    width: 24px;
+    height: 24px;
+    background: #FCE5D3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B84A3C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+@media (min-width: 1280px) {
+    .toepassing-lagen ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* "Wat dit níet is": opvallende notitie */
+.toepassing-let-op {
+    border-radius: 16px;
+    background: #FFF7E6;
+    border: 1px solid #FCE2A8;
+    padding: 16px 20px;
+}
+.toepassing-let-op p {
+    margin: 0;
+}
+/* Hoe het werkt op Nuts: de lagen als genummerde stappen */
+.toepassing-lagen ul {
+    counter-reset: laag;
+    display: grid;
+    gap: 12px;
+}
+.toepassing-lagen ul > li {
+    counter-increment: laag;
+    margin: 0 !important;
+    padding: 16px 20px 16px 64px;
+    border: 1px solid #F0E7E5;
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.toepassing-lagen ul > li::before {
+    content: counter(laag);
+    left: 18px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FCE5D3;
+    color: #B84A3C;
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+.toepassing-lagen ul > li strong:first-child {
+    display: block;
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+/* Vraag het je leverancier: de vraag als kaart, zonder dubbele aanhalingstekens */
+.toepassing-leverancier blockquote {
+    margin: 1.5rem 0;
+    padding: 20px 24px;
+    border: 0;
+    border-left: 0;
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5;
+    color: #1C2A39;
+    quotes: none;
+}
+.toepassing-leverancier blockquote p {
+    margin: 0;
+}
+.toepassing-leverancier blockquote p::before,
+.toepassing-leverancier blockquote p::after {
+    content: none;
+}
+
 /* Styles for the "eenheid van taal" page */
 html:has(.eenheid-van-taal) {
     scroll-behavior: smooth;

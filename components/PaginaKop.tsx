@@ -19,6 +19,8 @@ interface Props {
   beeld?: { src: string; alt: string };
   aside?: React.ReactNode;
   variant?: "warm" | "blauw";
+  /** Het Nuts-motief als lichte vorm in de kaart (zoals "Hoe werkt Nuts?" op de homepage). */
+  motief?: boolean;
   children?: React.ReactNode;
 }
 
@@ -41,12 +43,13 @@ const VARIANT = {
   },
 };
 
-export default function PaginaKop({ terug, eyebrow, titel, introHtml, primair, secundair, beeld, aside, variant = "warm", children }: Props) {
+export default function PaginaKop({ terug, eyebrow, titel, introHtml, primair, secundair, beeld, aside, variant = "warm", motief = false, children }: Props) {
   const v = VARIANT[variant];
   return (
     <header className="mx-auto max-w-[1440px] px-4 pt-5 md:pt-8">
-      <div className={`grid overflow-hidden rounded-[2rem] border shadow-sm lg:grid-cols-2 ${v.kaart}`}>
-        <div className="flex flex-col justify-center px-6 py-10 sm:px-9 md:px-12 lg:px-16 lg:py-14">
+      <div className={`relative grid overflow-hidden rounded-[2rem] border shadow-sm lg:grid-cols-2 ${v.kaart}`}>
+        {motief && <NutsMotief className="pointer-events-none absolute -bottom-[30%] -right-[6%] h-[130%] text-[#D15949] opacity-[0.07]" />}
+        <div className="relative flex flex-col justify-center px-6 py-10 sm:px-9 md:px-12 lg:px-16 lg:py-14">
           {terug && (
             <a href={terug.href} className={`mb-7 self-start text-sm font-medium text-[#5B6470] transition-colors ${v.terugHover}`}>
               &larr; {terug.label}
@@ -81,9 +84,18 @@ export default function PaginaKop({ terug, eyebrow, titel, introHtml, primair, s
             <img src={beeld.src} alt={beeld.alt} className="block h-auto w-full rounded-3xl" loading="eager" />
           </div>
         )}
-        {aside && <div className="flex flex-col justify-center px-6 pb-10 sm:px-9 md:px-12 lg:py-14 lg:pl-0 lg:pr-16">{aside}</div>}
+        {aside && <div className="relative flex flex-col justify-center px-6 pb-10 sm:px-9 md:px-12 lg:py-14 lg:pl-0 lg:pr-16">{aside}</div>}
       </div>
     </header>
+  );
+}
+
+/** De "n" uit het Nuts-logo, als achtergrondvorm (kleur via currentColor). */
+export function NutsMotief({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 152.31 119.71" aria-hidden="true" focusable="false" className={className}>
+      <path fill="currentColor" d="M128.49,30.76V72.81q0,25.62-20.23,25.62-19.61,0-20.18-24.13V46.37q0-14.19-3-21.39a36.52,36.52,0,0,0-10.48-14.5Q62.57,0,44,0T13.34,10.48A35.94,35.94,0,0,0,3.07,25,66.37,66.37,0,0,0,0,46.37v73.31c.64-.7,1.26-1.4,2-2.06A40.69,40.69,0,0,1,23.82,107V46.9q0-25.62,20.22-25.62,19.62,0,20.18,24.13V73.34q0,14.19,3,21.39a36.42,36.42,0,0,0,10.48,14.5q12.06,10.49,30.59,10.48T139,109.23a35.94,35.94,0,0,0,10.27-14.5,66.65,66.65,0,0,0,3.07-21.39V30.76Z" />
+    </svg>
   );
 }
 
