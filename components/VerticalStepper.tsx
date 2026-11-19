@@ -1,5 +1,6 @@
 import config from "../config/steps.json";
 import KennisbankIcon from "./KennisbankIcon";
+import Button, { Pijl, isExtern } from "./Button";
 
 type Stap = {
   number: number;
@@ -15,7 +16,6 @@ export const STAPPEN = config.steps as Stap[];
 /** Anker per stap, zodat het overzicht bovenaan de pagina ernaar kan springen. */
 export const stapId = (s: Stap) => `stap-${s.number}`;
 
-const extern = (url: string) => /^https?:\/\//.test(url);
 
 // De stappen op /starten: een rustige tijdlijn met per stap een kaart.
 // Eén duidelijke hoofdknop per stap; overige links als tekstlink, zodat het niet druk wordt.
@@ -51,7 +51,7 @@ export default function VerticalStepper() {
                 <ul className="mt-5 grid gap-2.5 md:grid-cols-2">
                   {stap.bullets.map((b) => (
                     <li key={b} className="flex gap-2.5 rounded-xl bg-creme px-4 py-3 text-sm leading-snug text-inkt">
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#D15949" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="mt-0.5 shrink-0">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="mt-0.5 shrink-0 text-brand">
                         <path d="m5 12 5 5L20 7" />
                       </svg>
                       {b}
@@ -61,24 +61,20 @@ export default function VerticalStepper() {
               )}
               {hoofd && (
                 <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-                  <a
-                    href={hoofd.url}
-                    {...(extern(hoofd.url) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-dark"
-                  >
+                  <Button href={hoofd.url}>
                     {hoofd.label}
-                    <span aria-hidden="true">{extern(hoofd.url) ? "↗" : "→"}</span>
-                  </a>
+                    <Pijl href={hoofd.url} />
+                  </Button>
                   {rest.map((l) => (
                     <a
                       key={l.url}
                       href={l.url}
-                      {...(extern(l.url) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      {...(isExtern(l.url) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       className="group inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-dark"
                     >
                       {/* Alleen de tekst onderstreept, niet het pijltje erachter */}
-                      <span className="underline decoration-[#F0C9C2] decoration-2 underline-offset-4 group-hover:decoration-dark">{l.label}</span>
-                      <span aria-hidden="true">{extern(l.url) ? "↗" : "→"}</span>
+                      <span className="underline decoration-onderstreep decoration-2 underline-offset-4 group-hover:decoration-dark">{l.label}</span>
+                      <Pijl href={l.url} />
                     </a>
                   ))}
                 </div>

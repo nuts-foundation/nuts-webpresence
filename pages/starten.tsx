@@ -5,6 +5,7 @@ import Markdown from "../components/Markdown";
 import Layout from "../components/Layout";
 import VerticalStepper, { STAPPEN, stapId } from "../components/VerticalStepper";
 import PaginaKop, { PaginaInhoud } from "../components/PaginaKop";
+import Button from "../components/Button";
 import KennisbankIcon from "../components/KennisbankIcon";
 
 const SLACK = "https://join.slack.com/t/nuts-foundation/shared_invite/zt-235ww08nk-halwcet23WCHclmlFd0lLg";
@@ -42,7 +43,7 @@ export default function StartenPage({ starten }: any) {
                         {s.number}
                       </span>
                       <span className="flex-1 group-hover:text-dark">{s.title}</span>
-                      <span aria-hidden="true" className="text-[#B8ADA9] transition-transform group-hover:translate-x-0.5 group-hover:text-dark">
+                      <span aria-hidden="true" className="text-pijl transition-transform group-hover:translate-x-0.5 group-hover:text-dark">
                         &rarr;
                       </span>
                     </a>
@@ -73,20 +74,8 @@ export default function StartenPage({ starten }: any) {
                   </div>
                 </div>
                 <div className="flex shrink-0 flex-wrap gap-3">
-                  <a
-                    href={SLACK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[44px] items-center rounded-full bg-button px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:bg-white"
-                  >
-                    Stel je vraag via Slack
-                  </a>
-                  <a
-                    href="/community/"
-                    className="inline-flex min-h-[44px] items-center rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
-                  >
-                    Community meeting
-                  </a>
+                  <Button href={SLACK} variant="geel">Stel je vraag via Slack</Button>
+                  <Button href="/community/" variant="op-donker">Community meeting</Button>
                 </div>
               </div>
             </section>

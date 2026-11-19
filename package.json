@@ -8,6 +8,7 @@
     "lint": "next lint",
     "export": "next build --webpack && node generate.mjs",
     "smoke-test": "node scripts/smoke-test.mjs",
+    "check:style": "node scripts/check-style.mjs",
     "test:search": "node --test search/*.test.ts"
   },
   "dependencies": {
