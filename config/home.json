@@ -59,13 +59,9 @@
     ],
     "knop": {
       "href": "/starten",
-      "label": "Starten met Nuts →"
+      "label": "Starten met Nuts"
     },
     "knopToelichting": ""
-  },
-  "hoeWerktNutsLink": {
-    "href": "/kennisbank",
-    "label": "Lees hoe Nuts werkt →"
   },
   "aanDeSlag": {
     "titel": "Aan de slag met Nuts",
@@ -130,7 +126,7 @@
       ],
       "knop": {
         "href": "/kennisbank",
-        "label": "Naar de kennisbank →"
+        "label": "Naar de kennisbank"
       }
     }
   },
@@ -138,7 +134,7 @@
     "links": [
       {
         "href": "/kalender",
-        "label": "Bekijk de kalender →"
+        "label": "Bekijk de kalender"
       }
     ],
     "foto": {

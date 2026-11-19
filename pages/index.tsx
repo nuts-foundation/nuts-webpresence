@@ -3,7 +3,6 @@ import React from "react"
 import { config } from "../lib/config"
 import { getContent } from "../lib/api"
 import home from "../config/home.json"
-import footer from "../config/footer.json"
 
 import VideoImage from "../public/video.png"
 
@@ -12,6 +11,7 @@ import Markdown from "../components/Markdown"
 import YoutubeEmbed from "../components/YoutubeEmbed"
 import KennisbankIcon from "../components/KennisbankIcon"
 import Carousel from "../components/Carousel"
+import Button, { Pijl } from "../components/Button"
 
 // Homepage volgens het huisstijlontwerp (nuts.nl – homepage en toepassingen, nov 2026).
 // Teksten van de vaste blokken staan in content/home/*.md, de nieuwe blokken in config/home.json.
@@ -26,6 +26,8 @@ function H2({ children, className = "" }: { children: React.ReactNode; className
 
 export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, community, callToAction } }: any) {
   const logos = config.participants
+  // "Hoe werkt Nuts?" in alinea's: de eerste is de inleiding (links), de rest staat ernaast.
+  const hoeAlineas: string[] = howDoesItWork.content.match(/<p[\s\S]*?<\/p>/g) ?? [howDoesItWork.content]
 
   return (
     <Layout>
@@ -37,12 +39,8 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
             <div className="flex flex-col gap-10">
               <Markdown className="home-hero-tekst" html={entrance.content} />
               <div className="flex flex-wrap gap-3">
-                <a href="/starten" className="inline-block rounded-full bg-button px-6 py-3.5 text-[15px] font-semibold text-text transition-colors hover:bg-button-hover">
-                  Starten met Nuts
-                </a>
-                <a href="/toepassingen" className="inline-block rounded-full border border-white px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:border-menu-hover hover:text-menu-hover">
-                  Bekijk de toepassingen
-                </a>
+                <Button href="/starten" variant="geel">Starten met Nuts</Button>
+                <Button href="/toepassingen" variant="op-donker">Bekijk de toepassingen</Button>
               </div>
             </div>
           </Wrap>
@@ -63,16 +61,14 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
             {/* Hoe Nuts georganiseerd is: rustige rijen met een lijn ertussen, zonder iconen (die staan alleen waar ze iets betekenen). */}
             <div className="rounded-3xl border border-zand bg-creme px-6 pb-3 pt-6 lg:px-8 lg:pt-7">
               <p className="text-xs font-semibold uppercase tracking-[0.08em] text-brand">{home.watDoet.kop}</p>
-              <div className="mt-2 flex flex-col divide-y divide-[#EADCD7]">
+              <div className="mt-2 flex flex-col divide-y divide-zand">
                 {home.watDoet.pijlers.map((p) => (
                   <a key={p.href} href={p.href} className="group flex items-center gap-4 py-4">
                     <span className="flex min-w-0 flex-1 flex-col gap-1">
                       <span className="font-redhat text-[17px] font-bold leading-tight text-inkt group-hover:text-dark">{p.titel}</span>
                       <span className="text-sm leading-[1.55] text-leisteen">{p.tekst}</span>
                     </span>
-                    <span aria-hidden="true" className="text-lg text-brand transition-transform group-hover:translate-x-1">
-                      &rarr;
-                    </span>
+                    <Pijl href={p.href} className="text-pijl transition-transform group-hover:translate-x-0.5 group-hover:text-dark" />
                   </a>
                 ))}
               </div>
@@ -101,9 +97,7 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
               ))}
             </div>
             <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <a href={home.voorWie.knop.href} className="inline-block rounded-full bg-brand px-[22px] py-[13px] text-[15px] font-semibold text-white transition-colors hover:bg-dark">
-                {home.voorWie.knop.label}
-              </a>
+              <Button href={home.voorWie.knop.href}>{home.voorWie.knop.label} <Pijl href={home.voorWie.knop.href} /></Button>
               {home.voorWie.knopToelichting && <span className="text-sm text-leisteen">{home.voorWie.knopToelichting}</span>}
             </div>
           </Wrap>
@@ -113,16 +107,17 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
         <section>
           <Wrap>
             <div className="relative overflow-hidden rounded-[2rem] border border-light-rand bg-light">
-              <svg viewBox="0 0 152.31 119.71" aria-hidden="true" focusable="false" className="pointer-events-none absolute -bottom-[14%] right-0 h-[112%] lg:-right-[4vw]">
-                <path fill="#004B6B" fillOpacity="0.06" d="M128.49,30.76V72.81q0,25.62-20.23,25.62-19.61,0-20.18-24.13V46.37q0-14.19-3-21.39a36.52,36.52,0,0,0-10.48-14.5Q62.57,0,44,0T13.34,10.48A35.94,35.94,0,0,0,3.07,25,66.37,66.37,0,0,0,0,46.37v73.31c.64-.7,1.26-1.4,2-2.06A40.69,40.69,0,0,1,23.82,107V46.9q0-25.62,20.22-25.62,19.62,0,20.18,24.13V73.34q0,14.19,3,21.39a36.42,36.42,0,0,0,10.48,14.5q12.06,10.49,30.59,10.48T139,109.23a35.94,35.94,0,0,0,10.27-14.5,66.65,66.65,0,0,0,3.07-21.39V30.76Z" />
+              <svg viewBox="0 0 152.31 119.71" aria-hidden="true" focusable="false" className="pointer-events-none absolute -bottom-[14%] right-0 h-[112%] text-nuts-blauw lg:-right-[4vw]">
+                <path fill="currentColor" fillOpacity="0.06" d="M128.49,30.76V72.81q0,25.62-20.23,25.62-19.61,0-20.18-24.13V46.37q0-14.19-3-21.39a36.52,36.52,0,0,0-10.48-14.5Q62.57,0,44,0T13.34,10.48A35.94,35.94,0,0,0,3.07,25,66.37,66.37,0,0,0,0,46.37v73.31c.64-.7,1.26-1.4,2-2.06A40.69,40.69,0,0,1,23.82,107V46.9q0-25.62,20.22-25.62,19.62,0,20.18,24.13V73.34q0,14.19,3,21.39a36.42,36.42,0,0,0,10.48,14.5q12.06,10.49,30.59,10.48T139,109.23a35.94,35.94,0,0,0,10.27-14.5,66.65,66.65,0,0,0,3.07-21.39V30.76Z" />
               </svg>
-              <div className="relative px-6 py-9 sm:px-12 lg:px-[72px] lg:py-[72px]">
-                <div className="max-w-[680px]">
+              {/* Volledige tekst zoals op de huidige site. Breed: links kop en inleiding; rechts de andere alinea's. */}
+              <div className="relative grid gap-6 px-6 py-9 sm:px-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16 lg:px-[72px] lg:py-[72px]">
+                <div>
                   <H2 className="mb-6">{howDoesItWork.meta["title"]}</H2>
-                  <Markdown className="home-tekst" html={howDoesItWork.content} />
-                  <a href={home.hoeWerktNutsLink.href} className="mt-5 inline-block text-[15px] font-semibold text-brand hover:text-dark hover:underline">
-                    {home.hoeWerktNutsLink.label}
-                  </a>
+                  <Markdown className="home-tekst home-tekst-inleiding" html={hoeAlineas[0] ?? ""} />
+                </div>
+                <div className="lg:pt-[68px]">
+                  <Markdown className="home-tekst" html={hoeAlineas.slice(1).join("")} />
                 </div>
               </div>
             </div>
@@ -139,7 +134,7 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
                 {
                   ...home.aanDeSlag.toepassingen,
                   rijen: home.aanDeSlag.toepassingen.rijen.map((r) => ({ ...r, href: "/toepassingen" })),
-                  knop: { href: "/toepassingen", label: "Bekijk alle toepassingen →" },
+                  knop: { href: "/toepassingen", label: "Bekijk alle toepassingen" },
                 },
                 home.aanDeSlag.kennisbank,
               ].map((kaart) => (
@@ -158,15 +153,13 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
                           <span className="text-[15px] font-semibold group-hover:text-dark">{r.titel}</span>
                           <span className="text-[13px] leading-normal text-leisteen">{r.tekst}</span>
                         </span>
-                        <span aria-hidden="true" className="text-[#B8ADA9] transition-transform group-hover:translate-x-0.5 group-hover:text-dark">
-                          &rarr;
-                        </span>
+                        <Pijl href={r.href} className="text-pijl transition-transform group-hover:translate-x-0.5 group-hover:text-dark" />
                       </a>
                     ))}
                   </div>
-                  <a href={kaart.knop.href} className="mt-auto self-start justify-self-start rounded-full bg-brand px-[22px] py-[13px] text-[15px] font-semibold text-white transition-colors hover:bg-dark">
-                    {kaart.knop.label}
-                  </a>
+                  <Button href={kaart.knop.href} className="mt-auto self-start justify-self-start">
+                    {kaart.knop.label} <Pijl href={kaart.knop.href} />
+                  </Button>
                 </div>
               ))}
             </div>
@@ -208,24 +201,17 @@ export default function Home({ sections: { entrance, whatIsNuts, howDoesItWork, 
                     name="EMAIL"
                     required
                     placeholder="Vul hier je e-mailadres in"
-                    className="h-[52px] w-full min-w-0 rounded-full border border-[#D6C9C4] bg-white px-[22px] text-[15px] text-text sm:flex-1 sm:rounded-l-full sm:rounded-r-none sm:border-r-0"
+                    className="h-[52px] w-full min-w-0 rounded-full border border-zand-donker bg-white px-[22px] text-[15px] text-text sm:flex-1 sm:rounded-l-full sm:rounded-r-none sm:border-r-0"
                   />
-                  <button type="submit" className="h-[52px] w-full cursor-pointer rounded-full bg-button px-[26px] text-[15px] font-semibold text-text transition-colors hover:bg-button-hover sm:w-auto sm:flex-none sm:rounded-l-none sm:rounded-r-full">
+                  <button type="submit" className="h-[52px] w-full cursor-pointer rounded-full bg-button px-[26px] text-sm font-semibold text-text transition-colors hover:bg-button-hover sm:w-auto sm:flex-none sm:rounded-l-none sm:rounded-r-full">
                     Houd me op de hoogte!
                   </button>
                 </form>
+                {/* Alleen de link(s); de social-iconen staan in de footer */}
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
                   {home.callToAction.links.map((l) => (
-                    <a key={l.href} href={l.href} className="text-[15px] font-semibold text-brand hover:text-dark hover:underline">{l.label}</a>
+                    <a key={l.href} href={l.href} className="text-[15px] font-semibold text-brand hover:text-dark hover:underline">{l.label} <Pijl href={l.href} /></a>
                   ))}
-                  <span className="flex gap-2.5">
-                    {footer.socials.map((s) => (
-                      <a key={s.href} href={s.href} aria-label={`Nuts: ${s.name}`} target={s.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
-                        {/* Op de lichte kaart een versie met zichtbare witte rand; de footer houdt de gewone iconen. */}
-                        <img src={s.icon.replace(/\.svg$/, "-licht.svg")} alt="" className="block h-11 w-11" />
-                      </a>
-                    ))}
-                  </span>
                 </div>
               </div>
               {/* Illustratie in haar eigen verhouding (1200×943): niet bijsnijden, dan valt er niets weg. */}

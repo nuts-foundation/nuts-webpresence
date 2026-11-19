@@ -259,6 +259,11 @@ html:has(.eenheid-van-taal) {
 .home-tekst > p + p {
     margin-top: 18px;
 }
+/* Eerste alinea van "Hoe werkt Nuts?": iets groter, als inleiding */
+.home-tekst-inleiding > p {
+    font-size: 19px;
+    line-height: 1.7;
+}
 .home-tekst a,
 .home-cta-tekst a {
     color: theme(colors.linkHover);
