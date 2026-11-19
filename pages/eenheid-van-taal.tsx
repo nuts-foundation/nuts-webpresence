@@ -114,7 +114,7 @@ export default function EenheidVanTaalPage({ pagina }: any) {
                         if (!t) return null;
                         return (
                           <React.Fragment key={id}>
-                            {j > 0 && laag.keten && <span aria-hidden="true" className="text-sm text-[#C9B9B4]">→</span>}
+                            {j > 0 && laag.keten && <span aria-hidden="true" className="text-sm text-pijl">→</span>}
                             <a
                               href={`#${id}`}
                               onClick={ga(id)}
@@ -140,7 +140,7 @@ export default function EenheidVanTaalPage({ pagina }: any) {
             <button
               type="button"
               onClick={() => setOpen(alleOpen ? new Set() : new Set(termen.map((t) => t.id)))}
-              className="shrink-0 cursor-pointer text-sm font-semibold text-inkt underline decoration-[#D6C9C4] underline-offset-4 transition-colors hover:text-dark hover:decoration-dark"
+              className="shrink-0 cursor-pointer text-sm font-semibold text-inkt underline decoration-zand-donker underline-offset-4 transition-colors hover:text-dark hover:decoration-dark"
             >
               {alleOpen ? "Alles inklappen" : "Alles uitklappen"}
             </button>

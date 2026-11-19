@@ -22,14 +22,19 @@ module.exports = {
         inkt: "#1C2A39",
         "nuts-blauw": "#004B6B",
         "nuts-blauw-fel": "#0084DF",
+        "nuts-groen": "#87A14C",
         zand: "#F0E7E5",
         creme: "#FBF6F4",
         perzik: "#FCE5D3",
         leisteen: "#4C5968",
         grijs: "#5B6470",
         "light-rand": "#DCEBEF",
-        "geel-licht": "#FFF7E6",
-        "geel-rand": "#FCE2A8"
+        "zand-donker": "#D6C9C4",
+        pijl: "#B8ADA9",
+        onderstreep: "#F0C9C2",
+        "nuts-blauw-donker": "#0B122C",
+        "fase-idee": "#8B97A8",
+        "fase-productie": "#2E8A4F"
       },
       fontFamily: {
         redhat: "Red Hat Display",

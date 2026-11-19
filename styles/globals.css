@@ -237,15 +237,19 @@ html:has(.kennisbank) {
 @media (min-width: 1280px) {
     .toepassing-lagen ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-/* "Wat dit níet is": opvallende notitie */
+/* "Wat dit níet is": rustige notitie in de kleuren van de pagina, met een smalle streep in Nuts-rood */
 .toepassing-let-op {
     border-radius: 16px;
-    background: theme(colors.geel-licht);
-    border: 1px solid theme(colors.geel-rand);
+    background: theme(colors.creme);
+    border: 1px solid theme(colors.zand);
+    border-left: 4px solid theme(colors.brand);
     padding: 16px 20px;
 }
 .toepassing-let-op p {
     margin: 0;
+}
+.toepassing-let-op strong {
+    color: theme(colors.brand);
 }
 /* Hoe het werkt op Nuts: de lagen als genummerde stappen */
 .toepassing-lagen ul {
@@ -259,8 +263,7 @@ html:has(.kennisbank) {
     padding: 16px 20px 16px 64px;
     border: 1px solid theme(colors.zand);
     border-radius: 16px;
-    background: #FFFFFF;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background: white;
 }
 .toepassing-lagen ul > li::before {
     content: counter(laag);
@@ -326,7 +329,7 @@ html:has(.kennisbank) {
 /* Hoe het werkt in het blauwe vlak: stapnummers in illustratieblauw */
 .toepassing-blauw .toepassing-lagen ul > li::before {
     background: theme(colors.nuts-blauw);
-    color: #FFFFFF;
+    color: white;
 }
 .toepassing-blauw .toepassing-lagen ul > li {
     border-color: theme(colors.light-rand);
@@ -363,7 +366,7 @@ html:has(.kennisbank) {
 }
 /* Genummerde stappen in het blauwe vlak: blauw op wit, passend bij het vlak */
 .toepassing-blauw .toepassing-sectie ol > li::before {
-    background: #FFFFFF;
+    background: white;
     color: theme(colors.nuts-blauw);
     box-shadow: inset 0 0 0 1px theme(colors.light-rand);
 }

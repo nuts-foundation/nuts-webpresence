@@ -4,6 +4,8 @@ import Layout from "../../components/Layout";
 import KennisbankIcon from "../../components/KennisbankIcon";
 import PaginaKop, { NutsMotief, PaginaInhoud } from "../../components/PaginaKop";
 import KopieerKnop from "../../components/KopieerKnop";
+import Button, { Pijl, isExtern } from "../../components/Button";
+import { FASE_KLEUR } from "../../components/CategoryNuts";
 import { getToepassingArticles, getToepassingFull } from "../../lib/api";
 import categorieConfig from "../../config/category.json";
 
@@ -33,7 +35,6 @@ interface Props {
   inOntwikkeling: boolean;
 }
 
-const FASE_KLEUR: Record<string, string> = { idee: "#8B97A8", poc: "#D15949", ontwikkeling: "#FEC248", productie: "#2E8A4F" };
 // De openbare Slack van Nuts (zoals op de pagina Contact).
 const SLACK = "https://nuts-foundation.slack.com/join/shared_invite/zt-27wzp5eic-8kJD0c7HDU7h_08mgdJR_w#/shared-invite/email";
 
@@ -78,7 +79,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                     <div key={f.label} className="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0">
                       <dt className="text-sm text-grijs">{f.label}</dt>
                       <dd className="flex items-center gap-2 text-right text-sm font-semibold text-inkt">
-                        {f.kleur && <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: f.kleur }} />}
+                        {f.kleur && <span aria-hidden="true" className={`h-2.5 w-2.5 shrink-0 rounded-full ${f.kleur}`} />}
                         {f.icon && (
                           <span aria-hidden="true" className="text-brand">
                             <KennisbankIcon name={f.icon} size={16} />
@@ -97,14 +98,14 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
           {linksSectie && (
             <div className="mt-7 flex flex-wrap gap-3">
               <span className="lg:hidden">
-              <a href={`#${linksSectie.id}`} className={KNOP_PRIMAIR}>
+              <Button href={`#${linksSectie.id}`}>
                 Documentatie en links &darr;
-              </a>
+              </Button>
               </span>
               <span className="hidden lg:inline">
-              <a href="#documentatie-en-links" className={KNOP_PRIMAIR}>
+              <Button href="#documentatie-en-links">
                 Documentatie en links &darr;
-              </a>
+              </Button>
               </span>
             </div>
           )}
@@ -159,7 +160,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                         <ul className="order-last flex flex-col gap-3 self-end text-sm xl:order-none xl:col-start-1 xl:row-start-2">
                           {(inOntwikkeling
                             ? [
-                                { vraag: "Wil je meedenken over beproeven?", tekst: "Neem contact op met de Kring", href: SLACK, extern: true },
+                                { vraag: "Wil je meedenken over beproeven?", tekst: "Neem contact op met de Kring", href: SLACK },
                                 { vraag: "Iedereen is welkom in de community", tekst: "Kom naar de community meeting", href: "/community/" },
                               ]
                             : [
@@ -171,11 +172,11 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                               <span className="block text-white/75">{v.vraag}</span>
                               <a
                                 href={v.href}
-                                {...("extern" in v ? { target: "_blank", rel: "noreferrer" } : {})}
-                                className="group mt-0.5 inline-block whitespace-nowrap font-semibold text-white hover:text-button"
+                                {...(isExtern(v.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                className="group mt-0.5 inline-block whitespace-nowrap font-semibold text-white"
                               >
                                 {/* Alleen de tekst onderstreept, niet het pijltje */}
-                                <span className="underline decoration-button decoration-2 underline-offset-4">{v.tekst}</span> &rarr;
+                                <span className="underline decoration-nuts-groen decoration-2 underline-offset-4 group-hover:decoration-white">{v.tekst}</span> <Pijl href={v.href} />
                               </a>
                             </li>
                           ))}
@@ -185,7 +186,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                             <ol className="flex flex-col gap-4">
                               {s.vragen.map((v, n) => (
                                 <li key={n} className="grid grid-cols-[28px_minmax(0,1fr)] gap-x-3">
-                                  <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-button font-redhat text-[13px] font-bold text-text">
+                                  <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-nuts-groen font-redhat text-[13px] font-bold text-inkt">
                                     {s.vragen!.length > 1 ? n + 1 : "?"}
                                   </span>
                                   <span className="pt-0.5 font-redhat text-[17px] font-semibold leading-snug text-white">{v}</span>
@@ -205,7 +206,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                     </div>
                   ) : (
                     <div className={s.soort === "lagen" ? "toepassing-blauw rounded-[2rem] border border-light-rand bg-light px-4 py-7 sm:px-10 sm:py-10" : ""}>
-                      <Kop titel={s.titel} icon={s.icon} blauw={s.soort === "lagen"} />
+                      <Kop titel={s.titel} />
                       {s.html.trim() && (
                         <div
                           className={`toepassing-sectie ${s.soort === "lagen" ? "toepassing-lagen" : s.soort === "functies" ? "toepassing-functies" : ""}`}
@@ -223,17 +224,6 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                 </section>
               ))}
 
-              <div className="mt-14 flex flex-wrap items-center gap-3 border-t border-zand pt-8">
-                <a href="/toepassingen" className="inline-block rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-dark">
-                  &larr; Alle toepassingen
-                </a>
-                <a
-                  href="/starten"
-                  className="inline-block rounded-full border border-[#D6C9C4] px-5 py-3 text-sm font-semibold text-inkt transition-colors hover:border-dark hover:text-dark"
-                >
-                  Starten met Nuts
-                </a>
-              </div>
             </div>
 
             {/* Computer: zijkolom die meescrolt. */}
@@ -259,13 +249,10 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
   );
 }
 
-function Kop({ titel, icon, licht, blauw }: { titel: string; icon: string; licht?: boolean; blauw?: boolean }) {
-  const vlak = licht ? "bg-white/15 text-white" : blauw ? "bg-white text-nuts-blauw" : "bg-perzik text-brand";
+// Sectiekop zonder icoon: rustiger. Iconen staan alleen in kaarten en blokken (zie README, sectie "Style").
+function Kop({ titel, licht }: { titel: string; licht?: boolean }) {
   return (
-    <h2 className={`mb-5 flex items-center gap-3 font-redhat text-2xl font-bold leading-tight md:text-[28px] ${licht ? "text-white" : "text-inkt"}`}>
-      <span aria-hidden="true" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${vlak}`}>
-        <KennisbankIcon name={icon} size={18} />
-      </span>
+    <h2 className={`mb-5 font-redhat text-2xl font-bold leading-tight md:text-[28px] ${licht ? "text-white" : "text-inkt"}`}>
       {titel}
     </h2>
   );
@@ -273,13 +260,13 @@ function Kop({ titel, icon, licht, blauw }: { titel: string; icon: string; licht
 
 /** Links in vaste groepen, steeds in dezelfde volgorde, elk met één icoon. */
 const GROEPEN = [
-  { titel: "Specificatie en code", icon: "ontwikkelaar", vlak: "bg-[#E8EBEE] text-inkt", kleur: "text-inkt", test: /github|gitlab|\bcode\b|specificatie/ },
-  { titel: "Documentatie", icon: "wiki", vlak: "bg-[#E3F0F6] text-nuts-blauw", kleur: "text-nuts-blauw", test: /wiki|uitwerking|profiel|documentatie|afsprakenset|implement|ontwerp/ },
-  { titel: "Privacy en juridisch", icon: "slot", vlak: "bg-perzik text-brand", kleur: "text-brand", test: /dpia|privacy|risico|juridisch/ },
+  { titel: "Specificatie en code", icon: "ontwikkelaar", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /github|gitlab|\bcode\b|specificatie/ },
+  { titel: "Documentatie", icon: "wiki", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /wiki|uitwerking|profiel|documentatie|afsprakenset|implement|ontwerp/ },
+  { titel: "Privacy en juridisch", icon: "slot", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /dpia|privacy|risico|juridisch/ },
 ];
 function groepeer(links: LinkKaart[]) {
   const uit = GROEPEN.map((g) => ({ ...g, links: [] as LinkKaart[] }));
-  const overig = { titel: "Meer informatie", icon: "specificatie", vlak: "bg-[#FFF1D6] text-[#8A6414]", kleur: "text-[#8A6414]", test: /./, links: [] as LinkKaart[] };
+  const overig = { titel: "Meer informatie", icon: "specificatie", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /./, links: [] as LinkKaart[] };
   for (const l of links) {
     // Eerst kijken naar label en bron (wat het is), pas daarna naar het adres.
     // Privacy en juridisch gaat voor: een risicoanalyse op de wiki is juridisch, geen gewone documentatie.
@@ -291,7 +278,6 @@ function groepeer(links: LinkKaart[]) {
   return [...uit, overig].filter((g) => g.links.length > 0);
 }
 
-const KNOP_PRIMAIR = "inline-block rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-dark";
 
 /** Waar de link staat, kort: de bron uit de tekst (GitHub, Wiki), anders de linktekst of de website. */
 function bronKort(l: LinkKaart) {
@@ -304,7 +290,7 @@ function bronKort(l: LinkKaart) {
   }
 }
 
-/** De links in hun groepen: rustige lijst, per groep een kleine grijze kop, één regel per link. */
+/** De links in hun groepen: rustige lijst, per groep een kleine kop met het standaardicoon, één regel per link. */
 function LinkGroepen({ links, compact }: { links: LinkKaart[]; compact?: boolean }) {
   if (!links.length) return null;
   const lijst = (
@@ -324,7 +310,11 @@ function LinkGroepen({ links, compact }: { links: LinkKaart[]; compact?: boolean
                   <div className="-mx-2 flex items-baseline gap-3 px-2 py-2.5">
                     <span className="min-w-0 flex-1 text-sm font-semibold leading-snug text-grijs">{l.label}</span>
                     <span className="shrink-0 text-xs text-grijs">{l.bron}</span>
-                    <span className="shrink-0 rounded-full bg-[#FFF1D6] px-2 py-0.5 text-[11px] font-semibold text-[#8A6414]">In ontwikkeling</span>
+                    {/* Zelfde fasebolletje als in "In één oogopslag" en op /toepassingen */}
+                    <span className="flex shrink-0 items-center gap-1.5 text-xs text-grijs">
+                      <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-button" />
+                      In ontwikkeling
+                    </span>
                   </div>
                 ) : (
                 <a href={l.href} target="_blank" rel="noreferrer" className="group -mx-2 flex items-baseline gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-creme">
@@ -334,10 +324,7 @@ function LinkGroepen({ links, compact }: { links: LinkKaart[]; compact?: boolean
                     {bronKort(l).length > 12 && <span className="mt-0.5 block break-words text-xs text-grijs">{bronKort(l)}</span>}
                   </span>
                   {bronKort(l).length <= 12 && <span className="shrink-0 text-xs text-grijs">{bronKort(l)}</span>}
-                  <span aria-hidden="true" className="shrink-0 text-xs text-brand/60 transition-colors group-hover:text-dark">
-                    &#8599;
-                  </span>
-                  <span className="sr-only">(opent in een nieuw venster)</span>
+                  <Pijl href={l.href} className="shrink-0 text-xs text-brand/60 transition-colors group-hover:text-dark" />
                 </a>
                 )}
               </li>
@@ -362,14 +349,9 @@ function ContactKaart({ contact }: { contact: Contact }) {
         Contact
       </p>
       <p className="font-redhat text-lg font-bold leading-snug text-inkt">{contact.organisatie}</p>
-      <a
-        href={SLACK}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-4 block rounded-full bg-brand px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-dark"
-      >
+      <Button href={SLACK} className="mt-4 flex w-full">
         Stel je vraag via Slack
-      </a>
+      </Button>
       {contact.personen.length > 0 && (
         <div className="mt-5 border-t border-zand pt-4">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-grijs">

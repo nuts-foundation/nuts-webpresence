@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { knopStijl } from "./Button";
 
 // Knop die een tekst naar het klembord kopieert (bijv. de vraag aan je leverancier) en even "Gekopieerd" toont.
 // Met `paginaAdres` kopieert hij het adres van de huidige pagina (om door te sturen).
@@ -19,11 +20,7 @@ export default function KopieerKnop({ tekst, paginaAdres, licht, label = "Kopiee
     <button
       type="button"
       onClick={kopieer}
-      className={`inline-flex min-h-[44px] cursor-pointer items-center gap-2 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${
-        licht
-          ? "border border-white/40 bg-white/10 text-white hover:border-white hover:bg-white/20"
-          : "border border-[#D6C9C4] bg-white text-inkt hover:border-dark hover:text-dark"
-      }`}
+      className={knopStijl(licht ? "op-donker" : "secundair", "whitespace-nowrap")}
     >
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         {klaar ? (

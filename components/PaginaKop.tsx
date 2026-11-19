@@ -1,7 +1,8 @@
 import React from "react";
+import Button from "./Button";
 
 // Paginakop volgens de Nuts-huisstijl: een afgeronde kaart binnen de paginabreedte,
-// tekst links en een beeld (of ander blok) rechts. Variant "blauw" is voor de kennisbank.
+// tekst links en een beeld (of ander blok) rechts. 
 
 interface Knop {
   href: string;
@@ -18,7 +19,7 @@ interface Props {
   secundair?: Knop;
   beeld?: { src: string; alt: string };
   aside?: React.ReactNode;
-  variant?: "warm" | "blauw";
+  variant?: "warm";
   /** Het Nuts-motief als lichte vorm in de kaart (zoals "Hoe werkt Nuts?" op de homepage). */
   motief?: boolean;
   children?: React.ReactNode;
@@ -28,16 +29,7 @@ const VARIANT = {
   warm: {
     kaart: "bg-creme border-zand",
     eyebrow: "text-brand",
-    primair: "bg-brand hover:bg-dark",
-    secundairHover: "hover:border-dark hover:text-dark",
     terugHover: "hover:text-dark",
-  },
-  blauw: {
-    kaart: "bg-light border-light-rand",
-    eyebrow: "text-nuts-blauw",
-    primair: "bg-nuts-blauw hover:bg-[#0B122C]",
-    secundairHover: "hover:border-nuts-blauw hover:text-nuts-blauw",
-    terugHover: "hover:text-nuts-blauw",
   },
 };
 
@@ -59,14 +51,10 @@ export default function PaginaKop({ terug, eyebrow, titel, introHtml, primair, s
           {(primair || secundair) && (
             <div className="mt-7 flex flex-wrap gap-3">
               {primair && (
-                <a href={primair.href} className={`inline-block rounded-full px-5 py-3 text-sm font-semibold text-white transition-colors ${v.primair}`}>
-                  {primair.label}
-                </a>
+                <Button href={primair.href}>{primair.label}</Button>
               )}
               {secundair && (
-                <a href={secundair.href} className={`inline-block rounded-full border border-[#D6C9C4] px-5 py-3 text-sm font-semibold text-inkt transition-colors ${v.secundairHover}`}>
-                  {secundair.label}
-                </a>
+                <Button href={secundair.href} variant="secundair">{secundair.label}</Button>
               )}
             </div>
           )}

@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import KennisbankIcon from "../components/KennisbankIcon";
 import config from "../config/kennisbank.json";
 import PaginaKop, { PaginaInhoud } from "../components/PaginaKop";
+import Button, { Pijl } from "../components/Button";
 
 interface Sectie {
   id: string;
@@ -76,7 +77,7 @@ export default function KennisbankPage({ kennisbank }: any) {
                       <span className="block font-redhat text-lg font-bold leading-snug group-hover:text-dark">{ingang.title}</span>
                       <span className="mt-1 block text-sm leading-snug text-leisteen">{ingang.text}</span>
                     </span>
-                    <span aria-hidden="true" className="ml-auto self-center text-brand transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                    <Pijl href={ingang.href} className="ml-auto self-center text-brand transition-transform group-hover:translate-x-0.5" />
                   </a>
                 ))}
               </div>
@@ -111,31 +112,17 @@ export default function KennisbankPage({ kennisbank }: any) {
               id={sectie.id}
               className={`scroll-mt-20 ${i > 0 ? "mt-10 border-t border-zand pt-10" : ""}`}
             >
-              <h2 className="mb-4 flex items-center gap-3 font-redhat text-2xl font-bold leading-tight text-inkt">
-                {sectie.icon && (
-                  <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-perzik text-brand">
-                    <KennisbankIcon name={sectie.icon} size={18} />
-                  </span>
-                )}
-                {sectie.titel}
-              </h2>
+              {/* Sectiekop zonder icoon; iconen staan bij de ingangen bovenaan */}
+              <h2 className="mb-4 font-redhat text-2xl font-bold leading-tight text-inkt">{sectie.titel}</h2>
               <Markdown html={sectie.html} className="kennisbank-sectie max-w-[66ch]" />
               {sectie.links.length > 0 && (
                 <div className="mt-6 flex flex-wrap gap-2.5">
                   {sectie.links.map((link, j) => {
-                    const ext = link.href.startsWith("http");
                     return (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        {...(ext ? { target: "_blank", rel: "noreferrer" } : {})}
-                        className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${
-                          j === 0 ? "bg-brand text-white hover:bg-dark" : "border border-[#D6C9C4] text-inkt hover:border-dark hover:text-dark"
-                        }`}
-                      >
+                      <Button key={link.href} href={link.href} variant={j === 0 ? "primair" : "secundair"}>
                         {link.label}
-                        <span aria-hidden="true">→</span>
-                      </a>
+                        <Pijl href={link.href} />
+                      </Button>
                     );
                   })}
                 </div>

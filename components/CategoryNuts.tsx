@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import config from "../config/category.json";
 import KennisbankIcon from "./KennisbankIcon";
+import Button, { keuzeStijl, Pijl, isExtern } from "./Button";
 
 // Naam → adres: accenten eraf (cliëntbeeld → clientbeeld), de rest wordt een streepje.
 function nameToSlug(name: string): string {
@@ -24,11 +25,11 @@ type Category = { id: string; label: string; abbr: string; icon?: string; descri
 type Phase = { id: string; label: string };
 
 // Kleur van het statusbolletje per fase (huisstijl-tokens fase-*). Altijd met tekstlabel.
-const FASE_KLEUR: Record<string, string> = {
-  idee: "#8B97A8",
-  poc: "#D15949",
-  ontwikkeling: "#FEC248",
-  productie: "#2E8A4F",
+export const FASE_KLEUR: Record<string, string> = {
+  idee: "bg-fase-idee",
+  poc: "bg-brand",
+  ontwikkeling: "bg-button",
+  productie: "bg-fase-productie",
 };
 
 const catsVan = (t: Toepassing) => (Array.isArray(t.category) ? t.category : [t.category]);
@@ -161,27 +162,23 @@ export default function CategoryNuts({ availableSlugs = [] }: { availableSlugs?:
                   <p className="mb-4 text-sm leading-[1.65] text-inkt">{toepassing.text}</p>
 
                   {slugSet.has(slug) && (
-                    <a
-                      href={`/toepassingen/${slug}`}
-                      className="mb-4 self-start rounded-full bg-brand px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-dark"
-                    >
+                    <Button href={`/toepassingen/${slug}`} className="mb-4 self-start">
                       Lees meer
-                    </a>
+                    </Button>
                   )}
                   {toepassing.links?.map((link) => (
                     <a
                       key={link.url}
                       href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {...(isExtern(link.url) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       className="mb-4 inline-flex items-center gap-1 self-start text-sm font-semibold text-brand hover:text-dark hover:underline"
                     >
-                      {link.label} <span aria-hidden="true">&nearr;</span>
+                      {link.label} <Pijl href={link.url} />
                     </a>
                   ))}
 
                   <div className="mt-auto flex items-center gap-2 border-t border-zand pt-3">
-                    <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ background: FASE_KLEUR[toepassing.phase] ?? "#8B97A8" }} />
+                    <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${FASE_KLEUR[toepassing.phase] ?? "bg-fase-idee"}`} />
                     <span className="text-xs text-inkt">{phaseLabel(toepassing.phase)}</span>
                   </div>
                 </article>
@@ -200,11 +197,9 @@ function FilterChip({ active, onClick, dot, children }: { active: boolean; onCli
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-dark-gray ${
-        active ? "border-brand bg-brand text-white" : "border-zand bg-white text-inkt hover:border-dark"
-      }`}
+      className={keuzeStijl(active)}
     >
-      {dot && <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full shadow-[0_0_0_2px_#fff]" style={{ background: dot }} />}
+      {dot && <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ring-2 ring-white ${dot}`} />}
       {children}
     </button>
   );
