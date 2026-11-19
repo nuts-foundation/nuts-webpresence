@@ -18,7 +18,18 @@ module.exports = {
         "menu-hover": "#FFE4CB",
         text: "#272727",
         link: "#027FDD",
-        linkHover: "#166fb2"
+        linkHover: "#166fb2",
+        inkt: "#1C2A39",
+        "nuts-blauw": "#004B6B",
+        "nuts-blauw-fel": "#0084DF",
+        zand: "#F0E7E5",
+        creme: "#FBF6F4",
+        perzik: "#FCE5D3",
+        leisteen: "#4C5968",
+        grijs: "#5B6470",
+        "light-rand": "#DCEBEF",
+        "geel-licht": "#FFF7E6",
+        "geel-rand": "#FCE2A8"
       },
       fontFamily: {
         redhat: "Red Hat Display",

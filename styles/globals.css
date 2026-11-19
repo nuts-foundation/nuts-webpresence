@@ -261,7 +261,7 @@ html:has(.eenheid-van-taal) {
 }
 .home-tekst a,
 .home-cta-tekst a {
-    color: #166FB2;
+    color: theme(colors.linkHover);
 }
 .home-tekst a:hover,
 .home-cta-tekst a:hover {
@@ -269,139 +269,13 @@ html:has(.eenheid-van-taal) {
 }
 .home-cta-tekst p {
     margin: 0;
-    color: #4C5968;
+    color: theme(colors.leisteen);
     font-size: 18px;
     line-height: 1.6;
-}
-.home-logos {
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-}
-.home-logos-track {
-    list-style: none;
-    margin: 0;
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    gap: 56px;
-    width: max-content;
-    animation: nuts-marquee 140s linear infinite;
-}
-.home-logos:hover .home-logos-track,
-.home-logos:focus-within .home-logos-track {
-    animation-play-state: paused !important;
-}
-@keyframes nuts-marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-.home-logo img {
-    filter: grayscale(1);
-    opacity: 0.7;
-    transition: filter 0.2s, opacity 0.2s;
-}
-.home-logo:hover img,
-.home-logo:focus-visible img {
-    filter: none;
-    opacity: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-    .home-logos-track { animation: none; }
-    .home-logos { overflow-x: auto; }
 }
 .home a:focus-visible,
 .home button:focus-visible,
 .home input:focus-visible {
-    outline: 3px solid #101828;
+    outline: 3px solid theme(colors.dark-gray);
     outline-offset: 2px;
-}
-/* Oneven aantal kaarten: de laatste over de hele breedte, zodat er geen gat naast staat. */
-@media (min-width: 768px) {
-    .toepassing-functies ul > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
-}
-@media (min-width: 1280px) {
-    .toepassing-lagen ul > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
-}
-/* Genummerde lijsten in de tekst (bijv. het voorbeeld bij KIK-V): nummers in een rondje, op tekstbreedte. */
-.toepassing-sectie ol {
-    list-style: none;
-    padding: 0;
-    max-width: 72ch;
-    counter-reset: stap;
-}
-.toepassing-sectie ol > li {
-    counter-increment: stap;
-    position: relative;
-    padding-left: 2.5rem;
-}
-.toepassing-sectie ol > li + li {
-    margin-top: 0.75rem;
-}
-.toepassing-sectie ol > li::before {
-    content: counter(stap);
-    position: absolute;
-    left: 0;
-    top: 0.15em;
-    width: 26px;
-    height: 26px;
-    border-radius: 9999px;
-    background: #FCE5D3;
-    color: #B84A3C;
-    font-family: "Red Hat Display", system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* Hoe het werkt in het blauwe vlak: stapnummers in illustratieblauw */
-.toepassing-blauw .toepassing-lagen ul > li::before {
-    background: #245371;
-    color: #FFFFFF;
-}
-.toepassing-blauw .toepassing-lagen ul > li {
-    border-color: #DCEBEF;
-}
-/* Tekst op het donkerblauwe vlak (Vraag je leverancier) */
-.toepassing-op-donker,
-.toepassing-op-donker p,
-.toepassing-op-donker a {
-    color: #FFFFFF;
-}
-/* Toelichting in de zijkolom (Belangrijkste links) */
-.toepassing-klein,
-.toepassing-klein p,
-.toepassing-klein li {
-    font-size: 13px;
-    line-height: 1.6;
-    color: #4C5968;
-}
-/* Stappen bij "Hoe het werkt" compacter: tekst kleiner dan de lopende tekst, zodat de kaarten in verhouding zijn. */
-.toepassing-lagen ul > li {
-    padding: 14px 18px 14px 54px;
-    font-size: 14.5px;
-    line-height: 1.6;
-}
-.toepassing-lagen ul > li::before {
-    left: 16px;
-    top: 14px;
-    width: 26px;
-    height: 26px;
-    font-size: 13px;
-}
-.toepassing-lagen ul > li strong:first-child {
-    font-size: 16px;
-    margin-bottom: 4px;
-    line-height: 1.35;
-}
-@media (max-width: 639px) {
-    .toepassing-lagen ul > li { padding: 14px 14px 14px 46px; }
-    .toepassing-lagen ul > li::before { left: 12px; }
-}
-/* Genummerde stappen in het blauwe vlak: blauw op wit, passend bij het vlak */
-.toepassing-blauw .toepassing-sectie ol > li::before {
-    background: #FFFFFF;
-    color: #245371;
-    box-shadow: inset 0 0 0 1px #DCEBEF;
 }
