@@ -32,17 +32,17 @@ export default function StartenPage({ starten }: any) {
           secundair={{ href: "/kennisbank", label: "Naar de kennisbank" }}
           aside={
             // Overzicht van de route: in één oogopslag welke stappen er zijn, en meteen erheen springen.
-            <nav aria-label="De stappen" className="rounded-2xl border border-[#F0E7E5] bg-white p-6 shadow-sm">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-[#B84A3C]">In {STAPPEN.length} stappen op weg</p>
-              <ol className="divide-y divide-[#F0E7E5]">
+            <nav aria-label="De stappen" className="rounded-2xl border border-zand bg-white p-6">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-brand">In {STAPPEN.length} stappen op weg</p>
+              <ol className="divide-y divide-zand [&>li:first-child>a]:pt-0 [&>li:last-child>a]:pb-0">
                 {STAPPEN.map((s) => (
                   <li key={s.number}>
-                    <a href={`#${stapId(s)}`} className="group flex items-center gap-3 py-3 text-sm font-semibold text-[#1C2A39] first:pt-0">
-                      <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#FCE5D3] font-redhat text-[13px] font-bold text-[#B84A3C]">
+                    <a href={`#${stapId(s)}`} className="group flex items-center gap-3 py-3 text-sm font-semibold text-inkt">
+                      <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-perzik font-redhat text-[13px] font-bold text-brand">
                         {s.number}
                       </span>
-                      <span className="flex-1 group-hover:text-[#B84A3C]">{s.title}</span>
-                      <span aria-hidden="true" className="text-[#B8ADA9] transition-transform group-hover:translate-x-0.5 group-hover:text-[#B84A3C]">
+                      <span className="flex-1 group-hover:text-dark">{s.title}</span>
+                      <span aria-hidden="true" className="text-[#B8ADA9] transition-transform group-hover:translate-x-0.5 group-hover:text-dark">
                         &rarr;
                       </span>
                     </a>
@@ -59,10 +59,10 @@ export default function StartenPage({ starten }: any) {
             <VerticalStepper />
 
             {/* Afsluiter: wie onderweg vastloopt, kan altijd terecht bij de community. */}
-            <section className="relative mt-14 overflow-hidden rounded-3xl bg-[#245371] px-6 py-8 text-white sm:px-10 sm:py-10">
+            <section className="relative mt-14 overflow-hidden rounded-3xl bg-nuts-blauw px-6 py-8 text-white sm:px-10 sm:py-10">
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="flex items-start gap-4">
-                  <span aria-hidden="true" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
+                  <span aria-hidden="true" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-nuts-blauw-fel text-white">
                     <KennisbankIcon name="vraag" size={20} />
                   </span>
                   <div>
@@ -77,7 +77,7 @@ export default function StartenPage({ starten }: any) {
                     href={SLACK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[44px] items-center rounded-full bg-[#FEC248] px-5 py-2.5 text-sm font-semibold text-[#272727] transition-colors hover:bg-white"
+                    className="inline-flex min-h-[44px] items-center rounded-full bg-button px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:bg-white"
                   >
                     Stel je vraag via Slack
                   </a>
