@@ -40,6 +40,39 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Style
+
+The colours come from the Nuts brand guide (the same colours as in the illustrations). They are defined once, as named
+colours in `tailwind.config.js`. Use those names, never a loose colour code:
+
+- in components: Tailwind classes such as `bg-brand`, `text-inkt`, `border-zand`;
+- in `styles/globals.css`: `theme(colors.brand)`, `theme(colors.inkt)` and so on.
+
+| Name | Colour | Used for |
+|---|---|---|
+| `brand` | `#D15949` | Nuts red: menu, footer, buttons, icons, labels, links and arrows |
+| `dark` | `#B24A3B` | hover state of everything in `brand` |
+| `darker` | `#7D352C` | only for an extra dark accent; not for buttons |
+| `button` / `button-hover` | `#FEC248` / `#CB9B3A` | yellow secondary button on red (e.g. "Starten met Nuts", newsletter) |
+| `inkt` | `#1C2A39` | headings and body text in the new layout |
+| `leisteen`, `grijs` | `#4C5968`, `#5B6470` | secondary text |
+| `creme`, `zand`, `perzik` | `#FBF6F4`, `#F0E7E5`, `#FCE5D3` | card background, card border, icon circle |
+| `light` / `light-rand` | `#F1F9FB` / `#DCEBEF` | light blue: sections that explain how it works ("Hoe werkt Nuts?", "Hoe het werkt") |
+| `nuts-blauw` | `#004B6B` | dark blue from the illustrations: the "Interesse in …?" block at the bottom of each toepassing |
+| `nuts-blauw-fel` | `#0084DF` | bright blue of the Nuts circle in the illustrations: the icon in that block |
+| `geel-licht` / `geel-rand` | `#FFF7E6` / `#FCE2A8` | note box ("Wat dit níét is") |
+
+Rules:
+
+- **Buttons** are pills (`rounded-full`): `bg-brand hover:bg-dark` with white text; the secondary button is outlined,
+  or yellow (`bg-button`) on a red background.
+- **Icons** sit in a round circle (`rounded-full`), in `brand` on `perzik`.
+- **Cards** have a thin border and no shadow. Clickable cards only get a shadow on hover (`hover:shadow-md`).
+- **Links with an arrow**: only the text is underlined, not the arrow.
+- **Hand cursor** on everything clickable. Links get it automatically; a `<button>` needs `cursor-pointer`,
+  because Tailwind 4 no longer sets it.
+- New colour? Add it to `tailwind.config.js` and to this table first.
+
 ## Search
 
 One search over all formal Nuts documentation: nuts.nl, the Nuts node docs (ReadTheDocs, per version), the Nuts node API (OpenAPI), the specifications and the toepassingen (FHIR implementation guides) and the wiki. This repository has the search page and the search field. The index is Typesense at https://search.nuts.nl, filled every night by the indexer in nuts-foundation/infra-admin, which also lists the sources.

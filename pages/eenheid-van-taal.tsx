@@ -95,19 +95,19 @@ export default function EenheidVanTaalPage({ pagina }: any) {
         <link rel="canonical" href="https://nuts.nl/eenheid-van-taal/" />
       </Head>
 
-      <div className="eenheid-van-taal bg-white font-inter text-[#1C2A39]">
+      <div className="eenheid-van-taal bg-white font-inter text-inkt">
         <PaginaKop
           terug={{ href: "/kennisbank", label: "Terug naar de kennisbank" }}
           eyebrow={{ icon: "taal", label: "Kennisbank" }}
           titel="Eenheid van Nuts-taal"
           introHtml={introHtml}
           aside={
-            <div className="rounded-2xl border border-[#F0E7E5] bg-white p-6 shadow-sm">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-[#B84A3C]">Hoe de termen samenhangen</p>
+            <div className="rounded-2xl border border-zand bg-white p-6">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-brand">Hoe de termen samenhangen</p>
               <dl className="space-y-4">
                 {LAGEN.map((laag) => (
                   <div key={laag.label}>
-                    <dt className="mb-2 text-sm font-semibold text-[#1C2A39]">{laag.label}</dt>
+                    <dt className="mb-2 text-sm font-semibold text-inkt">{laag.label}</dt>
                     <dd className="flex flex-wrap items-center gap-1.5">
                       {laag.termen.map((id, j) => {
                         const t = term(id);
@@ -118,7 +118,7 @@ export default function EenheidVanTaalPage({ pagina }: any) {
                             <a
                               href={`#${id}`}
                               onClick={ga(id)}
-                              className="rounded-full border border-[#F0E7E5] bg-[#FBF6F4] px-3 py-1.5 text-sm font-medium text-[#1C2A39] transition-colors hover:border-[#B84A3C] hover:text-[#B84A3C]"
+                              className="rounded-full border border-zand bg-creme px-3 py-1.5 text-sm font-medium text-inkt transition-colors hover:border-dark hover:text-dark"
                             >
                               {t.kort}
                             </a>
@@ -140,13 +140,13 @@ export default function EenheidVanTaalPage({ pagina }: any) {
             <button
               type="button"
               onClick={() => setOpen(alleOpen ? new Set() : new Set(termen.map((t) => t.id)))}
-              className="shrink-0 text-sm font-semibold text-[#1C2A39] underline decoration-[#D6C9C4] underline-offset-4 transition-colors hover:text-[#B84A3C] hover:decoration-[#B84A3C]"
+              className="shrink-0 cursor-pointer text-sm font-semibold text-inkt underline decoration-[#D6C9C4] underline-offset-4 transition-colors hover:text-dark hover:decoration-dark"
             >
               {alleOpen ? "Alles inklappen" : "Alles uitklappen"}
             </button>
           </div>
 
-          <div className="mt-4 border-t border-[#F0E7E5]">
+          <div className="mt-4 border-t border-zand">
             {termen.map((t) => (
               <details
                 key={t.id}
@@ -156,20 +156,20 @@ export default function EenheidVanTaalPage({ pagina }: any) {
                   const isOpen = (e.currentTarget as HTMLDetailsElement).open;
                   if (isOpen !== open.has(t.id)) zetOpen(t.id, isOpen);
                 }}
-                className="group scroll-mt-20 border-b border-[#F0E7E5]"
+                className="group scroll-mt-20 border-b border-zand"
               >
                 <summary className="flex cursor-pointer list-none items-start gap-5 py-7 [&::-webkit-details-marker]:hidden">
-                  <span aria-hidden="true" className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FCE5D3] text-[#B84A3C]">
+                  <span aria-hidden="true" className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-perzik text-brand">
                     <KennisbankIcon name={t.icon} size={18} />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block font-redhat text-lg font-bold leading-snug group-hover:text-[#B84A3C]">
-                      <span className="mr-2 text-[#B84A3C]">{t.nummer}</span>
+                    <span className="block font-redhat text-lg font-bold leading-snug group-hover:text-dark">
+                      <span className="mr-2 text-brand">{t.nummer}</span>
                       {t.titel}
                     </span>
-                    <span className="mt-2 block max-w-[62ch] text-[0.9375rem] leading-[1.65] text-[#5b6470] group-open:hidden">{t.eersteZin}</span>
+                    <span className="mt-2 block max-w-[62ch] text-[0.9375rem] leading-[1.65] text-grijs group-open:hidden">{t.eersteZin}</span>
                   </span>
-                  <span aria-hidden="true" className="mt-3 shrink-0 text-[#B84A3C] transition-transform group-open:rotate-180 motion-reduce:transition-none">
+                  <span aria-hidden="true" className="mt-3 shrink-0 text-brand transition-transform group-open:rotate-180 motion-reduce:transition-none">
                     <KennisbankIcon name="omlaag" size={16} />
                   </span>
                 </summary>

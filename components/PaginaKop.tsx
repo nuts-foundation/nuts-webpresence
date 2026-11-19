@@ -1,5 +1,4 @@
 import React from "react";
-import KennisbankIcon from "./KennisbankIcon";
 
 // Paginakop volgens de Nuts-huisstijl: een afgeronde kaart binnen de paginabreedte,
 // tekst links en een beeld (of ander blok) rechts. Variant "blauw" is voor de kennisbank.
@@ -11,7 +10,8 @@ interface Knop {
 
 interface Props {
   terug?: Knop;
-  eyebrow: { icon: string; label: string };
+  /** Klein label boven de titel. `icon` wordt niet meer getoond (alleen tekst, voor een rustige kop). */
+  eyebrow: { icon?: string; label: string };
   titel: string;
   introHtml?: string;
   primair?: Knop;
@@ -26,20 +26,18 @@ interface Props {
 
 const VARIANT = {
   warm: {
-    kaart: "bg-[#FBF6F4] border-[#F0E7E5]",
-    eyebrow: "text-[#B84A3C]",
-    icoonVlak: "bg-[#FCE5D3] text-[#D15949]",
-    primair: "bg-[#B84A3C] hover:bg-[#7D352C]",
-    secundairHover: "hover:border-[#B84A3C] hover:text-[#B84A3C]",
-    terugHover: "hover:text-[#B84A3C]",
+    kaart: "bg-creme border-zand",
+    eyebrow: "text-brand",
+    primair: "bg-brand hover:bg-dark",
+    secundairHover: "hover:border-dark hover:text-dark",
+    terugHover: "hover:text-dark",
   },
   blauw: {
-    kaart: "bg-[#F1F9FB] border-[#DCEBEF]",
-    eyebrow: "text-[#245371]",
-    icoonVlak: "bg-white text-[#245371]",
-    primair: "bg-[#245371] hover:bg-[#0B122C]",
-    secundairHover: "hover:border-[#245371] hover:text-[#245371]",
-    terugHover: "hover:text-[#245371]",
+    kaart: "bg-light border-light-rand",
+    eyebrow: "text-nuts-blauw",
+    primair: "bg-nuts-blauw hover:bg-[#0B122C]",
+    secundairHover: "hover:border-nuts-blauw hover:text-nuts-blauw",
+    terugHover: "hover:text-nuts-blauw",
   },
 };
 
@@ -47,21 +45,16 @@ export default function PaginaKop({ terug, eyebrow, titel, introHtml, primair, s
   const v = VARIANT[variant];
   return (
     <header className="mx-auto max-w-[1440px] px-4 pt-5 md:pt-8">
-      <div className={`relative grid overflow-hidden rounded-[2rem] border shadow-sm lg:grid-cols-2 ${v.kaart}`}>
-        {motief && <NutsMotief className="pointer-events-none absolute -bottom-[30%] -right-[6%] h-[130%] text-[#D15949] opacity-[0.07]" />}
+      <div className={`relative grid overflow-hidden rounded-[2rem] border lg:grid-cols-2 ${v.kaart}`}>
+        {motief && <NutsMotief className="pointer-events-none absolute -bottom-[30%] -right-[6%] h-[130%] text-brand opacity-[0.07]" />}
         <div className="relative flex flex-col justify-center px-6 py-10 sm:px-9 md:px-12 lg:px-16 lg:py-14">
           {terug && (
-            <a href={terug.href} className={`mb-7 self-start text-sm font-medium text-[#5B6470] transition-colors ${v.terugHover}`}>
+            <a href={terug.href} className={`mb-7 self-start text-sm font-medium text-grijs transition-colors ${v.terugHover}`}>
               &larr; {terug.label}
             </a>
           )}
-          <div className={`mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.08em] ${v.eyebrow}`}>
-            <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${v.icoonVlak}`}>
-              <KennisbankIcon name={eyebrow.icon} size={16} />
-            </span>
-            {eyebrow.label}
-          </div>
-          <h1 className="font-redhat text-4xl font-bold leading-tight text-[#1C2A39] lg:text-5xl">{titel}</h1>
+          <div className={`mb-3 text-xs font-semibold uppercase tracking-[0.08em] ${v.eyebrow}`}>{eyebrow.label}</div>
+          <h1 className="font-redhat text-4xl font-bold leading-tight text-inkt lg:text-5xl">{titel}</h1>
           {introHtml && <div className="paginakop-intro mt-5 max-w-[65ch]" dangerouslySetInnerHTML={{ __html: introHtml }} />}
           {(primair || secundair) && (
             <div className="mt-7 flex flex-wrap gap-3">
@@ -71,7 +64,7 @@ export default function PaginaKop({ terug, eyebrow, titel, introHtml, primair, s
                 </a>
               )}
               {secundair && (
-                <a href={secundair.href} className={`inline-block rounded-full border border-[#D6C9C4] px-5 py-3 text-sm font-semibold text-[#1C2A39] transition-colors ${v.secundairHover}`}>
+                <a href={secundair.href} className={`inline-block rounded-full border border-[#D6C9C4] px-5 py-3 text-sm font-semibold text-inkt transition-colors ${v.secundairHover}`}>
                   {secundair.label}
                 </a>
               )}

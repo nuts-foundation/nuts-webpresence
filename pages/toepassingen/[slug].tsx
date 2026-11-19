@@ -71,16 +71,16 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
           introHtml={excerpt ? `<p>${excerpt}</p>` : undefined}
           aside={
             feiten.length > 0 ? (
-              <div className="rounded-2xl border border-[#F0E7E5] bg-white p-6 shadow-sm">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-[#B84A3C]">In één oogopslag</p>
-                <dl className="divide-y divide-[#F0E7E5]">
+              <div className="rounded-2xl border border-zand bg-white p-6">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-brand">In één oogopslag</p>
+                <dl className="divide-y divide-zand">
                   {feiten.map((f) => (
                     <div key={f.label} className="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0">
-                      <dt className="text-sm text-[#5B6470]">{f.label}</dt>
-                      <dd className="flex items-center gap-2 text-right text-sm font-semibold text-[#1C2A39]">
+                      <dt className="text-sm text-grijs">{f.label}</dt>
+                      <dd className="flex items-center gap-2 text-right text-sm font-semibold text-inkt">
                         {f.kleur && <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: f.kleur }} />}
                         {f.icon && (
-                          <span aria-hidden="true" className="text-[#B84A3C]">
+                          <span aria-hidden="true" className="text-brand">
                             <KennisbankIcon name={f.icon} size={16} />
                           </span>
                         )}
@@ -112,14 +112,14 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
 
         {/* Telefoon en tablet: de onderwerpen als balk om door te vegen. */}
         {secties.length > 1 && (
-          <nav aria-label="Onderwerpen op deze pagina" className="mt-6 border-b border-[#F0E7E5] bg-white lg:hidden">
+          <nav aria-label="Onderwerpen op deze pagina" className="mt-6 border-b border-zand bg-white lg:hidden">
             <PaginaInhoud>
               <div className="-mx-3.5 flex gap-2 overflow-x-auto py-2.5">
                 {secties.map((s) => (
                   <a
                     key={s.id}
                     href={`#${s.id}`}
-                    className="shrink-0 whitespace-nowrap rounded-full px-3.5 py-1.5 text-sm font-medium text-[#1C2A39] transition-colors hover:bg-[#FBF6F4] hover:text-[#B84A3C]"
+                    className="shrink-0 whitespace-nowrap rounded-full px-3.5 py-1.5 text-sm font-medium text-inkt transition-colors hover:bg-creme hover:text-dark"
                   >
                     {s.titel}
                   </a>
@@ -136,16 +136,16 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                 <section
                   key={s.id}
                   id={s.id}
-                  className={`scroll-mt-8 ${i > 0 ? "mt-12 border-t border-[#F0E7E5] pt-12" : ""} ${s.soort === "links" ? "lg:hidden" : ""}`}
+                  className={`scroll-mt-8 ${i > 0 ? "mt-12 border-t border-zand pt-12" : ""} ${s.soort === "links" ? "lg:hidden" : ""}`}
                 >
                   {s.soort === "leverancier" ? (
                     // Actiekaart: links de kop, uitleg en vervolglinks; rechts de vragen op een lichter blauw vlak (geen wit formulierveld).
-                    <div className="relative overflow-hidden rounded-3xl bg-[#245371] px-6 py-7 text-white sm:px-8 sm:py-8">
+                    <div className="relative overflow-hidden rounded-3xl bg-nuts-blauw px-6 py-7 text-white sm:px-8 sm:py-8">
                       <NutsMotief className="pointer-events-none absolute -bottom-[40%] -left-[8%] h-[140%] text-white opacity-[0.05]" />
                       <div className="relative grid gap-6 xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] xl:grid-rows-[auto_1fr] xl:gap-x-8">
                         <div className="xl:col-start-1 xl:row-start-1">
                           <h2 className="flex items-center gap-3 font-redhat text-xl font-bold leading-tight text-white md:text-2xl">
-                            <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+                            <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-nuts-blauw-fel text-white">
                               <KennisbankIcon name={s.icon} size={16} />
                             </span>
                             Interesse in {naam}?
@@ -172,9 +172,10 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                               <a
                                 href={v.href}
                                 {...("extern" in v ? { target: "_blank", rel: "noreferrer" } : {})}
-                                className="mt-0.5 inline-block whitespace-nowrap font-semibold text-white underline decoration-[#FEC248] decoration-2 underline-offset-4 hover:text-[#FEC248]"
+                                className="group mt-0.5 inline-block whitespace-nowrap font-semibold text-white hover:text-button"
                               >
-                                {v.tekst} &rarr;
+                                {/* Alleen de tekst onderstreept, niet het pijltje */}
+                                <span className="underline decoration-button decoration-2 underline-offset-4">{v.tekst}</span> &rarr;
                               </a>
                             </li>
                           ))}
@@ -184,7 +185,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                             <ol className="flex flex-col gap-4">
                               {s.vragen.map((v, n) => (
                                 <li key={n} className="grid grid-cols-[28px_minmax(0,1fr)] gap-x-3">
-                                  <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-[#FEC248] font-redhat text-[13px] font-bold text-[#272727]">
+                                  <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-button font-redhat text-[13px] font-bold text-text">
                                     {s.vragen!.length > 1 ? n + 1 : "?"}
                                   </span>
                                   <span className="pt-0.5 font-redhat text-[17px] font-semibold leading-snug text-white">{v}</span>
@@ -203,7 +204,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                       </div>
                     </div>
                   ) : (
-                    <div className={s.soort === "lagen" ? "toepassing-blauw rounded-[2rem] border border-[#DCEBEF] bg-[#F1F9FB] px-4 py-7 sm:px-10 sm:py-10" : ""}>
+                    <div className={s.soort === "lagen" ? "toepassing-blauw rounded-[2rem] border border-light-rand bg-light px-4 py-7 sm:px-10 sm:py-10" : ""}>
                       <Kop titel={s.titel} icon={s.icon} blauw={s.soort === "lagen"} />
                       {s.html.trim() && (
                         <div
@@ -222,13 +223,13 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                 </section>
               ))}
 
-              <div className="mt-14 flex flex-wrap items-center gap-3 border-t border-[#F0E7E5] pt-8">
-                <a href="/toepassingen" className="inline-block rounded-full bg-[#B84A3C] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#7D352C]">
+              <div className="mt-14 flex flex-wrap items-center gap-3 border-t border-zand pt-8">
+                <a href="/toepassingen" className="inline-block rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-dark">
                   &larr; Alle toepassingen
                 </a>
                 <a
                   href="/starten"
-                  className="inline-block rounded-full border border-[#D6C9C4] px-5 py-3 text-sm font-semibold text-[#1C2A39] transition-colors hover:border-[#B84A3C] hover:text-[#B84A3C]"
+                  className="inline-block rounded-full border border-[#D6C9C4] px-5 py-3 text-sm font-semibold text-inkt transition-colors hover:border-dark hover:text-dark"
                 >
                   Starten met Nuts
                 </a>
@@ -241,8 +242,8 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
               <div className="sticky top-8 flex max-h-[calc(100vh-4rem)] flex-col gap-6 overflow-y-auto pb-2">
                 {contact && <ContactKaart contact={contact} />}
                 {(links.length > 0 || linksSectie?.html.trim()) && (
-                  <div id="documentatie-en-links" className="scroll-mt-8 rounded-2xl border border-[#F0E7E5] bg-white p-6">
-                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-[#B84A3C]">Documentatie en links</p>
+                  <div id="documentatie-en-links" className="scroll-mt-8 rounded-2xl border border-zand bg-white p-6">
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-brand">Documentatie en links</p>
                     {linksSectie?.html.trim() && (
                       <div className="toepassing-sectie toepassing-klein mb-5" dangerouslySetInnerHTML={{ __html: linksSectie.html }} />
                     )}
@@ -259,9 +260,9 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
 }
 
 function Kop({ titel, icon, licht, blauw }: { titel: string; icon: string; licht?: boolean; blauw?: boolean }) {
-  const vlak = licht ? "bg-white/15 text-white" : blauw ? "bg-white text-[#245371]" : "bg-[#FCE5D3] text-[#B84A3C]";
+  const vlak = licht ? "bg-white/15 text-white" : blauw ? "bg-white text-nuts-blauw" : "bg-perzik text-brand";
   return (
-    <h2 className={`mb-5 flex items-center gap-3 font-redhat text-2xl font-bold leading-tight md:text-[28px] ${licht ? "text-white" : "text-[#1C2A39]"}`}>
+    <h2 className={`mb-5 flex items-center gap-3 font-redhat text-2xl font-bold leading-tight md:text-[28px] ${licht ? "text-white" : "text-inkt"}`}>
       <span aria-hidden="true" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${vlak}`}>
         <KennisbankIcon name={icon} size={18} />
       </span>
@@ -272,9 +273,9 @@ function Kop({ titel, icon, licht, blauw }: { titel: string; icon: string; licht
 
 /** Links in vaste groepen, steeds in dezelfde volgorde, elk met één icoon. */
 const GROEPEN = [
-  { titel: "Specificatie en code", icon: "ontwikkelaar", vlak: "bg-[#E8EBEE] text-[#1C2A39]", kleur: "text-[#1C2A39]", test: /github|gitlab|\bcode\b|specificatie/ },
-  { titel: "Documentatie", icon: "wiki", vlak: "bg-[#E3F0F6] text-[#245371]", kleur: "text-[#245371]", test: /wiki|uitwerking|profiel|documentatie|afsprakenset|implement|ontwerp/ },
-  { titel: "Privacy en juridisch", icon: "slot", vlak: "bg-[#FCE5D3] text-[#B84A3C]", kleur: "text-[#B84A3C]", test: /dpia|privacy|risico|juridisch/ },
+  { titel: "Specificatie en code", icon: "ontwikkelaar", vlak: "bg-[#E8EBEE] text-inkt", kleur: "text-inkt", test: /github|gitlab|\bcode\b|specificatie/ },
+  { titel: "Documentatie", icon: "wiki", vlak: "bg-[#E3F0F6] text-nuts-blauw", kleur: "text-nuts-blauw", test: /wiki|uitwerking|profiel|documentatie|afsprakenset|implement|ontwerp/ },
+  { titel: "Privacy en juridisch", icon: "slot", vlak: "bg-perzik text-brand", kleur: "text-brand", test: /dpia|privacy|risico|juridisch/ },
 ];
 function groepeer(links: LinkKaart[]) {
   const uit = GROEPEN.map((g) => ({ ...g, links: [] as LinkKaart[] }));
@@ -290,7 +291,7 @@ function groepeer(links: LinkKaart[]) {
   return [...uit, overig].filter((g) => g.links.length > 0);
 }
 
-const KNOP_PRIMAIR = "inline-block rounded-full bg-[#B84A3C] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#7D352C]";
+const KNOP_PRIMAIR = "inline-block rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-dark";
 
 /** Waar de link staat, kort: de bron uit de tekst (GitHub, Wiki), anders de linktekst of de website. */
 function bronKort(l: LinkKaart) {
@@ -311,29 +312,29 @@ function LinkGroepen({ links, compact }: { links: LinkKaart[]; compact?: boolean
       {groepeer(links).map((g) => (
         <div key={g.titel}>
           <p className={`mb-1.5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] ${g.kleur}`}>
-            <span aria-hidden="true" className={`flex h-6 w-6 items-center justify-center rounded-md ${g.vlak}`}>
+            <span aria-hidden="true" className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${g.vlak}`}>
               <KennisbankIcon name={g.icon} size={13} />
             </span>
             {g.titel}
           </p>
-          <ul className="divide-y divide-[#F0E7E5]">
+          <ul className="divide-y divide-zand">
             {g.links.map((l) => (
               <li key={l.href}>
                 {l.volgt ? (
                   <div className="-mx-2 flex items-baseline gap-3 px-2 py-2.5">
-                    <span className="min-w-0 flex-1 text-sm font-semibold leading-snug text-[#5B6470]">{l.label}</span>
-                    <span className="shrink-0 text-xs text-[#5B6470]">{l.bron}</span>
+                    <span className="min-w-0 flex-1 text-sm font-semibold leading-snug text-grijs">{l.label}</span>
+                    <span className="shrink-0 text-xs text-grijs">{l.bron}</span>
                     <span className="shrink-0 rounded-full bg-[#FFF1D6] px-2 py-0.5 text-[11px] font-semibold text-[#8A6414]">In ontwikkeling</span>
                   </div>
                 ) : (
-                <a href={l.href} target="_blank" rel="noreferrer" className="group -mx-2 flex items-baseline gap-3 rounded-lg px-2 py-2.5 transition-colors hover:bg-[#FBF6F4]">
+                <a href={l.href} target="_blank" rel="noreferrer" className="group -mx-2 flex items-baseline gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-creme">
                   {/* Korte bron (GitHub, Wiki) rechts; een lange (een webadres) klein onder de titel, zodat de titel ruimte houdt. */}
                   <span className="min-w-0 flex-1">
-                    <span className="block text-sm font-semibold leading-snug text-[#1C2A39] group-hover:text-[#B84A3C]">{l.label || l.tekst}</span>
-                    {bronKort(l).length > 12 && <span className="mt-0.5 block break-words text-xs text-[#5B6470]">{bronKort(l)}</span>}
+                    <span className="block text-sm font-semibold leading-snug text-inkt group-hover:text-dark">{l.label || l.tekst}</span>
+                    {bronKort(l).length > 12 && <span className="mt-0.5 block break-words text-xs text-grijs">{bronKort(l)}</span>}
                   </span>
-                  {bronKort(l).length <= 12 && <span className="shrink-0 text-xs text-[#5B6470]">{bronKort(l)}</span>}
-                  <span aria-hidden="true" className="shrink-0 text-xs text-[#D15949]/60 transition-colors group-hover:text-[#B84A3C]">
+                  {bronKort(l).length <= 12 && <span className="shrink-0 text-xs text-grijs">{bronKort(l)}</span>}
+                  <span aria-hidden="true" className="shrink-0 text-xs text-brand/60 transition-colors group-hover:text-dark">
                     &#8599;
                   </span>
                   <span className="sr-only">(opent in een nieuw venster)</span>
@@ -347,40 +348,40 @@ function LinkGroepen({ links, compact }: { links: LinkKaart[]; compact?: boolean
     </div>
   );
   // In de zijkolom zit de lijst al in een kaart; onderaan (telefoon) krijgt hij er zelf een.
-  return compact ? lijst : <div className="rounded-2xl border border-[#F0E7E5] bg-white p-6">{lijst}</div>;
+  return compact ? lijst : <div className="rounded-2xl border border-zand bg-white p-6">{lijst}</div>;
 }
 
 /** Met wie neem je contact op: bij elke toepassing de Kring Toepassingen via Slack, met de contactpersonen en hun rol. */
 function ContactKaart({ contact }: { contact: Contact }) {
   return (
-    <div className="rounded-2xl border border-[#F0E7E5] bg-[#FBF6F4] p-6">
-      <p className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#B84A3C]">
-        <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-[#FCE5D3]">
+    <div className="rounded-2xl border border-zand bg-creme p-6">
+      <p className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.08em] text-brand">
+        <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-perzik">
           <KennisbankIcon name="persoon" size={14} />
         </span>
         Contact
       </p>
-      <p className="font-redhat text-lg font-bold leading-snug text-[#1C2A39]">{contact.organisatie}</p>
+      <p className="font-redhat text-lg font-bold leading-snug text-inkt">{contact.organisatie}</p>
       <a
         href={SLACK}
         target="_blank"
         rel="noreferrer"
-        className="mt-4 block rounded-full bg-[#B84A3C] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#7D352C]"
+        className="mt-4 block rounded-full bg-brand px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-dark"
       >
         Stel je vraag via Slack
       </a>
       {contact.personen.length > 0 && (
-        <div className="mt-5 border-t border-[#F0E7E5] pt-4">
-          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#5B6470]">
+        <div className="mt-5 border-t border-zand pt-4">
+          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-grijs">
             {contact.personen.length > 1 ? "Contactpersonen" : "Contactpersoon"}
           </p>
           <ul className="flex flex-col gap-2.5">
             {contact.personen.map((p) => (
               <li key={p.naam} className="text-sm leading-snug">
-                <span className="font-semibold text-[#1C2A39]">{p.naam}</span>
-                {p.rol && <span className="text-[#5B6470]"> · {p.rol}</span>}
+                <span className="font-semibold text-inkt">{p.naam}</span>
+                {p.rol && <span className="text-grijs"> · {p.rol}</span>}
                 {p.email && (
-                  <a href={`mailto:${p.email}`} className="mt-0.5 block break-all text-xs text-[#B84A3C] hover:text-[#7D352C] hover:underline">
+                  <a href={`mailto:${p.email}`} className="mt-0.5 block break-all text-xs text-brand hover:text-dark hover:underline">
                     {p.email}
                   </a>
                 )}
