@@ -82,6 +82,12 @@ const paths: { [name: string]: ReactElement } = {
     </>
   ),
   overheid: <path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-6 10 6Z" />,
+  kalender: (
+    <>
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01" />
+    </>
+  ),
   vraag: (
     <>
       <circle cx="12" cy="12" r="10" />
