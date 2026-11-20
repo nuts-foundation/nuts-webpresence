@@ -40,6 +40,77 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Style
+
+The colours come from the Nuts brand guide (the same colours as in the illustrations). They are defined once, as named
+colours in `tailwind.config.js`. Use those names, never a loose colour code:
+
+- in components: Tailwind classes such as `bg-brand`, `text-inkt`, `border-zand`;
+- in `styles/globals.css`: `theme(colors.brand)`, `theme(colors.inkt)` and so on;
+- in an SVG: `fill="currentColor"` or `stroke="currentColor"`, with the colour as a class (e.g. `text-brand`);
+- not the default Tailwind colours (`gray-500`, `blue-600` …), no `rgb()`/`hsl()` and no colours in `style={{…}}`.
+  For transparency use the named colour with an opacity, e.g. `bg-inkt/70` or `border-white/50`.
+
+| Name | Colour | Used for |
+|---|---|---|
+| `brand` | `#D15949` | Nuts red: menu, footer, buttons, icons, labels, links and arrows |
+| `dark` | `#B24A3B` | hover state of everything in `brand` |
+| `darker` | `#7D352C` | only for an extra dark accent; not for buttons |
+| `button` / `button-hover` | `#FEC248` / `#CB9B3A` | yellow button on red or dark blue (e.g. "Starten met Nuts", newsletter) |
+| `inkt` | `#1C2A39` | headings and body text in the new layout |
+| `leisteen`, `grijs` | `#4C5968`, `#5B6470` | secondary text |
+| `creme`, `zand`, `perzik` | `#FBF6F4`, `#F0E7E5`, `#FCE5D3` | card background, card border, icon circle; the note box ("Wat dit níét is") is `creme` with a `brand` line on the left |
+| `zand-donker` | `#D6C9C4` | border of the secondary button and of input fields |
+| `pijl` | `#B8ADA9` | arrow in a list row before hover |
+| `onderstreep` | `#F0C9C2` | underline of a text link |
+| `light` / `light-rand` | `#F1F9FB` / `#DCEBEF` | light blue: sections that explain how it works ("Hoe werkt Nuts?", "Hoe het werkt") |
+| `nuts-blauw` | `#004B6B` | dark blue from the illustrations: the "Interesse in …?" and "Hulp nodig bij een stap?" blocks |
+| `nuts-blauw-fel` | `#0084DF` | bright blue of the Nuts circle in the illustrations: the icon in those blocks |
+| `nuts-blauw-donker` | `#0B122C` | darkest blue, for hover on dark blue |
+| `nuts-groen` | `#87A14C` | light green of the Nuts circle in the illustrations: numbers and link underlines in the "Interesse in …?" block |
+| `fase-idee`, `brand`, `button`, `fase-productie` | `#8B97A8`, `#D15949`, `#FEC248`, `#2E8A4F` | status dot per phase: Idee, PoC, In ontwikkeling, In productie (always with its label) |
+
+Rules:
+
+- **Buttons**: always use `<Button>` from `components/Button.tsx` (or `knopStijl()` for a `<button>` with `onClick`).
+  It is a pill in Nuts red with a darker hover, one size everywhere. Variants: `primair` (default), `secundair`
+  (outlined, on a light background), `geel` and `op-donker` (on red or dark blue). Filter and choice chips use `keuzeStijl()`.
+  Do not write your own button classes; `className` on `<Button>` is only for placement (margin, alignment, width).
+- **Icons** sit in a round circle (`rounded-full`), in `brand` on `perzik`. They belong in cards, lists and blocks;
+  section headings (`<h2>`) and the label above a page title have no icon.
+- **Fonts**: `font-inter` for text, `font-redhat` for headings; no other font families.
+- **Cards** have a thin border (`border-zand`) and no shadow, also not in CSS (`box-shadow`). Clickable cards only get a
+  shadow on hover (`hover:shadow-md`).
+- **Arrows**: use `<Pijl href={…} />` from `components/Button.tsx` instead of typing an arrow. It shows → for a page on
+  nuts.nl and ↗ for an external site (which opens in a new tab, also announced to screen readers). Do not put arrows
+  in labels in the config files. Only the text of a link is underlined, never the arrow.
+- **Hand cursor** on everything clickable. Links get it automatically; a `<button>` needs `cursor-pointer`
+  (`knopStijl()` and `keuzeStijl()` include it), because Tailwind 4 no longer sets it.
+- **CSS in `styles/globals.css`** is only for styling text that comes from Markdown files (which cannot carry Tailwind
+  classes). Everything else is done with Tailwind classes in the component.
+- New colour? Add it to `tailwind.config.js` and to this table first.
+
+### Style check
+
+`npm run check:style` checks the rules above in the files your branch adds or changes (compared with master):
+
+- colours: no loose colour codes, no default Tailwind colours, no `rgb()`/`hsl()` and no colours in `style={{…}}`;
+- buttons: no own button styles (filled or outlined), and a hand cursor on every `<button>`;
+- no fixed shadows, round icon circles, and only `font-inter` / `font-redhat`;
+- new lines in `styles/globals.css`: no loose colours and no `box-shadow`.
+
+It runs on every pull request, next to the build and the smoke test. `npm run check:style -- --all`
+lists the older files that do not follow the rules yet; fix those when you touch them.
+
+### A new page
+
+1. Put the page in `pages/` and wrap it in `<Layout>`.
+2. Start with `<PaginaKop>` (label, title, intro, buttons and an image or a side block) and put the content in
+   `<PaginaInhoud>`, so everything lines up with the header.
+3. Use `<Button>` for buttons, `KennisbankIcon` in a round circle for icons, and the named colours for everything else.
+4. Text that editors maintain goes into a Markdown file in `content/`; its styling (if needed) goes into `globals.css`.
+5. Run `npm run check:style`, `npm run export` and `npm run smoke-test` before you open a pull request.
+
 ## Search
 
 One search over all formal Nuts documentation: nuts.nl, the Nuts node docs (ReadTheDocs, per version), the Nuts node API (OpenAPI), the specifications and the toepassingen (FHIR implementation guides) and the wiki. This repository has the search page and the search field. The index is Typesense at https://search.nuts.nl, filled every night by the indexer in nuts-foundation/infra-admin, which also lists the sources.
