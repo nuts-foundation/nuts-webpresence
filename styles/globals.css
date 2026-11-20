@@ -227,3 +227,60 @@ html:has(.eenheid-van-taal) {
     color: #B84A3C;
     text-decoration: underline;
 }
+
+/* Homepage (huisstijlontwerp nov 2026) */
+.home-wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-left: clamp(16px, 6.6vw, 96px);
+    padding-right: clamp(16px, 6.6vw, 96px);
+}
+.home-hero {
+    padding: clamp(40px, 5vw, 72px) 0 clamp(170px, 24vw, 350px);
+}
+.home-hero-tekst p {
+    margin: 0;
+    color: white;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.home-video {
+    max-width: 1440px;
+    margin: calc(-1 * clamp(100px, 16vw, 250px)) auto 0;
+    box-sizing: border-box;
+    padding: 0 clamp(16px, 10vw, 144px);
+}
+.home-tekst > p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+}
+.home-tekst > p + p {
+    margin-top: 18px;
+}
+/* Eerste alinea van "Hoe werkt Nuts?": iets groter, als inleiding */
+.home-tekst-inleiding > p {
+    font-size: 19px;
+    line-height: 1.7;
+}
+.home-tekst a,
+.home-cta-tekst a {
+    color: theme(colors.linkHover);
+}
+.home-tekst a:hover,
+.home-cta-tekst a:hover {
+    text-decoration: underline;
+}
+.home-cta-tekst p {
+    margin: 0;
+    color: theme(colors.leisteen);
+    font-size: 18px;
+    line-height: 1.6;
+}
+.home a:focus-visible,
+.home button:focus-visible,
+.home input:focus-visible {
+    outline: 3px solid theme(colors.dark-gray);
+    outline-offset: 2px;
+}
