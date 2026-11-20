@@ -150,11 +150,225 @@ html:has(.kennisbank) {
     max-width: 66ch;
 }
 .kennisbank-sectie p a {
-    color: #B84A3C;
+    color: theme(colors.brand);
 }
 .kennisbank-sectie p a:hover {
     color: #7D352C;
     text-decoration: underline;
+}
+
+/* Detailpagina van een toepassing (pages/toepassingen/[slug].tsx), zelfde basis als de Kennisbank */
+.toepassing-sectie {
+    color: theme(colors.inkt);
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+}
+.toepassing-sectie > * + * {
+    margin-top: 1rem;
+}
+.toepassing-sectie a {
+    color: theme(colors.brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.toepassing-sectie a:hover {
+    color: theme(colors.darker);
+}
+.toepassing-sectie strong {
+    font-weight: 600;
+}
+.toepassing-sectie ul {
+    list-style: none;
+    padding: 0;
+}
+.toepassing-sectie ul > li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+.toepassing-sectie ul > li + li {
+    margin-top: 0.6rem;
+}
+.toepassing-sectie ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.7em;
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: theme(colors.brand);
+}
+/* Lopende tekst op een prettige regellengte; kaarten en lijsten gebruiken de hele kolom. */
+.toepassing-sectie p,
+.toepassing-sectie > h3,
+.toepassing-sectie > ul:not(.toepassing-functies ul):not(.toepassing-lagen ul) {
+    max-width: 72ch;
+}
+.toepassing-sectie h3 {
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 1.75rem;
+}
+/* Wat het doet: elke functie als kaart met een vinkje, in twee kolommen */
+.toepassing-functies ul {
+    display: grid;
+    gap: 12px;
+}
+@media (min-width: 768px) {
+    .toepassing-functies ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.toepassing-functies ul > li {
+    margin: 0 !important;
+    padding: 18px 20px 18px 56px;
+    border: 1px solid theme(colors.zand);
+    border-radius: 16px;
+    background: theme(colors.creme);
+    line-height: 1.6;
+}
+.toepassing-functies ul > li::before {
+    left: 18px;
+    top: 18px;
+    width: 24px;
+    height: 24px;
+    background: #FCE5D3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B84A3C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+@media (min-width: 1280px) {
+    .toepassing-lagen ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* "Wat dit níet is": rustige notitie in de kleuren van de pagina, met een smalle streep in Nuts-rood */
+.toepassing-let-op {
+    border-radius: 16px;
+    background: theme(colors.creme);
+    border: 1px solid theme(colors.zand);
+    border-left: 4px solid theme(colors.brand);
+    padding: 16px 20px;
+}
+.toepassing-let-op p {
+    margin: 0;
+}
+.toepassing-let-op strong {
+    color: theme(colors.brand);
+}
+/* Hoe het werkt op Nuts: de lagen als genummerde stappen */
+.toepassing-lagen ul {
+    counter-reset: laag;
+    display: grid;
+    gap: 12px;
+}
+.toepassing-lagen ul > li {
+    counter-increment: laag;
+    margin: 0 !important;
+    padding: 16px 20px 16px 64px;
+    border: 1px solid theme(colors.zand);
+    border-radius: 16px;
+    background: white;
+}
+.toepassing-lagen ul > li::before {
+    content: counter(laag);
+    left: 18px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: theme(colors.perzik);
+    color: theme(colors.brand);
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+.toepassing-lagen ul > li strong:first-child {
+    display: block;
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+/* Oneven aantal kaarten: de laatste over de hele breedte, zodat er geen gat naast staat. */
+@media (min-width: 768px) {
+    .toepassing-functies ul > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (min-width: 1280px) {
+    .toepassing-lagen ul > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+/* Genummerde lijsten in de tekst (bijv. het voorbeeld bij KIK-V): nummers in een rondje, op tekstbreedte. */
+.toepassing-sectie ol {
+    list-style: none;
+    padding: 0;
+    max-width: 72ch;
+    counter-reset: stap;
+}
+.toepassing-sectie ol > li {
+    counter-increment: stap;
+    position: relative;
+    padding-left: 2.5rem;
+}
+.toepassing-sectie ol > li + li {
+    margin-top: 0.75rem;
+}
+.toepassing-sectie ol > li::before {
+    content: counter(stap);
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    width: 26px;
+    height: 26px;
+    border-radius: 9999px;
+    background: theme(colors.perzik);
+    color: theme(colors.brand);
+    font-family: "Red Hat Display", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Hoe het werkt in het blauwe vlak: stapnummers in illustratieblauw */
+.toepassing-blauw .toepassing-lagen ul > li::before {
+    background: theme(colors.nuts-blauw);
+    color: white;
+}
+.toepassing-blauw .toepassing-lagen ul > li {
+    border-color: theme(colors.light-rand);
+}
+/* Toelichting in de zijkolom (Belangrijkste links) */
+.toepassing-klein,
+.toepassing-klein p,
+.toepassing-klein li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: theme(colors.leisteen);
+}
+/* Stappen bij "Hoe het werkt" compacter: tekst kleiner dan de lopende tekst, zodat de kaarten in verhouding zijn. */
+.toepassing-lagen ul > li {
+    padding: 14px 18px 14px 54px;
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+.toepassing-lagen ul > li::before {
+    left: 16px;
+    top: 14px;
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+}
+.toepassing-lagen ul > li strong:first-child {
+    font-size: 16px;
+    margin-bottom: 4px;
+    line-height: 1.35;
+}
+@media (max-width: 639px) {
+    .toepassing-lagen ul > li { padding: 14px 14px 14px 46px; }
+    .toepassing-lagen ul > li::before { left: 12px; }
+}
+/* Genummerde stappen in het blauwe vlak: blauw op wit, passend bij het vlak */
+.toepassing-blauw .toepassing-sectie ol > li::before {
+    background: white;
+    color: theme(colors.nuts-blauw);
+    box-shadow: inset 0 0 0 1px theme(colors.light-rand);
 }
 
 /* Styles for the "eenheid van taal" page */
@@ -187,7 +401,7 @@ html:has(.eenheid-van-taal) {
     max-width: 70ch;
 }
 .taal-sectie a {
-    color: #B84A3C;
+    color: theme(colors.brand);
 }
 .taal-sectie a:hover {
     color: #7D352C;
@@ -205,7 +419,7 @@ html:has(.eenheid-van-taal) {
     margin-top: 0.75rem;
 }
 .taal-sectie ol li::marker {
-    color: #B84A3C;
+    color: theme(colors.brand);
     font-weight: 600;
 }
 .taal-sectie ol li strong {
@@ -224,7 +438,7 @@ html:has(.eenheid-van-taal) {
     margin-top: 14px;
 }
 .paginakop-intro a {
-    color: #B84A3C;
+    color: theme(colors.brand);
     text-decoration: underline;
 }
 

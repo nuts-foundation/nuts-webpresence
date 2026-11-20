@@ -27,7 +27,7 @@ Huisartsinzage geeft de huisarts via het eigen huisartsinformatiesysteem (HIS) i
 **Wat dit níet is:** Dit is geen vervanging van overdrachtsmomenten of overleg tussen zorgverleners. Het gaat om inzage in informatie, niet om gezamenlijke besluitvorming.
 
 
-## Hoe het werkt op Nuts
+## Hoe het werkt
 
 
 Nuts is een open netwerk voor veilige uitwisseling van zorggegevens tussen zorgorganisaties. Voordat een huisarts het thuiszorgdossier van een patiënt kan inzien of een wijkverpleegkundige omgekeerd de relevante informatie uit het huisartsdossier doorloopt het systeem eerst een aantal controles. Ze zijn in lagen opgebouwd; pas als elke laag klopt, opent de inzage:
@@ -43,7 +43,7 @@ Nuts is een open netwerk voor veilige uitwisseling van zorggegevens tussen zorgo
 Je kunt het zien als een sleutelkastje: de medische gegevens reizen niet rond. Er is alleen een sleutel die past op het juiste moment, bij de juiste organisatie.
 
 
-## Wat Nuts voor deze toepassing betekent
+## Rol van Nuts
 
 
 Bij huisartsinzage wisselen huisartsenpraktijken gegevens uit met thuiszorgorganisaties. In Nederland zijn dat duizenden huisartsenpraktijken en honderden thuiszorgorganisaties, elk met hun eigen softwareleverancier. Zonder een gezamenlijk afsprakenstelsel zou elke softwareleverancier per zorgorganisatie of per regio een aparte koppeling moeten bouwen - of zou er een centraal schakelpunt nodig zijn waar alle gegevens doorheen lopen.
@@ -58,7 +58,7 @@ Dat betekent niet dat gegevens zomaar met elke aangesloten partij beschikbaar zi
 Voor deze toepassing betekent dat: geen aparte koppelingen per huisartsenpraktijk of thuiszorgorganisatie, geen centraal opgeslagen patiëntdossiers, en geen leverancierslock-in. Eén keer goed geregeld en per samenwerking geborgd in het bronsysteem.
 
 
-## Privacy en gegevensbescherming
+## Privacy
 
 
 De opvragende zorgverlener ziet alleen de informatie die nodig is voor de zorgtaak - niet het hele dossier. Een huisarts ziet dus de relevante gegevens uit het thuiszorgdossier, en een wijkverpleegkundige de relevante gegevens uit het huisartsdossier. Wat "relevant" is, is vooraf vastgelegd: er is een afgesproken set gegevens die opgevraagd kan worden, en daarbuiten geeft het bronsysteem niets vrij. Het is dus niet mogelijk om via deze inzage het volledige dossier op te vragen.
@@ -70,22 +70,11 @@ De basis hiervoor is dat beide zorgverleners een eigen behandelrelatie met de pa
 Elke raadpleging wordt vastgelegd bij de zorgorganisatie die de gegevens beheert, en de patiënt kan daar opvragen wie zijn dossier heeft ingezien. Wil de patiënt deze inzage niet? Dan kan hij bezwaar maken bij de betrokken zorgorganisaties.
 
 
-## Vraag het je leverancier
+## Vraag je leverancier
 
+Je softwareleverancier is het aanspreekpunt. Stel hen deze vraag:
 
-Huisartsen kunnen het thuiszorgdossier van hun patiënt inzien zonder bellen of e-mailen - veilig, alleen wanneer het mag, en met toestemming van de patiënt. Dat betekent minder tijd kwijt aan informatie ophalen, minder kans op fouten, en betere zorg voor patiënten die met meerdere zorgverleners te maken hebben.
-
-
-Jouw softwareleverancier is het aanspreekpunt. Stel hen deze vraag:
-
-
-> "Ondersteunt jullie software Huisartsinzage op het Nuts-netwerk? Zo niet, staat dit op de roadmap?"
-
-
-Werkt je leverancier nog niet met Nuts? Deel de link naar deze pagina of verwijs ze naar [starten met Nuts](https://www.nuts.nl/starten).
-
-
-Vragen, ideeën of wil je meedenken? Stel je vraag via Slack of sluit je aan bij de Nuts-community - daar denken zorgorganisaties, leveranciers en geïnteresseerden samen mee over toepassingen als deze.
+> Ondersteunt jullie software Huisartsinzage op het Nuts-netwerk? Zo niet, staat dit op de roadmap?
 
 
 ## Links & contact
@@ -96,6 +85,7 @@ Vragen, ideeën of wil je meedenken? Stel je vraag via Slack of sluit je aan bij
 - **Functionele uitwerking (Wiki):** [Functionele uitwerking Huisartsinzage](https://wiki.nuts.nl/books/samenwerken-huisarts-en-thuiszorg/page/functionele-uitwerking-huisartsinzage)
 - **Risicoanalyse en juridische rolverdeling (Wiki):** [Authenticatie risicoanalyse](https://wiki.nuts.nl/books/samenwerken-huisarts-en-thuiszorg/page/authenticatie-risicoanalyse)
 - **DPIA:** [Google Doc](https://docs.google.com/document/d/1Zsq1rzfpypmnRZt4os4l1sY2G43i5xUvH-H1OWLGFvU/edit?tab=t.0#heading=h.uqcrbb5f90ap)
+- **Contact:** Kring Toepassingen
 - **Contactpersoon:** Cornelis de Pee
 - **Laatst bijgewerkt:** 27 juli 2026
 

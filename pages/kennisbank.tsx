@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import KennisbankIcon from "../components/KennisbankIcon";
 import config from "../config/kennisbank.json";
 import PaginaKop, { PaginaInhoud } from "../components/PaginaKop";
+import Button, { Pijl } from "../components/Button";
 
 interface Sectie {
   id: string;
@@ -61,41 +62,41 @@ export default function KennisbankPage({ kennisbank }: any) {
           introHtml={introTekst}
           aside={
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-[#B84A3C]">Kies een ingang</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-brand">Kies een ingang</p>
               <div className="flex flex-col gap-3">
                 {config.ingangen.map((ingang) => (
                   <a
                     key={ingang.id}
                     href={ingang.href}
-                    className="group flex items-start gap-3.5 rounded-2xl border border-[#F0E7E5] bg-white p-5 text-[#1C2A39] shadow-sm transition-shadow hover:shadow-md"
+                    className="group flex items-start gap-3.5 rounded-2xl border border-zand bg-white p-5 text-inkt transition-shadow hover:shadow-md"
                   >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FCE5D3] text-[#B84A3C]">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-perzik text-brand">
                       <KennisbankIcon name={ingang.icon} size={18} />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-redhat text-lg font-bold leading-snug group-hover:text-[#B84A3C]">{ingang.title}</span>
-                      <span className="mt-1 block text-sm leading-snug text-[#4C5968]">{ingang.text}</span>
+                      <span className="block font-redhat text-lg font-bold leading-snug group-hover:text-dark">{ingang.title}</span>
+                      <span className="mt-1 block text-sm leading-snug text-leisteen">{ingang.text}</span>
                     </span>
-                    <span aria-hidden="true" className="ml-auto self-center text-[#B84A3C] transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                    <Pijl href={ingang.href} className="ml-auto self-center text-brand transition-transform group-hover:translate-x-0.5" />
                   </a>
                 ))}
               </div>
-              <p className="mt-5 text-sm text-[#4C5968]">
+              <p className="mt-5 text-sm text-leisteen">
                 Nieuw met Nuts? Begin bij{" "}
-                <a href="/starten" className="font-semibold text-[#B84A3C] underline underline-offset-4 hover:text-[#7D352C]">Starten met Nuts &rarr;</a>
+                <a href="/starten" className="font-semibold text-brand underline underline-offset-4 hover:text-dark">Starten met Nuts &rarr;</a>
               </p>
             </div>
           }
         />
 
-        <nav aria-label="Onderwerpen op deze pagina" className="mt-8 border-b border-[#F0E7E5] bg-white">
+        <nav aria-label="Onderwerpen op deze pagina" className="mt-8 border-b border-zand bg-white">
           <PaginaInhoud>
             <div className="-mx-3.5 flex gap-2 overflow-x-auto py-2.5">
               {secties.map((sectie) => (
                 <a
                   key={sectie.id}
                   href={`#${sectie.id}`}
-                  className="shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium text-[#1C2A39] transition-colors hover:bg-[#FBF6F4] hover:text-[#B84A3C]"
+                  className="shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium text-inkt transition-colors hover:bg-creme hover:text-dark"
                 >
                   {sectie.label}
                 </a>
@@ -109,33 +110,19 @@ export default function KennisbankPage({ kennisbank }: any) {
             <section
               key={sectie.id}
               id={sectie.id}
-              className={`scroll-mt-20 ${i > 0 ? "mt-10 border-t border-[#F0E7E5] pt-10" : ""}`}
+              className={`scroll-mt-20 ${i > 0 ? "mt-10 border-t border-zand pt-10" : ""}`}
             >
-              <h2 className="mb-4 flex items-center gap-3 font-redhat text-2xl font-bold leading-tight text-[#1C2A39]">
-                {sectie.icon && (
-                  <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FCE5D3] text-[#B84A3C]">
-                    <KennisbankIcon name={sectie.icon} size={18} />
-                  </span>
-                )}
-                {sectie.titel}
-              </h2>
+              {/* Sectiekop zonder icoon; iconen staan bij de ingangen bovenaan */}
+              <h2 className="mb-4 font-redhat text-2xl font-bold leading-tight text-inkt">{sectie.titel}</h2>
               <Markdown html={sectie.html} className="kennisbank-sectie max-w-[66ch]" />
               {sectie.links.length > 0 && (
                 <div className="mt-6 flex flex-wrap gap-2.5">
                   {sectie.links.map((link, j) => {
-                    const ext = link.href.startsWith("http");
                     return (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        {...(ext ? { target: "_blank", rel: "noreferrer" } : {})}
-                        className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${
-                          j === 0 ? "bg-[#B84A3C] text-white hover:bg-[#7D352C]" : "border border-[#D6C9C4] text-[#1C2A39] hover:border-[#B84A3C] hover:text-[#B84A3C]"
-                        }`}
-                      >
+                      <Button key={link.href} href={link.href} variant={j === 0 ? "primair" : "secundair"}>
                         {link.label}
-                        <span aria-hidden="true">→</span>
-                      </a>
+                        <Pijl href={link.href} />
+                      </Button>
                     );
                   })}
                 </div>

@@ -2,24 +2,28 @@
   "categories": [
     {
       "id": "databeschikbaarheid",
+      "icon": "databeschikbaarheid",
       "label": "Databeschikbaarheid",
       "abbr": "DB",
       "description": "Gegevens blijven bij de bron en worden ontsloten op het moment dat een andere zorgverlener ze nodig heeft. Bijvoorbeeld huisartseninzage, beeldinzage en medicatie-inzage."
     },
     {
       "id": "gegevensuitwisseling",
+      "icon": "gegevensuitwisseling",
       "label": "Gegevensuitwisseling",
       "abbr": "GU",
       "description": "Een afgebakend bericht wordt overgedragen aan een nieuwe verantwoordelijke partij. Bijvoorbeeld eOverdracht, geboortezorg en MSZ-overdracht."
     },
     {
       "id": "netwerkzorg",
+      "icon": "netwerkzorg",
       "label": "Netwerkzorg",
       "abbr": "NW",
       "description": "Meerdere zorgverleners werken gelijktijdig samen rond één patiënt en delen actuele afspraken in de keten."
     },
     {
       "id": "secundair-gebruik",
+      "icon": "secundair-gebruik",
       "label": "Secundair gebruik",
       "abbr": "SG",
       "description": "Federatieve uitvragen voor beleid, kwaliteit en wetenschappelijk onderzoek — denk aan KIK-V en WellData."
@@ -39,10 +43,10 @@
       "text": "Zorgverleners met een actuele zorgrelatie raadplegen het huisartsdossier rechtstreeks — zonder kopie."
     },
     {
-      "name": "Viewer applicatie inzage",
+      "name": "360° cliëntbeeld",
       "category": "databeschikbaarheid",
       "phase": "ontwikkeling",
-      "text": "Algemene viewer waarmee toegelaten partijen meerdere bronnen via één interface ontsluiten."
+      "text": "Vraag als zorgverlener op het moment dat je het nodig hebt de gegevens van andere zorgaanbieders over je cliënt op, in één overzicht."
     },
     {
       "name": "Beeldinzage",
@@ -113,10 +117,10 @@
       "text": "Avond-, nacht- en weekendzorg — dienstapotheek, huisartsenpost en regio werken op één netwerk samen."
     },
     {
-      "name": "Integrale Netwerkcommunicatie",
+      "name": "Netwerkcommunicatie",
       "category": "netwerkzorg",
-      "phase": "productie",
-      "text": "Multidisciplinaire samenwerking rond één patiënt, waarbij betrokkenen actuele afspraken delen."
+      "phase": "ontwikkeling",
+      "text": "Cliënt, mantelzorgers en professionals wisselen veilig berichten uit vanuit hun eigen applicatie, ook als ze verschillende systemen gebruiken."
     },
     {
       "name": "Casemanagement dementie",
@@ -150,16 +154,10 @@
       "text": "Kwaliteitsinformatie verpleeghuiszorg — uitvraag aan verpleeghuizen via één gestandaardiseerd kanaal."
     },
    {
-      "name": "WellData (Interreg)",
+      "name": "WellData",
       "category": "secundair-gebruik",
       "phase": "productie",
-      "text": "Grensoverschrijdend onderzoek met federatieve data — Nederland, België en Duitsland.",
-      "links": [
-        {
-          "label": "Lees meer",
-          "url": "https://nuts.nl/welldata/"
-        }
-      ]
+      "text": "Grensoverschrijdend project (Vlaanderen en Nederland) dat leefstijl- en welzijnsdata inzet voor preventieve gezondheidszorg."
     },
     {
       "name": "Health-RI",

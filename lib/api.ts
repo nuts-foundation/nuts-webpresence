@@ -160,6 +160,7 @@ export interface ToepassingArticle {
 
 export interface ToepassingArticleFull extends ToepassingArticle {
   content: string;
+  status?: string;
 }
 
 export async function getToepassingArticles(): Promise<ToepassingArticle[]> {
@@ -195,5 +196,6 @@ export async function getToepassingFull(slug: string): Promise<ToepassingArticle
     title: data.title as string,
     excerpt: (data.excerpt as string) ?? null,
     content: rendered,
+    ...(typeof data.status === "string" ? { status: data.status } : {}),
   };
 }
