@@ -161,6 +161,8 @@ export interface ToepassingArticle {
 export interface ToepassingArticleFull extends ToepassingArticle {
   content: string;
   status?: string;
+  /** Eigen Slack-kanaal van deze toepassing (frontmatter `slack:`); zonder dit gaat de knop naar de uitnodiging. */
+  slack?: string;
 }
 
 export async function getToepassingArticles(): Promise<ToepassingArticle[]> {
@@ -197,5 +199,6 @@ export async function getToepassingFull(slug: string): Promise<ToepassingArticle
     excerpt: (data.excerpt as string) ?? null,
     content: rendered,
     ...(typeof data.status === "string" ? { status: data.status } : {}),
+    ...(typeof data.slack === "string" ? { slack: data.slack } : {}),
   };
 }
