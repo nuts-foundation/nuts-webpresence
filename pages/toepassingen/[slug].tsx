@@ -15,7 +15,8 @@ import categorieConfig from "../../config/category.json";
 
 type Soort = "tekst" | "functies" | "lagen" | "leverancier" | "links";
 type Sectie = { id: string; titel: string; icon: string; soort: Soort; html: string; vragen?: string[] };
-type LinkKaart = { label: string; bron: string; href: string; tekst: string; volgt?: boolean };
+// uitleg: korte toelichting na de link ("[tekst](url) — voor wie het is"), klein onder het label.
+type LinkKaart = { label: string; bron: string; href: string; tekst: string; uitleg?: string; volgt?: boolean };
 type Feit = { label: string; waarde: string; kleur?: string; icon?: string };
 type Persoon = { naam: string; rol: string | null; email: string | null };
 // Contact is bij elke toepassing gelijk: de Kring Toepassingen (via Slack) en een of meer contactpersonen met hun rol.
@@ -31,12 +32,15 @@ interface Props {
   secties: Sectie[];
   links: LinkKaart[];
   contact: Contact | null;
+  /** Eigen Slack-kanaal van deze toepassing, of null (dan de algemene uitnodiging). */
+  slack: string | null;
   /** Nog niet in productie (idee, PoC, in ontwikkeling): de actiekaart vraagt dan om interesse in plaats van gebruik. */
   inOntwikkeling: boolean;
 }
 
-// De openbare Slack van Nuts (zoals op de pagina Contact).
-const SLACK = "https://nuts-foundation.slack.com/join/shared_invite/zt-27wzp5eic-8kJD0c7HDU7h_08mgdJR_w#/shared-invite/email";
+// De openbare uitnodiging voor de Nuts-Slack. Heeft een toepassing een eigen kanaal (frontmatter `slack:`),
+// dan gaat de knop daarheen; dat werkt alleen voor leden, dus staat de uitnodiging er dan als "meld je eerst aan" onder.
+const SLACK_AANMELDEN = "https://join.slack.com/t/nuts-foundation/shared_invite/zt-235ww08nk-halwcet23WCHclmlFd0lLg";
 
 const kaal = (html: string) => html.replace(/<[^>]+>/g, "").replace(/&amp;|&#x0*26;|&#0*38;/gi, "&").trim();
 const slugVan = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -55,7 +59,7 @@ function icoonVoor(titel: string) {
   return "toepassingen";
 }
 
-export default function ToepassingDetail({ titel, naam, excerpt, categorie, feiten, secties, links, contact, inOntwikkeling }: Props) {
+export default function ToepassingDetail({ titel, naam, excerpt, categorie, feiten, secties, links, contact, slack, inOntwikkeling }: Props) {
   const linksSectie = secties.find((s) => s.soort === "links");
 
   return (
@@ -160,7 +164,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                         <ul className="order-last flex flex-col gap-3 self-end text-sm xl:order-none xl:col-start-1 xl:row-start-2">
                           {(inOntwikkeling
                             ? [
-                                { vraag: "Wil je meedenken over beproeven?", tekst: "Neem contact op met de Kring", href: SLACK },
+                                { vraag: "Wil je meedenken over beproeven?", tekst: "Neem contact op met de Kring", href: slack ?? SLACK_AANMELDEN },
                                 { vraag: "Iedereen is welkom in de community", tekst: "Kom naar de community meeting", href: "/community/" },
                               ]
                             : [
@@ -215,7 +219,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
                       )}
                       {s.soort === "links" && (
                         <div className="mt-6 flex flex-col gap-8">
-                          {contact && <ContactKaart contact={contact} />}
+                          {contact && <ContactKaart contact={contact} slack={slack} />}
                           <LinkGroepen links={links} />
                         </div>
                       )}
@@ -230,7 +234,7 @@ export default function ToepassingDetail({ titel, naam, excerpt, categorie, feit
             <aside className="hidden lg:block">
               {/* Meescrollen, maar nooit hoger dan het scherm: dan scrolt de kolom zelf. */}
               <div className="sticky top-8 flex max-h-[calc(100vh-4rem)] flex-col gap-6 overflow-y-auto pb-2">
-                {contact && <ContactKaart contact={contact} />}
+                {contact && <ContactKaart contact={contact} slack={slack} />}
                 {(links.length > 0 || linksSectie?.html.trim()) && (
                   <div id="documentatie-en-links" className="scroll-mt-8 rounded-2xl border border-zand bg-white p-6">
                     <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-brand">Documentatie en links</p>
@@ -258,10 +262,11 @@ function Kop({ titel, licht }: { titel: string; licht?: boolean }) {
   );
 }
 
-/** Links in vaste groepen, steeds in dezelfde volgorde, elk met één icoon. */
+/** Links in vaste groepen, steeds in dezelfde volgorde, elk met één icoon.
+ *  Het functioneel ontwerp (groep Documentatie) staat altijd bovenaan, de technische documentatie daaronder. */
 const GROEPEN = [
+  { titel: "Documentatie", icon: "wiki", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /wiki|uitwerking|profiel|documentatie|afsprakenset|implement|ontwerp|werkgroep/ },
   { titel: "Specificatie en code", icon: "ontwikkelaar", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /github|gitlab|\bcode\b|specificatie/ },
-  { titel: "Documentatie", icon: "wiki", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /wiki|uitwerking|profiel|documentatie|afsprakenset|implement|ontwerp/ },
   { titel: "Privacy en juridisch", icon: "slot", vlak: "bg-perzik text-brand", kleur: "text-inkt", test: /dpia|privacy|risico|juridisch/ },
 ];
 function groepeer(links: LinkKaart[]) {
@@ -271,7 +276,8 @@ function groepeer(links: LinkKaart[]) {
     // Eerst kijken naar label en bron (wat het is), pas daarna naar het adres.
     // Privacy en juridisch gaat voor: een risicoanalyse op de wiki is juridisch, geen gewone documentatie.
     const tekst = `${l.label} ${l.bron}`.toLowerCase();
-    const opVolgorde = [uit[2], uit[0], uit[1]];
+    // Zoekvolgorde (los van de weergave): privacy, dan specificatie en code, dan documentatie.
+    const opVolgorde = [uit[2], uit[1], uit[0]];
     const g = opVolgorde.find((x) => x.test.test(tekst)) ?? opVolgorde.find((x) => x.test.test(l.href.toLowerCase()));
     (g ?? overig).links.push(l);
   }
@@ -321,6 +327,7 @@ function LinkGroepen({ links, compact }: { links: LinkKaart[]; compact?: boolean
                   {/* Korte bron (GitHub, Wiki) rechts; een lange (een webadres) klein onder de titel, zodat de titel ruimte houdt. */}
                   <span className="min-w-0 flex-1">
                     <span className="block text-sm font-semibold leading-snug text-inkt group-hover:text-dark">{l.label || l.tekst}</span>
+                    {l.uitleg && <span className="mt-0.5 block text-xs leading-snug text-grijs">{l.uitleg}</span>}
                     {bronKort(l).length > 12 && <span className="mt-0.5 block break-words text-xs text-grijs">{bronKort(l)}</span>}
                   </span>
                   {bronKort(l).length <= 12 && <span className="shrink-0 text-xs text-grijs">{bronKort(l)}</span>}
@@ -339,7 +346,7 @@ function LinkGroepen({ links, compact }: { links: LinkKaart[]; compact?: boolean
 }
 
 /** Met wie neem je contact op: bij elke toepassing de Kring Toepassingen via Slack, met de contactpersonen en hun rol. */
-function ContactKaart({ contact }: { contact: Contact }) {
+function ContactKaart({ contact, slack }: { contact: Contact; slack: string | null }) {
   return (
     <div className="rounded-2xl border border-zand bg-creme p-6">
       <p className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.08em] text-brand">
@@ -349,9 +356,17 @@ function ContactKaart({ contact }: { contact: Contact }) {
         Contact
       </p>
       <p className="font-redhat text-lg font-bold leading-snug text-inkt">{contact.organisatie}</p>
-      <Button href={SLACK} className="mt-4 flex w-full">
+      <Button href={slack ?? SLACK_AANMELDEN} className="mt-4 flex w-full">
         Stel je vraag via Slack
       </Button>
+      {slack && (
+        <p className="mt-2 text-xs leading-snug text-grijs">
+          Nog geen lid van de Nuts-Slack?
+          <a href={SLACK_AANMELDEN} className="mt-0.5 block text-brand hover:text-dark hover:underline">
+            Meld je eerst aan
+          </a>
+        </p>
+      )}
       {contact.personen.length > 0 && (
         <div className="mt-5 border-t border-zand pt-4">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-grijs">
@@ -462,7 +477,8 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
         }
         if (a && !a[1].startsWith("mailto:")) {
           const bron = label.match(/\(([^)]+)\)\s*$/)?.[1] ?? "";
-          links.push({ label: label.replace(/\s*\([^)]+\)\s*$/, ""), bron, href: a[1].replace(/&amp;/g, "&"), tekst: kaal(a[2]) });
+          const uitleg = kaal(waarde.replace(a[0], "")).replace(/^[\s—–:-]+/, "").trim();
+          links.push({ label: label.replace(/\s*\([^)]+\)\s*$/, ""), bron, href: a[1].replace(/&amp;/g, "&"), tekst: kaal(a[2]), ...(uitleg ? { uitleg } : {}) });
         } else over.push(li);
       }
       html = html.replace(/<ul>[\s\S]*?<\/ul>/, over.length ? `<ul>${over.join("")}</ul>` : "");
@@ -502,6 +518,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
       secties,
       links,
       contact,
+      slack: t.slack ?? null,
       inOntwikkeling: !!fase && fase.id !== "productie",
     },
   };

@@ -1,6 +1,7 @@
 ---
 title: "360° cliëntbeeld"
 excerpt: "Met het 360° cliëntbeeld van een cliënt vraag je als zorgverlener, op het moment dat je het nodig hebt, de beschikbare gegevens van andere zorgaanbieders over je cliënt op in één overzicht."
+slack: "https://nuts-foundation.slack.com/archives/C0B7U5195HT"
 ---
 ## Probleem en oplossing
 
@@ -68,7 +69,7 @@ Zo zie je in één overzicht welke gegevens andere zorgorganisaties over je cli�
 
 ### Welke gegevens
 
-Het 360° cliëntbeeld toont een afgesproken set zorggegevens over één cliënt. Welke gegevens dat precies zijn, staat in de specificatie en het technisch ontwerp.
+Het 360° cliëntbeeld toont een afgesproken set zorggegevens over één cliënt. Welke gegevens dat precies zijn, staat in het technisch ontwerp (de implementatiegids).
 
 ### Op welke grondslag
 
@@ -104,9 +105,10 @@ Met de toepassing op Nuts 360° cliëntbeeld zie je in je eigen applicatie wat a
 
 ## Links & contact
 
-- **Technische specificatie (GitHub):** [Implementatiegids 360° cliëntbeeld](https://nuts-foundation.github.io/nl-360-ig)
-- **Functionele uitwerking (Wiki):** in ontwikkeling
-- **Functioneel ontwerp (Google Doc):** [Functioneel ontwerp Toepassing op Nuts 360° cliëntbeeld](https://docs.google.com/document/d/1hp5mXqv8HJdAUgbtEQMF77ELHMwUM9mA1O0FC0ovUXc/edit?tab=t.0)
+- **Functioneel ontwerp (PDF):** [Functioneel ontwerp Nuts 360° cliëntbeeld](https://nuts-foundation.github.io/nl-360-ig/FO-Nuts-360-clientbeeld.pdf) — wat de toepassing doet, voor zorgorganisaties
+- **Werkgroep 360° cliëntbeeld (Google Drive):** [Map van de werkgroep](https://drive.google.com/drive/folders/1KtoAEiUAc4GrQ7q0jAgcnUNr6XhYypt9) — verslagen en werkdocumenten
+- **Technisch ontwerp (GitHub):** [Implementatiegids 360° cliëntbeeld](https://nuts-foundation.github.io/nl-360-ig/) — technische afspraken, voor softwareleveranciers
+- **Dekkingsmatrix (PDF):** [Dekkingsmatrix FO en TO](https://nuts-foundation.github.io/nl-360-ig/Dekkingsmatrix_FO_TO_ToN_360_clientbeeld.pdf) — welke eisen technisch zijn afgedekt (werkdocument)
 - **Initiatief:** ActiZ, de branchevereniging van zorgorganisaties, met inbreng van regio's en softwareleveranciers
 - **Contact:** Kring Toepassingen
 - **Contactpersonen:** Ilona Pullens (functioneel), Dirk Geurs (techniek)
